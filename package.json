@@ -1,0 +1,18 @@
+{
+  "name": "desafino",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Protótipo do jogo de festa DESAFINO",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.7.5"
+  }
+}

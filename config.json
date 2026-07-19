@@ -1,0 +1,5 @@
+{
+  "rodada": { "duracaoSegundos": 90, "totalRodadas": 8 },
+  "modos": { "cantarolar": 100, "mimica": 70 },
+  "dicas": { "cantor": 10, "ano": 10, "quantidadePalavras": 25 }
+}
