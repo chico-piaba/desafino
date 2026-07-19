@@ -11,7 +11,7 @@ async function carregar() {
   const musicas = await (await fetch('/api/musicas')).json();
   $('total').textContent = musicas.length;
   $('lista').innerHTML = musicas
-    .map((m) => `<tr><td>${esc(m.titulo)}</td><td>${esc(m.artista)}</td><td>${m.ano}</td>
+    .map((m) => `<tr><td>${esc(m.titulo)}</td><td>${esc(m.artista)}</td><td>${m.ano}</td><td>${m.genero ? esc(m.genero) : '—'}</td>
       <td><button class="btn btn-error" data-id="${m.id}" style="padding:6px 14px">Remover</button></td></tr>`)
     .join('');
   for (const btn of $('lista').querySelectorAll('button[data-id]')) {
@@ -30,16 +30,17 @@ $('btn-adicionar').onclick = async () => {
       titulo: $('campo-titulo').value,
       artista: $('campo-artista').value,
       ano: $('campo-ano').value,
+      genero: $('campo-genero').value,
     }),
   });
   if (!resposta.ok) return mostrarErro((await resposta.json()).erro);
-  $('campo-titulo').value = $('campo-artista').value = $('campo-ano').value = '';
+  $('campo-titulo').value = $('campo-artista').value = $('campo-ano').value = $('campo-genero').value = '';
   carregar();
 };
 
 $('btn-buscar').onclick = async () => {
   $('resultados-wiki').innerHTML = '<p>Buscando…</p>';
-  const resposta = await fetch(`/api/wikipedia?q=${encodeURIComponent($('campo-busca').value)}`);
+  const resposta = await fetch(`/api/buscar?q=${encodeURIComponent($('campo-busca').value)}`);
   if (!resposta.ok) {
     $('resultados-wiki').innerHTML = '';
     return mostrarErro((await resposta.json()).erro + ' — preencha o formulário manualmente.');
@@ -47,7 +48,7 @@ $('btn-buscar').onclick = async () => {
   const resultados = await resposta.json();
   $('resultados-wiki').innerHTML = resultados
     .map((r, i) => `<div class="resultado-wiki">
-      <span><b>${esc(r.titulo)}</b>${r.artista ? ` — ${esc(r.artista)}` : ''}${r.ano ? ` (${r.ano})` : ''}</span>
+      <span><b>${esc(r.titulo)}</b>${r.artista ? ` — ${esc(r.artista)}` : ''}${r.ano ? ` (${r.ano})` : ''}${r.genero ? ` · ${esc(r.genero)}` : ''}</span>
       <button class="btn" data-i="${i}" style="padding:6px 14px">Usar</button></div>`)
     .join('') || '<p>Nada encontrado.</p>';
   for (const btn of $('resultados-wiki').querySelectorAll('button[data-i]')) {
@@ -56,6 +57,7 @@ $('btn-buscar').onclick = async () => {
       $('campo-titulo').value = r.titulo;
       $('campo-artista').value = r.artista || '';
       $('campo-ano').value = r.ano || '';
+      $('campo-genero').value = r.genero || '';
     };
   }
 };

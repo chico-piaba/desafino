@@ -7,7 +7,7 @@ const { criarServidor } = require('../src/server');
 const CONFIG = {
   rodada: { duracaoSegundos: 90, totalRodadas: 8 },
   modos: { cantarolar: 100, mimica: 70 },
-  dicas: { cantor: 10, ano: 10, quantidadePalavras: 25 },
+  dicas: { cantor: 10, ano: 10, decada: 5, genero: 10, inicialDoTitulo: 15, forca: 25 },
 };
 const MUSICAS = Array.from({ length: 10 }, (_, i) => ({
   id: `m${i}`, titulo: `Musica Numero ${i}`, artista: `Artista ${i}`, ano: 1990 + i,

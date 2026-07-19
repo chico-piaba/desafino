@@ -8,7 +8,7 @@ const { Server } = require('socket.io');
 const QRCode = require('qrcode');
 const game = require('./game');
 const { criarBanco } = require('./bancoMusicas');
-const wikipedia = require('./wikipedia');
+const itunes = require('./itunes');
 
 function localIp() {
   for (const infos of Object.values(os.networkInterfaces())) {
@@ -76,12 +76,12 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000, l
     res.status(204).end();
   });
 
-  app.get('/api/wikipedia', async (req, res) => {
+  app.get('/api/buscar', async (req, res) => {
     try {
-      res.json(await wikipedia.buscar(String(req.query.q || '')));
+      res.json(await itunes.buscar(String(req.query.q || '')));
     } catch (e) {
-      console.error('Busca na Wikipedia falhou:', e.message);
-      res.status(502).json({ erro: 'Busca na Wikipedia indisponível no momento — cadastre a música manualmente.' });
+      console.error('Busca no iTunes falhou:', e.message);
+      res.status(502).json({ erro: 'Busca indisponível no momento — cadastre a música manualmente.' });
     }
   });
 
@@ -122,7 +122,7 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000, l
     if (!r) return null;
     if (playerId === r.apresentadorId) return { papel: 'apresentador', musica: r.musica };
     if (playerId === r.adivinhadorId) {
-      return { papel: 'adivinhador', dicas: r.dicasCompradas, precos: config.dicas };
+      return { papel: 'adivinhador', dicas: r.dicasCompradas, precos: game.dicasDisponiveis(config, r.musica) };
     }
     return { papel: 'plateia' };
   }

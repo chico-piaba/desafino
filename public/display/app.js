@@ -2,7 +2,10 @@
 const socket = io();
 const $ = (id) => document.getElementById(id);
 const NOME_MODO = { cantarolar: 'CANTAROLANDO 🎤', mimica: 'MÍMICA 🎭' };
-const NOME_DICA = { cantor: 'Cantor', ano: 'Ano', quantidadePalavras: 'Nº de palavras' };
+const NOME_DICA = {
+  cantor: 'Cantor', ano: 'Ano', decada: 'Década', genero: 'Gênero',
+  inicialDoTitulo: 'Inicial do título', forca: 'Forca',
+};
 
 function esc(texto) {
   const div = document.createElement('div');
@@ -86,7 +89,7 @@ function renderRodada(e) {
   }
   if (r.dicasCompradas.length > dicasVistas) {
     const d = r.dicasCompradas[r.dicasCompradas.length - 1];
-    mostrarEvento(`💡 Dica comprada: ${NOME_DICA[d.tipo]} (−${d.custo} pts)`);
+    mostrarEvento(`💡 Dica comprada: ${NOME_DICA[d.tipo] || d.tipo} (−${d.custo} pts)`);
   }
   dicasVistas = r.dicasCompradas.length;
 }

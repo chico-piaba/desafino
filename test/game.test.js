@@ -6,10 +6,10 @@ const game = require('../src/game');
 const CONFIG = {
   rodada: { duracaoSegundos: 90, totalRodadas: 8 },
   modos: { cantarolar: 100, mimica: 70 },
-  dicas: { cantor: 10, ano: 10, quantidadePalavras: 25 },
+  dicas: { cantor: 10, ano: 10, decada: 5, genero: 10, inicialDoTitulo: 15, forca: 25 },
 };
 const MUSICAS = Array.from({ length: 10 }, (_, i) => ({
-  id: `m${i}`, titulo: `Musica Numero ${i}`, artista: `Artista ${i}`, ano: 1990 + i,
+  id: `m${i}`, titulo: `Musica Numero ${i}`, artista: `Artista ${i}`, ano: 1990 + i, genero: 'MPB',
 }));
 
 function jogoCom2Duplas() {
@@ -123,8 +123,8 @@ test('dicas descontam do valor e revelam conteúdo; só o adivinhador compra', (
   assert.throws(() => game.comprarDica(jogo, 'a', 'cantor'), /adivinhador/);
   const cantor = game.comprarDica(jogo, 'b', 'cantor');
   assert.strictEqual(cantor.conteudo, 'Artista 0');
-  const palavras = game.comprarDica(jogo, 'b', 'quantidadePalavras');
-  assert.strictEqual(palavras.conteudo, '3 palavras'); // "Musica Numero 0"
+  const forca = game.comprarDica(jogo, 'b', 'forca');
+  assert.strictEqual(forca.conteudo, '_ _ _ _ _ _   _ _ _ _ _ _   _'); // "Musica Numero 0"
   assert.strictEqual(game.valorAtual(jogo), 100 - 10 - 25);
   assert.throws(() => game.comprarDica(jogo, 'b', 'cantor'), /já comprada/);
   assert.throws(() => game.comprarDica(jogo, 'b', 'nota'), /desconhecida/);
@@ -137,12 +137,12 @@ test('valor nunca fica negativo', () => {
   game.mudarParaMimica(jogo, 'a'); // 70
   game.comprarDica(jogo, 'b', 'cantor'); // -10
   game.comprarDica(jogo, 'b', 'ano'); // -10
-  game.comprarDica(jogo, 'b', 'quantidadePalavras'); // -25 → 25
+  game.comprarDica(jogo, 'b', 'forca'); // -25 → 25
   assert.strictEqual(game.valorAtual(jogo), 25);
 });
 
 test('valor para em 0 quando as dicas custam mais que o V0', () => {
-  const configCaro = { ...CONFIG, dicas: { cantor: 40, ano: 40, quantidadePalavras: 40 } };
+  const configCaro = { ...CONFIG, dicas: { cantor: 40, ano: 40, forca: 40 } };
   const jogo = game.criarJogo(configCaro, MUSICAS, () => 0);
   game.entrarJogador(jogo, 'Ana', 1, 'a');
   game.entrarJogador(jogo, 'João', 1, 'b');
@@ -245,4 +245,58 @@ test('removerJogador só funciona no lobby e exige jogador existente', () => {
   assert.throws(() => game.removerJogador(jogo, 99), /não encontrado/);
   game.iniciarPartida(jogo);
   assert.throws(() => game.removerJogador(jogo, 1), /lobby/);
+});
+
+test('gerarForca esconde letras, mantém pontuação e pode revelar a inicial', () => {
+  assert.strictEqual(game.gerarForca('Anna Júlia', false), '_ _ _ _   _ _ _ _ _');
+  assert.strictEqual(game.gerarForca('Trem-Bala', true), 'T _ _ _ - _ _ _ _');
+});
+
+test('dicas novas: década, gênero e inicial do título', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  assert.strictEqual(game.comprarDica(jogo, 'b', 'decada').conteudo, 'Anos 90'); // 1990
+  assert.strictEqual(game.comprarDica(jogo, 'b', 'genero').conteudo, 'MPB');
+  assert.strictEqual(game.comprarDica(jogo, 'b', 'inicialDoTitulo').conteudo, 'Começa com "M"');
+});
+
+test('década a partir de 2000 sai por extenso', () => {
+  const musicas = [{ id: 'x', titulo: 'Festa', artista: 'Ivete Sangalo', ano: 2003, genero: 'Axé' }];
+  const jogo = game.criarJogo(CONFIG, musicas, () => 0);
+  game.entrarJogador(jogo, 'Ana', 1, 'a');
+  game.entrarJogador(jogo, 'João', 1, 'b');
+  game.entrarJogador(jogo, 'Bia', 2, 'c');
+  game.entrarJogador(jogo, 'Leo', 2, 'd');
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  assert.strictEqual(game.comprarDica(jogo, 'b', 'decada').conteudo, 'Anos 2000');
+});
+
+test('forca comprada antes da inicial é atualizada com a primeira letra', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  const forca = game.comprarDica(jogo, 'b', 'forca');
+  assert.strictEqual(forca.conteudo, '_ _ _ _ _ _   _ _ _ _ _ _   _');
+  game.comprarDica(jogo, 'b', 'inicialDoTitulo');
+  assert.strictEqual(
+    jogo.rodada.dicasCompradas.find((d) => d.tipo === 'forca').conteudo,
+    'M _ _ _ _ _   _ _ _ _ _ _   _'
+  );
+});
+
+test('gênero indisponível some dos preços e não pode ser comprado', () => {
+  const semGenero = [{ id: 'x', titulo: 'Oceano', artista: 'Djavan', ano: 1989 }];
+  const jogo = game.criarJogo(CONFIG, semGenero, () => 0);
+  game.entrarJogador(jogo, 'Ana', 1, 'a');
+  game.entrarJogador(jogo, 'João', 1, 'b');
+  game.entrarJogador(jogo, 'Bia', 2, 'c');
+  game.entrarJogador(jogo, 'Leo', 2, 'd');
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  const precos = game.dicasDisponiveis(CONFIG, jogo.rodada.musica);
+  assert.ok(!('genero' in precos));
+  assert.ok('forca' in precos);
+  assert.throws(() => game.comprarDica(jogo, 'b', 'genero'), /indisponível/);
 });

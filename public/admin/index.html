@@ -9,7 +9,7 @@
     body { padding: 24px; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
     table { width: 100%; border-collapse: collapse; }
     th, td { text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--outline); }
-    .linha-form { display: grid; grid-template-columns: 2fr 2fr 1fr auto; gap: 12px; align-items: end; }
+    .linha-form { display: grid; grid-template-columns: 2fr 2fr 1fr 1fr auto; gap: 12px; align-items: end; }
     .resultado-wiki { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0; }
     .erro { color: #93000a; font-weight: 800; min-height: 1.4em; }
   </style>
@@ -19,9 +19,9 @@
   <p id="erro" class="erro" role="alert"></p>
 
   <section class="card">
-    <h2>🔎 Buscar na Wikipedia</h2>
+    <h2>🔎 Buscar música (iTunes)</h2>
     <div style="display:flex;gap:12px">
-      <input id="campo-busca" placeholder="Nome da música…">
+      <input id="campo-busca" placeholder="Nome da música ou artista…">
       <button id="btn-buscar" class="btn btn-tertiary">Buscar</button>
     </div>
     <div id="resultados-wiki"></div>
@@ -33,6 +33,7 @@
       <label>Título <input id="campo-titulo"></label>
       <label>Artista <input id="campo-artista"></label>
       <label>Ano <input id="campo-ano" type="number" min="1900" max="2100"></label>
+      <label>Gênero <input id="campo-genero" placeholder="opcional"></label>
       <button id="btn-adicionar" class="btn btn-success">Salvar</button>
     </div>
   </section>
@@ -40,7 +41,7 @@
   <section class="card">
     <h2>🎵 Músicas (<span id="total"></span>)</h2>
     <table>
-      <thead><tr><th>Título</th><th>Artista</th><th>Ano</th><th></th></tr></thead>
+      <thead><tr><th>Título</th><th>Artista</th><th>Ano</th><th>Gênero</th><th></th></tr></thead>
       <tbody id="lista"></tbody>
     </table>
   </section>

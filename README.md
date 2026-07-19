@@ -11,9 +11,11 @@ Protótipo local — o servidor roda no seu notebook e os celulares entram por Q
 4. Clique em **Começar partida** no display.
 5. Na sua vez, o apresentador vê a música no celular (privado!) e cantarola — vale **100 pts**.
    Pode **mudar para mímica** (o valor cai para 70) a qualquer momento; a troca não tem volta.
-6. O adivinhador fala os palpites em voz alta e pode **comprar dicas** no celular
-   (cantor −10, ano −10, nº de palavras −25). O que sobrar é o prêmio se o apresentador
-   confirmar o **Acertou!** antes dos 90 segundos.
+6. O adivinhador fala os palpites em voz alta e pode **comprar dicas** no celular:
+   década −5, cantor −10, ano −10, gênero −10, inicial do título −15 e a **forca** −25
+   (o esqueleto do título, letra por letra, estilo forca — comprar a inicial preenche a
+   primeira letra). O que sobrar é o prêmio se o apresentador confirmar o **Acertou!**
+   antes dos 90 segundos.
 7. São 8 rodadas. Vence a dupla com mais pontos.
 
 ## Balanceamento
@@ -23,9 +25,11 @@ Edite e reinicie o servidor.
 
 ## Banco de músicas
 
-`data/musicas.json` traz 40 músicas brasileiras. Gerencie em `http://localhost:3000/admin/`,
-com busca na Wikipedia para preencher artista/ano automaticamente.
+`data/musicas.json` traz **500+ músicas** (nacionais e internacionais, com ano e gênero),
+geradas por `node scripts/gerar-banco.js` a partir da iTunes Search API — rode de novo para
+expandir sem perder o que você adicionou. Gerencie em `http://localhost:3000/admin/`, com
+busca no iTunes para preencher título/artista/ano/gênero automaticamente.
 
 ## Testes
 
-`npm test` — motor do jogo, banco de músicas, extração da Wikipedia e integração via sockets.
+`npm test` — motor do jogo, banco de músicas, interpretação do iTunes e integração via sockets.

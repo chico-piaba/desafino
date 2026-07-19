@@ -8,7 +8,14 @@ function esc(texto) {
 
 const socket = io();
 const $ = (id) => document.getElementById(id);
-const NOME_DICA = { cantor: '🎤 Cantor', ano: '📅 Ano', quantidadePalavras: '🔢 Nº de palavras' };
+const NOME_DICA = {
+  cantor: '🎤 Cantor',
+  ano: '📅 Ano',
+  decada: '🕰 Década',
+  genero: '🎶 Gênero',
+  inicialDoTitulo: '🔤 Inicial do título',
+  forca: '🪢 Forca',
+};
 let ultimoEstado = null;
 
 function entrar(dados) {
@@ -110,10 +117,12 @@ function renderAdivinhador(e) {
     ? '<p>Aguarde o apresentador começar…</p>'
     : Object.entries(e.voce.precos).map(([tipo, custo]) => {
         const comprada = e.voce.dicas.find((d) => d.tipo === tipo);
+        const rotulo = NOME_DICA[tipo] || tipo;
         if (comprada) {
-          return `<div class="dica"><b>${NOME_DICA[tipo]}:</b> <span class="pill">${esc(comprada.conteudo)}</span></div>`;
+          const classe = tipo === 'forca' ? 'pill forca-pill' : 'pill';
+          return `<div class="dica"><b>${rotulo}:</b> <span class="${classe}">${esc(comprada.conteudo)}</span></div>`;
         }
-        return `<div class="dica"><span>${NOME_DICA[tipo]}</span>
+        return `<div class="dica"><span>${rotulo}</span>
           <button class="btn btn-tertiary" data-tipo="${tipo}" style="padding:8px 16px">−${custo} pts</button></div>`;
       }).join('');
   for (const btn of $('lista-dicas').querySelectorAll('button[data-tipo]')) {
