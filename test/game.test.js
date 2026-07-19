@@ -88,3 +88,121 @@ test('com 3 duplas e 8 rodadas o jogo avisa divisão desigual', () => {
   game.iniciarPartida(jogo);
   assert.match(jogo.aviso, /totalRodadas/);
 });
+
+test('rodada começa em cantarolar valendo 100', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  assert.strictEqual(jogo.rodada.fase, 'emAndamento');
+  assert.strictEqual(game.valorAtual(jogo), 100);
+});
+
+test('só o apresentador inicia, muda modo, acerta e passa', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  assert.throws(() => game.comecarRodada(jogo, 'b'), /apresentador/);
+  game.comecarRodada(jogo, 'a');
+  assert.throws(() => game.mudarParaMimica(jogo, 'b'), /apresentador/);
+  assert.throws(() => game.acertou(jogo, 'b'), /apresentador/);
+  assert.throws(() => game.passar(jogo, 'b'), /apresentador/);
+});
+
+test('mudar para mímica derruba o V0 para 70 e é só de ida', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.mudarParaMimica(jogo, 'a');
+  assert.strictEqual(game.valorAtual(jogo), 70);
+  assert.throws(() => game.mudarParaMimica(jogo, 'a'), /já está/);
+});
+
+test('dicas descontam do valor e revelam conteúdo; só o adivinhador compra', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  assert.throws(() => game.comprarDica(jogo, 'a', 'cantor'), /adivinhador/);
+  const cantor = game.comprarDica(jogo, 'b', 'cantor');
+  assert.strictEqual(cantor.conteudo, 'Artista 0');
+  const palavras = game.comprarDica(jogo, 'b', 'quantidadePalavras');
+  assert.strictEqual(palavras.conteudo, '3 palavras'); // "Musica Numero 0"
+  assert.strictEqual(game.valorAtual(jogo), 100 - 10 - 25);
+  assert.throws(() => game.comprarDica(jogo, 'b', 'cantor'), /já comprada/);
+  assert.throws(() => game.comprarDica(jogo, 'b', 'nota'), /desconhecida/);
+});
+
+test('valor nunca fica negativo', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.mudarParaMimica(jogo, 'a'); // 70
+  game.comprarDica(jogo, 'b', 'cantor'); // -10
+  game.comprarDica(jogo, 'b', 'ano'); // -10
+  game.comprarDica(jogo, 'b', 'quantidadePalavras'); // -25 → 25
+  assert.strictEqual(game.valorAtual(jogo), 25);
+});
+
+test('acertou credita o valor atual à dupla', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.comprarDica(jogo, 'b', 'cantor');
+  game.acertou(jogo, 'a');
+  assert.strictEqual(jogo.rodada.fase, 'resultado');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 90);
+  assert.strictEqual(jogo.duplas[1].pontos, 90);
+});
+
+test('passar e tempoEsgotado encerram com 0 pontos', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.passar(jogo, 'a');
+  assert.strictEqual(jogo.duplas[1].pontos, 0);
+  game.proximaRodada(jogo);
+  game.comecarRodada(jogo, 'c');
+  game.tempoEsgotado(jogo);
+  assert.strictEqual(jogo.duplas[2].pontos, 0);
+});
+
+test('músicas não se repetem entre rodadas', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  const vistas = [jogo.rodada.musica.id];
+  for (let i = 0; i < 3; i++) {
+    game.comecarRodada(jogo, jogo.rodada.apresentadorId);
+    game.passar(jogo, jogo.rodada.apresentadorId);
+    game.proximaRodada(jogo);
+    vistas.push(jogo.rodada.musica.id);
+  }
+  assert.strictEqual(new Set(vistas).size, vistas.length);
+});
+
+test('o jogo termina após totalRodadas', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  for (let i = 0; i < 8; i++) {
+    game.comecarRodada(jogo, jogo.rodada.apresentadorId);
+    game.acertou(jogo, jogo.rodada.apresentadorId);
+    game.proximaRodada(jogo);
+  }
+  assert.strictEqual(jogo.fase, 'fim');
+  assert.strictEqual(jogo.duplas[1].pontos, 400); // 4 rodadas × 100
+  assert.strictEqual(jogo.duplas[2].pontos, 400);
+});
+
+test('banco esgotado encerra a partida mais cedo com aviso', () => {
+  const poucas = MUSICAS.slice(0, 2);
+  const jogo = game.criarJogo(CONFIG, poucas, () => 0);
+  game.entrarJogador(jogo, 'Ana', 1, 'a');
+  game.entrarJogador(jogo, 'João', 1, 'b');
+  game.entrarJogador(jogo, 'Bia', 2, 'c');
+  game.entrarJogador(jogo, 'Leo', 2, 'd');
+  game.iniciarPartida(jogo);
+  for (let i = 0; i < 2; i++) {
+    game.comecarRodada(jogo, jogo.rodada.apresentadorId);
+    game.passar(jogo, jogo.rodada.apresentadorId);
+    game.proximaRodada(jogo);
+  }
+  assert.strictEqual(jogo.fase, 'fim');
+  assert.match(jogo.aviso, /esgotado/);
+});
