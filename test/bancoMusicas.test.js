@@ -35,12 +35,13 @@ test('remover apaga pelo id e persiste', () => {
   assert.strictEqual(banco.ler().length, 0);
 });
 
-test('seed real tem 40 músicas válidas com ids únicos', () => {
-  const seed = require('../data/musicas.json');
-  assert.strictEqual(seed.length, 40);
-  const ids = new Set(seed.map((m) => m.id));
-  assert.strictEqual(ids.size, 40);
-  for (const m of seed) {
+test('banco real tem pelo menos as 40 músicas do seed, válidas e com ids únicos', () => {
+  // O banco é editável em produção pelo /admin — não pinamos a contagem exata.
+  const banco = require('../data/musicas.json');
+  assert.ok(banco.length >= 40, `esperava >= 40 músicas, achou ${banco.length}`);
+  const ids = new Set(banco.map((m) => m.id));
+  assert.strictEqual(ids.size, banco.length);
+  for (const m of banco) {
     assert.ok(m.titulo.trim() && m.artista.trim() && Number.isInteger(m.ano));
   }
 });

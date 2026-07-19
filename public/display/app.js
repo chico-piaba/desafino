@@ -16,6 +16,11 @@ fetch('/api/entrada').then((r) => r.json()).then(({ url, qr }) => {
 });
 
 $('btn-iniciar').onclick = () => socket.emit('iniciarPartida');
+$('btn-reiniciar').onclick = () => {
+  if (confirm('Reiniciar a sala? Todos os jogadores e pontos serão zerados.')) {
+    socket.emit('reiniciarSala');
+  }
+};
 socket.on('erro', (msg) => mostrarEvento(`⚠️ ${msg}`));
 socket.on('tick', (t) => {
   $('tempo').textContent = t;
@@ -26,6 +31,7 @@ let dicasVistas = 0;
 socket.on('estado', (e) => {
   $('aviso').classList.toggle('oculto', !e.aviso);
   $('aviso').textContent = e.aviso || '';
+  renderPresenca(e);
   renderRanking(e);
   if (e.fase === 'lobby') return mostrarTela('tela-lobby', e);
   if (e.fase === 'fim') return renderFim(e);
@@ -40,10 +46,27 @@ function mostrarTela(id) {
 
 function renderLobbyDuplas(e) {
   const porDupla = [1, 2, 3, 4].map((n) => {
-    const nomes = e.jogadores.filter((j) => j.dupla === n).map((j) => esc(j.nome));
-    return nomes.length ? `<p><b>Dupla ${n}:</b> ${nomes.join(' & ')}</p>` : '';
+    const membros = e.jogadores.filter((j) => j.dupla === n);
+    if (!membros.length) return '';
+    const itens = membros.map((j) =>
+      `<span class="jogador-lobby">${j.conectado ? '🟢' : '🔴'} ${esc(j.nome)}` +
+      `<button class="remover-jogador" data-num="${j.num}" title="Remover jogador">✕</button></span>`
+    ).join('');
+    return `<p><b>Dupla ${n}:</b> ${itens}</p>`;
   });
   $('lobby-duplas').innerHTML = porDupla.join('') || '<p>Aguardando jogadores…</p>';
+  for (const btn of $('lobby-duplas').querySelectorAll('button[data-num]')) {
+    btn.onclick = () => socket.emit('removerJogador', Number(btn.dataset.num));
+  }
+}
+
+function renderPresenca(e) {
+  const duplaVez = e.fase === 'rodada' && e.rodada ? e.rodada.dupla : null;
+  const offline = duplaVez
+    ? e.jogadores.filter((j) => j.dupla === duplaVez && !j.conectado).map((j) => j.nome)
+    : [];
+  $('presenca').classList.toggle('oculto', offline.length === 0);
+  $('presenca').textContent = offline.length ? `📵 Desconectado: ${offline.join(', ')}` : '';
 }
 
 function renderRodada(e) {

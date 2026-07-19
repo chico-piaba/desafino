@@ -23,12 +23,21 @@
     #ranking li { font-size: 1.2rem; margin: 8px 0; }
     #qr { width: 240px; height: 240px; }
     .evento { color: var(--secondary-dark); font-weight: 800; min-height: 1.5em; }
+    .presenca { background: var(--error); color: #fff; }
+    .jogador-lobby { display: inline-flex; align-items: center; gap: 6px; margin: 0 6px; }
+    .remover-jogador {
+      border: 2px solid var(--outline); border-radius: 999px; background: var(--error);
+      color: #fff; font-weight: 800; cursor: pointer; width: 22px; height: 22px;
+      line-height: 1; padding: 0; font-size: 0.8rem;
+    }
+    #btn-reiniciar { font-size: 0.85rem; padding: 8px 16px; margin-top: 12px; }
   </style>
 </head>
 <body>
   <header>
     <h1 class="logo">DESAFINO</h1>
     <span id="aviso" class="pill oculto"></span>
+    <span id="presenca" class="pill presenca oculto"></span>
     <p id="evento" class="evento"></p>
   </header>
 
@@ -69,6 +78,7 @@
     <h2>🏆 Ranking</h2>
     <ol id="ranking"></ol>
     <p id="progresso" class="pill"></p>
+    <button id="btn-reiniciar" class="btn btn-error">↺ Reiniciar sala</button>
   </aside>
 
   <script src="/socket.io/socket.io.js"></script>

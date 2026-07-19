@@ -225,3 +225,24 @@ test('banco esgotado encerra a partida mais cedo com aviso', () => {
   assert.strictEqual(jogo.fase, 'fim');
   assert.match(jogo.aviso, /esgotado/);
 });
+
+test('jogadores recebem num público sequencial', () => {
+  const jogo = jogoCom2Duplas();
+  assert.deepStrictEqual(jogo.jogadores.map((j) => j.num), [1, 2, 3, 4]);
+});
+
+test('removerJogador tira do lobby, libera a vaga e não reaproveita num', () => {
+  const jogo = jogoCom2Duplas();
+  const numJoao = jogo.jogadores.find((j) => j.id === 'b').num;
+  game.removerJogador(jogo, numJoao);
+  assert.strictEqual(jogo.jogadores.length, 3);
+  const novo = game.entrarJogador(jogo, 'Zé', 1);
+  assert.notStrictEqual(novo.num, numJoao);
+});
+
+test('removerJogador só funciona no lobby e exige jogador existente', () => {
+  const jogo = jogoCom2Duplas();
+  assert.throws(() => game.removerJogador(jogo, 99), /não encontrado/);
+  game.iniciarPartida(jogo);
+  assert.throws(() => game.removerJogador(jogo, 1), /lobby/);
+});

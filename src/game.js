@@ -14,6 +14,7 @@ function criarJogo(config, musicas, rng = Math.random) {
     rodadasJogadas: 0,
     musicasUsadas: [],
     aviso: null,
+    proximoNum: 0,
   };
 }
 
@@ -24,9 +25,17 @@ function entrarJogador(jogo, nome, duplaNumero, id = crypto.randomUUID()) {
   if (jogo.jogadores.filter((j) => j.dupla === duplaNumero).length >= 2) {
     throw new Error('Dupla cheia');
   }
-  const jogador = { id, nome: String(nome).trim(), dupla: duplaNumero };
+  jogo.proximoNum += 1;
+  const jogador = { id, num: jogo.proximoNum, nome: String(nome).trim(), dupla: duplaNumero };
   jogo.jogadores.push(jogador);
   return jogador;
+}
+
+function removerJogador(jogo, num) {
+  if (jogo.fase !== 'lobby') throw new Error('Só é possível remover jogadores no lobby');
+  const indice = jogo.jogadores.findIndex((j) => j.num === num);
+  if (indice === -1) throw new Error('Jogador não encontrado');
+  jogo.jogadores.splice(indice, 1);
 }
 
 function iniciarPartida(jogo) {
@@ -165,6 +174,7 @@ function proximaRodada(jogo) {
 module.exports = {
   criarJogo,
   entrarJogador,
+  removerJogador,
   iniciarPartida,
   comecarRodada,
   mudarParaMimica,

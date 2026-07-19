@@ -19,7 +19,7 @@ function localIp() {
   return 'localhost';
 }
 
-function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 }) {
+function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000, lobbyLimpezaMs = 30000 }) {
   const app = express();
   app.use(express.json());
   app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -28,9 +28,33 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
 
   let jogo = game.criarJogo(config, banco.ler(), rng);
   const conectados = new Map(); // playerId -> socket.id
+  const limpezaLobby = new Map(); // playerId -> timeout de remoção do lobby
   let timer = null;
   let tempoRestante = null;
   let timeoutProxima = null;
+
+  function cancelarLimpezaLobby(playerId) {
+    const pendente = limpezaLobby.get(playerId);
+    if (pendente) {
+      clearTimeout(pendente);
+      limpezaLobby.delete(playerId);
+    }
+  }
+
+  function agendarLimpezaLobby(playerId) {
+    if (jogo.fase !== 'lobby') return;
+    cancelarLimpezaLobby(playerId);
+    const t = setTimeout(() => {
+      limpezaLobby.delete(playerId);
+      if (jogo.fase !== 'lobby' || conectados.has(playerId)) return;
+      const jogador = jogo.jogadores.find((j) => j.id === playerId);
+      if (!jogador) return;
+      game.removerJogador(jogo, jogador.num);
+      broadcast();
+    }, lobbyLimpezaMs);
+    t.unref();
+    limpezaLobby.set(playerId, t);
+  }
 
   app.get('/api/entrada', async (req, res) => {
     const url = `http://${localIp()}:${req.socket.localPort}/jogar/`;
@@ -75,7 +99,7 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
       duracaoSegundos: config.rodada.duracaoSegundos,
       tempoRestante,
       jogadores: jogo.jogadores.map((j) => ({
-        nome: j.nome, dupla: j.dupla, conectado: conectados.has(j.id),
+        num: j.num, nome: j.nome, dupla: j.dupla, conectado: conectados.has(j.id),
       })),
       duplas: Object.values(jogo.duplas),
       rodada: r && {
@@ -167,6 +191,7 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
           socket.data.playerId = jogador.id;
         }
         conectados.set(socket.data.playerId, socket.id);
+        cancelarLimpezaLobby(socket.data.playerId);
         // O snapshot inicial vai direto no payload do ack: o cliente recebe seu
         // estado de forma atômica, sem depender de registrar o listener de
         // 'estado' antes que o broadcast() a seguir seja emitido.
@@ -202,8 +227,41 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
       agendarProxima();
     }));
 
+    socket.on('removerJogador', (num) => guardar(() => {
+      const alvo = jogo.jogadores.find((j) => j.num === Number(num));
+      game.removerJogador(jogo, Number(num));
+      if (alvo) {
+        const socketId = conectados.get(alvo.id);
+        conectados.delete(alvo.id);
+        cancelarLimpezaLobby(alvo.id);
+        const s = socketId && io.of('/').sockets.get(socketId);
+        if (s) {
+          s.data.playerId = undefined;
+          s.emit('removido');
+        }
+      }
+    }));
+
+    socket.on('reiniciarSala', () => guardar(() => {
+      pararTimer();
+      pararProxima();
+      for (const id of limpezaLobby.keys()) cancelarLimpezaLobby(id);
+      jogo = game.criarJogo(config, banco.ler(), rng);
+      tempoRestante = null;
+      for (const [, s] of io.of('/').sockets) {
+        if (s.data.playerId) {
+          s.data.playerId = undefined;
+          s.emit('removido');
+        }
+      }
+      conectados.clear();
+    }));
+
     socket.on('disconnect', () => {
-      if (pid() && conectados.get(pid()) === socket.id) conectados.delete(pid());
+      if (pid() && conectados.get(pid()) === socket.id) {
+        conectados.delete(pid());
+        agendarLimpezaLobby(pid());
+      }
       broadcast();
     });
 
@@ -213,6 +271,8 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
   httpServer.on('close', () => {
     pararTimer();
     pararProxima();
+    for (const t of limpezaLobby.values()) clearTimeout(t);
+    limpezaLobby.clear();
   });
 
   return { app, httpServer, io };

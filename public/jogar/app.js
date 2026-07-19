@@ -14,8 +14,8 @@ let ultimoEstado = null;
 function entrar(dados) {
   socket.emit('entrar', dados, (resposta) => {
     if (resposta.erro) {
-      // playerId de uma partida antiga não vale mais: limpa e volta para a tela de entrada
-      if (dados.playerId) {
+      // Reconexão automática com playerId de partida antiga: limpa e volta pra entrada
+      if (dados.playerId && !dados.nome) {
         localStorage.removeItem('desafinoPlayerId');
         if (ultimoEstado) render(ultimoEstado);
         return;
@@ -23,6 +23,10 @@ function entrar(dados) {
       return mostrarErro(resposta.erro);
     }
     localStorage.setItem('desafinoPlayerId', resposta.playerId);
+    if (resposta.estado) {
+      ultimoEstado = resposta.estado;
+      render(resposta.estado);
+    }
   });
 }
 
@@ -32,8 +36,20 @@ socket.on('connect', () => {
 });
 
 $('btn-entrar').onclick = () => {
-  entrar({ nome: $('campo-nome').value, dupla: $('campo-dupla').value });
+  // Envia o playerId salvo: se este aparelho já entrou, o servidor reconecta
+  // em vez de criar um jogador duplicado.
+  entrar({
+    nome: $('campo-nome').value,
+    dupla: $('campo-dupla').value,
+    playerId: localStorage.getItem('desafinoPlayerId') || undefined,
+  });
 };
+
+socket.on('removido', () => {
+  localStorage.removeItem('desafinoPlayerId');
+  mostrarErro('Você saiu da sala — entre novamente.');
+  if (ultimoEstado) render(ultimoEstado);
+});
 
 socket.on('erro', mostrarErro);
 socket.on('tick', (t) => { $('tempo').textContent = t; });
