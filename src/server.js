@@ -30,7 +30,6 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
   let timer = null;
   let tempoRestante = null;
   let timeoutProxima = null;
-  const timeoutsEntrar = new Set();
 
   app.get('/api/entrada', async (req, res) => {
     const url = `http://${localIp()}:${req.socket.localPort}/jogar/`;
@@ -141,17 +140,11 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
           socket.data.playerId = jogador.id;
         }
         conectados.set(socket.data.playerId, socket.id);
-        cb({ playerId: socket.data.playerId });
-        // Adia o broadcast em vez de emiti-lo no mesmo burst síncrono do ack:
-        // sobre WebSocket, os dois pacotes podem chegar juntos na mesma
-        // leitura do cliente, e como o listener de 'estado' só é registrado
-        // DEPOIS que a promise do ack resolve (via microtask), o cliente
-        // perderia esse 'estado' e ficaria esperando por outro que nunca
-        // chega. Um pequeno atraso real (não apenas próximo tick) garante
-        // que o ack já foi processado no cliente antes do broadcast sair.
-        const t = setTimeout(() => { timeoutsEntrar.delete(t); broadcast(); }, 10);
-        t.unref();
-        timeoutsEntrar.add(t);
+        // O snapshot inicial vai direto no payload do ack: o cliente recebe seu
+        // estado de forma atômica, sem depender de registrar o listener de
+        // 'estado' antes que o broadcast() a seguir seja emitido.
+        cb({ playerId: socket.data.playerId, estado: { ...estadoPublico(), voce: estadoPrivado(socket.data.playerId) } });
+        broadcast();
       } catch (e) {
         cb({ erro: e.message });
       }
@@ -190,8 +183,6 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
   httpServer.on('close', () => {
     pararTimer();
     pararProxima();
-    for (const t of timeoutsEntrar) clearTimeout(t);
-    timeoutsEntrar.clear();
   });
 
   return { app, httpServer, io };

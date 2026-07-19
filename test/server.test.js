@@ -82,8 +82,8 @@ test('reconexão pelo playerId reassume a vaga', async () => {
     try {
       const r = await emitir(c2, 'entrar', { playerId });
       assert.strictEqual(r.playerId, playerId);
-      const e = await esperarEstado(c2, (e) => e.jogadores.length === 1);
-      assert.strictEqual(e.jogadores[0].conectado, true);
+      assert.strictEqual(r.estado.jogadores.length, 1);
+      assert.strictEqual(r.estado.jogadores[0].conectado, true);
     } finally { c2.close(); }
   } finally { httpServer.close(); }
 });
