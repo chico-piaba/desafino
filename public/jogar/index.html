@@ -1,3 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>DESAFINO</title></head>
-<body><h1>DESAFINO — jogar (em construção)</h1></body></html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DESAFINO</title>
+  <link rel="stylesheet" href="/shared/neoretro.css">
+  <style>
+    body { padding: 16px; display: flex; flex-direction: column; gap: 16px; max-width: 480px; margin: 0 auto; }
+    .privado { background: #ffdad6; border-color: var(--error); color: #93000a; font-weight: 800; }
+    .musica-card { text-align: center; font-size: 1.3rem; }
+    .valor-grande {
+      width: 160px; height: 160px; border-radius: 50%; margin: 0 auto;
+      border: var(--border) solid var(--outline); box-shadow: var(--shadow);
+      background: var(--primary); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; font-size: 2.6rem; font-weight: 800;
+    }
+    .dica { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0; }
+    .acoes { display: flex; flex-direction: column; gap: 12px; }
+    .erro { color: #93000a; font-weight: 800; min-height: 1.4em; }
+    #timer-jogador { text-align: center; font-size: 1.4rem; }
+  </style>
+</head>
+<body>
+  <h1 class="logo" style="text-align:center">DESAFINO</h1>
+  <p id="erro" class="erro" role="alert"></p>
+
+  <section id="tela-entrar" class="tela card">
+    <h2>Entrar no jogo</h2>
+    <label>Seu nome <input id="campo-nome" maxlength="20" autocomplete="off"></label>
+    <label style="display:block;margin-top:12px">Sua dupla
+      <select id="campo-dupla">
+        <option value="1">Dupla 1</option><option value="2">Dupla 2</option>
+        <option value="3">Dupla 3</option><option value="4">Dupla 4</option>
+      </select>
+    </label>
+    <button id="btn-entrar" class="btn btn-success" style="margin-top:16px;width:100%">Entrar</button>
+  </section>
+
+  <section id="tela-espera" class="tela card oculto" style="text-align:center">
+    <h2 id="espera-titulo">Você está dentro!</h2>
+    <p id="espera-texto">Aguardando a partida começar…</p>
+  </section>
+
+  <p id="timer-jogador" class="pill oculto">⏱ <span id="tempo">90</span>s</p>
+
+  <section id="tela-apresentador" class="tela oculto acoes">
+    <div class="card privado">🙈 PRIVADO — somente seus olhos!</div>
+    <div class="card musica-card">
+      <div style="font-size:2rem">🎵</div>
+      <b id="musica-titulo"></b>
+      <div id="musica-artista"></div>
+    </div>
+    <button id="btn-comecar" class="btn" style="width:100%">▶ Começar Rodada (cantarolando)</button>
+    <button id="btn-mimica" class="btn btn-secondary oculto" style="width:100%">🎭 Mudar para Mímica</button>
+    <button id="btn-acertou" class="btn btn-success oculto" style="width:100%">✅ Acertou!</button>
+    <button id="btn-passar" class="btn btn-error oculto" style="width:100%">⏭ Passar</button>
+  </section>
+
+  <section id="tela-adivinhador" class="tela oculto acoes">
+    <div class="card" style="text-align:center">
+      <h2>Valor da rodada</h2>
+      <div class="valor-grande"><span id="valor"></span><small style="font-size:1rem">pts</small></div>
+    </div>
+    <div class="card">
+      <h2>💡 Comprar dicas</h2>
+      <div id="lista-dicas"></div>
+    </div>
+  </section>
+
+  <section id="tela-plateia" class="tela card oculto" style="text-align:center">
+    <h2>👀 Plateia</h2>
+    <p>Sem interagir com a dupla da vez! Acompanhe pelo display.</p>
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
