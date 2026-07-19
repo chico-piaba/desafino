@@ -141,6 +141,23 @@ test('valor nunca fica negativo', () => {
   assert.strictEqual(game.valorAtual(jogo), 25);
 });
 
+test('valor para em 0 quando as dicas custam mais que o V0', () => {
+  const configCaro = { ...CONFIG, dicas: { cantor: 40, ano: 40, quantidadePalavras: 40 } };
+  const jogo = game.criarJogo(configCaro, MUSICAS, () => 0);
+  game.entrarJogador(jogo, 'Ana', 1, 'a');
+  game.entrarJogador(jogo, 'João', 1, 'b');
+  game.entrarJogador(jogo, 'Bia', 2, 'c');
+  game.entrarJogador(jogo, 'Leo', 2, 'd');
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.mudarParaMimica(jogo, 'a'); // V0 = 70
+  game.comprarDica(jogo, 'b', 'cantor'); // -40
+  game.comprarDica(jogo, 'b', 'ano'); // -40 → max(0, 70-80) = 0
+  assert.strictEqual(game.valorAtual(jogo), 0);
+  game.acertou(jogo, 'a');
+  assert.strictEqual(jogo.duplas[1].pontos, 0);
+});
+
 test('acertou credita o valor atual à dupla', () => {
   const jogo = jogoCom2Duplas();
   game.iniciarPartida(jogo);
@@ -157,10 +174,12 @@ test('passar e tempoEsgotado encerram com 0 pontos', () => {
   game.iniciarPartida(jogo);
   game.comecarRodada(jogo, 'a');
   game.passar(jogo, 'a');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 0);
   assert.strictEqual(jogo.duplas[1].pontos, 0);
   game.proximaRodada(jogo);
   game.comecarRodada(jogo, 'c');
   game.tempoEsgotado(jogo);
+  assert.strictEqual(jogo.rodada.pontosGanhos, 0);
   assert.strictEqual(jogo.duplas[2].pontos, 0);
 });
 
