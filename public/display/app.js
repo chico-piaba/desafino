@@ -4,6 +4,12 @@ const $ = (id) => document.getElementById(id);
 const NOME_MODO = { cantarolar: 'CANTAROLANDO 🎤', mimica: 'MÍMICA 🎭' };
 const NOME_DICA = { cantor: 'Cantor', ano: 'Ano', quantidadePalavras: 'Nº de palavras' };
 
+function esc(texto) {
+  const div = document.createElement('div');
+  div.textContent = String(texto);
+  return div.innerHTML;
+}
+
 fetch('/api/entrada').then((r) => r.json()).then(({ url, qr }) => {
   $('qr').src = qr;
   $('url-entrada').textContent = url;
@@ -34,7 +40,7 @@ function mostrarTela(id) {
 
 function renderLobbyDuplas(e) {
   const porDupla = [1, 2, 3, 4].map((n) => {
-    const nomes = e.jogadores.filter((j) => j.dupla === n).map((j) => j.nome);
+    const nomes = e.jogadores.filter((j) => j.dupla === n).map((j) => esc(j.nome));
     return nomes.length ? `<p><b>Dupla ${n}:</b> ${nomes.join(' & ')}</p>` : '';
   });
   $('lobby-duplas').innerHTML = porDupla.join('') || '<p>Aguardando jogadores…</p>';
@@ -79,7 +85,7 @@ function renderFim(e) {
 
 function renderRanking(e) {
   if (e.fase === 'lobby') renderLobbyDuplas(e);
-  const nomes = (n) => e.jogadores.filter((j) => j.dupla === n).map((j) => j.nome).join(' & ');
+  const nomes = (n) => e.jogadores.filter((j) => j.dupla === n).map((j) => esc(j.nome)).join(' & ');
   $('ranking').innerHTML = [...e.duplas]
     .sort((a, b) => b.pontos - a.pontos)
     .map((d) => `<li>${nomes(d.numero) || `Dupla ${d.numero}`} — <b>${d.pontos}</b></li>`)

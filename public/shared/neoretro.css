@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('./fonts/plus-jakarta-sans.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --surface: #f8f1e4;
   --surface-bright: #fff8f1;
