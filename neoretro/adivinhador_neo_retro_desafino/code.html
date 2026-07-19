@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Desafino - Guess Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#765b00",
+                    "primary-container": "#f9c629",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#001f26",
+                    "inverse-primary": "#f2c021",
+                    "error": "#f17716",
+                    "surface-dim": "#e2d9c9",
+                    "on-secondary-fixed": "#380037",
+                    "surface-container": "#f7eddc",
+                    "on-surface": "#3c2f2f",
+                    "tertiary-container": "#3adfff",
+                    "on-secondary-fixed-variant": "#82007e",
+                    "success": "#71ba1a",
+                    "primary-fixed": "#ffdf92",
+                    "surface-bright": "#fff8f1",
+                    "secondary": "#9f2999",
+                    "on-background": "#1f1b11",
+                    "on-surface-variant": "#4e4633",
+                    "on-tertiary-container": "#005f6f",
+                    "secondary-fixed-dim": "#ffabf1",
+                    "on-primary-fixed": "#241a00",
+                    "surface-container-highest": "#ebe1d1",
+                    "secondary-container": "#fe7ef0",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#353025",
+                    "on-secondary-container": "#790076",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#f1e7d7",
+                    "outline-variant": "#d2c5ac",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffd7f4",
+                    "background": "#fff8f1",
+                    "primary": "#765b00",
+                    "on-primary-container": "#6c5300",
+                    "surface": "#f8f1e4",
+                    "tertiary-fixed": "#a9edff",
+                    "surface-container-low": "#fdf2e2",
+                    "inverse-on-surface": "#faf0df",
+                    "on-primary-fixed-variant": "#594400",
+                    "tertiary-fixed-dim": "#2ed8f8",
+                    "on-tertiary-fixed-variant": "#004e5b",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#f2c021",
+                    "surface-variant": "#ebe1d1",
+                    "outline": "#807661",
+                    "tertiary": "#3cb0da"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px", // Adjusted for mobile
+                    "base": "8px",
+                    "border-width": "4px",
+                    "margin": "16px" // Adjusted for mobile
+            },
+            "fontFamily": {
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .neo-border { border: 4px solid #3c2f2f; }
+        .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(60,47,47,1); }
+        .neo-shadow-active:active { 
+            box-shadow: 1px 1px 0px 0px rgba(60,47,47,1); 
+            transform: translate(3px, 3px);
+        }
+        
+        @keyframes pulse-score {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .anim-pulse { animation: pulse-score 2s infinite; }
+    </style>
+</head>
+<body class="bg-surface h-full flex flex-col font-body-md text-on-surface overscroll-none selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Transactional, minimal) -->
+<header class="w-full top-0 sticky bg-surface z-50 flex justify-between items-center px-gutter py-4 border-b-4 border-on-surface neo-shadow mb-6">
+<button aria-label="Pause Game" class="flex items-center justify-center w-12 h-12 rounded-full neo-border bg-surface-bright neo-shadow neo-shadow-active transition-all">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<div class="font-headline-lg text-headline-lg font-black text-primary italic uppercase tracking-tighter">
+            Desafino
+        </div>
+<div class="w-12 h-12"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-gutter gap-6 pb-32 overflow-y-auto">
+<!-- Score Header (Decaying) -->
+<section class="flex flex-col items-center justify-center pt-2 pb-6">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest mb-2">Round Score</h2>
+<div class="relative flex items-center justify-center w-40 h-40 rounded-full neo-border bg-primary-container neo-shadow anim-pulse">
+<div class="absolute inset-2 rounded-full border-4 border-dashed border-on-primary-container opacity-30"></div>
+<div class="flex flex-col items-center justify-center z-10 text-on-primary-container">
+<span class="font-headline-xl text-headline-xl text-6xl leading-none">87</span>
+<span class="font-label-lg text-label-lg mt-1">pts</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-error mt-4 flex items-center gap-1 bg-error-container text-on-error-container px-3 py-1 rounded-full neo-border">
+<span class="material-symbols-outlined text-sm">timer</span> Decaying rapidly!
+            </p>
+</section>
+<!-- Hints Section -->
+<section class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Buy Hints</h3>
+<!-- Hint Option 1 (Available) -->
+<button class="w-full flex items-center justify-between p-4 bg-tertiary-container rounded-xl neo-border neo-shadow neo-shadow-active transition-all group relative overflow-hidden">
+<div class="absolute inset-0 bg-white opacity-0 group-active:opacity-20 transition-opacity"></div>
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center neo-border text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="font-headline-md text-headline-md text-on-tertiary-container leading-tight">Singer</span>
+<span class="font-label-md text-label-md text-on-tertiary-container/80">Reveal Artist</span>
+</div>
+</div>
+<div class="flex items-center justify-center px-4 py-2 bg-error rounded-lg neo-border shadow-[2px_2px_0px_0px_rgba(60,47,47,1)] relative z-10">
+<span class="font-label-lg text-label-lg text-on-error font-black">-10 pts</span>
+</div>
+</button>
+<!-- Hint Option 2 (Available) -->
+<button class="w-full flex items-center justify-between p-4 bg-secondary-container rounded-xl neo-border neo-shadow neo-shadow-active transition-all group relative overflow-hidden">
+<div class="absolute inset-0 bg-white opacity-0 group-active:opacity-20 transition-opacity"></div>
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center neo-border text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="font-headline-md text-headline-md text-on-secondary-container leading-tight">Year</span>
+<span class="font-label-md text-label-md text-on-secondary-container/80">Decade Context</span>
+</div>
+</div>
+<div class="flex items-center justify-center px-4 py-2 bg-error rounded-lg neo-border shadow-[2px_2px_0px_0px_rgba(60,47,47,1)] relative z-10">
+<span class="font-label-lg text-label-lg text-on-error font-black">-10 pts</span>
+</div>
+</button>
+<!-- Hint Option 3 (Revealed) -->
+<div class="w-full flex flex-col p-4 bg-surface-bright rounded-xl neo-border neo-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-success rotate-45 translate-x-8 -translate-y-8 neo-border z-0"></div>
+<div class="absolute top-2 right-2 z-10 text-on-primary">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex items-center gap-4 mb-3 relative z-10 opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center neo-border">
+<span class="material-symbols-outlined text-on-surface-variant">format_list_numbered</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="font-body-lg text-body-lg text-on-surface-variant font-bold leading-tight line-through">Word count</span>
+</div>
+<div class="ml-auto font-label-md text-label-md text-on-surface-variant">-25 pts</div>
+</div>
+<div class="relative z-10 p-3 bg-surface rounded-lg neo-border shadow-inner mt-1">
+<span class="font-headline-md text-headline-md text-primary font-black block text-center">4 Words</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Fixed Action - ACERTOU -->
+<div class="fixed bottom-0 left-0 w-full p-gutter bg-surface-bright/90 backdrop-blur-sm border-t-4 border-on-surface z-50">
+<button class="w-full flex items-center justify-center gap-3 py-5 bg-success rounded-xl neo-border shadow-[4px_6px_0px_0px_rgba(60,47,47,1)] active:shadow-[1px_1px_0px_0px_rgba(60,47,47,1)] active:translate-y-[5px] active:translate-x-[3px] transition-all overflow-hidden relative group">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="material-symbols-outlined font-bold text-3xl text-on-primary z-10">stars</span>
+<span class="font-headline-lg text-headline-lg font-black text-on-primary tracking-widest uppercase z-10">Acertou!</span>
+</button>
+</div>
+</body></html>

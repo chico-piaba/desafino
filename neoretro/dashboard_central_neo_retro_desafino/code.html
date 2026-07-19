@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Desafino - Game Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#765b00",
+                        "primary-container": "#f9c629",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#001f26",
+                        "inverse-primary": "#f2c021",
+                        "error": "#f17716",
+                        "surface-dim": "#e2d9c9",
+                        "on-secondary-fixed": "#380037",
+                        "surface-container": "#f7eddc",
+                        "on-surface": "#3c2f2f",
+                        "tertiary-container": "#3adfff",
+                        "on-secondary-fixed-variant": "#82007e",
+                        "success": "#71ba1a",
+                        "primary-fixed": "#ffdf92",
+                        "surface-bright": "#fff8f1",
+                        "secondary": "#9f2999",
+                        "on-background": "#1f1b11",
+                        "on-surface-variant": "#4e4633",
+                        "on-tertiary-container": "#005f6f",
+                        "secondary-fixed-dim": "#ffabf1",
+                        "on-primary-fixed": "#241a00",
+                        "surface-container-highest": "#ebe1d1",
+                        "secondary-container": "#fe7ef0",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#353025",
+                        "on-secondary-container": "#790076",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#f1e7d7",
+                        "outline-variant": "#d2c5ac",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffd7f4",
+                        "background": "#fff8f1",
+                        "primary": "#765b00",
+                        "on-primary-container": "#6c5300",
+                        "surface": "#f8f1e4",
+                        "tertiary-fixed": "#a9edff",
+                        "surface-container-low": "#fdf2e2",
+                        "inverse-on-surface": "#faf0df",
+                        "on-primary-fixed-variant": "#594400",
+                        "tertiary-fixed-dim": "#2ed8f8",
+                        "on-tertiary-fixed-variant": "#004e5b",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#f2c021",
+                        "surface-variant": "#ebe1d1",
+                        "outline": "#807661",
+                        "tertiary": "#3cb0da"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "border-width": "4px",
+                        "margin": "32px"
+                    },
+                    fontFamily: {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "label-md": ["12px", { lineHeight: "16px", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "800" }],
+                        "label-lg": ["14px", { lineHeight: "20px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(60, 47, 47, 1);
+        }
+        .neo-shadow-active:active {
+            box-shadow: 1px 1px 0px 0px rgba(60, 47, 47, 1);
+            transform: translate(3px, 3px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-sans text-on-surface h-full flex flex-col md:flex-row overflow-hidden">
+<!-- Desktop Sidebar -->
+<nav class="hidden md:flex flex-col h-full w-64 border-r-4 border-on-surface bg-surface shadow-[4px_0px_0px_0px_rgba(60,47,47,1)] p-gutter shrink-0 z-20">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md text-primary italic uppercase tracking-tighter">Desafino</h1>
+</div>
+<div class="flex items-center gap-4 mb-8 p-4 border-4 border-on-surface neo-shadow bg-surface-container-high rounded-xl">
+<div class="w-12 h-12 rounded-full border-4 border-on-surface overflow-hidden bg-primary-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A bold, pop-art style avatar of a stylish character with sunglasses, thick black outlines, flat vibrant yellow and pink colors, retro comic book aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ8ac0lo0sb3l1nwlExWWI0eH-UGJMT-lqMCXAQfNScytSGF9092D84nu2KqoMxo6tUiHiHti5A3hT2iqnnJU6Vwb8R7wr0sQ_zBiDj7_HIunITXqEcfznIQsDL5BpwJ8BdQPAr3SvGBdgNYVN21eRUX-mGHa4kJOcIpApDfUK1425COl4U8FVbB7ql9HzO4UZSZTceLMBiB8AvDST7zGASveu2pttXEd2q4jZaZyqojoTvBKXk7qv"/>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-lg text-label-lg truncate text-on-surface">Player 1</p>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Level 42 Party Master</p>
+</div>
+</div>
+<ul class="flex-1 space-y-4">
+<li>
+<a class="flex items-center gap-3 p-3 bg-tertiary-container text-on-tertiary-container font-bold border-4 border-on-surface rounded-xl neo-shadow neo-shadow-active transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-body-lg text-body-lg">Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 text-on-surface hover:bg-surface-container-high border-4 border-transparent hover:border-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-body-lg text-body-lg">Game Rules</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 text-on-surface hover:bg-surface-container-high border-4 border-transparent hover:border-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-body-lg text-body-lg">Achievements</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 text-on-surface hover:bg-surface-container-high border-4 border-transparent hover:border-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-body-lg text-body-lg">History</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 text-on-surface hover:bg-surface-container-high border-4 border-transparent hover:border-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-lg text-body-lg">Support</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-8">
+<div class="border-4 border-on-surface p-4 bg-white rounded-xl neo-shadow text-center">
+<p class="font-label-md text-label-md mb-2 uppercase">Scan to Join</p>
+<div class="w-full aspect-square bg-surface-container border-2 border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">qr_code_2</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div 0="" 20="" 20\"="" class="flex-1 flex flex-col h-full overflow-hidden bg-[url('data:image/svg+xml;utf8,&lt;svg width=\" height='\"20\"' viewbox='\"0' xmlns='\"http://www.w3.org/2000/svg\"'><circle cx='\"2\"' cy='\"2\"' fill='\"%23807661\"' opacity='\"0.2\"/' r='\"1\"'>')]"&gt;
+        
+        <!-- Mobile Header (Hidden on Desktop) -->
+<header class="md:hidden flex justify-between items-center px-gutter py-4 w-full bg-surface-container border-b-4 border-on-surface sticky top-0 z-10 shadow-[4px_4px_0px_0px_rgba(60,47,47,1)]">
+<h1 class="font-headline-lg text-headline-lg font-black text-primary italic uppercase tracking-tighter">Desafino</h1>
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:bg-primary-container p-2 rounded-full border-2 border-transparent hover:border-on-surface transition-colors">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Dashboard Canvas -->
+<main class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-12 pb-24 md:pb-8 flex flex-col lg:flex-row gap-8">
+<!-- Left/Center Column: Game Stage -->
+<div class="flex-1 flex flex-col items-center justify-center gap-8 relative">
+<!-- Badge -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 z-10">
+<div class="bg-secondary text-on-secondary px-6 py-2 border-4 border-on-surface rounded-full neo-shadow transform rotate-[-2deg]">
+<h2 class="font-headline-md text-headline-md uppercase tracking-wider">Cantarolando</h2>
+</div>
+</div>
+<!-- Giant Timer -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary-container border-4 border-on-surface rounded-full neo-shadow"></div>
+<div class="absolute inset-4 bg-surface border-4 border-on-surface rounded-full flex items-center justify-center">
+<span class="font-headline-xl text-[80px] md:text-[100px] font-black text-on-surface tracking-tighter">42</span>
+</div>
+<!-- Decorative shapes -->
+<div class="absolute -top-4 -right-4 w-12 h-12 bg-tertiary border-4 border-on-surface rounded-full"></div>
+<div class="absolute -bottom-2 -left-2 w-8 h-8 bg-error border-4 border-on-surface rotate-12"></div>
+</div>
+<!-- Player Pair -->
+<div class="flex items-center gap-4 md:gap-8 bg-surface-bright border-4 border-on-surface p-4 md:p-6 rounded-2xl neo-shadow w-full max-w-2xl justify-between">
+<!-- Singer -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full border-4 border-on-surface overflow-hidden bg-tertiary-container relative">
+<span class="absolute top-1 left-1 material-symbols-outlined text-xs bg-white border border-on-surface rounded-full p-0.5 z-10">mic</span>
+<img class="w-full h-full object-cover" data-alt="Pop-art portrait of a girl singing enthusiastically into a retro microphone, bright teal background, thick comic outlines, vivid colors, playful expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrs354_HOlbRVaW6ADsH3rqKKFdiORBRh0jGRSTFQVOthWH5LvXYoPkOgRYuAbvu9DXwhdQ9SuifDJKX27oB63rYxRQevmgW7j59L9HBiNj7aIZVb7dhgY_loQ7D0GSvg_8vrUGrqXPzKhihG40ACaFFJ01DZYwrDR6l5REVuuqtL_ZR6Xszav_FuYsEpT4lWagj-y5l8bhXytHJ2JtXumylOrmgcTapiuI7VuQho2FKFnUAMDKFZJ"/>
+</div>
+<p class="font-label-lg text-label-lg uppercase tracking-wide text-center">Ana</p>
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-0.5 border-2 border-on-surface rounded-full uppercase">Singer</span>
+</div>
+<!-- vs/action -->
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl md:text-6xl text-primary animate-pulse">sync_alt</span>
+<div class="bg-primary text-on-primary font-headline-md text-headline-md px-4 py-1 border-4 border-on-surface neo-shadow rounded-xl mt-2 rotate-2">
+                            +100
+                        </div>
+</div>
+<!-- Guesser -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full border-4 border-on-surface overflow-hidden bg-secondary-container relative">
+<span class="absolute top-1 right-1 material-symbols-outlined text-xs bg-white border border-on-surface rounded-full p-0.5 z-10">psychology_alt</span>
+<img class="w-full h-full object-cover" data-alt="Pop-art portrait of a guy looking confused but excited, thinking hard, bright magenta background, thick black outlines, retro aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnh83jHTuCsWQ0PHcIs8P3hMkHAJeJtI7Fbf51umKGxtpRH2eLVqSqzUY1A-dWvMGO-Di3jsfquUXSvU88Fi6ehqkGBSlD3kXArDIZqJ3Of2BjjCKHWvFKKnb8Qp62ouONqu3c01O_BVOEZxiAz2XhnY4Pc5I6RZG9J53hetLS-Y3dT06axoRF2UMPXh7wZ6z9R9qpCkctex3QT5U0WlYUnSNveM2I4ey7revQk4zR03m94RohtKsZ"/>
+</div>
+<p class="font-label-lg text-label-lg uppercase tracking-wide text-center">João</p>
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 border-2 border-on-surface rounded-full uppercase">Guesser</span>
+</div>
+</div>
+<!-- Main Action -->
+<button class="bg-success text-on-primary font-headline-md text-headline-md px-12 py-4 border-4 border-on-surface rounded-full neo-shadow neo-shadow-active transition-all uppercase tracking-widest hover:bg-opacity-90">
+                    Got It!
+                </button>
+</div>
+<!-- Right Column: Leaderboard (Bento Style) -->
+<div class="w-full lg:w-80 flex flex-col gap-6">
+<div class="bg-surface-container-high border-4 border-on-surface rounded-2xl p-6 neo-shadow">
+<div class="flex items-center gap-3 mb-6 border-b-4 border-on-surface pb-4">
+<span class="material-symbols-outlined text-3xl text-primary">emoji_events</span>
+<h3 class="font-headline-md text-headline-md uppercase">Top Pairs</h3>
+</div>
+<ul class="space-y-4">
+<!-- 1st Place -->
+<li class="flex items-center justify-between p-3 bg-primary-container border-4 border-on-surface rounded-xl transform -rotate-1 hover:rotate-0 transition-transform">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md w-6 text-center">1</span>
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-gray-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-gray-300"></div>
+</div>
+<span class="font-label-lg text-label-lg">Ana &amp; João</span>
+</div>
+<span class="font-headline-md text-headline-md">450</span>
+</li>
+<!-- 2nd Place -->
+<li class="flex items-center justify-between p-3 bg-surface border-4 border-on-surface rounded-xl">
+<div class="flex items-center gap-3">
+<span class="font-body-lg text-body-lg font-bold w-6 text-center">2</span>
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-gray-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-gray-300"></div>
+</div>
+<span class="font-label-lg text-label-lg">Bia &amp; Leo</span>
+</div>
+<span class="font-body-lg text-body-lg font-bold">380</span>
+</li>
+<!-- 3rd Place -->
+<li class="flex items-center justify-between p-3 bg-surface border-4 border-on-surface rounded-xl">
+<div class="flex items-center gap-3">
+<span class="font-body-lg text-body-lg font-bold w-6 text-center">3</span>
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-gray-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-gray-300"></div>
+</div>
+<span class="font-label-lg text-label-lg">Carol &amp; Gui</span>
+</div>
+<span class="font-body-lg text-body-lg font-bold">290</span>
+</li>
+</ul>
+</div>
+<!-- Mini Activity Card -->
+<div class="bg-secondary-container border-4 border-on-surface rounded-2xl p-4 neo-shadow flex items-center gap-4">
+<div class="w-12 h-12 bg-white border-4 border-on-surface rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">campaign</span>
+</div>
+<div>
+<p class="font-label-md text-label-md uppercase">Next Up</p>
+<p class="font-body-lg text-body-lg font-bold leading-tight">Theme: 80s Rock</p>
+</div>
+</div>
+</div>
+</main>
+</circle></div>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-bright border-t-4 border-on-surface">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-2 border-on-surface rounded-xl px-4 py-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="font-label-lg text-label-lg">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-lg text-label-lg">Decks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-lg text-label-lg">Friends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-lg text-label-lg">Shop</span>
+</a>
+</nav>
+</body></html>

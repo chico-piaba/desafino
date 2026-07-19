@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Presenter Screen - Desafino</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#765b00",
+                      "primary-container": "#f9c629",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#001f26",
+                      "inverse-primary": "#f2c021",
+                      "error": "#f17716",
+                      "surface-dim": "#e2d9c9",
+                      "on-secondary-fixed": "#380037",
+                      "surface-container": "#f7eddc",
+                      "on-surface": "#3c2f2f",
+                      "tertiary-container": "#3adfff",
+                      "on-secondary-fixed-variant": "#82007e",
+                      "success": "#71ba1a",
+                      "primary-fixed": "#ffdf92",
+                      "surface-bright": "#fff8f1",
+                      "secondary": "#9f2999",
+                      "on-background": "#1f1b11",
+                      "on-surface-variant": "#4e4633",
+                      "on-tertiary-container": "#005f6f",
+                      "secondary-fixed-dim": "#ffabf1",
+                      "on-primary-fixed": "#241a00",
+                      "surface-container-highest": "#ebe1d1",
+                      "secondary-container": "#fe7ef0",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#353025",
+                      "on-secondary-container": "#790076",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#f1e7d7",
+                      "outline-variant": "#d2c5ac",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#ffd7f4",
+                      "background": "#fff8f1",
+                      "primary": "#765b00",
+                      "on-primary-container": "#6c5300",
+                      "surface": "#f8f1e4",
+                      "tertiary-fixed": "#a9edff",
+                      "surface-container-low": "#fdf2e2",
+                      "inverse-on-surface": "#faf0df",
+                      "on-primary-fixed-variant": "#594400",
+                      "tertiary-fixed-dim": "#2ed8f8",
+                      "on-tertiary-fixed-variant": "#004e5b",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#f2c021",
+                      "surface-variant": "#ebe1d1",
+                      "outline": "#807661",
+                      "tertiary": "#3cb0da"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "base": "8px",
+                      "border-width": "4px",
+                      "margin": "32px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "label-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                      "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+                      "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "800" }],
+                      "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                      "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                      "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                      "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Neo-Retro Brutalist Utilities */
+        .brutal-border {
+            border: 4px solid #3c2f2f;
+        }
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px #3c2f2f;
+        }
+        .brutal-shadow-pressed {
+            box-shadow: 1px 1px 0px 0px #3c2f2f;
+        }
+        .brutal-card {
+            border: 4px solid #3c2f2f;
+            box-shadow: 4px 4px 0px 0px #3c2f2f;
+            transition: all 0.15s ease-in-out;
+        }
+        .brutal-button {
+            border: 4px solid #3c2f2f;
+            box-shadow: 4px 4px 0px 0px #3c2f2f;
+            transition: all 0.15s ease-in-out;
+        }
+        .brutal-button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0px 0px #3c2f2f;
+        }
+        /* TopAppBar JSON Styles */
+        .style_separation_logic { border-bottom: 4px solid #3c2f2f; }
+        .style_shadows_and_elevation { box-shadow: 4px 4px 0px 0px rgba(60,47,47,1); }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar (Desafino Game Header) -->
+<header class="bg-surface-container text-primary font-headline-md w-full top-0 sticky style_separation_logic style_shadows_and_elevation flex justify-between items-center px-gutter py-4 z-40">
+<div class="font-headline-lg font-black text-primary italic uppercase tracking-tighter">Desafino</div>
+<div class="flex gap-4">
+<button class="hover:bg-primary-container transition-colors p-2 rounded-full border-2 border-transparent hover:border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+<button class="hover:bg-primary-container transition-colors p-2 rounded-full border-2 border-transparent hover:border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col px-4 md:px-gutter py-6 gap-6 max-w-lg mx-auto w-full mb-[120px]">
+<!-- Warning Banner -->
+<div class="bg-error-container text-on-error-container p-4 rounded-xl brutal-card flex items-center gap-3 animate-[pulse_2s_ease-in-out_infinite]">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">visibility_off</span>
+<div>
+<p class="font-label-lg uppercase tracking-wider text-error">Privado</p>
+<p class="font-body-md font-bold">Somente seus olhos!</p>
+</div>
+</div>
+<!-- Music Card (The Secret Content) -->
+<div class="bg-surface p-6 rounded-2xl brutal-card flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-tertiary-container rounded-full brutal-border opacity-50 z-0"></div>
+<div class="z-10 bg-primary-container p-4 rounded-full brutal-border mb-2">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">music_note</span>
+</div>
+<div class="z-10">
+<h2 class="font-headline-lg text-on-surface mb-1">Bohemian Rhapsody</h2>
+<p class="font-body-lg text-on-surface-variant font-bold">Queen</p>
+</div>
+</div>
+<!-- Mode Selection -->
+<div class="flex flex-col gap-4 mt-2">
+<h3 class="font-label-lg uppercase text-on-surface-variant tracking-widest text-center">Escolha o Modo</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Hum Mode -->
+<button class="brutal-button bg-tertiary-container text-on-tertiary-container p-5 rounded-xl flex flex-col items-center gap-2 group relative overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">mic</span>
+<span class="font-headline-md">Cantarolar</span>
+<span class="bg-surface px-3 py-1 rounded-full text-success font-label-md brutal-border shadow-[2px_2px_0px_0px_#3c2f2f]">+100 pts</span>
+</button>
+<!-- Mime Mode -->
+<button class="brutal-button bg-secondary-container text-on-secondary-container p-5 rounded-xl flex flex-col items-center gap-2 group relative overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">sports_kabaddi</span>
+<span class="font-headline-md">Mímica</span>
+<span class="bg-surface px-3 py-1 rounded-full text-success font-label-md brutal-border shadow-[2px_2px_0px_0px_#3c2f2f]">+150 pts</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Action Area (Sticky for one-handed play) -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-surface-bright/90 backdrop-blur-sm border-t-4 border-on-surface z-50">
+<div class="max-w-lg mx-auto">
+<button class="brutal-button w-full bg-primary-container text-on-primary-container font-headline-md py-4 rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Começar Rodada
+            </button>
+</div>
+</div>
+</body></html>
