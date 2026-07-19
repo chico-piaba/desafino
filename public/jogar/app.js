@@ -52,16 +52,19 @@ function render(e) {
   const entrou = Boolean(e.voce) || (e.fase === 'lobby' && localStorage.getItem('desafinoPlayerId') && e.jogadores.length > 0);
   const emRodada = e.fase === 'rodada' && e.rodada && e.rodada.fase !== 'resultado';
   $('timer-jogador').classList.toggle('oculto', !(emRodada && e.rodada.fase === 'emAndamento'));
+  if (emRodada && e.rodada.fase === 'emAndamento' && e.tempoRestante != null) {
+    $('tempo').textContent = e.tempoRestante;
+  }
 
   if (e.fase === 'lobby') {
     return mostrarTela(e.voce || entrou ? 'tela-espera' : 'tela-entrar');
   }
-  if (!e.voce) return mostrarTela('tela-entrar');
   if (e.fase === 'fim') {
     $('espera-titulo').textContent = '🏆 Fim de jogo!';
     $('espera-texto').textContent = 'Veja o resultado no display.';
     return mostrarTela('tela-espera');
   }
+  if (!e.voce) return mostrarTela('tela-entrar');
   if (e.rodada.fase === 'resultado') {
     $('espera-titulo').textContent = e.rodada.pontosGanhos > 0 ? '🎉 Acertaram!' : '😅 Rodada encerrada';
     $('espera-texto').textContent = `+${e.rodada.pontosGanhos} pts para a Dupla ${e.rodada.dupla}. Próxima rodada já vem…`;

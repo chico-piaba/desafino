@@ -55,7 +55,12 @@ function renderRodada(e) {
   $('apresentador').textContent = r.apresentador;
   $('adivinhador').textContent = r.adivinhador;
   $('valor').textContent = `${r.valorAtual} pts`;
-  if (r.fase === 'aguardandoInicio') $('tempo').textContent = e.duracaoSegundos;
+  if (r.fase === 'aguardandoInicio') {
+    $('tempo').textContent = e.duracaoSegundos;
+    $('timer').classList.remove('urgente');
+  } else if (e.tempoRestante != null) {
+    $('tempo').textContent = e.tempoRestante;
+  }
   if (r.dicasCompradas.length > dicasVistas) {
     const d = r.dicasCompradas[r.dicasCompradas.length - 1];
     mostrarEvento(`💡 Dica comprada: ${NOME_DICA[d.tipo]} (−${d.custo} pts)`);

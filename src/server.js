@@ -129,9 +129,11 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
       io.emit('tick', tempoRestante);
       if (tempoRestante <= 0) {
         pararTimer();
-        game.tempoEsgotado(jogo);
-        agendarProxima();
-        broadcast();
+        if (jogo.fase === 'rodada' && jogo.rodada && jogo.rodada.fase === 'emAndamento') {
+          game.tempoEsgotado(jogo);
+          agendarProxima();
+          broadcast();
+        }
       }
     }, 1000);
     timer.unref();
@@ -175,7 +177,10 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
       }
     });
 
-    socket.on('iniciarPartida', () => guardar(() => game.iniciarPartida(jogo)));
+    socket.on('iniciarPartida', () => guardar(() => {
+      jogo.musicas = banco.ler();
+      game.iniciarPartida(jogo);
+    }));
     socket.on('comecarRodada', () => guardar(() => {
       const r = jogo.rodada;
       if (r && !conectados.has(r.adivinhadorId)) {
