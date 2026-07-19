@@ -23,21 +23,20 @@ Interface 100% em português (pt-BR).
 ### Rodada
 
 1. O sistema sorteia uma música do banco (sem repetir na mesma partida) e a envia **apenas ao celular do apresentador** (título + artista).
-2. O apresentador escolhe o modo, o que define o valor inicial da rodada:
-   - **Cantarolar**: 100 pontos
-   - **Mímica** (do título): 150 pontos
-3. Ao confirmar "Começar Rodada", o timer de **90 segundos** dispara em todas as telas.
-4. O valor da rodada **decai linearmente do valor inicial até 0** ao longo dos 90s.
-5. O adivinhador pode **comprar dicas** no celular a qualquer momento; o custo é descontado do valor atual da rodada:
+2. O apresentador escolhe o modo, o que define o valor inicial (V0) da rodada:
+   - **Cantarolar** (modo principal): 100 pontos
+   - **Mímica** (do título — modo secundário, escolher já custa pontos): 70 pontos
+3. Ao confirmar "Começar Rodada", o timer de **90 segundos** dispara em todas as telas. O timer é fixo e serve apenas como limite da rodada — **o tempo não altera a pontuação**.
+4. O adivinhador pode **comprar dicas** no celular a qualquer momento; o custo é descontado do valor da rodada (o V0 banca as dicas):
    - Cantor: −10
    - Ano: −10
    - Quantidade de palavras do título: −25
    - A dica comprada aparece **somente no celular do adivinhador**; o display central anuncia apenas que uma dica foi comprada e o custo.
-6. O palpite é falado **em voz alta**. O apresentador tem dois botões:
-   - **"Acertou!"** — a dupla ganha o valor atual da rodada (nunca negativo) e a rodada encerra.
+5. O palpite é falado **em voz alta**. O apresentador tem dois botões:
+   - **"Acertou!"** — a dupla ganha o valor atual da rodada (V0 − dicas compradas, nunca negativo) e a rodada encerra.
    - **"Passar"** — a rodada encerra com 0 pontos.
-7. Timer zerado sem acerto = 0 pontos.
-8. Entre rodadas, o display mostra o resultado (música revelada, pontos ganhos) por alguns segundos antes da próxima dupla.
+6. Timer zerado sem acerto = 0 pontos.
+7. Entre rodadas, o display mostra o resultado (música revelada, pontos ganhos) por alguns segundos antes da próxima dupla.
 
 ### Configuração (`config.json`)
 
@@ -46,7 +45,7 @@ Todo número de balanceamento vive num arquivo de configuração, editável sem 
 ```json
 {
   "rodada": { "duracaoSegundos": 90, "totalRodadas": 8 },
-  "modos": { "cantarolar": 100, "mimica": 150 },
+  "modos": { "cantarolar": 100, "mimica": 70 },
   "dicas": { "cantor": 10, "ano": 10, "quantidadePalavras": 25 }
 }
 ```
@@ -72,7 +71,7 @@ Todo número de balanceamento vive num arquivo de configuração, editável sem 
 O servidor é a única fonte de verdade; os clientes renderizam o estado que recebem. Eventos principais:
 
 - Cliente → servidor: `entrar` (nome, dupla), `iniciarPartida`, `escolherModo`, `comecarRodada`, `comprarDica`, `acertou`, `passar`.
-- Servidor → clientes: `estado` (snapshot completo do jogo, emitido a cada mudança), `tick` (valor atual da rodada + tempo restante, 1×/segundo).
+- Servidor → clientes: `estado` (snapshot completo do jogo, emitido a cada mudança), `tick` (tempo restante, 1×/segundo; o valor da rodada só muda quando uma dica é comprada).
 - Reconexão: o celular guarda um `playerId` em `localStorage`; ao reconectar, reassume a vaga e recebe o estado atual.
 
 ### Máquina de estados da partida
@@ -81,7 +80,7 @@ O servidor é a única fonte de verdade; os clientes renderizam o estado que rec
 lobby → rodada:escolhendoModo → rodada:emAndamento → rodada:resultado → (próxima rodada | fim)
 ```
 
-O motor do jogo (sorteio, rotação de duplas, decaimento, dicas, placar) é um módulo puro (`src/game.js`), sem dependência de Socket.IO — testável isoladamente.
+O motor do jogo (sorteio, rotação de duplas, dicas, placar) é um módulo puro (`src/game.js`), sem dependência de Socket.IO — testável isoladamente.
 
 ## Banco de músicas e admin
 
@@ -99,7 +98,7 @@ As três telas seguem os wireframes em `neoretro/` e o design system `neoretro/n
 - Fonte Plus Jakarta Sans, peso 800 em títulos.
 - Os `code.html` dos wireframes servem de ponto de partida para o markup real.
 - Textos em inglês dos wireframes são traduzidos ("Buy Hints" → "Comprar Dicas", "Top Pairs" → "Ranking", "Got it!" → "Acertou!").
-- **Fora do v1** (enfeites de wireframe): navegação lateral Achievements/History/Support, perfil com nível, tema "Next up".
+- **Fora do v1** (enfeites de wireframe): navegação lateral Achievements/History/Support, perfil com nível, tema "Next up", selo "Decaying rapidly!" do adivinhador (a pontuação não decai com o tempo).
 
 ## Tratamento de erros
 
@@ -109,7 +108,7 @@ As três telas seguem os wireframes em `neoretro/` e o design system `neoretro/n
 
 ## Testes
 
-- **Automatizados** (`node:test`, sem dependências extras): motor do jogo — máquina de estados, rotação de duplas e papéis, decaimento do valor, custo de dicas, placar, condição de fim, não-repetição de músicas.
+- **Automatizados** (`node:test`, sem dependências extras): motor do jogo — máquina de estados, rotação de duplas e papéis, valor da rodada por modo, custo de dicas, placar, condição de fim, não-repetição de músicas.
 - **Manuais**: fluxo das telas jogando de verdade (notebook + 2 celulares), incluindo reconexão.
 
 ## Estrutura de arquivos
