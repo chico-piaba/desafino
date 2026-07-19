@@ -56,7 +56,8 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
     try {
       res.json(await wikipedia.buscar(String(req.query.q || '')));
     } catch (e) {
-      res.status(502).json({ erro: `Busca indisponível: ${e.message}` });
+      console.error('Busca na Wikipedia falhou:', e.message);
+      res.status(502).json({ erro: 'Busca na Wikipedia indisponível no momento — cadastre a música manualmente.' });
     }
   });
 
