@@ -8,6 +8,7 @@ const { Server } = require('socket.io');
 const QRCode = require('qrcode');
 const game = require('./game');
 const { criarBanco } = require('./bancoMusicas');
+const wikipedia = require('./wikipedia');
 
 function localIp() {
   for (const infos of Object.values(os.networkInterfaces())) {
@@ -34,6 +35,29 @@ function criarServidor({ config, banco, rng = Math.random, resultadoMs = 6000 })
   app.get('/api/entrada', async (req, res) => {
     const url = `http://${localIp()}:${req.socket.localPort}/jogar/`;
     res.json({ url, qr: await QRCode.toDataURL(url, { margin: 1, width: 280 }) });
+  });
+
+  app.get('/api/musicas', (req, res) => res.json(banco.ler()));
+
+  app.post('/api/musicas', (req, res) => {
+    try {
+      res.status(201).json(banco.adicionar(req.body));
+    } catch (e) {
+      res.status(400).json({ erro: e.message });
+    }
+  });
+
+  app.delete('/api/musicas/:id', (req, res) => {
+    banco.remover(req.params.id);
+    res.status(204).end();
+  });
+
+  app.get('/api/wikipedia', async (req, res) => {
+    try {
+      res.json(await wikipedia.buscar(String(req.query.q || '')));
+    } catch (e) {
+      res.status(502).json({ erro: `Busca indisponível: ${e.message}` });
+    }
   });
 
   function nomeDe(id) {

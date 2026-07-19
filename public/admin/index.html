@@ -1,3 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>DESAFINO</title></head>
-<body><h1>DESAFINO — admin (em construção)</h1></body></html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DESAFINO — Admin</title>
+  <link rel="stylesheet" href="/shared/neoretro.css">
+  <style>
+    body { padding: 24px; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--outline); }
+    .linha-form { display: grid; grid-template-columns: 2fr 2fr 1fr auto; gap: 12px; align-items: end; }
+    .resultado-wiki { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0; }
+    .erro { color: #93000a; font-weight: 800; min-height: 1.4em; }
+  </style>
+</head>
+<body>
+  <h1 class="logo">DESAFINO — Banco de músicas</h1>
+  <p id="erro" class="erro" role="alert"></p>
+
+  <section class="card">
+    <h2>🔎 Buscar na Wikipedia</h2>
+    <div style="display:flex;gap:12px">
+      <input id="campo-busca" placeholder="Nome da música…">
+      <button id="btn-buscar" class="btn btn-tertiary">Buscar</button>
+    </div>
+    <div id="resultados-wiki"></div>
+  </section>
+
+  <section class="card">
+    <h2>➕ Adicionar música</h2>
+    <div class="linha-form">
+      <label>Título <input id="campo-titulo"></label>
+      <label>Artista <input id="campo-artista"></label>
+      <label>Ano <input id="campo-ano" type="number" min="1900" max="2100"></label>
+      <button id="btn-adicionar" class="btn btn-success">Salvar</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🎵 Músicas (<span id="total"></span>)</h2>
+    <table>
+      <thead><tr><th>Título</th><th>Artista</th><th>Ano</th><th></th></tr></thead>
+      <tbody id="lista"></tbody>
+    </table>
+  </section>
+
+  <script src="./app.js"></script>
+</body>
+</html>
