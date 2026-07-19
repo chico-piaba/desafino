@@ -23,16 +23,14 @@ Interface 100% em português (pt-BR).
 ### Rodada
 
 1. O sistema sorteia uma música do banco (sem repetir na mesma partida) e a envia **apenas ao celular do apresentador** (título + artista).
-2. O apresentador escolhe o modo, o que define o valor inicial (V0) da rodada:
-   - **Cantarolar** (modo principal): 100 pontos
-   - **Mímica** (do título — modo secundário, escolher já custa pontos): 70 pontos
-3. Ao confirmar "Começar Rodada", o timer de **90 segundos** dispara em todas as telas. O timer é fixo e serve apenas como limite da rodada — **o tempo não altera a pontuação**.
-4. O adivinhador pode **comprar dicas** no celular a qualquer momento; o custo é descontado do valor da rodada (o V0 banca as dicas):
+2. A rodada **sempre começa no modo Cantarolar** (V0 = 100 pontos). Ao apertar "Começar Rodada", o timer de **90 segundos** dispara em todas as telas. O timer é fixo e serve apenas como limite da rodada — **o tempo não altera a pontuação**.
+3. Durante a rodada, **o apresentador controla a transição de modo**: pode apertar **"Mudar para Mímica"** a qualquer momento, e o V0 da rodada cai para 70 pontos (mímica é o modo secundário — escolher já custa pontos). A troca é **só de ida** (não volta para cantarolar) e o display anuncia a mudança.
+4. O adivinhador pode **comprar dicas** no celular a qualquer momento; o custo é descontado do valor da rodada (valor atual = V0 do modo atual − dicas compradas):
    - Cantor: −10
    - Ano: −10
    - Quantidade de palavras do título: −25
    - A dica comprada aparece **somente no celular do adivinhador**; o display central anuncia apenas que uma dica foi comprada e o custo.
-5. O palpite é falado **em voz alta**. O apresentador tem dois botões:
+5. O palpite é falado **em voz alta**. Além de "Mudar para Mímica", o apresentador tem dois botões:
    - **"Acertou!"** — a dupla ganha o valor atual da rodada (V0 − dicas compradas, nunca negativo) e a rodada encerra.
    - **"Passar"** — a rodada encerra com 0 pontos.
 6. Timer zerado sem acerto = 0 pontos.
@@ -63,21 +61,21 @@ Todo número de balanceamento vive num arquivo de configuração, editável sem 
 | Rota | Dispositivo | Conteúdo |
 |---|---|---|
 | `/display` | Notebook/TV | QR code de entrada, lobby com botão **"Começar partida"** (acionado por quem opera o notebook), timer circular, modo da rodada, dupla da vez com papéis, valor atual da rodada, ranking das duplas, resultado da rodada. Só informação pública. |
-| `/jogar` | Celular | Tela do jogador. Muda conforme o contexto: lobby (nome + dupla), apresentador (música privada, escolha de modo, Acertou!/Passar), adivinhador (valor da rodada, comprar dicas), plateia (espectador com placar). |
+| `/jogar` | Celular | Tela do jogador. Muda conforme o contexto: lobby (nome + dupla), apresentador (música privada, Começar Rodada, Mudar para Mímica, Acertou!/Passar), adivinhador (valor da rodada, comprar dicas), plateia (espectador com placar). |
 | `/admin` | Qualquer | Gestão do banco de músicas: listar, editar, remover, e **buscar na Wikipedia** para adicionar músicas com dicas autopreenchidas. |
 
 ### Comunicação (Socket.IO)
 
 O servidor é a única fonte de verdade; os clientes renderizam o estado que recebem. Eventos principais:
 
-- Cliente → servidor: `entrar` (nome, dupla), `iniciarPartida`, `escolherModo`, `comecarRodada`, `comprarDica`, `acertou`, `passar`.
+- Cliente → servidor: `entrar` (nome, dupla), `iniciarPartida`, `comecarRodada`, `mudarParaMimica`, `comprarDica`, `acertou`, `passar`.
 - Servidor → clientes: `estado` (snapshot completo do jogo, emitido a cada mudança), `tick` (tempo restante, 1×/segundo; o valor da rodada só muda quando uma dica é comprada).
 - Reconexão: o celular guarda um `playerId` em `localStorage`; ao reconectar, reassume a vaga e recebe o estado atual.
 
 ### Máquina de estados da partida
 
 ```
-lobby → rodada:escolhendoModo → rodada:emAndamento → rodada:resultado → (próxima rodada | fim)
+lobby → rodada:aguardandoInicio → rodada:emAndamento (cantarolar → mímica, opcional) → rodada:resultado → (próxima rodada | fim)
 ```
 
 O motor do jogo (sorteio, rotação de duplas, dicas, placar) é um módulo puro (`src/game.js`), sem dependência de Socket.IO — testável isoladamente.
@@ -96,7 +94,7 @@ As três telas seguem os wireframes em `neoretro/` e o design system `neoretro/n
 - Fundo creme `#f8f1e4`, texto `#3c2f2f`, paleta amarelo `#f9c629` / magenta / ciano / laranja / verde.
 - Bordas de 4px em `#3c2f2f`, sombras duras `4px 4px 0px`, cantos 12px.
 - Fonte Plus Jakarta Sans, peso 800 em títulos.
-- Os `code.html` dos wireframes servem de ponto de partida para o markup real.
+- Os `code.html` dos wireframes servem de ponto de partida para o markup real. Adaptação: o painel "Escolha o modo" do apresentador (dois cards) vira o fluxo real — a rodada começa em Cantarolar e o card de Mímica funciona como botão "Mudar para Mímica" durante a rodada.
 - Textos em inglês dos wireframes são traduzidos ("Buy Hints" → "Comprar Dicas", "Top Pairs" → "Ranking", "Got it!" → "Acertou!").
 - **Fora do v1** (enfeites de wireframe): navegação lateral Achievements/History/Support, perfil com nível, tema "Next up", selo "Decaying rapidly!" do adivinhador (a pontuação não decai com o tempo).
 
@@ -108,7 +106,7 @@ As três telas seguem os wireframes em `neoretro/` e o design system `neoretro/n
 
 ## Testes
 
-- **Automatizados** (`node:test`, sem dependências extras): motor do jogo — máquina de estados, rotação de duplas e papéis, valor da rodada por modo, custo de dicas, placar, condição de fim, não-repetição de músicas.
+- **Automatizados** (`node:test`, sem dependências extras): motor do jogo — máquina de estados, rotação de duplas e papéis, valor da rodada por modo, transição cantarolar→mímica (só de ida), custo de dicas, placar, condição de fim, não-repetição de músicas.
 - **Manuais**: fluxo das telas jogando de verdade (notebook + 2 celulares), incluindo reconexão.
 
 ## Estrutura de arquivos
