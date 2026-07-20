@@ -6,6 +6,7 @@ const game = require('../src/game');
 const CONFIG = {
   rodada: { duracaoSegundos: 90, totalRodadas: 8 },
   modos: { cantarolar: 100, mimica: 70 },
+  x1: { bonusApresentador: 0.5 },
   dicas: { cantor: 10, ano: 10, decada: 5, genero: 10, inicialDoTitulo: 15, forca: 25 },
 };
 const MUSICAS = Array.from({ length: 10 }, (_, i) => ({
@@ -30,11 +31,11 @@ test('entrarJogador valida nome, dupla e lotação', () => {
   assert.throws(() => game.entrarJogador(jogo, 'Zé', 1), /cheia/);
 });
 
-test('iniciarPartida exige pelo menos 2 duplas completas', () => {
+test('iniciarPartida exige pelo menos uma dupla completa', () => {
   const jogo = game.criarJogo(CONFIG, MUSICAS);
+  assert.throws(() => game.iniciarPartida(jogo), /dupla completa/);
   game.entrarJogador(jogo, 'Ana', 1);
-  game.entrarJogador(jogo, 'João', 1);
-  assert.throws(() => game.iniciarPartida(jogo), /2 duplas/);
+  assert.throws(() => game.iniciarPartida(jogo), /incompleta/);
 });
 
 test('iniciarPartida rejeita dupla incompleta', () => {
@@ -311,4 +312,57 @@ test('entrarJogador guarda avatar saneado (só as 5 peças, inteiros 0-99)', () 
   assert.deepStrictEqual(comAvatar.avatar, { fundo: 3, rosto: 1, olhos: 5, boca: 2, acessorio: 6 });
   const lixo = game.entrarJogador(jogo, 'Bia', 2, undefined, { fundo: 'xss', olhos: -5, boca: 1000 });
   assert.deepStrictEqual(lixo.avatar, { fundo: 0, rosto: 0, olhos: 0, boca: 0, acessorio: 0 });
+});
+
+function jogoX1() {
+  const jogo = game.criarJogo(CONFIG, MUSICAS, () => 0);
+  game.entrarJogador(jogo, 'Ana', 1, 'a');
+  game.entrarJogador(jogo, 'João', 1, 'b');
+  game.iniciarPartida(jogo);
+  return jogo;
+}
+
+test('uma dupla sozinha entra no modo x1 com placar individual', () => {
+  const jogo = jogoX1();
+  assert.strictEqual(jogo.modo, 'x1');
+  assert.deepStrictEqual(jogo.pontosJogadores, { 1: 0, 2: 0 });
+  assert.deepStrictEqual(jogo.duplas, {});
+  assert.strictEqual(jogo.rodada.apresentadorId, 'a');
+});
+
+test('duas duplas completas seguem no modo clássico', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  assert.strictEqual(jogo.modo, 'duplas');
+  assert.strictEqual(jogo.pontosJogadores[1], undefined);
+});
+
+test('x1: acerto credita o adivinhador e dá bônus ao apresentador', () => {
+  const jogo = jogoX1();
+  game.comecarRodada(jogo, 'a');
+  game.comprarDica(jogo, 'b', 'cantor'); // valor 90
+  game.acertou(jogo, 'a');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 90);
+  assert.strictEqual(jogo.rodada.bonusApresentador, 45);
+  assert.strictEqual(jogo.pontosJogadores[2], 90); // João adivinhou
+  assert.strictEqual(jogo.pontosJogadores[1], 45); // Ana apresentou
+  game.proximaRodada(jogo);
+  assert.strictEqual(jogo.rodada.apresentadorId, 'b'); // papéis invertem
+  assert.strictEqual(jogo.rodada.adivinhadorId, 'a');
+});
+
+test('x1: bônus arredonda e passar/tempo não dá bônus', () => {
+  const jogo = jogoX1();
+  game.comecarRodada(jogo, 'a');
+  game.comprarDica(jogo, 'b', 'cantor'); // -10
+  game.comprarDica(jogo, 'b', 'forca'); // -25 → 65
+  game.acertou(jogo, 'a');
+  assert.strictEqual(jogo.rodada.bonusApresentador, 33); // round(32.5)
+  game.proximaRodada(jogo);
+  game.comecarRodada(jogo, 'b');
+  game.passar(jogo, 'b');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 0);
+  assert.strictEqual(jogo.rodada.bonusApresentador, 0);
+  assert.strictEqual(jogo.pontosJogadores[2], 65); // João: adivinhou a 1ª rodada (65)
+  assert.strictEqual(jogo.pontosJogadores[1], 33); // Ana: bônus de apresentadora (33)
 });

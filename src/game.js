@@ -7,8 +7,10 @@ function criarJogo(config, musicas, rng = Math.random) {
     musicas,
     rng,
     fase: 'lobby',
+    modo: 'duplas',
     jogadores: [],
     duplas: {},
+    pontosJogadores: {},
     duplasAtivas: [],
     rodada: null,
     rodadasJogadas: 0,
@@ -61,13 +63,21 @@ function iniciarPartida(jogo) {
   const completas = numeros.filter(
     (n) => jogo.jogadores.filter((j) => j.dupla === n).length === 2
   );
-  if (completas.length < 2) throw new Error('São necessárias pelo menos 2 duplas completas');
   if (completas.length !== numeros.length) throw new Error('Há dupla incompleta');
+  if (completas.length === 0) {
+    throw new Error('É preciso pelo menos uma dupla completa para começar');
+  }
   jogo.duplasAtivas = completas;
-  for (const n of completas) jogo.duplas[n] = { numero: n, pontos: 0 };
-  if (jogo.config.rodada.totalRodadas % completas.length !== 0) {
-    jogo.aviso =
-      'As rodadas não dividem igualmente entre as duplas — ajuste totalRodadas no config.json';
+  // Uma dupla sozinha joga um contra o outro (x1); duas ou mais, modo clássico.
+  jogo.modo = completas.length === 1 ? 'x1' : 'duplas';
+  if (jogo.modo === 'x1') {
+    for (const j of jogo.jogadores) jogo.pontosJogadores[j.num] = 0;
+  } else {
+    for (const n of completas) jogo.duplas[n] = { numero: n, pontos: 0 };
+    if (jogo.config.rodada.totalRodadas % completas.length !== 0) {
+      jogo.aviso =
+        'As rodadas não dividem igualmente entre as duplas — ajuste totalRodadas no config.json';
+    }
   }
   jogo.fase = 'rodada';
   prepararRodada(jogo);
@@ -103,6 +113,7 @@ function prepararRodada(jogo) {
     modo: 'cantarolar',
     dicasCompradas: [],
     pontosGanhos: null,
+    bonusApresentador: null,
   };
 }
 
@@ -197,7 +208,18 @@ function comprarDica(jogo, jogadorId, tipo) {
 function encerrarRodada(jogo, pontos) {
   const r = jogo.rodada;
   r.pontosGanhos = pontos;
-  jogo.duplas[r.dupla].pontos += pontos;
+  if (jogo.modo === 'x1') {
+    // No duelo, o adivinhador leva o valor e o apresentador ganha um bônus no
+    // acerto — sem isso, quem apresenta teria incentivo de sabotar a rodada.
+    const fracao = jogo.config.x1 ? jogo.config.x1.bonusApresentador : 0.5;
+    const adivinhador = jogo.jogadores.find((j) => j.id === r.adivinhadorId);
+    const apresentador = jogo.jogadores.find((j) => j.id === r.apresentadorId);
+    r.bonusApresentador = pontos > 0 ? Math.round(pontos * fracao) : 0;
+    jogo.pontosJogadores[adivinhador.num] += pontos;
+    jogo.pontosJogadores[apresentador.num] += r.bonusApresentador;
+  } else {
+    jogo.duplas[r.dupla].pontos += pontos;
+  }
   r.fase = 'resultado';
   jogo.rodadasJogadas += 1;
 }

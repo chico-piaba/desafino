@@ -1,5 +1,6 @@
 {
   "rodada": { "duracaoSegundos": 90, "totalRodadas": 8 },
   "modos": { "cantarolar": 100, "mimica": 70 },
+  "x1": { "bonusApresentador": 0.5 },
   "dicas": { "cantor": 10, "ano": 10, "decada": 5, "genero": 10, "inicialDoTitulo": 15, "forca": 25 }
 }

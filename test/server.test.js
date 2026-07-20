@@ -7,6 +7,7 @@ const { criarServidor } = require('../src/server');
 const CONFIG = {
   rodada: { duracaoSegundos: 90, totalRodadas: 8 },
   modos: { cantarolar: 100, mimica: 70 },
+  x1: { bonusApresentador: 0.5 },
   dicas: { cantor: 10, ano: 10, decada: 5, genero: 10, inicialDoTitulo: 15, forca: 25 },
 };
 const MUSICAS = Array.from({ length: 10 }, (_, i) => ({
@@ -268,4 +269,26 @@ test('avatar circula saneado no estado e emote chega à sala inteira', async () 
     celular.emit('emote', '🔥');
     assert.deepStrictEqual(await chegada, { num: 1, tipo: '🔥' });
   } finally { celular.close(); display.close(); httpServer.close(); }
+});
+
+test('duelo x1 via sockets: 2 jogadores, placar individual', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    display.emit('iniciarPartida');
+    const e1 = await esperarEstado(ana, (e) => e.fase === 'rodada');
+    assert.strictEqual(e1.modoJogo, 'x1');
+    assert.strictEqual(e1.voce.papel, 'apresentador');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada && e.rodada.fase === 'emAndamento');
+    ana.emit('acertou');
+    const e2 = await esperarEstado(display, (e) => e.rodada && e.rodada.fase === 'resultado');
+    assert.strictEqual(e2.rodada.pontosGanhos, 100);
+    assert.strictEqual(e2.rodada.bonusApresentador, 50);
+    assert.deepStrictEqual(e2.pontosJogadores, { 1: 50, 2: 100 });
+  } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
 });

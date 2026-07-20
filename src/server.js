@@ -175,6 +175,8 @@ function criarServidor({
     return {
       codigo: sala.codigo,
       fase: jogo.fase,
+      modoJogo: jogo.modo,
+      pontosJogadores: jogo.modo === 'x1' ? jogo.pontosJogadores : null,
       aviso: jogo.aviso,
       totalRodadas: config.rodada.totalRodadas,
       duracaoSegundos: config.rodada.duracaoSegundos,
@@ -196,6 +198,7 @@ function criarServidor({
         valorAtual: game.valorAtual(jogo),
         dicasCompradas: r.dicasCompradas.map((d) => ({ tipo: d.tipo, custo: d.custo })),
         pontosGanhos: r.pontosGanhos,
+        bonusApresentador: r.bonusApresentador,
         musica: r.fase === 'resultado' ? r.musica : null,
       },
     };

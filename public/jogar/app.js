@@ -143,8 +143,11 @@ function render(e) {
   }
   if (!e.voce) return mostrarTela('tela-entrar');
   if (e.rodada.fase === 'resultado') {
-    $('espera-titulo').textContent = e.rodada.pontosGanhos > 0 ? '🎉 Acertaram!' : '😅 Rodada encerrada';
-    $('espera-texto').textContent = `+${e.rodada.pontosGanhos} pts para a Dupla ${e.rodada.dupla}. Próxima rodada já vem…`;
+    const r = e.rodada;
+    $('espera-titulo').textContent = r.pontosGanhos > 0 ? '🎉 Acertaram!' : '😅 Rodada encerrada';
+    $('espera-texto').textContent = (e.modoJogo === 'x1'
+      ? `+${r.pontosGanhos} pts ${r.adivinhador}` + (r.bonusApresentador ? ` e +${r.bonusApresentador} pts ${r.apresentador}` : '')
+      : `+${r.pontosGanhos} pts para a Dupla ${r.dupla}`) + '. Próxima rodada já vem…';
     return mostrarTela('tela-espera');
   }
   if (e.voce.papel === 'apresentador') return renderApresentador(e);

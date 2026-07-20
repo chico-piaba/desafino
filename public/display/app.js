@@ -108,7 +108,9 @@ function renderPresenca(e) {
 function renderRodada(e) {
   mostrarTela('tela-rodada');
   const r = e.rodada;
-  $('rodada-info').textContent = `Rodada ${r.numero} de ${e.totalRodadas} — Dupla ${r.dupla}`;
+  $('rodada-info').textContent = e.modoJogo === 'x1'
+    ? `Rodada ${r.numero} de ${e.totalRodadas} — Duelo x1 ⚔️`
+    : `Rodada ${r.numero} de ${e.totalRodadas} — Dupla ${r.dupla}`;
   $('modo').textContent = r.fase === 'aguardandoInicio' ? 'PREPARANDO…' : NOME_MODO[r.modo];
   $('modo').className = `pill modo ${r.modo}`;
   $('apresentador').textContent = r.apresentador;
@@ -136,11 +138,24 @@ function renderResultado(e) {
   const acertou = r.pontosGanhos > 0;
   $('resultado-titulo').textContent = acertou ? '🎉 Acertou!' : '😅 Não foi dessa vez…';
   $('resultado-musica').textContent = `A música era: "${r.musica.titulo}" — ${r.musica.artista} (${r.musica.ano})`;
-  $('resultado-pontos').textContent = `+${r.pontosGanhos} pts para a Dupla ${r.dupla}`;
+  $('resultado-pontos').textContent = e.modoJogo === 'x1'
+    ? `+${r.pontosGanhos} pts ${r.adivinhador}` + (r.bonusApresentador ? ` · +${r.bonusApresentador} pts ${r.apresentador}` : '')
+    : `+${r.pontosGanhos} pts para a Dupla ${r.dupla}`;
 }
 
 function renderFim(e) {
   mostrarTela('tela-fim');
+  if (e.modoJogo === 'x1') {
+    const ordenados = [...e.jogadores].sort(
+      (a, b) => (e.pontosJogadores[b.num] || 0) - (e.pontosJogadores[a.num] || 0)
+    );
+    const melhor = e.pontosJogadores[ordenados[0].num] || 0;
+    const campeoes = ordenados.filter((j) => (e.pontosJogadores[j.num] || 0) === melhor);
+    $('podio').innerHTML = campeoes.length > 1
+      ? `Empate! ${campeoes.map((j) => esc(j.nome)).join(' e ')} com ${melhor} pts`
+      : `Vencedor do duelo: ${esc(campeoes[0].nome)} com ${melhor} pts ⚔️🏆`;
+    return;
+  }
   const ordenadas = [...e.duplas].sort((a, b) => b.pontos - a.pontos);
   const melhor = ordenadas[0].pontos;
   const campeas = ordenadas.filter((d) => d.pontos === melhor);
@@ -151,6 +166,15 @@ function renderFim(e) {
 
 function renderRanking(e) {
   if (e.fase === 'lobby') renderLobbyDuplas(e);
+  if (e.modoJogo === 'x1' && e.pontosJogadores) {
+    $('ranking').innerHTML = [...e.jogadores]
+      .sort((a, b) => (e.pontosJogadores[b.num] || 0) - (e.pontosJogadores[a.num] || 0))
+      .map((j) => `<li><span class="avatar-ranking">${DesafinoAvatar.avatarSvg(j.avatar)}</span> ${esc(j.nome)} — <b>${e.pontosJogadores[j.num] || 0}</b></li>`)
+      .join('');
+    $('progresso').textContent = e.rodada
+      ? `Rodada ${e.rodada.numero}/${e.totalRodadas} · x1` : `${e.totalRodadas} rodadas · x1`;
+    return;
+  }
   const nomes = (n) => e.jogadores.filter((j) => j.dupla === n).map((j) => esc(j.nome)).join(' & ');
   const avatares = (n) => e.jogadores.filter((j) => j.dupla === n)
     .map((j) => `<span class="avatar-ranking">${DesafinoAvatar.avatarSvg(j.avatar)}</span>`).join('');

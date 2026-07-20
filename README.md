@@ -21,6 +21,11 @@ Protótipo local — o servidor roda no seu notebook e os celulares entram por Q
    antes dos 90 segundos.
 7. São 8 rodadas. Vence a dupla com mais pontos.
 
+**Modo x1 (duelo):** com apenas uma dupla na sala, a partida vira um contra o outro —
+os papéis alternam a cada rodada, o adivinhador leva os pontos da rodada e o
+apresentador ganha metade no acerto (para ninguém sabotar a própria apresentação).
+Vence quem somar mais pontos individuais.
+
 ## Balanceamento
 
 Tudo em `config.json` (duração, nº de rodadas, valores dos modos, preço das dicas).
