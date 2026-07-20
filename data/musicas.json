@@ -3525,5 +3525,19 @@
     "artista": "Gloria Gaynor",
     "ano": 2008,
     "genero": "Dance"
+  },
+  {
+    "id": "ceed499f-2005-4e6f-bea1-be5799f23231",
+    "titulo": "Lata Velha",
+    "artista": "Landau",
+    "ano": 2010,
+    "genero": "Rock"
+  },
+  {
+    "id": "a5aa284c-312b-4fc2-9912-40989b65b8c1",
+    "titulo": "Linha de Frente",
+    "artista": "Criolo",
+    "ano": 2011,
+    "genero": "Pagode"
   }
 ]

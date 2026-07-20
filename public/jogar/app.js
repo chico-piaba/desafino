@@ -21,15 +21,17 @@ let ultimoEstado = null;
 function entrar(dados) {
   socket.emit('entrar', dados, (resposta) => {
     if (resposta.erro) {
-      // Reconexão automática com playerId de partida antiga: limpa e volta pra entrada
+      // Reconexão automática com sala/playerId de partida antiga: limpa e volta pra entrada
       if (dados.playerId && !dados.nome) {
         localStorage.removeItem('desafinoPlayerId');
+        localStorage.removeItem('desafinoSala');
         if (ultimoEstado) render(ultimoEstado);
         return;
       }
       return mostrarErro(resposta.erro);
     }
     localStorage.setItem('desafinoPlayerId', resposta.playerId);
+    localStorage.setItem('desafinoSala', resposta.sala);
     if (resposta.estado) {
       ultimoEstado = resposta.estado;
       render(resposta.estado);
@@ -37,15 +39,20 @@ function entrar(dados) {
   });
 }
 
-const playerIdSalvo = localStorage.getItem('desafinoPlayerId');
+const salaDaUrl = (new URLSearchParams(location.search).get('sala') || '').toUpperCase().slice(0, 4);
+$('campo-sala').value = salaDaUrl || localStorage.getItem('desafinoSala') || '';
+
 socket.on('connect', () => {
-  if (playerIdSalvo) entrar({ playerId: playerIdSalvo });
+  const playerId = localStorage.getItem('desafinoPlayerId');
+  const sala = localStorage.getItem('desafinoSala');
+  if (playerId && sala) entrar({ sala, playerId });
 });
 
 $('btn-entrar').onclick = () => {
-  // Envia o playerId salvo: se este aparelho já entrou, o servidor reconecta
-  // em vez de criar um jogador duplicado.
+  // Envia o playerId salvo: se este aparelho já entrou nesta sala, o servidor
+  // reconecta em vez de criar um jogador duplicado.
   entrar({
+    sala: $('campo-sala').value.trim().toUpperCase(),
     nome: $('campo-nome').value,
     dupla: $('campo-dupla').value,
     playerId: localStorage.getItem('desafinoPlayerId') || undefined,

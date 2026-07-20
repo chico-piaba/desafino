@@ -24,6 +24,11 @@
     #qr { width: 240px; height: 240px; }
     .evento { color: var(--secondary-dark); font-weight: 800; min-height: 1.5em; }
     .presenca { background: var(--error); color: #fff; }
+    .codigo {
+      display: block; margin: 8px auto 16px; width: fit-content;
+      font-size: 2.6rem; letter-spacing: 10px; padding: 8px 20px 8px 30px;
+      background: var(--primary);
+    }
     .jogador-lobby { display: inline-flex; align-items: center; gap: 6px; margin: 0 6px; }
     .remover-jogador {
       border: 2px solid var(--outline); border-radius: 999px; background: var(--error);
@@ -44,6 +49,7 @@
   <main>
     <section id="tela-lobby" class="tela card" style="text-align:center">
       <h2>Escaneie para entrar</h2>
+      <div id="codigo-sala" class="pill codigo"></div>
       <img id="qr" alt="QR code para entrar no jogo">
       <p id="url-entrada" style="font-weight:800"></p>
       <div id="lobby-duplas"></div>

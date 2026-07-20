@@ -6,8 +6,11 @@ Protótipo local — o servidor roda no seu notebook e os celulares entram por Q
 ## Como jogar
 
 1. `npm install && npm start`
-2. Abra o **display** (`http://localhost:3000/display/`) numa TV ou telão.
-3. Cada jogador escaneia o QR code com o celular e entra com nome + dupla (2 a 4 duplas completas).
+2. Abra o **display** (`http://localhost:3000/display/`) numa TV ou telão — ele cria uma
+   **sala com código de 4 letras** (vários grupos podem jogar ao mesmo tempo no mesmo servidor;
+   o display que criou é o dono da sala e pode expulsar jogadores e reiniciá-la).
+3. Cada jogador escaneia o QR code com o celular (ou digita o código da sala) e entra com
+   nome + dupla (2 a 4 duplas completas).
 4. Clique em **Começar partida** no display.
 5. Na sua vez, o apresentador vê a música no celular (privado!) e cantarola — vale **100 pts**.
    Pode **mudar para mímica** (o valor cai para 70) a qualquer momento; a troca não tem volta.
