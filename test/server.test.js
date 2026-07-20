@@ -234,3 +234,22 @@ test('reiniciarSala (dono) zera a partida, mantém o código e desvincula os cel
     await avisoRemovido;
   } finally { celular.close(); display.close(); httpServer.close(); }
 });
+
+test('/api/entrada monta a URL conforme o Host da requisição (proxy/Funnel)', async () => {
+  const http = require('node:http');
+  const { httpServer, url } = await subirServidor();
+  const porta = httpServer.address().port;
+  const pedir = (headers) => new Promise((resolve, reject) => {
+    http.get({ host: 'localhost', port: porta, path: '/api/entrada?sala=ABCD', headers }, (res) => {
+      let corpo = '';
+      res.on('data', (c) => { corpo += c; });
+      res.on('end', () => resolve(JSON.parse(corpo)));
+    }).on('error', reject);
+  });
+  try {
+    const publico = await pedir({ Host: 'desafino.exemplo.ts.net', 'X-Forwarded-Proto': 'https' });
+    assert.strictEqual(publico.url, 'https://desafino.exemplo.ts.net/jogar/?sala=ABCD');
+    const local = await pedir({ Host: `localhost:${porta}` });
+    assert.match(local.url, /^http:\/\/[\d.]+:\d+\/jogar\/\?sala=ABCD$/); // IP da LAN
+  } finally { httpServer.close(); }
+});

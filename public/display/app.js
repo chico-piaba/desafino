@@ -13,11 +13,14 @@ function esc(texto) {
   return div.innerHTML;
 }
 
+let codigoAtual = null;
 socket.on('connect', () => {
   // Cria uma sala nova, ou reassume a sala deste display se o token ainda vale.
   socket.emit('criarSala', { donoToken: localStorage.getItem('desafinoDonoToken') || undefined }, (r) => {
     if (r.erro) return mostrarEvento(`⚠️ ${r.erro}`);
     localStorage.setItem('desafinoDonoToken', r.donoToken);
+    if (r.codigo === codigoAtual) return; // reconexão na mesma sala: QR já está certo
+    codigoAtual = r.codigo;
     $('codigo-sala').textContent = r.codigo;
     fetch(`/api/entrada?sala=${r.codigo}`).then((resp) => resp.json()).then(({ url, qr }) => {
       $('qr').src = qr;

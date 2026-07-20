@@ -117,10 +117,21 @@ function criarServidor({
     sala.limpezaLobby.set(playerId, t);
   }
 
+  function urlBase(req) {
+    // Atrás de um proxy (Tailscale Funnel, Render etc.) o Host/X-Forwarded-*
+    // dizem como o cliente chegou — o QR precisa apontar para o mesmo lugar.
+    const proto = req.headers['x-forwarded-proto'] || 'http';
+    const host = req.headers['x-forwarded-host'] || req.headers.host || '';
+    if (!host || host.startsWith('localhost') || host.startsWith('127.')) {
+      return `http://${localIp()}:${req.socket.localPort}`;
+    }
+    return `${proto}://${host}`;
+  }
+
   app.get('/api/entrada', async (req, res) => {
     const codigo = String(req.query.sala || '').trim().toUpperCase();
     const sufixo = codigo ? `?sala=${codigo}` : '';
-    const url = `http://${localIp()}:${req.socket.localPort}/jogar/${sufixo}`;
+    const url = `${urlBase(req)}/jogar/${sufixo}`;
     res.json({ url, qr: await QRCode.toDataURL(url, { margin: 1, width: 280 }) });
   });
 
