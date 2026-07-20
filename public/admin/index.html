@@ -6,11 +6,16 @@
   <title>DESAFINO — Admin</title>
   <link rel="stylesheet" href="/shared/neoretro.css">
   <style>
-    body { padding: 24px; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
-    table { width: 100%; border-collapse: collapse; }
+    body { padding: clamp(12px, 3vw, 24px); max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .card { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 560px; }
     th, td { text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--outline); }
     .linha-form { display: grid; grid-template-columns: 2fr 2fr 1fr 1fr auto; gap: 12px; align-items: end; }
-    .resultado-wiki { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0; }
+    @media (max-width: 700px) {
+      .linha-form { grid-template-columns: 1fr 1fr; }
+      .linha-form button { grid-column: 1 / -1; }
+    }
+    .resultado-wiki { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0; flex-wrap: wrap; }
     .erro { color: #93000a; font-weight: 800; min-height: 1.4em; }
   </style>
 </head>
