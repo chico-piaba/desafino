@@ -33,13 +33,23 @@ geradas por `node scripts/gerar-banco.js` a partir da iTunes Search API — rode
 expandir sem perder o que você adicionou. Gerencie em `http://localhost:3000/admin/`, com
 busca no iTunes para preencher título/artista/ano/gênero automaticamente.
 
-## Hospedagem 24/7 (Render, grátis)
+## Hospedagem numa VPS (Docker)
 
-O repositório traz um `render.yaml`: no [Render](https://render.com), **New → Blueprint** →
-selecione este repositório e pronto — deploy automático a cada push na branch.
-Atenção: no plano free o disco é efêmero — músicas adicionadas pelo `/admin` em produção
-somem no próximo deploy (as do repositório permanecem). O serviço dorme após ~15 min sem
-uso e acorda em ~30 s no primeiro acesso.
+A cada push, o CI publica a imagem em `ghcr.io/chico-piaba/desafino:latest`. Na VPS:
+
+```bash
+mkdir desafino && cd desafino
+curl -fsSLO https://raw.githubusercontent.com/chico-piaba/desafino/desafino-prototipo/docker-compose.yml
+docker compose pull && docker compose up -d
+```
+
+O jogo sobe na porta 3000; o volume `dados` guarda o banco de músicas (edições do
+`/admin` sobrevivem a atualizações — na primeira subida ele é semeado com as músicas
+do repositório). Para atualizar: `docker compose pull && docker compose up -d`.
+
+Para HTTPS, coloque um proxy na frente (Caddy resolve com 2 linhas de Caddyfile:
+`seudominio.com { reverse_proxy localhost:3000 }` — WebSockets inclusos). O QR já
+se adapta ao domínio de quem acessa.
 
 ## Testes
 
