@@ -164,6 +164,11 @@ function criarServidor({
     return j ? j.nome : '?';
   }
 
+  function numDe(sala, id) {
+    const j = sala.jogo.jogadores.find((j) => j.id === id);
+    return j ? j.num : null;
+  }
+
   function estadoPublico(sala) {
     const { jogo } = sala;
     const r = jogo.rodada;
@@ -175,7 +180,8 @@ function criarServidor({
       duracaoSegundos: config.rodada.duracaoSegundos,
       tempoRestante: sala.tempoRestante,
       jogadores: jogo.jogadores.map((j) => ({
-        num: j.num, nome: j.nome, dupla: j.dupla, conectado: sala.conectados.has(j.id),
+        num: j.num, nome: j.nome, dupla: j.dupla, avatar: j.avatar,
+        conectado: sala.conectados.has(j.id),
       })),
       duplas: Object.values(jogo.duplas),
       rodada: r && {
@@ -185,6 +191,8 @@ function criarServidor({
         modo: r.modo,
         apresentador: nomeDe(sala, r.apresentadorId),
         adivinhador: nomeDe(sala, r.adivinhadorId),
+        apresentadorNum: numDe(sala, r.apresentadorId),
+        adivinhadorNum: numDe(sala, r.adivinhadorId),
         valorAtual: game.valorAtual(jogo),
         dicasCompradas: r.dicasCompradas.map((d) => ({ tipo: d.tipo, custo: d.custo })),
         pontosGanhos: r.pontosGanhos,
@@ -312,7 +320,7 @@ function criarServidor({
         const existente = dados.playerId && sala.jogo.jogadores.find((j) => j.id === dados.playerId);
         socket.data.playerId = existente
           ? existente.id
-          : game.entrarJogador(sala.jogo, dados.nome, Number(dados.dupla)).id;
+          : game.entrarJogador(sala.jogo, dados.nome, Number(dados.dupla), undefined, dados.avatar).id;
         vincular(sala);
         sala.conectados.set(socket.data.playerId, socket.id);
         cancelarLimpezaLobby(sala, socket.data.playerId);
@@ -391,6 +399,20 @@ function criarServidor({
       }
       sala.conectados.clear();
     }));
+
+    const EMOTES = ['👋', '😂', '🔥', '🎵'];
+    socket.on('emote', (tipo) => {
+      // Emotes são efêmeros e só no lobby: inválidos são descartados em silêncio.
+      const sala = minhaSala();
+      if (!sala || !pid() || sala.jogo.fase !== 'lobby') return;
+      if (!EMOTES.includes(tipo)) return;
+      const agora = Date.now();
+      if (socket.data.ultimoEmote && agora - socket.data.ultimoEmote < 1000) return;
+      socket.data.ultimoEmote = agora;
+      const jogador = sala.jogo.jogadores.find((j) => j.id === pid());
+      if (!jogador) return;
+      io.to(`sala:${sala.codigo}`).emit('emote', { num: jogador.num, tipo });
+    });
 
     socket.on('disconnect', () => {
       const sala = minhaSala();

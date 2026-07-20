@@ -253,3 +253,19 @@ test('/api/entrada monta a URL conforme o Host da requisição (proxy/Funnel)', 
     assert.match(local.url, /^http:\/\/[\d.]+:\d+\/jogar\/\?sala=ABCD$/); // IP da LAN
   } finally { httpServer.close(); }
 });
+
+test('avatar circula saneado no estado e emote chega à sala inteira', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const celular = conectar(url);
+  try {
+    const r = await emitir(celular, 'entrar', {
+      sala: codigo, nome: 'Ana', dupla: 1,
+      avatar: { fundo: 2, rosto: 1, olhos: 3, boca: 4, acessorio: 5, extra: 'lixo' },
+    });
+    assert.deepStrictEqual(r.estado.jogadores[0].avatar, { fundo: 2, rosto: 1, olhos: 3, boca: 4, acessorio: 5 });
+    const chegada = new Promise((resolve) => display.on('emote', resolve));
+    celular.emit('emote', '🔥');
+    assert.deepStrictEqual(await chegada, { num: 1, tipo: '🔥' });
+  } finally { celular.close(); display.close(); httpServer.close(); }
+});

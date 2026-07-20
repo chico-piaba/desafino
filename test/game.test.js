@@ -300,3 +300,15 @@ test('gênero indisponível some dos preços e não pode ser comprado', () => {
   assert.ok('forca' in precos);
   assert.throws(() => game.comprarDica(jogo, 'b', 'genero'), /indisponível/);
 });
+
+test('entrarJogador guarda avatar saneado (só as 5 peças, inteiros 0-99)', () => {
+  const jogo = game.criarJogo(CONFIG, MUSICAS);
+  const semAvatar = game.entrarJogador(jogo, 'Ana', 1);
+  assert.deepStrictEqual(semAvatar.avatar, { fundo: 0, rosto: 0, olhos: 0, boca: 0, acessorio: 0 });
+  const comAvatar = game.entrarJogador(jogo, 'João', 1, undefined, {
+    fundo: 3, rosto: 1, olhos: 5, boca: 2, acessorio: 6, hack: 'x',
+  });
+  assert.deepStrictEqual(comAvatar.avatar, { fundo: 3, rosto: 1, olhos: 5, boca: 2, acessorio: 6 });
+  const lixo = game.entrarJogador(jogo, 'Bia', 2, undefined, { fundo: 'xss', olhos: -5, boca: 1000 });
+  assert.deepStrictEqual(lixo.avatar, { fundo: 0, rosto: 0, olhos: 0, boca: 0, acessorio: 0 });
+});

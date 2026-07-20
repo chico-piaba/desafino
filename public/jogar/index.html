@@ -22,6 +22,12 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       letter-spacing: 1px; font-weight: 800; line-height: 1.8;
     }
+    .avatar-preview { width: 128px; margin: 0 auto 10px; }
+    .avatar-preview svg { width: 100%; height: auto; display: block; }
+    .linha-peca { display: flex; justify-content: space-between; align-items: center; margin: 8px 0; font-weight: 800; }
+    .btn-peca { padding: 6px 14px; font-size: 1rem; margin-left: 8px; }
+    .emotes { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
+    .btn-emote { font-size: 1.6rem; padding: 10px 14px; background: var(--surface-bright); }
     #timer-jogador { text-align: center; font-size: 1.4rem; }
   </style>
 </head>
@@ -31,7 +37,9 @@
 
   <section id="tela-entrar" class="tela card">
     <h2>Entrar no jogo</h2>
-    <label>Código da sala <input id="campo-sala" maxlength="4" autocomplete="off"
+    <div id="avatar-preview" class="avatar-preview"></div>
+    <div id="builder"></div>
+    <label style="display:block;margin-top:16px">Código da sala <input id="campo-sala" maxlength="4" autocomplete="off"
       style="text-transform:uppercase;letter-spacing:6px;font-weight:800"></label>
     <label style="display:block;margin-top:12px">Seu nome <input id="campo-nome" maxlength="20" autocomplete="off"></label>
     <label style="display:block;margin-top:12px">Sua dupla
@@ -46,6 +54,12 @@
   <section id="tela-espera" class="tela card oculto" style="text-align:center">
     <h2 id="espera-titulo">Você está dentro!</h2>
     <p id="espera-texto">Aguardando a partida começar…</p>
+    <div id="emotes" class="emotes oculto">
+      <button class="btn btn-emote" data-emote="👋">👋</button>
+      <button class="btn btn-emote" data-emote="😂">😂</button>
+      <button class="btn btn-emote" data-emote="🔥">🔥</button>
+      <button class="btn btn-emote" data-emote="🎵">🎵</button>
+    </div>
   </section>
 
   <p id="timer-jogador" class="pill oculto">⏱ <span id="tempo">90</span>s</p>
@@ -80,6 +94,7 @@
   </section>
 
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/shared/avatar.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

@@ -42,6 +42,46 @@ function entrar(dados) {
 const salaDaUrl = (new URLSearchParams(location.search).get('sala') || '').toUpperCase().slice(0, 4);
 $('campo-sala').value = salaDaUrl || localStorage.getItem('desafinoSala') || '';
 
+// ---- Perfil e builder de avatar ----
+const PECAS = [
+  ['fundo', '🎨 Fundo'], ['rosto', '🙂 Rosto'], ['olhos', '👀 Olhos'],
+  ['boca', '👄 Boca'], ['acessorio', '🎩 Acessório'],
+];
+let perfil;
+try { perfil = JSON.parse(localStorage.getItem('desafinoPerfil') || 'null'); } catch { perfil = null; }
+if (!perfil || !perfil.avatar) perfil = { nome: '', avatar: DesafinoAvatar.avatarAleatorio() };
+$('campo-nome').value = perfil.nome || '';
+
+function renderAvatarPreview() {
+  $('avatar-preview').innerHTML = DesafinoAvatar.avatarSvg(perfil.avatar);
+}
+
+$('builder').innerHTML = PECAS.map(([peca, rotulo]) =>
+  `<div class="linha-peca"><span>${rotulo}</span><span>
+    <button type="button" class="btn btn-peca" data-peca="${peca}" data-dir="-1">◀</button>
+    <button type="button" class="btn btn-peca" data-peca="${peca}" data-dir="1">▶</button>
+  </span></div>`
+).join('') +
+  '<button type="button" id="btn-sortear" class="btn btn-secondary" style="width:100%;margin-top:6px">🎲 Aleatório</button>';
+
+for (const btn of $('builder').querySelectorAll('button[data-peca]')) {
+  btn.onclick = () => {
+    const peca = btn.dataset.peca;
+    const n = DesafinoAvatar.TAMANHOS[peca];
+    perfil.avatar[peca] = ((perfil.avatar[peca] || 0) + Number(btn.dataset.dir) + n) % n;
+    renderAvatarPreview();
+  };
+}
+$('btn-sortear').onclick = () => {
+  perfil.avatar = DesafinoAvatar.avatarAleatorio();
+  renderAvatarPreview();
+};
+renderAvatarPreview();
+
+for (const btn of $('emotes').querySelectorAll('button[data-emote]')) {
+  btn.onclick = () => socket.emit('emote', btn.dataset.emote);
+}
+
 socket.on('connect', () => {
   const playerId = localStorage.getItem('desafinoPlayerId');
   const sala = localStorage.getItem('desafinoSala');
@@ -49,12 +89,15 @@ socket.on('connect', () => {
 });
 
 $('btn-entrar').onclick = () => {
+  perfil.nome = $('campo-nome').value.trim();
+  localStorage.setItem('desafinoPerfil', JSON.stringify(perfil));
   // Envia o playerId salvo: se este aparelho já entrou nesta sala, o servidor
   // reconecta em vez de criar um jogador duplicado.
   entrar({
     sala: $('campo-sala').value.trim().toUpperCase(),
-    nome: $('campo-nome').value,
+    nome: perfil.nome,
     dupla: $('campo-dupla').value,
+    avatar: perfil.avatar,
     playerId: localStorage.getItem('desafinoPlayerId') || undefined,
   });
 };
@@ -87,8 +130,12 @@ function render(e) {
   }
 
   if (e.fase === 'lobby') {
+    $('emotes').classList.toggle('oculto', !entrou);
+    $('espera-titulo').textContent = 'Você está dentro!';
+    $('espera-texto').textContent = 'Aguardando a partida começar…';
     return mostrarTela(e.voce || entrou ? 'tela-espera' : 'tela-entrar');
   }
+  $('emotes').classList.add('oculto');
   if (e.fase === 'fim') {
     $('espera-titulo').textContent = '🏆 Fim de jogo!';
     $('espera-texto').textContent = 'Veja o resultado no display.';

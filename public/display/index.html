@@ -30,6 +30,28 @@
       background: var(--primary);
     }
     .jogador-lobby { display: inline-flex; align-items: center; gap: 6px; margin: 0 6px; }
+    .grupo-dupla { margin: 14px 0; }
+    .fileira-avatares { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 6px; }
+    .card-jogador {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      position: relative; animation: flutuar 3s ease-in-out infinite;
+    }
+    .card-jogador.off { opacity: 0.45; animation: none; }
+    .card-jogador .mini-avatar svg { width: 76px; height: 76px; }
+    .nome-jogador { font-weight: 800; }
+    @keyframes flutuar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .card-jogador.pulo { animation: pular 0.8s ease; }
+    @keyframes pular {
+      0% { transform: scale(1); } 30% { transform: scale(1.25) rotate(-6deg); }
+      60% { transform: scale(0.95) rotate(4deg); } 100% { transform: scale(1); }
+    }
+    .emote-flutuante {
+      position: absolute; top: -8px; left: 50%; font-size: 2.2rem;
+      animation: subir 1.6s ease forwards; pointer-events: none; z-index: 5;
+    }
+    @keyframes subir { to { transform: translate(-50%, -70px); opacity: 0; } }
+    .dupla-card .mini-avatar svg { width: 56px; height: 56px; vertical-align: middle; }
+    .avatar-ranking svg { width: 26px; height: 26px; vertical-align: middle; margin-right: 2px; }
     .remover-jogador {
       border: 2px solid var(--outline); border-radius: 999px; background: var(--error);
       color: #fff; font-weight: 800; cursor: pointer; width: 22px; height: 22px;
@@ -61,8 +83,10 @@
       <span id="modo" class="pill modo"></span>
       <div class="timer" id="timer"><span id="tempo">90</span></div>
       <div class="card dupla-card">
+        <span class="mini-avatar" id="avatar-apresentador"></span>
         <span>🎤 <span id="apresentador"></span></span>
         <span>→</span>
+        <span class="mini-avatar" id="avatar-adivinhador"></span>
         <span>🤔 <span id="adivinhador"></span></span>
         <span id="valor" class="pill valor"></span>
       </div>
@@ -88,6 +112,7 @@
   </aside>
 
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/shared/avatar.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

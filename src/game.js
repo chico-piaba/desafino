@@ -18,7 +18,18 @@ function criarJogo(config, musicas, rng = Math.random) {
   };
 }
 
-function entrarJogador(jogo, nome, duplaNumero, id = crypto.randomUUID()) {
+const PECAS_AVATAR = ['fundo', 'rosto', 'olhos', 'boca', 'acessorio'];
+
+function sanearAvatar(avatar) {
+  const saneado = {};
+  for (const chave of PECAS_AVATAR) {
+    const valor = avatar && typeof avatar === 'object' ? Number(avatar[chave]) : NaN;
+    saneado[chave] = Number.isInteger(valor) && valor >= 0 && valor <= 99 ? valor : 0;
+  }
+  return saneado;
+}
+
+function entrarJogador(jogo, nome, duplaNumero, id = crypto.randomUUID(), avatar = null) {
   if (jogo.fase !== 'lobby') throw new Error('A partida já começou');
   if (!nome || !String(nome).trim()) throw new Error('Nome obrigatório');
   if (![1, 2, 3, 4].includes(duplaNumero)) throw new Error('Dupla inválida');
@@ -26,7 +37,13 @@ function entrarJogador(jogo, nome, duplaNumero, id = crypto.randomUUID()) {
     throw new Error('Dupla cheia');
   }
   jogo.proximoNum += 1;
-  const jogador = { id, num: jogo.proximoNum, nome: String(nome).trim(), dupla: duplaNumero };
+  const jogador = {
+    id,
+    num: jogo.proximoNum,
+    nome: String(nome).trim(),
+    dupla: duplaNumero,
+    avatar: sanearAvatar(avatar),
+  };
   jogo.jogadores.push(jogador);
   return jogador;
 }
