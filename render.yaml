@@ -1,0 +1,13 @@
+# Blueprint do Render (https://render.com) — plano free.
+# No painel do Render: New → Blueprint → apontar para este repositório.
+services:
+  - type: web
+    name: desafino
+    runtime: node
+    plan: free
+    branch: desafino-prototipo
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

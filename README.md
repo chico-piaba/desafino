@@ -33,6 +33,14 @@ geradas por `node scripts/gerar-banco.js` a partir da iTunes Search API — rode
 expandir sem perder o que você adicionou. Gerencie em `http://localhost:3000/admin/`, com
 busca no iTunes para preencher título/artista/ano/gênero automaticamente.
 
+## Hospedagem 24/7 (Render, grátis)
+
+O repositório traz um `render.yaml`: no [Render](https://render.com), **New → Blueprint** →
+selecione este repositório e pronto — deploy automático a cada push na branch.
+Atenção: no plano free o disco é efêmero — músicas adicionadas pelo `/admin` em produção
+somem no próximo deploy (as do repositório permanecem). O serviço dorme após ~15 min sem
+uso e acorda em ~30 s no primeiro acesso.
+
 ## Testes
 
 `npm test` — motor do jogo, banco de músicas, interpretação do iTunes e integração via sockets.
