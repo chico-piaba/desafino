@@ -366,3 +366,37 @@ test('x1: bônus arredonda e passar/tempo não dá bônus', () => {
   assert.strictEqual(jogo.pontosJogadores[2], 65); // João: adivinhou a 1ª rodada (65)
   assert.strictEqual(jogo.pontosJogadores[1], 33); // Ana: bônus de apresentadora (33)
 });
+
+test('criarJogo completa o config com os padrões', () => {
+  const jogo = game.criarJogo({ rodada: { duracaoSegundos: 60 } }, MUSICAS);
+  assert.strictEqual(jogo.config.rodada.duracaoSegundos, 60);
+  assert.strictEqual(jogo.config.sala.maxDuplas, 4);
+  assert.strictEqual(jogo.config.plateia.rouboFracao, 0.05);
+});
+
+test('maxDuplas maior libera duplas acima de 4', () => {
+  const jogo = game.criarJogo({ ...CONFIG, sala: { maxDuplas: 10, maxJogadores: 20 } }, MUSICAS);
+  const j = game.entrarJogador(jogo, 'Ana', 7, 'a');
+  assert.strictEqual(j.dupla, 7);
+  assert.throws(() => game.entrarJogador(jogo, 'Zé', 11), /Dupla inválida/);
+});
+
+test('maxJogadores barra a sala lotada', () => {
+  const jogo = game.criarJogo({ ...CONFIG, sala: { maxDuplas: 10, maxJogadores: 4 } }, MUSICAS);
+  game.entrarJogador(jogo, 'A', 1, 'a');
+  game.entrarJogador(jogo, 'B', 1, 'b');
+  game.entrarJogador(jogo, 'C', 2, 'c');
+  game.entrarJogador(jogo, 'D', 2, 'd');
+  assert.throws(() => game.entrarJogador(jogo, 'E', 3), /lotada/);
+});
+
+test('a rodada nasce com os campos de ação, roubo e votação', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  const r = jogo.rodada;
+  assert.deepStrictEqual(r.acoes, []);
+  assert.deepStrictEqual(r.roubos, []);
+  assert.deepStrictEqual(r.duplasQueRoubaram, []);
+  assert.strictEqual(r.trocasUsadas, 0);
+  assert.strictEqual(r.votacao, null);
+});

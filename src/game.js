@@ -1,10 +1,11 @@
 'use strict';
 const crypto = require('crypto');
 const dicas = require('./dicas');
+const { mesclarPadroes } = require('./configSala');
 
 function criarJogo(config, musicas, rng = Math.random) {
   return {
-    config,
+    config: mesclarPadroes(config),
     musicas,
     rng,
     fase: 'lobby',
@@ -35,7 +36,11 @@ function sanearAvatar(avatar) {
 function entrarJogador(jogo, nome, duplaNumero, id = crypto.randomUUID(), avatar = null) {
   if (jogo.fase !== 'lobby') throw new Error('A partida já começou');
   if (!nome || !String(nome).trim()) throw new Error('Nome obrigatório');
-  if (![1, 2, 3, 4].includes(duplaNumero)) throw new Error('Dupla inválida');
+  const { maxDuplas, maxJogadores } = jogo.config.sala;
+  if (!Number.isInteger(duplaNumero) || duplaNumero < 1 || duplaNumero > maxDuplas) {
+    throw new Error(`Dupla inválida — esta sala vai até a dupla ${maxDuplas}`);
+  }
+  if (jogo.jogadores.length >= maxJogadores) throw new Error('Sala lotada');
   if (jogo.jogadores.filter((j) => j.dupla === duplaNumero).length >= 2) {
     throw new Error('Dupla cheia');
   }
@@ -113,6 +118,11 @@ function prepararRodada(jogo) {
     musica,
     modo: 'cantarolar',
     dicasCompradas: [],
+    acoes: [],
+    roubos: [],
+    duplasQueRoubaram: [],
+    trocasUsadas: 0,
+    votacao: null,
     pontosGanhos: null,
     bonusApresentador: null,
   };
