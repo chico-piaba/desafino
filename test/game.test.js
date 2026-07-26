@@ -400,3 +400,50 @@ test('a rodada nasce com os campos de ação, roubo e votação', () => {
   assert.strictEqual(r.trocasUsadas, 0);
   assert.strictEqual(r.votacao, null);
 });
+
+test('trocar música cobra o custo, sorteia outra e é só do apresentador', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  const antiga = jogo.rodada.musica.id;
+  assert.throws(() => game.trocarMusica(jogo, 'b'), /apresentador/);
+  const nova = game.trocarMusica(jogo, 'a');
+  assert.notStrictEqual(nova.id, antiga);
+  assert.strictEqual(jogo.rodada.musica.id, nova.id);
+  assert.strictEqual(game.valorAtual(jogo), 80); // 100 − 20
+  assert.strictEqual(jogo.rodada.trocasUsadas, 1);
+});
+
+test('trocar música não devolve o que já foi gasto em dicas', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.comprarDica(jogo, 'b', 'cantor'); // −10
+  game.comprarDica(jogo, 'b', 'forca'); // −25
+  game.trocarMusica(jogo, 'a'); // −20
+  assert.strictEqual(game.valorAtual(jogo), 45); // 100 − 10 − 25 − 20
+  assert.deepStrictEqual(jogo.rodada.dicasCompradas, []); // pode recomprar na música nova
+  game.comprarDica(jogo, 'b', 'cantor'); // −10 de novo
+  assert.strictEqual(game.valorAtual(jogo), 35);
+});
+
+test('trocar música respeita o limite por rodada e a música velha não volta', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  const antiga = jogo.rodada.musica.id;
+  game.trocarMusica(jogo, 'a');
+  assert.throws(() => game.trocarMusica(jogo, 'a'), /já trocou/);
+  assert.ok(jogo.musicasUsadas.includes(antiga));
+});
+
+test('troca desligada no config é recusada', () => {
+  const jogo = game.criarJogo({ ...CONFIG, troca: { ligada: false, custo: 20, porRodada: 1 } }, MUSICAS, () => 0);
+  game.entrarJogador(jogo, 'Ana', 1, 'a');
+  game.entrarJogador(jogo, 'João', 1, 'b');
+  game.entrarJogador(jogo, 'Bia', 2, 'c');
+  game.entrarJogador(jogo, 'Leo', 2, 'd');
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  assert.throws(() => game.trocarMusica(jogo, 'a'), /desligada/);
+});

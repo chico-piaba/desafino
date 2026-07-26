@@ -138,7 +138,8 @@ function exigirRodada(jogo, fase) {
 function valorAtual(jogo) {
   const r = jogo.rodada;
   const v0 = jogo.config.modos[r.modo];
-  const gasto = r.dicasCompradas.reduce((soma, d) => soma + d.custo, 0);
+  const soma = (lista, campo) => lista.reduce((total, item) => total + item[campo], 0);
+  const gasto = soma(r.dicasCompradas, 'custo') + soma(r.acoes, 'custo') + soma(r.roubos, 'valor');
   return Math.max(0, v0 - gasto);
 }
 
@@ -153,6 +154,26 @@ function mudarParaMimica(jogo, jogadorId) {
   if (jogadorId !== r.apresentadorId) throw new Error('Só o apresentador muda o modo');
   if (r.modo === 'mimica') throw new Error('A rodada já está em mímica');
   r.modo = 'mimica';
+}
+
+function trocarMusica(jogo, jogadorId) {
+  const r = exigirRodada(jogo, 'emAndamento');
+  if (jogadorId !== r.apresentadorId) throw new Error('Só o apresentador troca a música');
+  if (!jogo.config.troca.ligada) throw new Error('A troca de música está desligada nesta sala');
+  if (r.trocasUsadas >= jogo.config.troca.porRodada) {
+    throw new Error('Você já trocou a música nesta rodada');
+  }
+  const nova = sortearMusica(jogo);
+  if (!nova) throw new Error('Não há outra música disponível');
+  // Pote único que nunca reseta: o gasto em dicas da música antiga vira uma
+  // ação e a lista zera, para que as dicas da música nova possam ser compradas.
+  const gastoAnterior = r.dicasCompradas.reduce((total, d) => total + d.custo, 0);
+  if (gastoAnterior > 0) r.acoes.push({ tipo: 'dicasAnteriores', custo: gastoAnterior });
+  r.dicasCompradas = [];
+  r.acoes.push({ tipo: 'troca', custo: jogo.config.troca.custo });
+  r.trocasUsadas += 1;
+  r.musica = nova;
+  return nova;
 }
 
 function comprarDica(jogo, jogadorId, tipo) {
@@ -224,6 +245,7 @@ module.exports = {
   iniciarPartida,
   comecarRodada,
   mudarParaMimica,
+  trocarMusica,
   comprarDica,
   acertou,
   passar,
