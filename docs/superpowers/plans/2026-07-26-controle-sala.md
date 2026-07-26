@@ -100,7 +100,7 @@ function normalizar(texto) {
   const limpo = String(texto || '')
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '') // acentos
+    .replace(/[\u0300-\u036f]/g, '') // acentos (combinantes, pós-NFD)
     .replace(/\([^)]*\)/g, ' ') // "(Ao Vivo)", "(Remix)"
     .replace(/[^a-z0-9\s]/g, ' ') // pontuação
     .replace(/\s+/g, ' ')
