@@ -50,7 +50,9 @@ socket.on('tick', (t) => {
 
 // ---- Música do lobby (chiptune WebAudio, precisa de um clique pra começar) ----
 const musicaLobby = HumATuneChiptune.criar();
-let somLigado = localStorage.getItem('humatuneSomLobby') === '1';
+// Padrão LIGADO: este botão hoje controla todo o som do jogo, não só o loop
+// do lobby. Só fica mudo se alguém desligou de propósito nesta TV.
+let somLigado = localStorage.getItem('humatuneSomLobby') !== '0';
 let faseAtual = 'lobby';
 
 function atualizarSom() {
@@ -66,7 +68,10 @@ $('btn-som').onclick = () => {
   atualizarSom();
 };
 // Navegador bloqueia áudio sem gesto: o primeiro clique em qualquer lugar retoma
-document.addEventListener('pointerdown', () => atualizarSom(), { once: true });
+document.addEventListener('pointerdown', () => {
+  musicaLobby.destravar();
+  atualizarSom();
+}, { once: true });
 
 let dicasVistas = 0;
 let faseVista = null;        // fase do jogo na última renderização

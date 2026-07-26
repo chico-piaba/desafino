@@ -32,11 +32,13 @@
   };
 
   const VOLUME_LOOP = 0.07;
+  const VOLUME_EFEITOS = 0.32;
 
   function criar() {
     let ctx = null;
     let master = null;
     let ruido = null;
+    let efeitos = null;
     let timer = null;
     let passo = 0;
     let proximoTempo = 0;
@@ -50,25 +52,29 @@
       master = ctx.createGain();
       master.gain.value = mudo ? 0 : VOLUME_LOOP;
       master.connect(ctx.destination);
+      // Barramento separado: o loop fica por baixo, os efeitos cortam por cima.
+      efeitos = ctx.createGain();
+      efeitos.gain.value = mudo ? 0 : VOLUME_EFEITOS;
+      efeitos.connect(ctx.destination);
       // buffer de ruído branco pro chimbal
       ruido = ctx.createBuffer(1, ctx.sampleRate * 0.1, ctx.sampleRate);
       const dados = ruido.getChannelData(0);
       for (let i = 0; i < dados.length; i++) dados[i] = Math.random() * 2 - 1;
     }
 
-    function voz(tipo, freq, quando, dur, ganho) {
+    function voz(tipo, freq, quando, dur, ganho, destino) {
       const osc = ctx.createOscillator();
       const g = ctx.createGain();
       osc.type = tipo;
       osc.frequency.value = freq;
       g.gain.setValueAtTime(ganho, quando);
       g.gain.exponentialRampToValueAtTime(0.001, quando + dur);
-      osc.connect(g).connect(master);
+      osc.connect(g).connect(destino || master);
       osc.start(quando);
       osc.stop(quando + dur + 0.02);
     }
 
-    function chimbal(quando, ganho) {
+    function chimbal(quando, ganho, destino) {
       const fonte = ctx.createBufferSource();
       fonte.buffer = ruido;
       const filtro = ctx.createBiquadFilter();
@@ -77,7 +83,7 @@
       const g = ctx.createGain();
       g.gain.setValueAtTime(ganho, quando);
       g.gain.exponentialRampToValueAtTime(0.001, quando + 0.05);
-      fonte.connect(filtro).connect(g).connect(master);
+      fonte.connect(filtro).connect(g).connect(destino || master);
       fonte.start(quando);
     }
 
@@ -116,6 +122,14 @@
       mudo(silenciar) {
         mudo = Boolean(silenciar);
         if (master) master.gain.value = mudo ? 0 : VOLUME_LOOP;
+        if (efeitos) efeitos.gain.value = mudo ? 0 : VOLUME_EFEITOS;
+      },
+
+      // Abre e acorda o contexto no primeiro gesto do usuário. Sem isto o
+      // navegador engole o clique e a primeira partida sai muda.
+      destravar() {
+        garantirContexto();
+        if (ctx.state === 'suspended') ctx.resume();
       },
 
       tocar(nome) {
@@ -125,9 +139,9 @@
         if (ctx.state === 'suspended') ctx.resume();
         const agora = ctx.currentTime + 0.02;
         for (const [midi, atraso, dur] of efeito) {
-          voz('square', nota(midi), agora + atraso, dur, 0.22);
+          voz('square', nota(midi), agora + atraso, dur, 0.22, efeitos);
         }
-        if (nome === 'acertou' || nome === 'fimDeJogo') chimbal(agora, 0.12);
+        if (nome === 'acertou' || nome === 'fimDeJogo') chimbal(agora, 0.12, efeitos);
       },
 
       // Suspense do cronômetro: chamado a cada segundo. Grave e espaçado a
@@ -142,11 +156,11 @@
         if (ctx.state === 'suspended') ctx.resume();
         const agora = ctx.currentTime + 0.02;
         if (segundos > 5) {
-          voz('square', nota(60), agora, 0.07, 0.14);
+          voz('square', nota(60), agora, 0.07, 0.14, efeitos);
           return;
         }
-        voz('square', nota(72), agora, 0.06, 0.2);
-        voz('square', nota(72), agora + 0.5, 0.06, 0.2);
+        voz('square', nota(72), agora, 0.06, 0.2, efeitos);
+        voz('square', nota(72), agora + 0.5, 0.06, 0.2, efeitos);
       },
     };
   }
