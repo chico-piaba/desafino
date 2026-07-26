@@ -2,6 +2,7 @@
 const crypto = require('crypto');
 const dicas = require('./dicas');
 const { mesclarPadroes } = require('./configSala');
+const { pareceCerto } = require('./texto');
 
 function criarJogo(config, musicas, rng = Math.random) {
   return {
@@ -192,6 +193,30 @@ function comprarDica(jogo, jogadorId, tipo) {
   return dica;
 }
 
+function palpitar(jogo, jogadorId, texto) {
+  const r = exigirRodada(jogo, 'emAndamento');
+  if (!jogo.config.plateia.palpite) throw new Error('O palpite da plateia está desligado nesta sala');
+  if (jogo.modo !== 'duplas') throw new Error('Sem plateia neste modo');
+  if (jogadorId === r.apresentadorId || jogadorId === r.adivinhadorId) {
+    throw new Error('Quem está jogando a rodada não palpita');
+  }
+  const jogador = jogo.jogadores.find((j) => j.id === jogadorId);
+  if (!jogador) throw new Error('Jogador não encontrado');
+  if (!texto || !String(texto).trim()) throw new Error('Palpite vazio');
+  if (!pareceCerto(texto, r.musica.titulo)) return { certo: false };
+  // Uma dupla só rouba uma vez por rodada: sem isso, dois membros da mesma
+  // dupla drenariam o pote em sequência.
+  if (r.duplasQueRoubaram.includes(jogador.dupla)) {
+    return { certo: true, roubo: 0, bonus: 0, repetido: true };
+  }
+  const valor = Math.max(1, Math.round(valorAtual(jogo) * jogo.config.plateia.rouboFracao));
+  const bonus = Math.round(valor * jogo.config.plateia.bonusFracao);
+  r.roubos.push({ num: jogador.num, dupla: jogador.dupla, valor });
+  r.duplasQueRoubaram.push(jogador.dupla);
+  if (jogo.duplas[jogador.dupla]) jogo.duplas[jogador.dupla].pontos += bonus;
+  return { certo: true, roubo: valor, bonus, nome: jogador.nome, repetido: false };
+}
+
 function abrirVotacao(jogo, origem, eleitores) {
   const r = exigirRodada(jogo, 'emAndamento');
   // Sem plateia conectada, ou com a votação desligada, o apresentador segue
@@ -309,6 +334,7 @@ module.exports = {
   mudarParaMimica,
   trocarMusica,
   comprarDica,
+  palpitar,
   acertou,
   passar,
   tempoEsgotado,

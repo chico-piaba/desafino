@@ -550,3 +550,64 @@ test('apresentador resolve na hora mesmo com a votação aberta', () => {
   assert.strictEqual(jogo.rodada.votacao, null);
   assert.strictEqual(jogo.rodada.pontosGanhos, 100);
 });
+
+test('palpite errado da plateia não mexe no pote', () => {
+  const jogo = jogoCom3Duplas();
+  const r = game.palpitar(jogo, 'c', 'Aquarela');
+  assert.deepStrictEqual(r, { certo: false });
+  assert.strictEqual(game.valorAtual(jogo), 100);
+});
+
+test('palpite certo rouba a fração do pote e paga metade à dupla', () => {
+  const jogo = jogoCom3Duplas(); // música "Musica Numero 0"
+  const r = game.palpitar(jogo, 'c', 'musica numero 0');
+  assert.strictEqual(r.certo, true);
+  assert.strictEqual(r.roubo, 5); // round(100 × 0.05)
+  assert.strictEqual(r.bonus, 3); // round(5 × 0.5)
+  assert.strictEqual(r.nome, 'Bia');
+  assert.strictEqual(game.valorAtual(jogo), 95);
+  assert.strictEqual(jogo.duplas[2].pontos, 3);
+});
+
+test('a mesma dupla só rouba uma vez por rodada', () => {
+  const jogo = jogoCom3Duplas();
+  game.palpitar(jogo, 'c', 'Musica Numero 0'); // Bia, dupla 2
+  const r = game.palpitar(jogo, 'd', 'Musica Numero 0'); // Leo, mesma dupla 2
+  assert.deepStrictEqual(r, { certo: true, roubo: 0, bonus: 0, repetido: true });
+  assert.strictEqual(game.valorAtual(jogo), 95);
+  assert.strictEqual(jogo.duplas[2].pontos, 3);
+});
+
+test('duplas diferentes roubam em sequência sobre o pote que resta', () => {
+  const jogo = jogoCom3Duplas();
+  const primeiro = game.palpitar(jogo, 'c', 'Musica Numero 0'); // dupla 2: 100 → 95
+  const segundo = game.palpitar(jogo, 'e', 'Musica Numero 0'); // dupla 3: 95 → 90
+  assert.strictEqual(primeiro.roubo, 5);
+  assert.strictEqual(segundo.roubo, 5); // round(95 × 0.05) = 5
+  assert.strictEqual(game.valorAtual(jogo), 90);
+  assert.strictEqual(jogo.duplas[3].pontos, 3);
+});
+
+test('quem está jogando a rodada não palpita', () => {
+  const jogo = jogoCom3Duplas();
+  assert.throws(() => game.palpitar(jogo, 'a', 'Musica Numero 0'), /não palpita/);
+  assert.throws(() => game.palpitar(jogo, 'b', 'Musica Numero 0'), /não palpita/);
+});
+
+test('palpite vazio e palpite com a mecânica desligada são recusados', () => {
+  const jogo = jogoCom3Duplas();
+  assert.throws(() => game.palpitar(jogo, 'c', '   '), /vazio/);
+  jogo.config.plateia.palpite = false;
+  assert.throws(() => game.palpitar(jogo, 'c', 'Musica Numero 0'), /desligado/);
+});
+
+test('x1 não tem plateia para palpitar', () => {
+  const jogo = jogoX1();
+  game.comecarRodada(jogo, 'a');
+  assert.throws(() => game.palpitar(jogo, 'a', 'Musica Numero 0'), /Sem plateia/);
+});
+
+test('o roubo tolera acento, pontuação e dedo gordo', () => {
+  const jogo = jogoCom3Duplas();
+  assert.strictEqual(game.palpitar(jogo, 'c', 'MÚSICA NÚMERO 0!!').certo, true);
+});
