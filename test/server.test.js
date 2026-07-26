@@ -380,3 +380,81 @@ test('fluxo de partida registra a sequência de eventos do jogo', async () => {
     assert.strictEqual(acerto.musica, 'Musica Numero 0');
   } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
 });
+
+// ---- Sugestões de músicas ----
+const fsSug = require('fs');
+const osSug = require('os');
+const pathSug = require('path');
+
+// appendFile é assíncrono: espera o arquivo aparecer com conteúdo em vez de dormir um tempo fixo
+async function esperarArquivoSug(caminho) {
+  for (let i = 0; i < 80; i++) {
+    try {
+      const txt = fsSug.readFileSync(caminho, 'utf8');
+      if (txt.trim()) return txt;
+    } catch {}
+    await new Promise((r) => setTimeout(r, 25));
+  }
+  throw new Error(`arquivo ${caminho} não foi gravado a tempo`);
+}
+
+test('POST /api/sugestoes grava JSONL e registra evento', async () => {
+  const dir = fsSug.mkdtempSync(pathSug.join(osSug.tmpdir(), 'desafino-sug-'));
+  const arquivo = pathSug.join(dir, 'sugestoes.jsonl');
+  const registrador = criarRegistrador();
+  const { httpServer, url } = await subirServidor({ sugestoesArquivo: arquivo, registrador, monitorToken: 'segredo' });
+  try {
+    const r = await fetch(`${url}/api/sugestoes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titulo: 'Evidências', artista: 'Chitãozinho & Xororó', ano: 1990, genero: 'Sertanejo', sala: 'ABCD', sugeridoPor: 'Bia' }),
+    });
+    assert.strictEqual(r.status, 201);
+    const linhas = (await esperarArquivoSug(arquivo)).trim().split('\n');
+    assert.strictEqual(linhas.length, 1);
+    const s = JSON.parse(linhas[0]);
+    assert.strictEqual(s.titulo, 'Evidências');
+    assert.strictEqual(s.artista, 'Chitãozinho & Xororó');
+    assert.strictEqual(s.ano, 1990);
+    assert.strictEqual(s.sala, 'ABCD');
+    assert.strictEqual(s.sugeridoPor, 'Bia');
+    assert.ok(!Number.isNaN(Date.parse(s.ts)));
+    const ev = registrador.recentes().find((e) => e.tipo === 'musicaSugerida');
+    assert.ok(ev, 'evento musicaSugerida registrado');
+    assert.strictEqual(ev.nome, 'Bia');
+    assert.match(ev.musica, /Evidências/);
+  } finally { httpServer.close(); }
+});
+
+test('POST /api/sugestoes sem título → 400', async () => {
+  const { httpServer, url } = await subirServidor();
+  try {
+    const r = await fetch(`${url}/api/sugestoes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ artista: 'Alguém' }),
+    });
+    assert.strictEqual(r.status, 400);
+    assert.match((await r.json()).erro, /título/);
+  } finally { httpServer.close(); }
+});
+
+test('GET /api/sugestoes exige token e devolve a lista', async () => {
+  const dir = fsSug.mkdtempSync(pathSug.join(osSug.tmpdir(), 'desafino-sug-'));
+  const arquivo = pathSug.join(dir, 'sugestoes.jsonl');
+  const { httpServer, url } = await subirServidor({ sugestoesArquivo: arquivo, monitorToken: 'segredo' });
+  try {
+    await fetch(`${url}/api/sugestoes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titulo: 'Aquarela' }),
+    });
+    await esperarArquivoSug(arquivo);
+    assert.strictEqual((await fetch(`${url}/api/sugestoes`)).status, 403);
+    const r = await fetch(`${url}/api/sugestoes?token=segredo`);
+    assert.strictEqual(r.status, 200);
+    const lista = await r.json();
+    assert.strictEqual(lista.length, 1);
+    assert.strictEqual(lista[0].titulo, 'Aquarela');
+  } finally { httpServer.close(); }
+});

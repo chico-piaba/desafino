@@ -14,7 +14,7 @@ const NOME_EVENTO = {
   partidaIniciada: '🎬 Partida iniciada', rodadaComecou: '▶️ Rodada começou',
   mudouParaMimica: '🎭 Virou mímica', dicaComprada: '💡 Dica comprada',
   acertou: '🎉 Acertou', passou: '⏭ Passou', tempoEsgotado: '⏰ Tempo esgotado',
-  fimDeJogo: '🏆 Fim de jogo',
+  fimDeJogo: '🏆 Fim de jogo', musicaSugerida: '💌 Música sugerida',
 };
 const NOME_FASE = { lobby: 'Lobby', rodada: 'Em jogo', fim: 'Fim' };
 

@@ -104,6 +104,18 @@
     <p>Sem interagir com a dupla da vez! Acompanhe pelo display.</p>
   </section>
 
+  <!-- Fora do sistema de telas: aparece junto do lobby/plateia, controlada no render() -->
+  <section id="sugerir" class="card oculto">
+    <h2>💡 Sugerir música</h2>
+    <p style="font-size:0.9rem">Sentiu falta de uma música? Procure e sugira — ela entra na fila de avaliação do jogo.</p>
+    <div style="display:flex;gap:10px">
+      <input id="campo-sugestao" placeholder="Nome da música ou artista…" autocomplete="off">
+      <button id="btn-buscar-sugestao" class="btn btn-tertiary" style="padding:10px 16px">🔎</button>
+    </div>
+    <div id="resultados-sugestao"></div>
+    <p id="status-sugestao" style="font-weight:800;min-height:1.2em;margin:6px 0 0"></p>
+  </section>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/shared/avatar.js"></script>
   <script src="./app.js"></script>

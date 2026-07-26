@@ -6,6 +6,18 @@ const os = require('os');
 const path = require('path');
 const { criarRegistrador } = require('../src/eventos');
 
+// appendFile é assíncrono: espera o arquivo atingir a condição em vez de dormir um tempo fixo
+async function esperarArquivo(caminho, cond) {
+  for (let i = 0; i < 80; i++) {
+    try {
+      const txt = fs.readFileSync(caminho, 'utf8');
+      if (cond(txt)) return txt;
+    } catch {}
+    await new Promise((r) => setTimeout(r, 25));
+  }
+  throw new Error(`arquivo ${caminho} não atingiu a condição a tempo`);
+}
+
 test('registrar devolve evento com ts ISO, tipo e dados', () => {
   const reg = criarRegistrador();
   const e = reg.registrar('jogadorEntrou', { sala: 'ABCD', nome: 'Bia' });
@@ -36,9 +48,8 @@ test('com arquivo, grava uma linha JSONL por evento', async () => {
   const reg = criarRegistrador({ arquivo });
   reg.registrar('salaCriada', { sala: 'ABCD' });
   reg.registrar('jogadorEntrou', { sala: 'ABCD', nome: 'Léo' });
-  // appendFile é assíncrono: dá um tempinho pro flush
-  await new Promise((r) => setTimeout(r, 100));
-  const linhas = fs.readFileSync(arquivo, 'utf8').trim().split('\n');
+  const txt = await esperarArquivo(arquivo, (t) => t.trim().split('\n').length === 2);
+  const linhas = txt.trim().split('\n');
   assert.strictEqual(linhas.length, 2);
   const segunda = JSON.parse(linhas[1]);
   assert.strictEqual(segunda.tipo, 'jogadorEntrou');

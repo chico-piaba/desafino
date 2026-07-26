@@ -3539,5 +3539,68 @@
     "artista": "Criolo",
     "ano": 2011,
     "genero": "Pagode"
+  },
+  {
+    "id": "a5c94048-8e3a-48ce-8da7-ab5baf956c64",
+    "titulo": "Tremendo Vacilão",
+    "artista": "Perlla",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "8e276d74-2f2f-4ba2-a841-1eed5e8c1850",
+    "titulo": "Já Era",
+    "artista": "Seu Pereira e Coletivo 401",
+    "ano": 2012,
+    "genero": "Rock"
+  },
+  {
+    "id": "7bd0339f-39ce-4846-8f90-8ea4e6655566",
+    "titulo": "Rabissaca",
+    "artista": "Seu Pereira e Coletivo 401",
+    "ano": 2012,
+    "genero": "Rock"
+  },
+  {
+    "id": "eb74d144-62d1-4575-b8c8-6fd33565ca67",
+    "titulo": "Já Era",
+    "artista": "Seu Pereira e Coletivo 401",
+    "ano": 2012,
+    "genero": "Rock"
+  },
+  {
+    "id": "99c16fb3-73f1-403b-a479-1cd112908d50",
+    "titulo": "Os Dedinhos",
+    "artista": "Eliana",
+    "ano": 1993,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "91ac0f98-853f-4a66-b504-b252a3d4f135",
+    "titulo": "SOLTO (feat. Hot & Coyote Beatz)",
+    "artista": "Djonga",
+    "ano": 2018,
+    "genero": "Rap"
+  },
+  {
+    "id": "27f83699-65ea-4761-bfac-2382b688a6ab",
+    "titulo": "UFA (feat. Sidoka, Sant & Coyote Beatz)",
+    "artista": "Djonga",
+    "ano": 2018,
+    "genero": "Rap"
+  },
+  {
+    "id": "1d767248-1aaa-40fa-9c15-d4d348aa0623",
+    "titulo": "CORRA (feat. Paige & Coyote Beatz)",
+    "artista": "Djonga",
+    "ano": 2018,
+    "genero": "Rap"
+  },
+  {
+    "id": "7190ff76-dfdd-4888-b9e6-67954ce7cb46",
+    "titulo": "O Mundo é Nosso (feat. BK)",
+    "artista": "Djonga",
+    "ano": 2017,
+    "genero": "Hip-Hop/Rap"
   }
 ]

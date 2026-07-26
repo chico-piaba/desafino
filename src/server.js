@@ -33,6 +33,7 @@ function criarServidor({
   salaExpiraMs = 3600000,
   registrador = criarRegistrador(),
   monitorToken = process.env.MONITOR_TOKEN || crypto.randomBytes(8).toString('hex'),
+  sugestoesArquivo = path.join(__dirname, '..', 'data', 'sugestoes.jsonl'),
 }) {
   const app = express();
   app.use(express.json());
@@ -147,6 +148,39 @@ function criarServidor({
   app.get('/api/monitor', (req, res) => {
     if (req.query.token !== monitorToken) return res.status(403).json({ erro: 'Token inválido' });
     res.json({ salas: salasResumo(), eventos: registrador.recentes() });
+  });
+
+  app.post('/api/sugestoes', (req, res) => {
+    const { titulo, artista, ano, genero, sala, sugeridoPor } = req.body || {};
+    if (!titulo || typeof titulo !== 'string' || !titulo.trim()) {
+      return res.status(400).json({ erro: 'Sugestão precisa de um título' });
+    }
+    const sugestao = {
+      ts: new Date().toISOString(),
+      titulo: titulo.trim().slice(0, 120),
+      artista: String(artista || '').trim().slice(0, 120) || null,
+      ano: Number(ano) || null,
+      genero: String(genero || '').trim().slice(0, 60) || null,
+      sala: String(sala || '').trim().toUpperCase().slice(0, 4) || null,
+      sugeridoPor: String(sugeridoPor || '').trim().slice(0, 20) || null,
+    };
+    fs.appendFile(sugestoesArquivo, JSON.stringify(sugestao) + '\n', (err) => {
+      if (err) console.error('Falha ao gravar sugestão:', err.message);
+    });
+    registrador.registrar('musicaSugerida', {
+      sala: sugestao.sala,
+      nome: sugestao.sugeridoPor,
+      musica: sugestao.artista ? `${sugestao.titulo} — ${sugestao.artista}` : sugestao.titulo,
+    });
+    res.status(201).json({ ok: true });
+  });
+
+  app.get('/api/sugestoes', (req, res) => {
+    if (req.query.token !== monitorToken) return res.status(403).json({ erro: 'Token inválido' });
+    fs.readFile(sugestoesArquivo, 'utf8', (err, txt) => {
+      if (err) return res.json([]);
+      res.json(txt.trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)));
+    });
   });
 
   app.get('/api/musicas', (req, res) => res.json(banco.ler()));

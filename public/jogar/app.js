@@ -124,6 +124,13 @@ function mostrarTela(id) {
 function render(e) {
   const entrou = Boolean(e.voce) || (e.fase === 'lobby' && localStorage.getItem('desafinoPlayerId') && e.jogadores.length > 0);
   const emRodada = e.fase === 'rodada' && e.rodada && e.rodada.fase !== 'resultado';
+  // Telefone ocioso (lobby ou plateia) pode sugerir músicas pro banco.
+  // Guarda contra HTML antigo em cache (deploy quente sem restart).
+  if ($('sugerir')) {
+    const ocioso = (e.fase === 'lobby' && (Boolean(e.voce) || entrou)) ||
+      (emRodada && e.voce && e.voce.papel === 'plateia');
+    $('sugerir').classList.toggle('oculto', !ocioso);
+  }
   $('timer-jogador').classList.toggle('oculto', !(emRodada && e.rodada.fase === 'emAndamento'));
   if (emRodada && e.rodada.fase === 'emAndamento' && e.tempoRestante != null) {
     $('tempo').textContent = e.tempoRestante;
@@ -198,3 +205,83 @@ function mostrarErro(msg) {
   clearTimeout(erroTimeout);
   erroTimeout = setTimeout(() => { $('erro').textContent = ''; }, 4000);
 }
+
+// ---- Sugestões de músicas (telefones ociosos) ----
+// Se o servidor ainda não tiver o endpoint (ou a rede cair), a sugestão fica
+// numa fila local e é reenviada sozinha — nada se perde.
+const FILA_SUGESTOES = 'desafinoSugestoesPendentes';
+
+function filaSugestoes() {
+  try { return JSON.parse(localStorage.getItem(FILA_SUGESTOES) || '[]'); } catch { return []; }
+}
+
+async function postarSugestao(s) {
+  const r = await fetch('/api/sugestoes', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(s),
+  });
+  if (!r.ok) throw new Error('endpoint indisponível');
+}
+
+async function reenviarFila() {
+  const fila = filaSugestoes();
+  if (!fila.length) return;
+  const restantes = [];
+  for (const s of fila) {
+    try { await postarSugestao(s); } catch { restantes.push(s); }
+  }
+  localStorage.setItem(FILA_SUGESTOES, JSON.stringify(restantes));
+}
+
+let statusSugestaoTimeout = null;
+function mostrarStatusSugestao(msg) {
+  $('status-sugestao').textContent = msg;
+  clearTimeout(statusSugestaoTimeout);
+  statusSugestaoTimeout = setTimeout(() => { $('status-sugestao').textContent = ''; }, 5000);
+}
+
+async function enviarSugestao(m) {
+  const sugestao = {
+    ...m,
+    sala: localStorage.getItem('desafinoSala') || null,
+    sugeridoPor: perfil.nome || null,
+  };
+  try {
+    await postarSugestao(sugestao);
+    mostrarStatusSugestao('✅ Sugestão enviada!');
+    reenviarFila();
+  } catch {
+    localStorage.setItem(FILA_SUGESTOES, JSON.stringify([...filaSugestoes(), sugestao]));
+    mostrarStatusSugestao('📦 Guardada no aparelho — envio automático em breve.');
+  }
+}
+
+if ($('sugerir')) {
+$('btn-buscar-sugestao').onclick = async () => {
+  const q = $('campo-sugestao').value.trim();
+  if (!q) return;
+  $('resultados-sugestao').innerHTML = '<p>Buscando…</p>';
+  const resposta = await fetch(`/api/buscar?q=${encodeURIComponent(q)}`);
+  if (!resposta.ok) {
+    $('resultados-sugestao').innerHTML = '';
+    return mostrarStatusSugestao('😵 Busca indisponível agora — tente de novo já já.');
+  }
+  const resultados = await resposta.json();
+  $('resultados-sugestao').innerHTML = resultados.slice(0, 6)
+    .map((r, i) => `<div class="dica"><span><b>${esc(r.titulo)}</b>${r.artista ? ` — ${esc(r.artista)}` : ''}${r.ano ? ` (${r.ano})` : ''}</span>
+      <button class="btn btn-tertiary" data-i="${i}" style="padding:8px 14px">Sugerir</button></div>`)
+    .join('') || '<p>Nada encontrado.</p>';
+  for (const btn of $('resultados-sugestao').querySelectorAll('button[data-i]')) {
+    btn.onclick = () => {
+      enviarSugestao(resultados[Number(btn.dataset.i)]);
+      btn.disabled = true;
+      btn.textContent = 'Valeu!';
+    };
+  }
+};
+$('campo-sugestao').onkeydown = (ev) => { if (ev.key === 'Enter') $('btn-buscar-sugestao').onclick(); };
+}
+
+reenviarFila();
+setInterval(reenviarFila, 60000);
