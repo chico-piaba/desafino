@@ -9,6 +9,7 @@ const { Server } = require('socket.io');
 const QRCode = require('qrcode');
 const game = require('./game');
 const { criarBanco } = require('./bancoMusicas');
+const { criarRegistrador } = require('./eventos');
 const itunes = require('./itunes');
 
 function localIp() {
@@ -30,12 +31,16 @@ function criarServidor({
   resultadoMs = 6000,
   lobbyLimpezaMs = 30000,
   salaExpiraMs = 3600000,
+  registrador = criarRegistrador(),
+  monitorToken = process.env.MONITOR_TOKEN || crypto.randomBytes(8).toString('hex'),
 }) {
   const app = express();
   app.use(express.json());
   app.use(express.static(path.join(__dirname, '..', 'public')));
   const httpServer = http.createServer(app);
   const io = new Server(httpServer);
+
+  registrador.aoRegistrar((evento) => io.to('monitor').emit('monitorEvento', evento));
 
   const salas = new Map(); // codigo -> sala
 
@@ -66,6 +71,7 @@ function criarServidor({
       timeoutExpiracao: null,
     };
     salas.set(sala.codigo, sala);
+    registrador.registrar('salaCriada', { sala: sala.codigo });
     return sala;
   }
 
@@ -81,7 +87,10 @@ function criarServidor({
   function agendarExpiracao(sala) {
     if (sala.timeoutExpiracao) clearTimeout(sala.timeoutExpiracao);
     sala.timeoutExpiracao = setTimeout(() => {
-      if (sala.socketsNaSala.size === 0) destruirSala(sala);
+      if (sala.socketsNaSala.size === 0) {
+        registrador.registrar('salaExpirada', { sala: sala.codigo });
+        destruirSala(sala);
+      }
     }, salaExpiraMs);
     sala.timeoutExpiracao.unref();
   }
@@ -135,6 +144,11 @@ function criarServidor({
     res.json({ url, qr: await QRCode.toDataURL(url, { margin: 1, width: 280 }) });
   });
 
+  app.get('/api/monitor', (req, res) => {
+    if (req.query.token !== monitorToken) return res.status(403).json({ erro: 'Token inválido' });
+    res.json({ salas: salasResumo(), eventos: registrador.recentes() });
+  });
+
   app.get('/api/musicas', (req, res) => res.json(banco.ler()));
 
   app.post('/api/musicas', (req, res) => {
@@ -167,6 +181,29 @@ function criarServidor({
   function numDe(sala, id) {
     const j = sala.jogo.jogadores.find((j) => j.id === id);
     return j ? j.num : null;
+  }
+
+  function salasResumo() {
+    return [...salas.values()].map((sala) => ({
+      codigo: sala.codigo,
+      fase: sala.jogo.fase,
+      modoJogo: sala.jogo.modo,
+      rodadaNumero: sala.jogo.rodada ? sala.jogo.rodada.numero : null,
+      jogadores: sala.jogo.jogadores.map((j) => ({
+        num: j.num, nome: j.nome, dupla: j.dupla, conectado: sala.conectados.has(j.id),
+      })),
+    }));
+  }
+
+  function registrarFimSeAcabou(sala) {
+    // O jogo só muda para 'fim' na proximaRodada; aqui detectamos que esta era a última.
+    const { jogo } = sala;
+    if (jogo.rodadasJogadas < config.rodada.totalRodadas) return;
+    registrador.registrar('fimDeJogo', {
+      sala: sala.codigo,
+      placar: jogo.modo === 'x1' ? jogo.pontosJogadores
+        : Object.fromEntries(Object.values(jogo.duplas).map((d) => [d.numero, d.pontos])),
+    });
   }
 
   function estadoPublico(sala) {
@@ -226,6 +263,7 @@ function criarServidor({
       const pid = socket.data.playerId;
       socket.emit('estado', { ...publico, voce: pid ? estadoPrivado(sala, pid) : null });
     }
+    io.to('monitor').emit('monitorSalas', salasResumo());
   }
 
   function pararTimer(sala) {
@@ -250,6 +288,10 @@ function criarServidor({
         if (jogo.fase === 'rodada' && jogo.rodada && jogo.rodada.fase === 'emAndamento') {
           game.tempoEsgotado(jogo);
           agendarProxima(sala);
+          registrador.registrar('tempoEsgotado', {
+            sala: sala.codigo, rodada: jogo.rodada.numero, musica: jogo.rodada.musica.titulo,
+          });
+          registrarFimSeAcabou(sala);
           broadcast(sala);
         }
       }
@@ -271,6 +313,7 @@ function criarServidor({
   }
 
   io.on('connection', (socket) => {
+    registrador.registrar('socketConectado', { socketId: socket.id });
     const minhaSala = () => salas.get(socket.data.sala);
     const pid = () => socket.data.playerId;
 
@@ -327,6 +370,12 @@ function criarServidor({
         vincular(sala);
         sala.conectados.set(socket.data.playerId, socket.id);
         cancelarLimpezaLobby(sala, socket.data.playerId);
+        registrador.registrar(existente ? 'jogadorReconectou' : 'jogadorEntrou', {
+          sala: sala.codigo,
+          num: numDe(sala, socket.data.playerId),
+          nome: nomeDe(sala, socket.data.playerId),
+          dupla: Number(dados.dupla) || undefined,
+        });
         // O snapshot inicial vai no ack: o cliente recebe seu estado de forma
         // atômica, sem corrida com o broadcast a seguir.
         cb({
@@ -344,6 +393,11 @@ function criarServidor({
       exigirDono();
       sala.jogo.musicas = banco.ler();
       game.iniciarPartida(sala.jogo);
+      registrador.registrar('partidaIniciada', {
+        sala: sala.codigo,
+        modoJogo: sala.jogo.modo,
+        jogadores: sala.jogo.jogadores.map((j) => j.nome),
+      });
     }));
 
     socket.on('comecarRodada', () => guardar((sala) => {
@@ -353,21 +407,46 @@ function criarServidor({
       }
       game.comecarRodada(sala.jogo, pid());
       iniciarTimer(sala);
+      const r2 = sala.jogo.rodada;
+      registrador.registrar('rodadaComecou', {
+        sala: sala.codigo, rodada: r2.numero, modo: r2.modo,
+        apresentador: nomeDe(sala, r2.apresentadorId),
+        adivinhador: nomeDe(sala, r2.adivinhadorId),
+      });
     }));
 
-    socket.on('mudarParaMimica', () => guardar((sala) => game.mudarParaMimica(sala.jogo, pid())));
-    socket.on('comprarDica', (tipo) => guardar((sala) => game.comprarDica(sala.jogo, pid(), tipo)));
+    socket.on('mudarParaMimica', () => guardar((sala) => {
+      game.mudarParaMimica(sala.jogo, pid());
+      registrador.registrar('mudouParaMimica', { sala: sala.codigo, rodada: sala.jogo.rodada.numero });
+    }));
+
+    socket.on('comprarDica', (tipo) => guardar((sala) => {
+      game.comprarDica(sala.jogo, pid(), tipo);
+      const ult = sala.jogo.rodada.dicasCompradas.at(-1);
+      registrador.registrar('dicaComprada', {
+        sala: sala.codigo, rodada: sala.jogo.rodada.numero, dica: ult.tipo, custo: ult.custo,
+      });
+    }));
 
     socket.on('acertou', () => guardar((sala) => {
       game.acertou(sala.jogo, pid());
       pararTimer(sala);
       agendarProxima(sala);
+      const r2 = sala.jogo.rodada;
+      registrador.registrar('acertou', {
+        sala: sala.codigo, rodada: r2.numero, musica: r2.musica.titulo,
+        pontos: r2.pontosGanhos, bonusApresentador: r2.bonusApresentador || undefined,
+      });
+      registrarFimSeAcabou(sala);
     }));
 
     socket.on('passar', () => guardar((sala) => {
       game.passar(sala.jogo, pid());
       pararTimer(sala);
       agendarProxima(sala);
+      const r2 = sala.jogo.rodada;
+      registrador.registrar('passou', { sala: sala.codigo, rodada: r2.numero, musica: r2.musica.titulo });
+      registrarFimSeAcabou(sala);
     }));
 
     socket.on('removerJogador', (num) => guardar((sala) => {
@@ -375,6 +454,7 @@ function criarServidor({
       const alvo = sala.jogo.jogadores.find((j) => j.num === Number(num));
       game.removerJogador(sala.jogo, Number(num));
       if (alvo) {
+        registrador.registrar('jogadorRemovido', { sala: sala.codigo, num: alvo.num, nome: alvo.nome });
         const socketId = sala.conectados.get(alvo.id);
         sala.conectados.delete(alvo.id);
         cancelarLimpezaLobby(sala, alvo.id);
@@ -401,7 +481,14 @@ function criarServidor({
         }
       }
       sala.conectados.clear();
+      registrador.registrar('salaReiniciada', { sala: sala.codigo });
     }));
+
+    socket.on('monitorar', (token, cb = () => {}) => {
+      if (token !== monitorToken) return cb({ erro: 'Token inválido' });
+      socket.join('monitor');
+      cb({ ok: true });
+    });
 
     const EMOTES = ['👋', '😂', '🔥', '🎵'];
     socket.on('emote', (tipo) => {
@@ -418,7 +505,13 @@ function criarServidor({
     });
 
     socket.on('disconnect', () => {
-      const sala = minhaSala();
+      const sala0 = minhaSala();
+      registrador.registrar('socketDesconectado', {
+        socketId: socket.id,
+        sala: socket.data.sala || null,
+        nome: sala0 && pid() ? nomeDe(sala0, pid()) : undefined,
+      });
+      const sala = sala0;
       if (!sala) return;
       sala.socketsNaSala.delete(socket.id);
       if (pid() && sala.conectados.get(pid()) === socket.id) {
@@ -434,19 +527,21 @@ function criarServidor({
     for (const sala of [...salas.values()]) destruirSala(sala);
   });
 
-  return { app, httpServer, io };
+  return { app, httpServer, io, monitorToken };
 }
 
 if (require.main === module) {
   const config = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config.json'), 'utf8'));
   const banco = criarBanco(path.join(__dirname, '..', 'data', 'musicas.json'));
-  const { httpServer } = criarServidor({ config, banco });
+  const registrador = criarRegistrador({ arquivo: path.join(__dirname, '..', 'data', 'eventos.jsonl') });
+  const { httpServer, monitorToken } = criarServidor({ config, banco, registrador });
   const porta = process.env.PORT || 3000;
   httpServer.listen(porta, () => {
     console.log('DESAFINO no ar!');
     console.log(`  Display:  http://localhost:${porta}/display/`);
     console.log(`  Celular:  http://${localIp()}:${porta}/jogar/`);
     console.log(`  Admin:    http://localhost:${porta}/admin/`);
+    console.log(`  Monitor:  http://localhost:${porta}/monitor/?token=${monitorToken}`);
   });
 }
 

@@ -292,3 +292,91 @@ test('duelo x1 via sockets: 2 jogadores, placar individual', async () => {
     assert.deepStrictEqual(e2.pontosJogadores, { 1: 50, 2: 100 });
   } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
 });
+
+// ---- Monitoramento ----
+const { criarRegistrador } = require('../src/eventos');
+
+test('GET /api/monitor exige token', async () => {
+  const { httpServer, url } = await subirServidor({ monitorToken: 'segredo' });
+  try {
+    const sem = await fetch(`${url}/api/monitor`);
+    assert.strictEqual(sem.status, 403);
+    const errado = await fetch(`${url}/api/monitor?token=xxx`);
+    assert.strictEqual(errado.status, 403);
+    assert.match((await errado.json()).erro, /Token inválido/);
+  } finally { httpServer.close(); }
+});
+
+test('GET /api/monitor com token devolve salas e eventos', async () => {
+  const { httpServer, url } = await subirServidor({ monitorToken: 'segredo' });
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    const r = await fetch(`${url}/api/monitor?token=segredo`);
+    assert.strictEqual(r.status, 200);
+    const { salas, eventos } = await r.json();
+    const sala = salas.find((s) => s.codigo === codigo);
+    assert.ok(sala, 'sala aparece no snapshot');
+    assert.strictEqual(sala.fase, 'lobby');
+    assert.strictEqual(sala.jogadores.length, 1);
+    assert.strictEqual(sala.jogadores[0].nome, 'Ana');
+    assert.strictEqual(sala.jogadores[0].conectado, true);
+    const tipos = eventos.map((e) => e.tipo);
+    assert.ok(tipos.includes('salaCriada'), `faltou salaCriada: ${tipos}`);
+    assert.ok(tipos.includes('jogadorEntrou'), `faltou jogadorEntrou: ${tipos}`);
+  } finally { ana.close(); display.close(); httpServer.close(); }
+});
+
+test('socket monitorar recebe monitorEvento e monitorSalas ao vivo', async () => {
+  const { httpServer, url } = await subirServidor({ monitorToken: 'segredo' });
+  const { display, codigo } = await novaSala(url);
+  const mon = conectar(url);
+  const intruso = conectar(url);
+  const ana = conectar(url);
+  try {
+    assert.deepStrictEqual(await emitir(mon, 'monitorar', 'segredo'), { ok: true });
+    assert.match((await emitir(intruso, 'monitorar', 'nope')).erro, /Token inválido/);
+    const evento = new Promise((res) => mon.on('monitorEvento', (e) => {
+      if (e.tipo === 'jogadorEntrou') res(e);
+    }));
+    const resumo = new Promise((res) => mon.on('monitorSalas', res));
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    const e = await evento;
+    assert.strictEqual(e.sala, codigo);
+    assert.strictEqual(e.nome, 'Ana');
+    const salas = await resumo;
+    assert.ok(salas.find((s) => s.codigo === codigo));
+  } finally { mon.close(); intruso.close(); ana.close(); display.close(); httpServer.close(); }
+});
+
+test('fluxo de partida registra a sequência de eventos do jogo', async () => {
+  const registrador = criarRegistrador();
+  const { httpServer, url } = await subirServidor({ registrador, resultadoMs: 30 });
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    display.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada && e.rodada.fase === 'emAndamento');
+    joao.emit('comprarDica', 'decada');
+    await esperarEstado(joao, (e) => e.voce.dicas && e.voce.dicas.length === 1);
+    ana.emit('acertou');
+    await esperarEstado(display, (e) => e.rodada && e.rodada.fase === 'resultado');
+    const tipos = registrador.recentes().map((e) => e.tipo);
+    for (const esperado of ['salaCriada', 'socketConectado', 'jogadorEntrou',
+      'partidaIniciada', 'rodadaComecou', 'dicaComprada', 'acertou']) {
+      assert.ok(tipos.includes(esperado), `faltou evento ${esperado}: ${tipos}`);
+    }
+    const dica = registrador.recentes().find((e) => e.tipo === 'dicaComprada');
+    assert.strictEqual(dica.dica, 'decada');
+    assert.strictEqual(dica.custo, 5);
+    const acerto = registrador.recentes().find((e) => e.tipo === 'acertou');
+    assert.strictEqual(acerto.pontos, 95);
+    assert.strictEqual(acerto.musica, 'Musica Numero 0');
+  } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
+});
