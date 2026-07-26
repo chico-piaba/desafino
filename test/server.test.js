@@ -468,6 +468,200 @@ test('fluxo de partida registra a sequência de eventos do jogo', async () => {
   } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
 });
 
+test('trocar música pelo socket desconta e troca o título do apresentador', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  const bia = conectar(url);
+  const leo = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
+    await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(ana, (e) => e.rodada.fase === 'emAndamento');
+    ana.emit('trocarMusica');
+    const e = await esperarEstado(ana, (est) => est.rodada.valorAtual === 80);
+    assert.notStrictEqual(e.voce.musica.titulo, 'Musica Numero 0');
+  } finally {
+    for (const c of [ana, joao, bia, leo, display]) c.close();
+    httpServer.close();
+  }
+});
+
+test('palpite certo da plateia rouba pontos e anuncia sem o título', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  const bia = conectar(url);
+  const leo = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
+    await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(bia, (e) => e.rodada.fase === 'emAndamento');
+    // Os dois escutas são armados antes do palpite: o broadcast com o valor já
+    // roubado sai junto com o anúncio, e esperar por ele depois perderia a carona.
+    const anuncio = new Promise((resolve) => display.once('roubo', resolve));
+    const estadoRoubado = esperarEstado(display, (est) => est.rodada.valorAtual === 95);
+    bia.emit('palpitar', 'musica numero 0');
+    const evento = await anuncio;
+    assert.strictEqual(evento.nome, 'Bia');
+    assert.strictEqual(evento.valor, 5);
+    assert.ok(!('titulo' in evento), 'o anúncio não pode revelar o título');
+    const e = await estadoRoubado;
+    assert.strictEqual(e.duplas.find((d) => d.numero === 2).pontos, 3);
+  } finally {
+    for (const c of [ana, joao, bia, leo, display]) c.close();
+    httpServer.close();
+  }
+});
+
+test('palpite em rajada é barrado pelo intervalo mínimo', async () => {
+  const configRapido = { ...CONFIG, plateia: { palpite: true, rouboFracao: 0.05, bonusFracao: 0.5, votacao: true, votacaoSegundos: 10, palpiteIntervaloMs: 5000 } };
+  const { httpServer } = criarServidor({ config: configRapido, banco: bancoFalso, rng: () => 0 });
+  await new Promise((r) => httpServer.listen(0, r));
+  const url = `http://localhost:${httpServer.address().port}`;
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  const bia = conectar(url);
+  const leo = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
+    await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(bia, (e) => e.rodada.fase === 'emAndamento');
+    // O primeiro palpite erra e já devolve um erro; é preciso consumi-lo antes
+    // de armar o próximo escuta, senão o teste leria a recusa errada.
+    const erroDoPrimeiro = esperarErro(bia);
+    bia.emit('palpitar', 'nada a ver');
+    assert.match(await erroDoPrimeiro, /Não foi dessa vez/);
+    const erro = esperarErro(bia);
+    bia.emit('palpitar', 'outra coisa');
+    assert.match(await erro, /Espere um pouco/);
+  } finally {
+    for (const c of [ana, joao, bia, leo, display]) c.close();
+    httpServer.close();
+  }
+});
+
+test('"eu acertei" abre votação, a plateia aprova e o timer pausa', async () => {
+  const { httpServer, url } = await subirServidor({ resultadoMs: 30 });
+  const { display, codigo } = await novaSala(url);
+  const clientes = Array.from({ length: 6 }, () => conectar(url));
+  const [ana, joao, bia, leo, carol, gui] = clientes;
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
+    await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
+    await emitir(carol, 'entrar', { sala: codigo, nome: 'Carol', dupla: 3 });
+    await emitir(gui, 'entrar', { sala: codigo, nome: 'Gui', dupla: 3 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada.fase === 'emAndamento');
+    joao.emit('euAcertei');
+    const emVotacao = await esperarEstado(display, (e) => e.rodada.fase === 'votacao');
+    assert.strictEqual(emVotacao.rodada.votacao.origem, 'adivinhador');
+    assert.strictEqual(emVotacao.rodada.votacao.eleitores.length, 4);
+    bia.emit('votar', true);
+    leo.emit('votar', true);
+    carol.emit('votar', true);
+    const fim = await esperarEstado(display, (e) => e.rodada.fase === 'resultado');
+    assert.strictEqual(fim.rodada.pontosGanhos, 100);
+  } finally {
+    for (const c of clientes) c.close();
+    display.close();
+    httpServer.close();
+  }
+});
+
+test('votação reprovada devolve a rodada ao andamento com o tempo de onde parou', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const clientes = Array.from({ length: 6 }, () => conectar(url));
+  const [ana, joao, bia, leo, carol, gui] = clientes;
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
+    await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
+    await emitir(carol, 'entrar', { sala: codigo, nome: 'Carol', dupla: 3 });
+    await emitir(gui, 'entrar', { sala: codigo, nome: 'Gui', dupla: 3 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada.fase === 'emAndamento');
+    joao.emit('euAcertei');
+    await esperarEstado(display, (e) => e.rodada.fase === 'votacao');
+    for (const c of [bia, leo, carol, gui]) c.emit('votar', false);
+    const volta = await esperarEstado(display, (e) => e.rodada.fase === 'emAndamento');
+    assert.ok(volta.tempoRestante > 0 && volta.tempoRestante <= 90);
+  } finally {
+    for (const c of clientes) c.close();
+    display.close();
+    httpServer.close();
+  }
+});
+
+test('votação aberta por "euAcertei" expira sem quórum: rodada retoma sem resolver duas vezes nem duplicar o timer', async () => {
+  const registrador = criarRegistrador();
+  const configVotacaoRapida = {
+    ...CONFIG,
+    plateia: { palpite: true, rouboFracao: 0.05, bonusFracao: 0.5, votacao: true, votacaoSegundos: 1, palpiteIntervaloMs: 2000 },
+  };
+  const { httpServer } = criarServidor({ config: configVotacaoRapida, banco: bancoFalso, rng: () => 0, registrador });
+  await new Promise((r) => httpServer.listen(0, r));
+  const url = `http://localhost:${httpServer.address().port}`;
+  const { display, codigo } = await novaSala(url);
+  const clientes = Array.from({ length: 6 }, () => conectar(url));
+  const [ana, joao, bia, leo, carol, gui] = clientes;
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
+    await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
+    await emitir(carol, 'entrar', { sala: codigo, nome: 'Carol', dupla: 3 });
+    await emitir(gui, 'entrar', { sala: codigo, nome: 'Gui', dupla: 3 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada.fase === 'emAndamento');
+    joao.emit('euAcertei');
+    const emVotacao = await esperarEstado(display, (e) => e.rodada.fase === 'votacao');
+    assert.strictEqual(emVotacao.rodada.votacao.origem, 'adivinhador');
+    // ninguém vota — o prazo estoura sozinho, sem quórum
+    const volta = await esperarEstado(display, (e) => e.rodada.fase === 'emAndamento');
+    assert.ok(volta.tempoRestante > 0 && volta.tempoRestante <= 90);
+    const ticksDepois = [];
+    display.on('tick', (t) => ticksDepois.push(t));
+    await new Promise((r) => setTimeout(r, 2200));
+    // relógio único: ~2 ticks em 2.2s; o dobro (4+) indicaria timer duplicado
+    assert.ok(ticksDepois.length >= 1 && ticksDepois.length <= 3, `ticks inesperados: ${ticksDepois}`);
+    const resolucoes = registrador.recentes().filter((e) => e.tipo === 'votacaoResolvida');
+    assert.strictEqual(resolucoes.length, 1, 'a votação só pode ser resolvida uma vez');
+  } finally {
+    for (const c of clientes) c.close();
+    display.close();
+    httpServer.close();
+  }
+});
+
 // ---- Sugestões de músicas ----
 const fsSug = require('fs');
 const osSug = require('os');

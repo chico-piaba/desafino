@@ -74,6 +74,7 @@ function criarServidor({
       tempoRestante: null,
       timeoutProxima: null,
       timeoutExpiracao: null,
+      timeoutVotacao: null,
     };
     salas.set(sala.codigo, sala);
     registrador.registrar('salaCriada', { sala: sala.codigo });
@@ -83,6 +84,7 @@ function criarServidor({
   function destruirSala(sala) {
     pararTimer(sala);
     pararProxima(sala);
+    pararPrazoVotacao(sala);
     for (const t of sala.limpezaLobby.values()) clearTimeout(t);
     sala.limpezaLobby.clear();
     if (sala.timeoutExpiracao) clearTimeout(sala.timeoutExpiracao);
@@ -221,6 +223,55 @@ function criarServidor({
     return j ? j.num : null;
   }
 
+  function eleitoresDe(sala) {
+    const r = sala.jogo.rodada;
+    if (!r) return [];
+    return sala.jogo.jogadores
+      .filter((j) => j.id !== r.apresentadorId && j.id !== r.adivinhadorId)
+      .filter((j) => sala.conectados.has(j.id))
+      .map((j) => j.num);
+  }
+
+  function pararPrazoVotacao(sala) {
+    if (sala.timeoutVotacao) clearTimeout(sala.timeoutVotacao);
+    sala.timeoutVotacao = null;
+  }
+
+  function agendarPrazoVotacao(sala) {
+    pararPrazoVotacao(sala);
+    registrador.registrar('votacaoAberta', {
+      sala: sala.codigo,
+      rodada: sala.jogo.rodada.numero,
+      origem: sala.jogo.rodada.votacao.origem,
+      eleitores: sala.jogo.rodada.votacao.eleitores.length,
+    });
+    sala.timeoutVotacao = setTimeout(() => {
+      sala.timeoutVotacao = null;
+      const { jogo } = sala;
+      if (jogo.fase !== 'rodada' || !jogo.rodada || jogo.rodada.fase !== 'votacao') return;
+      concluirVotacao(sala, game.fecharVotacaoPorPrazo(jogo));
+      broadcast(sala);
+    }, sala.jogo.config.plateia.votacaoSegundos * 1000);
+    sala.timeoutVotacao.unref();
+  }
+
+  // Resultado da votação, venha do voto que bateu o quórum ou do prazo.
+  function concluirVotacao(sala, resultado) {
+    if (!resultado) return; // votação segue aberta
+    pararPrazoVotacao(sala);
+    registrador.registrar('votacaoResolvida', {
+      sala: sala.codigo, rodada: sala.jogo.rodada.numero,
+      origem: resultado.origem, aprovada: resultado.aprovada,
+    });
+    if (resultado.aprovada || resultado.origem === 'tempo') {
+      pararTimer(sala);
+      agendarProxima(sala);
+      registrarFimSeAcabou(sala);
+      return;
+    }
+    retomarTimer(sala); // "eu acertei" reprovado: a rodada continua de onde parou
+  }
+
   function promoverLider(sala) {
     const antigo = sala.liderId;
     const candidato = sala.jogo.jogadores
@@ -299,6 +350,13 @@ function criarServidor({
         pontosGanhos: r.pontosGanhos,
         bonusApresentador: r.bonusApresentador,
         musica: r.fase === 'resultado' ? r.musica : null,
+        votacao: r.votacao && {
+          origem: r.votacao.origem,
+          eleitores: r.votacao.eleitores,
+          sim: Object.values(r.votacao.votos).filter(Boolean).length,
+          votaram: Object.keys(r.votacao.votos).length,
+        },
+        roubos: r.roubos.map((x) => ({ num: x.num, valor: x.valor })),
       },
     };
   }
@@ -309,7 +367,16 @@ function criarServidor({
     const base = { num: jogador.num, ehLider: playerId === sala.liderId };
     const r = sala.jogo.rodada;
     if (!r) return { ...base, papel: 'lobby' };
-    if (playerId === r.apresentadorId) return { ...base, papel: 'apresentador', musica: r.musica };
+    if (playerId === r.apresentadorId) {
+      return {
+        ...base,
+        papel: 'apresentador',
+        musica: r.musica,
+        podeTrocar: sala.jogo.config.troca.ligada
+          && r.fase === 'emAndamento'
+          && r.trocasUsadas < sala.jogo.config.troca.porRodada,
+      };
+    }
     if (playerId === r.adivinhadorId) {
       return {
         ...base,
@@ -342,27 +409,39 @@ function criarServidor({
     sala.timeoutProxima = null;
   }
 
-  function iniciarTimer(sala) {
-    sala.tempoRestante = sala.jogo.config.rodada.duracaoSegundos;
-    io.to(`sala:${sala.codigo}`).emit('tick', sala.tempoRestante);
+  function ligarTimer(sala) {
+    if (sala.timer) return;
     sala.timer = setInterval(() => {
       sala.tempoRestante -= 1;
       io.to(`sala:${sala.codigo}`).emit('tick', sala.tempoRestante);
-      if (sala.tempoRestante <= 0) {
-        pararTimer(sala);
-        const { jogo } = sala;
-        if (jogo.fase === 'rodada' && jogo.rodada && jogo.rodada.fase === 'emAndamento') {
-          game.tempoEsgotado(jogo);
-          agendarProxima(sala);
-          registrador.registrar('tempoEsgotado', {
-            sala: sala.codigo, rodada: jogo.rodada.numero, musica: jogo.rodada.musica.titulo,
-          });
-          registrarFimSeAcabou(sala);
-          broadcast(sala);
-        }
+      if (sala.tempoRestante > 0) return;
+      pararTimer(sala);
+      const { jogo } = sala;
+      if (jogo.fase !== 'rodada' || !jogo.rodada || jogo.rodada.fase !== 'emAndamento') return;
+      const r = game.tempoEsgotado(jogo, eleitoresDe(sala));
+      registrador.registrar('tempoEsgotado', {
+        sala: sala.codigo, rodada: jogo.rodada.numero, musica: jogo.rodada.musica.titulo,
+      });
+      if (r.votacao) {
+        agendarPrazoVotacao(sala);
+      } else {
+        agendarProxima(sala);
+        registrarFimSeAcabou(sala);
       }
+      broadcast(sala);
     }, 1000);
     sala.timer.unref();
+  }
+
+  function iniciarTimer(sala) {
+    sala.tempoRestante = sala.jogo.config.rodada.duracaoSegundos;
+    io.to(`sala:${sala.codigo}`).emit('tick', sala.tempoRestante);
+    ligarTimer(sala);
+  }
+
+  function retomarTimer(sala) {
+    if (sala.tempoRestante == null || sala.tempoRestante <= 0) return;
+    ligarTimer(sala);
   }
 
   function agendarProxima(sala) {
@@ -504,6 +583,7 @@ function criarServidor({
 
     socket.on('acertou', () => guardar((sala) => {
       game.acertou(sala.jogo, pid());
+      pararPrazoVotacao(sala); // o apresentador pode resolver com a votação aberta
       pararTimer(sala);
       agendarProxima(sala);
       const r2 = sala.jogo.rodada;
@@ -521,6 +601,50 @@ function criarServidor({
       const r2 = sala.jogo.rodada;
       registrador.registrar('passou', { sala: sala.codigo, rodada: r2.numero, musica: r2.musica.titulo });
       registrarFimSeAcabou(sala);
+    }));
+
+    socket.on('trocarMusica', () => guardar((sala) => {
+      const nova = game.trocarMusica(sala.jogo, pid());
+      registrador.registrar('musicaTrocada', {
+        sala: sala.codigo, rodada: sala.jogo.rodada.numero, musica: nova.titulo,
+      });
+    }));
+
+    socket.on('euAcertei', () => guardar((sala) => {
+      const votacao = game.adivinhadorAcertou(sala.jogo, pid(), eleitoresDe(sala));
+      if (votacao) {
+        pararTimer(sala); // o relógio pausa enquanto a plateia decide
+        agendarPrazoVotacao(sala);
+        return;
+      }
+      // Sem plateia (ou votação desligada): vira só um toque no apresentador.
+      const socketApresentador = sala.conectados.get(sala.jogo.rodada.apresentadorId);
+      const s = socketApresentador && io.of('/').sockets.get(socketApresentador);
+      if (s) s.emit('avisoAcerto', nomeDe(sala, pid()));
+    }));
+
+    socket.on('votar', (acertou) => guardar((sala) => {
+      const jogador = sala.jogo.jogadores.find((j) => j.id === pid());
+      if (!jogador) throw new Error('Você não está nesta partida');
+      concluirVotacao(sala, game.votar(sala.jogo, jogador.num, acertou));
+    }));
+
+    socket.on('palpitar', (texto) => guardar((sala) => {
+      const agora = Date.now();
+      const intervalo = sala.jogo.config.plateia.palpiteIntervaloMs;
+      if (socket.data.ultimoPalpite && agora - socket.data.ultimoPalpite < intervalo) {
+        throw new Error('Espere um pouco antes do próximo palpite');
+      }
+      socket.data.ultimoPalpite = agora;
+      const r = game.palpitar(sala.jogo, pid(), texto);
+      if (!r.certo) throw new Error('Não foi dessa vez — tente outro palpite');
+      if (r.repetido) throw new Error('Sua dupla já roubou nesta rodada');
+      // O anúncio não leva o título: a plateia não pode soprar a resposta.
+      io.to(`sala:${sala.codigo}`).emit('roubo', { nome: r.nome, valor: r.roubo });
+      registrador.registrar('plateiaRoubou', {
+        sala: sala.codigo, rodada: sala.jogo.rodada.numero,
+        nome: r.nome, valor: r.roubo, bonus: r.bonus,
+      });
     }));
 
     socket.on('removerJogador', (num) => guardar((sala) => {
@@ -547,6 +671,7 @@ function criarServidor({
       exigirLider();
       pararTimer(sala);
       pararProxima(sala);
+      pararPrazoVotacao(sala);
       for (const id of [...sala.limpezaLobby.keys()]) cancelarLimpezaLobby(sala, id);
       sala.jogo = game.criarJogo(sala.config, banco.ler(), rng);
       sala.liderId = null;
