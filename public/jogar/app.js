@@ -6,6 +6,19 @@ function esc(texto) {
   return div.innerHTML;
 }
 
+// Rebrand: migra chaves antigas desafino* → humatune* sem perder perfil nem sala
+for (const [antiga, nova] of [
+  ['desafinoPerfil', 'humatunePerfil'],
+  ['desafinoPlayerId', 'humatunePlayerId'],
+  ['desafinoSala', 'humatuneSala'],
+  ['desafinoSugestoesPendentes', 'humatuneSugestoesPendentes'],
+]) {
+  if (localStorage.getItem(antiga) !== null && localStorage.getItem(nova) === null) {
+    localStorage.setItem(nova, localStorage.getItem(antiga));
+  }
+  localStorage.removeItem(antiga);
+}
+
 const socket = io();
 const $ = (id) => document.getElementById(id);
 const NOME_DICA = {
@@ -23,15 +36,15 @@ function entrar(dados) {
     if (resposta.erro) {
       // Reconexão automática com sala/playerId de partida antiga: limpa e volta pra entrada
       if (dados.playerId && !dados.nome) {
-        localStorage.removeItem('desafinoPlayerId');
-        localStorage.removeItem('desafinoSala');
+        localStorage.removeItem('humatunePlayerId');
+        localStorage.removeItem('humatuneSala');
         if (ultimoEstado) render(ultimoEstado);
         return;
       }
       return mostrarErro(resposta.erro);
     }
-    localStorage.setItem('desafinoPlayerId', resposta.playerId);
-    localStorage.setItem('desafinoSala', resposta.sala);
+    localStorage.setItem('humatunePlayerId', resposta.playerId);
+    localStorage.setItem('humatuneSala', resposta.sala);
     if (resposta.estado) {
       ultimoEstado = resposta.estado;
       render(resposta.estado);
@@ -40,7 +53,7 @@ function entrar(dados) {
 }
 
 const salaDaUrl = (new URLSearchParams(location.search).get('sala') || '').toUpperCase().slice(0, 4);
-$('campo-sala').value = salaDaUrl || localStorage.getItem('desafinoSala') || '';
+$('campo-sala').value = salaDaUrl || localStorage.getItem('humatuneSala') || '';
 
 // ---- Perfil e builder de avatar ----
 const PECAS = [
@@ -48,7 +61,7 @@ const PECAS = [
   ['boca', '👄 Boca'], ['acessorio', '🎩 Acessório'],
 ];
 let perfil;
-try { perfil = JSON.parse(localStorage.getItem('desafinoPerfil') || 'null'); } catch { perfil = null; }
+try { perfil = JSON.parse(localStorage.getItem('humatunePerfil') || 'null'); } catch { perfil = null; }
 if (!perfil || !perfil.avatar) perfil = { nome: '', avatar: DesafinoAvatar.avatarAleatorio() };
 $('campo-nome').value = perfil.nome || '';
 
@@ -83,14 +96,14 @@ for (const btn of $('emotes').querySelectorAll('button[data-emote]')) {
 }
 
 socket.on('connect', () => {
-  const playerId = localStorage.getItem('desafinoPlayerId');
-  const sala = localStorage.getItem('desafinoSala');
+  const playerId = localStorage.getItem('humatunePlayerId');
+  const sala = localStorage.getItem('humatuneSala');
   if (playerId && sala) entrar({ sala, playerId });
 });
 
 $('btn-entrar').onclick = () => {
   perfil.nome = $('campo-nome').value.trim();
-  localStorage.setItem('desafinoPerfil', JSON.stringify(perfil));
+  localStorage.setItem('humatunePerfil', JSON.stringify(perfil));
   // Envia o playerId salvo: se este aparelho já entrou nesta sala, o servidor
   // reconecta em vez de criar um jogador duplicado.
   entrar({
@@ -98,12 +111,12 @@ $('btn-entrar').onclick = () => {
     nome: perfil.nome,
     dupla: $('campo-dupla').value,
     avatar: perfil.avatar,
-    playerId: localStorage.getItem('desafinoPlayerId') || undefined,
+    playerId: localStorage.getItem('humatunePlayerId') || undefined,
   });
 };
 
 socket.on('removido', () => {
-  localStorage.removeItem('desafinoPlayerId');
+  localStorage.removeItem('humatunePlayerId');
   mostrarErro('Você saiu da sala — entre novamente.');
   if (ultimoEstado) render(ultimoEstado);
 });
@@ -122,7 +135,7 @@ function mostrarTela(id) {
 }
 
 function render(e) {
-  const entrou = Boolean(e.voce) || (e.fase === 'lobby' && localStorage.getItem('desafinoPlayerId') && e.jogadores.length > 0);
+  const entrou = Boolean(e.voce) || (e.fase === 'lobby' && localStorage.getItem('humatunePlayerId') && e.jogadores.length > 0);
   const emRodada = e.fase === 'rodada' && e.rodada && e.rodada.fase !== 'resultado';
   // Telefone ocioso (lobby ou plateia) pode sugerir músicas pro banco.
   // Guarda contra HTML antigo em cache (deploy quente sem restart).
@@ -209,7 +222,7 @@ function mostrarErro(msg) {
 // ---- Sugestões de músicas (telefones ociosos) ----
 // Se o servidor ainda não tiver o endpoint (ou a rede cair), a sugestão fica
 // numa fila local e é reenviada sozinha — nada se perde.
-const FILA_SUGESTOES = 'desafinoSugestoesPendentes';
+const FILA_SUGESTOES = 'humatuneSugestoesPendentes';
 
 function filaSugestoes() {
   try { return JSON.parse(localStorage.getItem(FILA_SUGESTOES) || '[]'); } catch { return []; }
@@ -244,7 +257,7 @@ function mostrarStatusSugestao(msg) {
 async function enviarSugestao(m) {
   const sugestao = {
     ...m,
-    sala: localStorage.getItem('desafinoSala') || null,
+    sala: localStorage.getItem('humatuneSala') || null,
     sugeridoPor: perfil.nome || null,
   };
   try {

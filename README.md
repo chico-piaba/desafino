@@ -1,4 +1,4 @@
-# DESAFINO 🎤🎭
+# Hum-a-Tune 🎤🎭
 
 Jogo de festa em duplas: um cantarola (ou faz mímica do título), o parceiro adivinha a música.
 Protótipo local — o servidor roda no seu notebook e os celulares entram por QR code na mesma rede Wi-Fi.
@@ -40,11 +40,11 @@ busca no iTunes para preencher título/artista/ano/gênero automaticamente.
 
 ## Hospedagem numa VPS (Docker)
 
-A cada push, o CI publica a imagem em `ghcr.io/chico-piaba/desafino:latest`. Na VPS:
+A cada push, o CI publica a imagem em `ghcr.io/chico-piaba/hum-a-tune:latest`. Na VPS:
 
 ```bash
-mkdir desafino && cd desafino
-curl -fsSLO https://raw.githubusercontent.com/chico-piaba/desafino/desafino-prototipo/docker-compose.yml
+mkdir hum-a-tune && cd hum-a-tune
+curl -fsSLO https://raw.githubusercontent.com/chico-piaba/hum-a-tune/hum-a-tune-prototipo/docker-compose.yml
 docker compose pull && docker compose up -d
 ```
 

@@ -13,12 +13,20 @@ function esc(texto) {
   return div.innerHTML;
 }
 
+// Rebrand: migra chaves antigas desafino* → humatune* sem perder a sala do display
+for (const [antiga, nova] of [['desafinoDonoToken', 'humatuneDonoToken']]) {
+  if (localStorage.getItem(antiga) !== null && localStorage.getItem(nova) === null) {
+    localStorage.setItem(nova, localStorage.getItem(antiga));
+  }
+  localStorage.removeItem(antiga);
+}
+
 let codigoAtual = null;
 socket.on('connect', () => {
   // Cria uma sala nova, ou reassume a sala deste display se o token ainda vale.
-  socket.emit('criarSala', { donoToken: localStorage.getItem('desafinoDonoToken') || undefined }, (r) => {
+  socket.emit('criarSala', { donoToken: localStorage.getItem('humatuneDonoToken') || undefined }, (r) => {
     if (r.erro) return mostrarEvento(`⚠️ ${r.erro}`);
-    localStorage.setItem('desafinoDonoToken', r.donoToken);
+    localStorage.setItem('humatuneDonoToken', r.donoToken);
     if (r.codigo === codigoAtual) return; // reconexão na mesma sala: QR já está certo
     codigoAtual = r.codigo;
     $('codigo-sala').textContent = r.codigo;
@@ -41,10 +49,32 @@ socket.on('tick', (t) => {
   $('timer').classList.toggle('urgente', t <= 15);
 });
 
+// ---- Música do lobby (chiptune WebAudio, precisa de um clique pra começar) ----
+const musicaLobby = HumATuneChiptune.criar();
+let somLigado = localStorage.getItem('humatuneSomLobby') === '1';
+let faseAtual = 'lobby';
+
+function atualizarSom() {
+  $('btn-som').textContent = somLigado ? '🔊' : '🔇';
+  if (somLigado && faseAtual === 'lobby') musicaLobby.ligar();
+  else musicaLobby.desligar();
+}
+$('btn-som').onclick = () => {
+  somLigado = !somLigado;
+  localStorage.setItem('humatuneSomLobby', somLigado ? '1' : '0');
+  atualizarSom();
+};
+// Navegador bloqueia áudio sem gesto: o primeiro clique em qualquer lugar retoma
+document.addEventListener('pointerdown', () => atualizarSom(), { once: true });
+
 let dicasVistas = 0;
 socket.on('estado', (e) => {
   $('aviso').classList.toggle('oculto', !e.aviso);
   $('aviso').textContent = e.aviso || '';
+  faseAtual = e.fase;
+  atualizarSom();
+  // No lobby o ranking não diz nada — o painel só aparece com a partida andando
+  $('painel-ranking').classList.toggle('oculto', e.fase === 'lobby');
   renderPresenca(e);
   renderRanking(e);
   if (e.fase === 'lobby') return mostrarTela('tela-lobby', e);

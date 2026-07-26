@@ -1,10 +1,10 @@
-# DESAFINO numa VPS: docker compose up -d
-# A imagem é publicada pelo CI em ghcr.io/chico-piaba/desafino a cada push.
+# Hum-a-Tune numa VPS: docker compose up -d
+# A imagem é publicada pelo CI em ghcr.io/chico-piaba/hum-a-tune a cada push.
 # O volume "dados" guarda data/musicas.json — músicas adicionadas pelo /admin
 # sobrevivem a atualizações (na primeira subida ele é semeado com as 510 do repo).
 services:
-  desafino:
-    image: ghcr.io/chico-piaba/desafino:latest
+  hum-a-tune:
+    image: ghcr.io/chico-piaba/hum-a-tune:latest
     build: .
     restart: unless-stopped
     ports:

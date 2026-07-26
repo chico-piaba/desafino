@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DESAFINO — Admin</title>
+  <title>Hum-a-Tune — Admin</title>
+  <link rel="icon" href="/shared/icone.svg">
   <link rel="stylesheet" href="/shared/neoretro.css">
   <style>
     body { padding: clamp(12px, 3vw, 24px); max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
@@ -20,7 +21,11 @@
   </style>
 </head>
 <body>
-  <h1 class="logo">DESAFINO — Banco de músicas</h1>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <h1 class="logo logo-humatune" aria-label="Hum-a-Tune" style="height:52px;margin:0"></h1>
+    <span class="pill">Banco de músicas</span>
+  </div>
+  <script src="/shared/logo.js"></script>
   <p id="erro" class="erro" role="alert"></p>
 
   <section class="card">

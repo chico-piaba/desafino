@@ -571,7 +571,7 @@ if (require.main === module) {
   const { httpServer, monitorToken } = criarServidor({ config, banco, registrador });
   const porta = process.env.PORT || 3000;
   httpServer.listen(porta, () => {
-    console.log('DESAFINO no ar!');
+    console.log('Hum-a-Tune no ar!');
     console.log(`  Display:  http://localhost:${porta}/display/`);
     console.log(`  Celular:  http://${localIp()}:${porta}/jogar/`);
     console.log(`  Admin:    http://localhost:${porta}/admin/`);

@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DESAFINO — Display</title>
+  <title>Hum-a-Tune — Display</title>
+  <link rel="icon" href="/shared/icone.svg">
   <link rel="stylesheet" href="/shared/neoretro.css">
   <style>
     body {
@@ -11,7 +12,9 @@
       gap: clamp(12px, 2vw, 24px); padding: clamp(12px, 2vw, 24px);
     }
     header { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    header .logo { font-size: clamp(1.6rem, 3vw, 2.6rem); }
+    header .logo { height: clamp(52px, 6vw, 84px); margin: 0; }
+    .btn-som, #btn-reiniciar { font-size: 0.85rem; padding: 8px 14px; }
+    .btn-som { font-size: 1.2rem; }
     main { display: flex; flex-direction: column; align-items: center; gap: clamp(14px, 2vw, 24px); }
     .timer {
       width: clamp(170px, 24vw, 320px); height: clamp(170px, 24vw, 320px); border-radius: 50%;
@@ -23,6 +26,7 @@
       body { grid-template-columns: 1fr; }
       aside { order: 2; }
     }
+    body:has(#painel-ranking.oculto) { grid-template-columns: 1fr; }
     .timer.urgente { border-color: var(--error); }
     .modo { font-size: clamp(1.1rem, 2vw, 1.8rem); background: var(--secondary); }
     .modo.cantarolar { background: var(--tertiary); }
@@ -73,10 +77,13 @@
 </head>
 <body>
   <header>
-    <h1 class="logo">DESAFINO</h1>
+    <h1 class="logo logo-humatune" aria-label="Hum-a-Tune"></h1>
     <span id="aviso" class="pill oculto"></span>
     <span id="presenca" class="pill presenca oculto"></span>
     <p id="evento" class="evento"></p>
+    <span style="flex:1"></span>
+    <button id="btn-som" class="btn btn-som" title="Música do lobby">🔇</button>
+    <button id="btn-reiniciar" class="btn btn-error">↺ Reiniciar sala</button>
   </header>
 
   <main>
@@ -115,15 +122,16 @@
     </section>
   </main>
 
-  <aside class="card">
+  <aside id="painel-ranking" class="card">
     <h2>🏆 Ranking</h2>
     <ol id="ranking"></ol>
     <p id="progresso" class="pill"></p>
-    <button id="btn-reiniciar" class="btn btn-error">↺ Reiniciar sala</button>
   </aside>
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="/shared/avatar.js"></script>
+  <script src="/shared/logo.js"></script>
+  <script src="/shared/chiptune.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

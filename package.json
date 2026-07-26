@@ -1,8 +1,8 @@
 {
-  "name": "desafino",
+  "name": "hum-a-tune",
   "version": "0.1.0",
   "private": true,
-  "description": "Protótipo do jogo de festa DESAFINO",
+  "description": "Protótipo do jogo de festa Hum-a-Tune",
   "scripts": {
     "start": "node src/server.js",
     "test": "node --test"
