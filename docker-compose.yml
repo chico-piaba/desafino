@@ -9,6 +9,9 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+    environment:
+      # Sem valor, o servidor gera um token aleatório e imprime no log do container.
+      - MONITOR_TOKEN=${MONITOR_TOKEN:-}
     volumes:
       - dados:/app/data
     healthcheck:

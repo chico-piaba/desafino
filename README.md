@@ -56,6 +56,14 @@ Para HTTPS, coloque um proxy na frente (Caddy resolve com 2 linhas de Caddyfile:
 `seudominio.com { reverse_proxy localhost:3000 }` — WebSockets inclusos). O QR já
 se adapta ao domínio de quem acessa.
 
+## Monitoramento
+
+`/monitor/?token=SEU_TOKEN` mostra ao vivo as salas ativas, quem está conectado e o
+feed de eventos (entradas, rodadas, dicas, acertos). O token vem da variável de
+ambiente `MONITOR_TOKEN`; sem ela, o servidor gera um aleatório e imprime no log
+na subida. Todos os eventos também ficam em `data/eventos.jsonl` (uma linha JSON
+por evento — `tail -f` ou `jq` para acompanhar), que no Docker vive no volume `dados`.
+
 ## Testes
 
 `npm test` — motor do jogo, banco de músicas, interpretação do iTunes e integração via sockets.
