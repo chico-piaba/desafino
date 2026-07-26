@@ -11,3 +11,12 @@ test('config tem os valores de balanceamento do spec', () => {
     cantor: 10, ano: 10, decada: 5, genero: 10, inicialDoTitulo: 15, forca: 25,
   });
 });
+
+test('config tem os limites da sala, a troca e as regras da plateia', () => {
+  assert.deepStrictEqual(config.sala, { maxDuplas: 4, maxJogadores: 20 });
+  assert.deepStrictEqual(config.troca, { ligada: true, custo: 20, porRodada: 1 });
+  assert.deepStrictEqual(config.plateia, {
+    palpite: true, rouboFracao: 0.05, bonusFracao: 0.5,
+    votacao: true, votacaoSegundos: 10, palpiteIntervaloMs: 2000,
+  });
+});
