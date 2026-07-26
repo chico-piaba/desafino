@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DESAFINO — Monitor</title>
+  <link rel="stylesheet" href="/shared/neoretro.css">
+  <style>
+    body { padding: clamp(12px, 3vw, 24px); max-width: 1100px; margin: 0 auto;
+           display: flex; flex-direction: column; gap: 16px; }
+    .contadores { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contador { flex: 1; min-width: 140px; text-align: center; }
+    .contador b { font-size: 2rem; display: block; }
+    .colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+    @media (max-width: 800px) { .colunas { grid-template-columns: 1fr; } }
+    .sala-card { margin-bottom: 12px; }
+    .sala-card h3 { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .jogador-linha { display: flex; align-items: center; gap: 6px; }
+    #feed { list-style: none; padding: 0; margin: 0; max-height: 70vh; overflow-y: auto;
+            display: flex; flex-direction: column; gap: 6px; }
+    #feed li { border: 2px solid var(--outline); border-radius: 8px; padding: 6px 10px;
+               background: #fff; font-size: 0.9rem; }
+    #feed .hora { opacity: 0.6; margin-right: 6px; font-variant-numeric: tabular-nums; }
+    #feed .sala-tag { font-weight: 800; margin-right: 6px; }
+    .erro { color: #93000a; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <h1 class="logo">DESAFINO — Monitor 📡</h1>
+  <p id="erro" class="erro oculto">Token inválido — abra /monitor/?token=SEU_TOKEN (veja o log do servidor).</p>
+  <div class="contadores">
+    <div class="card contador">🏠 Salas <b id="c-salas">0</b></div>
+    <div class="card contador">👥 Conectados <b id="c-jogadores">0</b></div>
+    <div class="card contador">📜 Eventos <b id="c-eventos">0</b></div>
+  </div>
+  <div class="colunas">
+    <section class="card"><h2>Salas ativas</h2><div id="salas"></div></section>
+    <section class="card"><h2>Feed de eventos</h2><ul id="feed"></ul></section>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
