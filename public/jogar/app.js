@@ -134,6 +134,50 @@ function mostrarTela(id) {
   $(id).classList.remove('oculto');
 }
 
+const CAMPOS_CONFIG = [
+  ['cfg-duracao', 'duracaoSegundos', 'number'],
+  ['cfg-rodadas', 'totalRodadas', 'number'],
+  ['cfg-duplas', 'maxDuplas', 'number'],
+  ['cfg-troca', 'trocaMusica', 'check'],
+  ['cfg-troca-custo', 'trocaCusto', 'number'],
+  ['cfg-palpite', 'palpitePlateia', 'check'],
+  ['cfg-votacao', 'votacaoPlateia', 'check'],
+];
+
+function renderPainelLider(e) {
+  const ehLider = Boolean(e.voce && e.voce.ehLider) && e.fase === 'lobby';
+  $('painel-lider').classList.toggle('oculto', !ehLider);
+  if (!ehLider || !e.configSala) return;
+  // Não sobrescreve o que o líder está digitando agora.
+  for (const [id, chave, tipo] of CAMPOS_CONFIG) {
+    if (document.activeElement === $(id)) continue;
+    if (tipo === 'check') $(id).checked = e.configSala[chave];
+    else $(id).value = e.configSala[chave];
+  }
+  $('lista-expulsar').innerHTML = e.jogadores
+    .filter((j) => j.num !== e.voce.num)
+    .map((j) => `<div class="dica"><span>${esc(j.nome)} (Dupla ${j.dupla})</span>
+      <button class="btn btn-error" data-expulsar="${j.num}" style="padding:6px 12px">✕</button></div>`)
+    .join('');
+  for (const btn of $('lista-expulsar').querySelectorAll('button[data-expulsar]')) {
+    btn.onclick = () => socket.emit('removerJogador', Number(btn.dataset.expulsar));
+  }
+}
+
+$('btn-salvar-config').onclick = () => {
+  const knobs = {};
+  for (const [id, chave, tipo] of CAMPOS_CONFIG) {
+    knobs[chave] = tipo === 'check' ? $(id).checked : Number($(id).value);
+  }
+  socket.emit('configurarSala', knobs);
+};
+$('btn-iniciar').onclick = () => socket.emit('iniciarPartida');
+$('btn-reiniciar').onclick = () => {
+  if (confirm('Reiniciar a sala? Todos os jogadores e pontos serão zerados.')) {
+    socket.emit('reiniciarSala');
+  }
+};
+
 function render(e) {
   const entrou = Boolean(e.voce) || (e.fase === 'lobby' && localStorage.getItem('humatunePlayerId') && e.jogadores.length > 0);
   const emRodada = e.fase === 'rodada' && e.rodada && e.rodada.fase !== 'resultado';
@@ -153,8 +197,10 @@ function render(e) {
     $('emotes').classList.toggle('oculto', !entrou);
     $('espera-titulo').textContent = 'Você está dentro!';
     $('espera-texto').textContent = 'Aguardando a partida começar…';
+    renderPainelLider(e);
     return mostrarTela(e.voce || entrou ? 'tela-espera' : 'tela-entrar');
   }
+  $('painel-lider').classList.add('oculto');
   $('emotes').classList.add('oculto');
   if (e.fase === 'fim') {
     $('espera-titulo').textContent = '🏆 Fim de jogo!';
@@ -172,7 +218,7 @@ function render(e) {
   }
   if (e.voce.papel === 'apresentador') return renderApresentador(e);
   if (e.voce.papel === 'adivinhador') return renderAdivinhador(e);
-  mostrarTela('tela-plateia');
+  renderPlateia(e);
 }
 
 function renderApresentador(e) {
@@ -182,8 +228,13 @@ function renderApresentador(e) {
   const andamento = e.rodada.fase === 'emAndamento';
   $('btn-comecar').classList.toggle('oculto', andamento);
   $('btn-mimica').classList.toggle('oculto', !andamento || e.rodada.modo === 'mimica');
-  $('btn-acertou').classList.toggle('oculto', !andamento);
+  // O apresentador resolve a rodada mesmo com a votação da plateia aberta — não é
+  // vetado por ela — por isso este botão soma 'votacao' aos casos visíveis, ao
+  // contrário dos outros botões acima, que ficam só em 'emAndamento'.
+  $('btn-acertou').classList.toggle('oculto', !(andamento || e.rodada.fase === 'votacao'));
   $('btn-passar').classList.toggle('oculto', !andamento);
+  $('btn-trocar').classList.toggle('oculto', !e.voce.podeTrocar);
+  $('btn-trocar').textContent = `🔀 Trocar música (−${e.configSala.trocaCusto} pts)`;
 }
 
 function renderAdivinhador(e) {
@@ -205,12 +256,40 @@ function renderAdivinhador(e) {
   for (const btn of $('lista-dicas').querySelectorAll('button[data-tipo]')) {
     btn.onclick = () => socket.emit('comprarDica', btn.dataset.tipo);
   }
+  $('btn-eu-acertei').classList.toggle('oculto', e.rodada.fase !== 'emAndamento');
+}
+
+function renderPlateia(e) {
+  mostrarTela('tela-plateia');
+  const votando = e.rodada.fase === 'votacao';
+  const souEleitor = votando && e.rodada.votacao.eleitores.includes(e.voce.num);
+  $('campo-palpite').parentElement.classList.toggle('oculto', votando || !e.configSala.palpitePlateia);
+  $('painel-voto').classList.toggle('oculto', !souEleitor);
+  if (souEleitor) {
+    $('voto-pergunta').textContent = e.rodada.votacao.origem === 'tempo'
+      ? `⏰ Tempo esgotado — ${e.rodada.adivinhador} acertou?`
+      : `✋ ${e.rodada.adivinhador} diz que acertou. Confere?`;
+  }
 }
 
 $('btn-comecar').onclick = () => socket.emit('comecarRodada');
 $('btn-mimica').onclick = () => socket.emit('mudarParaMimica');
 $('btn-acertou').onclick = () => socket.emit('acertou');
 $('btn-passar').onclick = () => socket.emit('passar');
+$('btn-trocar').onclick = () => socket.emit('trocarMusica');
+$('btn-eu-acertei').onclick = () => socket.emit('euAcertei');
+$('btn-voto-sim').onclick = () => socket.emit('votar', true);
+$('btn-voto-nao').onclick = () => socket.emit('votar', false);
+$('btn-palpitar').onclick = () => {
+  const texto = $('campo-palpite').value.trim();
+  if (!texto) return;
+  socket.emit('palpitar', texto);
+  $('campo-palpite').value = '';
+};
+$('campo-palpite').onkeydown = (ev) => { if (ev.key === 'Enter') $('btn-palpitar').onclick(); };
+
+socket.on('roubo', ({ nome, valor }) => mostrarErro(`🔥 ${nome} roubou ${valor} pts da rodada!`));
+socket.on('avisoAcerto', (nome) => mostrarErro(`✋ ${nome} diz que acertou — confirme se for isso!`));
 
 let erroTimeout = null;
 function mostrarErro(msg) {

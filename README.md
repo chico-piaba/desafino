@@ -7,19 +7,23 @@ Protótipo local — o servidor roda no seu notebook e os celulares entram por Q
 
 1. `npm install && npm start`
 2. Abra o **display** (`http://localhost:3000/display/`) numa TV ou telão — ele cria uma
-   **sala com código de 4 letras** (vários grupos podem jogar ao mesmo tempo no mesmo servidor;
-   o display que criou é o dono da sala e pode expulsar jogadores e reiniciá-la).
-3. Cada jogador escaneia o QR code com o celular (ou digita o código da sala) e entra com
-   nome + dupla (2 a 4 duplas completas).
-4. Clique em **Começar partida** no display.
-5. Na sua vez, o apresentador vê a música no celular (privado!) e cantarola — vale **100 pts**.
-   Pode **mudar para mímica** (o valor cai para 70) a qualquer momento; a troca não tem volta.
-6. O adivinhador fala os palpites em voz alta e pode **comprar dicas** no celular:
-   década −5, cantor −10, ano −10, gênero −10, inicial do título −15 e a **forca** −25
-   (o esqueleto do título, letra por letra, estilo forca — comprar a inicial preenche a
-   primeira letra). O que sobrar é o prêmio se o apresentador confirmar o **Acertou!**
-   antes dos 90 segundos.
-7. São 8 rodadas. Vence a dupla com mais pontos.
+   **sala com código de 4 letras** e daí em diante é só telão: quem manda é o celular.
+3. Cada jogador escaneia o QR code (ou digita o código) e entra com nome + dupla.
+   **O primeiro a entrar vira o líder** 👑: é ele quem configura a sala (duração, número
+   de rodadas, até 10 duplas, troca de música, palpite e votação da plateia), expulsa
+   jogador e começa a partida. Se o líder cair, o jogador conectado mais antigo assume.
+4. Na sua vez, o apresentador vê a música no celular (privado!) e cantarola — vale **100 pts**.
+   Pode **mudar para mímica** (o valor cai para 70) ou **trocar a música** (−20 pts, uma vez
+   por rodada; o relógio não para e nada do que já foi gasto volta).
+5. O adivinhador fala os palpites em voz alta e pode **comprar dicas** no celular:
+   década −5, cantor −10, ano −10, gênero −10, inicial do título −15 e a **forca** −25.
+6. **A plateia participa:** quem não está na rodada pode digitar palpites. Acertou o título?
+   Rouba 5% do pote e a dupla dele leva metade — mas **cada dupla só rouba uma vez por rodada**.
+7. **Confirmar o acerto** tem três caminhos: o apresentador aperta "Acertou!", o adivinhador
+   aperta "✋ Eu acertei!" (abre votação da plateia), ou o tempo acaba (também abre votação).
+   Mais de 50% da plateia confirmando fecha o acerto pelo valor que restou no pote.
+   Numa sala de uma dupla só (duelo x1) não há plateia, então o apresentador decide sozinho.
+8. São 8 rodadas por padrão. Vence a dupla com mais pontos.
 
 **Modo x1 (duelo):** com apenas uma dupla na sala, a partida vira um contra o outro —
 os papéis alternam a cada rodada, o adivinhador leva os pontos da rodada e o
@@ -28,8 +32,10 @@ Vence quem somar mais pontos individuais.
 
 ## Balanceamento
 
-Tudo em `config.json` (duração, nº de rodadas, valores dos modos, preço das dicas).
-Edite e reinicie o servidor.
+Os padrões ficam em `config.json` (duração, nº de rodadas, valores dos modos, preço das
+dicas, limites da sala, custo da troca e regras da plateia). O líder ajusta a maior parte
+disso na própria sala, pelo celular, sem reiniciar o servidor — e o ajuste sobrevive ao
+"reiniciar sala". `bonusFracao`, `votacaoSegundos` e `palpiteIntervaloMs` só mudam no arquivo.
 
 ## Banco de músicas
 

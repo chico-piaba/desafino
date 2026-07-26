@@ -57,8 +57,16 @@
     <label style="display:block;margin-top:12px">Seu nome <input id="campo-nome" maxlength="20" autocomplete="off"></label>
     <label style="display:block;margin-top:12px">Sua dupla
       <select id="campo-dupla">
-        <option value="1">Dupla 1</option><option value="2">Dupla 2</option>
-        <option value="3">Dupla 3</option><option value="4">Dupla 4</option>
+        <option value="1">Dupla 1</option>
+        <option value="2">Dupla 2</option>
+        <option value="3">Dupla 3</option>
+        <option value="4">Dupla 4</option>
+        <option value="5">Dupla 5</option>
+        <option value="6">Dupla 6</option>
+        <option value="7">Dupla 7</option>
+        <option value="8">Dupla 8</option>
+        <option value="9">Dupla 9</option>
+        <option value="10">Dupla 10</option>
       </select>
     </label>
     <button id="btn-entrar" class="btn btn-success" style="margin-top:16px;width:100%">Entrar</button>
@@ -72,6 +80,20 @@
       <button class="btn btn-emote" data-emote="😂">😂</button>
       <button class="btn btn-emote" data-emote="🔥">🔥</button>
       <button class="btn btn-emote" data-emote="🎵">🎵</button>
+    </div>
+    <div id="painel-lider" class="card oculto" style="text-align:left;margin-top:16px">
+      <h3>👑 Você comanda a sala</h3>
+      <label>Duração da rodada <input id="cfg-duracao" type="number" min="30" max="180" step="15"></label>
+      <label>Rodadas <input id="cfg-rodadas" type="number" min="4" max="20"></label>
+      <label>Máximo de duplas <input id="cfg-duplas" type="number" min="1" max="10"></label>
+      <label><input id="cfg-troca" type="checkbox"> Permitir trocar música</label>
+      <label>Custo da troca <input id="cfg-troca-custo" type="number" min="0" max="50"></label>
+      <label><input id="cfg-palpite" type="checkbox"> Plateia pode palpitar</label>
+      <label><input id="cfg-votacao" type="checkbox"> Plateia vota o acerto</label>
+      <button id="btn-salvar-config" class="btn btn-secondary" style="width:100%">Salvar configuração</button>
+      <button id="btn-iniciar" class="btn btn-success" style="width:100%;margin-top:8px">▶ Começar partida</button>
+      <button id="btn-reiniciar" class="btn btn-error" style="width:100%;margin-top:8px">↺ Reiniciar sala</button>
+      <div id="lista-expulsar"></div>
     </div>
   </section>
 
@@ -88,6 +110,7 @@
     <button id="btn-mimica" class="btn btn-secondary oculto" style="width:100%">🎭 Mudar para Mímica</button>
     <button id="btn-acertou" class="btn btn-success oculto" style="width:100%">✅ Acertou!</button>
     <button id="btn-passar" class="btn btn-error oculto" style="width:100%">⏭ Passar</button>
+    <button id="btn-trocar" class="btn btn-tertiary oculto" style="width:100%">🔀 Trocar música</button>
   </section>
 
   <section id="tela-adivinhador" class="tela oculto acoes">
@@ -99,11 +122,21 @@
       <h2>💡 Comprar dicas</h2>
       <div id="lista-dicas"></div>
     </div>
+    <button id="btn-eu-acertei" class="btn btn-success" style="width:100%;margin-top:12px">✋ Eu acertei!</button>
   </section>
 
   <section id="tela-plateia" class="tela card oculto" style="text-align:center">
-    <h2>👀 Plateia</h2>
-    <p>Sem interagir com a dupla da vez! Acompanhe pelo display.</p>
+    <h2>🍿 Você está na plateia</h2>
+    <p>Adivinhou antes? Palpite e roube pontos da rodada.</p>
+    <div class="linha-busca">
+      <input id="campo-palpite" placeholder="Seu palpite…" autocomplete="off">
+      <button id="btn-palpitar" class="btn btn-tertiary" style="padding:10px 16px">🔥</button>
+    </div>
+    <div id="painel-voto" class="oculto" style="margin-top:16px">
+      <h3 id="voto-pergunta"></h3>
+      <button id="btn-voto-sim" class="btn btn-success" style="width:100%">✅ Acertou</button>
+      <button id="btn-voto-nao" class="btn btn-error" style="width:100%;margin-top:8px">❌ Não acertou</button>
+    </div>
   </section>
 
   <!-- Fora do sistema de telas: aparece junto do lobby/plateia, controlada no render() -->
