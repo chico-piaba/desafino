@@ -8,6 +8,7 @@ const express = require('express');
 const { Server } = require('socket.io');
 const QRCode = require('qrcode');
 const game = require('./game');
+const { mesclarPadroes, aplicarKnobs } = require('./configSala');
 const { criarBanco } = require('./bancoMusicas');
 const { criarRegistrador } = require('./eventos');
 const itunes = require('./itunes');
@@ -59,10 +60,13 @@ function criarServidor({
   }
 
   function criarSala() {
+    const configSala = mesclarPadroes(config);
     const sala = {
       codigo: gerarCodigo(),
-      donoToken: crypto.randomUUID(),
-      jogo: game.criarJogo(config, banco.ler(), rng),
+      donoToken: crypto.randomUUID(), // identidade da TV, não dá mais poderes
+      config: configSala,
+      liderId: null,
+      jogo: game.criarJogo(configSala, banco.ler(), rng),
       conectados: new Map(), // playerId -> socket.id
       limpezaLobby: new Map(), // playerId -> timeout de remoção do lobby
       socketsNaSala: new Set(), // todos os sockets (display + celulares)
@@ -217,6 +221,19 @@ function criarServidor({
     return j ? j.num : null;
   }
 
+  function promoverLider(sala) {
+    const antigo = sala.liderId;
+    const candidato = sala.jogo.jogadores
+      .filter((j) => sala.conectados.has(j.id))
+      .sort((a, b) => a.num - b.num)[0];
+    sala.liderId = candidato ? candidato.id : null;
+    if (sala.liderId && sala.liderId !== antigo) {
+      registrador.registrar('liderDefinido', {
+        sala: sala.codigo, num: numDe(sala, sala.liderId), nome: nomeDe(sala, sala.liderId),
+      });
+    }
+  }
+
   function salasResumo() {
     return [...salas.values()].map((sala) => ({
       codigo: sala.codigo,
@@ -232,7 +249,7 @@ function criarServidor({
   function registrarFimSeAcabou(sala) {
     // O jogo só muda para 'fim' na proximaRodada; aqui detectamos que esta era a última.
     const { jogo } = sala;
-    if (jogo.rodadasJogadas < config.rodada.totalRodadas) return;
+    if (jogo.rodadasJogadas < jogo.config.rodada.totalRodadas) return;
     registrador.registrar('fimDeJogo', {
       sala: sala.codigo,
       placar: jogo.modo === 'x1' ? jogo.pontosJogadores
@@ -249,14 +266,25 @@ function criarServidor({
       modoJogo: jogo.modo,
       pontosJogadores: jogo.modo === 'x1' ? jogo.pontosJogadores : null,
       aviso: jogo.aviso,
-      totalRodadas: config.rodada.totalRodadas,
-      duracaoSegundos: config.rodada.duracaoSegundos,
+      totalRodadas: jogo.config.rodada.totalRodadas,
+      duracaoSegundos: jogo.config.rodada.duracaoSegundos,
       tempoRestante: sala.tempoRestante,
       jogadores: jogo.jogadores.map((j) => ({
         num: j.num, nome: j.nome, dupla: j.dupla, avatar: j.avatar,
         conectado: sala.conectados.has(j.id),
       })),
       duplas: Object.values(jogo.duplas),
+      liderNum: sala.liderId ? numDe(sala, sala.liderId) : null,
+      configSala: {
+        duracaoSegundos: jogo.config.rodada.duracaoSegundos,
+        totalRodadas: jogo.config.rodada.totalRodadas,
+        maxDuplas: jogo.config.sala.maxDuplas,
+        trocaMusica: jogo.config.troca.ligada,
+        trocaCusto: jogo.config.troca.custo,
+        palpitePlateia: jogo.config.plateia.palpite,
+        rouboFracao: jogo.config.plateia.rouboFracao,
+        votacaoPlateia: jogo.config.plateia.votacao,
+      },
       rodada: r && {
         numero: r.numero,
         fase: r.fase,
@@ -276,17 +304,21 @@ function criarServidor({
   }
 
   function estadoPrivado(sala, playerId) {
+    const jogador = sala.jogo.jogadores.find((j) => j.id === playerId);
+    if (!jogador) return null;
+    const base = { num: jogador.num, ehLider: playerId === sala.liderId };
     const r = sala.jogo.rodada;
-    if (!r) return null;
-    if (playerId === r.apresentadorId) return { papel: 'apresentador', musica: r.musica };
+    if (!r) return { ...base, papel: 'lobby' };
+    if (playerId === r.apresentadorId) return { ...base, papel: 'apresentador', musica: r.musica };
     if (playerId === r.adivinhadorId) {
       return {
+        ...base,
         papel: 'adivinhador',
         dicas: r.dicasCompradas,
-        precos: game.dicasDisponiveis(config, r.musica),
+        precos: game.dicasDisponiveis(sala.jogo.config, r.musica),
       };
     }
-    return { papel: 'plateia' };
+    return { ...base, papel: 'plateia' };
   }
 
   function broadcast(sala) {
@@ -311,7 +343,7 @@ function criarServidor({
   }
 
   function iniciarTimer(sala) {
-    sala.tempoRestante = config.rodada.duracaoSegundos;
+    sala.tempoRestante = sala.jogo.config.rodada.duracaoSegundos;
     io.to(`sala:${sala.codigo}`).emit('tick', sala.tempoRestante);
     sala.timer = setInterval(() => {
       sala.tempoRestante -= 1;
@@ -362,8 +394,11 @@ function criarServidor({
       }
     };
 
-    const exigirDono = () => {
-      if (!socket.data.ehDono) throw new Error('Só o display dono da sala pode fazer isso');
+    const exigirLider = () => {
+      const sala = minhaSala();
+      if (!sala || !pid() || pid() !== sala.liderId) {
+        throw new Error('Só o líder da sala pode fazer isso');
+      }
     };
 
     function vincular(sala) {
@@ -379,7 +414,6 @@ function criarServidor({
           ? [...salas.values()].find((s) => s.donoToken === dados.donoToken)
           : null;
         if (!sala) sala = criarSala();
-        socket.data.ehDono = true;
         vincular(sala);
         cb({
           codigo: sala.codigo,
@@ -403,6 +437,12 @@ function criarServidor({
           : game.entrarJogador(sala.jogo, dados.nome, Number(dados.dupla), undefined, dados.avatar).id;
         vincular(sala);
         sala.conectados.set(socket.data.playerId, socket.id);
+        if (!sala.liderId) {
+          sala.liderId = socket.data.playerId;
+          registrador.registrar('liderDefinido', {
+            sala: sala.codigo, num: numDe(sala, sala.liderId), nome: nomeDe(sala, sala.liderId),
+          });
+        }
         cancelarLimpezaLobby(sala, socket.data.playerId);
         registrador.registrar(existente ? 'jogadorReconectou' : 'jogadorEntrou', {
           sala: sala.codigo,
@@ -424,7 +464,7 @@ function criarServidor({
     });
 
     socket.on('iniciarPartida', () => guardar((sala) => {
-      exigirDono();
+      exigirLider();
       sala.jogo.musicas = banco.ler();
       game.iniciarPartida(sala.jogo);
       registrador.registrar('partidaIniciada', {
@@ -484,7 +524,10 @@ function criarServidor({
     }));
 
     socket.on('removerJogador', (num) => guardar((sala) => {
-      exigirDono();
+      exigirLider();
+      if (sala.jogo.jogadores.find((j) => j.num === Number(num) && j.id === pid())) {
+        throw new Error('O líder não pode se expulsar da sala');
+      }
       const alvo = sala.jogo.jogadores.find((j) => j.num === Number(num));
       game.removerJogador(sala.jogo, Number(num));
       if (alvo) {
@@ -501,11 +544,12 @@ function criarServidor({
     }));
 
     socket.on('reiniciarSala', () => guardar((sala) => {
-      exigirDono();
+      exigirLider();
       pararTimer(sala);
       pararProxima(sala);
       for (const id of [...sala.limpezaLobby.keys()]) cancelarLimpezaLobby(sala, id);
-      sala.jogo = game.criarJogo(config, banco.ler(), rng);
+      sala.jogo = game.criarJogo(sala.config, banco.ler(), rng);
+      sala.liderId = null;
       sala.tempoRestante = null;
       for (const socketId of sala.socketsNaSala) {
         const s = io.of('/').sockets.get(socketId);
@@ -516,6 +560,14 @@ function criarServidor({
       }
       sala.conectados.clear();
       registrador.registrar('salaReiniciada', { sala: sala.codigo });
+    }));
+
+    socket.on('configurarSala', (knobs) => guardar((sala) => {
+      exigirLider();
+      if (sala.jogo.fase !== 'lobby') throw new Error('Só dá para configurar a sala no lobby');
+      sala.config = aplicarKnobs(sala.config, knobs);
+      sala.jogo.config = sala.config;
+      registrador.registrar('salaConfigurada', { sala: sala.codigo, knobs });
     }));
 
     socket.on('monitorar', (token, cb = () => {}) => {
@@ -551,6 +603,7 @@ function criarServidor({
       if (pid() && sala.conectados.get(pid()) === socket.id) {
         sala.conectados.delete(pid());
         agendarLimpezaLobby(sala, pid());
+        if (pid() === sala.liderId) promoverLider(sala);
       }
       if (sala.socketsNaSala.size === 0) agendarExpiracao(sala);
       broadcast(sala);

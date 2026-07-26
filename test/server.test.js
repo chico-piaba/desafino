@@ -58,7 +58,7 @@ test('uma rodada completa via sockets, com sala', async () => {
     await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 2 });
     await emitir(leo, 'entrar', { sala: codigo, nome: 'Leo', dupla: 2 });
 
-    display.emit('iniciarPartida');
+    ana.emit('iniciarPartida');
     const e1 = await esperarEstado(ana, (e) => e.fase === 'rodada');
     assert.strictEqual(e1.codigo, codigo);
     assert.strictEqual(e1.voce.papel, 'apresentador');
@@ -116,18 +116,102 @@ test('duas salas são isoladas', async () => {
   } finally { c1.close(); c2.close(); salaA.display.close(); salaB.display.close(); httpServer.close(); }
 });
 
-test('só o dono inicia a partida, remove jogador e reinicia a sala', async () => {
+test('só o líder inicia a partida, remove jogador, reinicia e configura', async () => {
   const { httpServer, url } = await subirServidor();
   const { display, codigo } = await novaSala(url);
-  const c1 = conectar(url);
+  const lider = conectar(url);
+  const outro = conectar(url);
   try {
-    await emitir(c1, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
-    for (const evento of ['iniciarPartida', 'removerJogador', 'reiniciarSala']) {
-      const erro = esperarErro(c1);
-      c1.emit(evento, 1);
-      assert.match(await erro, /dono da sala/);
+    await emitir(lider, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(outro, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    for (const evento of ['iniciarPartida', 'removerJogador', 'reiniciarSala', 'configurarSala']) {
+      const erro = esperarErro(outro);
+      outro.emit(evento, 1);
+      assert.match(await erro, /líder da sala/);
     }
-  } finally { c1.close(); display.close(); httpServer.close(); }
+    // O display virou espectador: também não manda mais na sala.
+    const erroDisplay = esperarErro(display);
+    display.emit('iniciarPartida');
+    assert.match(await erroDisplay, /líder da sala/);
+  } finally { lider.close(); outro.close(); display.close(); httpServer.close(); }
+});
+
+test('o primeiro a entrar é o líder e aparece no estado', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  try {
+    const r1 = await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    assert.strictEqual(r1.estado.liderNum, 1);
+    assert.strictEqual(r1.estado.voce.ehLider, true);
+    const r2 = await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    assert.strictEqual(r2.estado.liderNum, 1);
+    assert.strictEqual(r2.estado.voce.ehLider, false);
+  } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
+});
+
+test('líder que cai é sucedido pelo jogador conectado mais antigo', async () => {
+  const { httpServer, url } = await subirServidor({ lobbyLimpezaMs: 60000 });
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    ana.close();
+    const e = await esperarEstado(joao, (est) => est.liderNum === 2);
+    assert.strictEqual(e.liderNum, 2);
+    assert.strictEqual(e.voce.ehLider, true);
+  } finally { joao.close(); display.close(); httpServer.close(); }
+});
+
+test('o líder não pode se expulsar', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  try {
+    const r = await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    const erro = esperarErro(ana);
+    ana.emit('removerJogador', r.estado.jogadores[0].num);
+    assert.match(await erro, /não pode se expulsar/);
+  } finally { ana.close(); display.close(); httpServer.close(); }
+});
+
+test('configurarSala aplica knobs, satura faixa e sobrevive ao reinício', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    ana.emit('configurarSala', { duracaoSegundos: 30, totalRodadas: 999, maxDuplas: 8, palpitePlateia: false });
+    const e = await esperarEstado(display, (est) => est.configSala.duracaoSegundos === 30);
+    assert.strictEqual(e.configSala.totalRodadas, 20); // saturado
+    assert.strictEqual(e.configSala.maxDuplas, 8);
+    assert.strictEqual(e.configSala.palpitePlateia, false);
+    assert.strictEqual(e.duracaoSegundos, 30);
+    assert.strictEqual(e.totalRodadas, 20);
+    ana.emit('reiniciarSala');
+    const depois = await esperarEstado(display, (est) => est.jogadores.length === 0);
+    assert.strictEqual(depois.configSala.duracaoSegundos, 30); // config persiste
+    assert.strictEqual(depois.liderNum, null);
+  } finally { ana.close(); display.close(); httpServer.close(); }
+});
+
+test('maxDuplas configurado libera a dupla 8', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const bia = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    const recusada = await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 8 });
+    assert.match(recusada.erro, /Dupla inválida/);
+    ana.emit('configurarSala', { maxDuplas: 8 });
+    await esperarEstado(ana, (est) => est.configSala.maxDuplas === 8);
+    const aceita = await emitir(bia, 'entrar', { sala: codigo, nome: 'Bia', dupla: 8 });
+    assert.strictEqual(aceita.estado.jogadores.length, 2);
+  } finally { ana.close(); bia.close(); display.close(); httpServer.close(); }
 });
 
 test('display reassume a mesma sala pelo donoToken', async () => {
@@ -211,15 +295,18 @@ test('desconectado no lobby é removido após o prazo de limpeza', async () => {
 test('removerJogador (dono) tira o jogador e avisa o removido', async () => {
   const { httpServer, url } = await subirServidor();
   const { display, codigo } = await novaSala(url);
+  const lider = conectar(url);
   const celular = conectar(url);
   try {
-    const r1 = await emitir(celular, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(lider, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    const r1 = await emitir(celular, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
     const avisoRemovido = new Promise((resolve) => celular.on('removido', resolve));
-    display.emit('removerJogador', r1.estado.jogadores[0].num);
-    const e = await esperarEstado(display, (est) => est.jogadores.length === 0);
-    assert.strictEqual(e.jogadores.length, 0);
+    const alvo = r1.estado.jogadores.find((j) => j.nome === 'João');
+    lider.emit('removerJogador', alvo.num);
+    const e = await esperarEstado(display, (est) => est.jogadores.length === 1);
+    assert.strictEqual(e.jogadores.length, 1);
     await avisoRemovido;
-  } finally { celular.close(); display.close(); httpServer.close(); }
+  } finally { lider.close(); celular.close(); display.close(); httpServer.close(); }
 });
 
 test('reiniciarSala (dono) zera a partida, mantém o código e desvincula os celulares', async () => {
@@ -229,7 +316,7 @@ test('reiniciarSala (dono) zera a partida, mantém o código e desvincula os cel
   try {
     await emitir(celular, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
     const avisoRemovido = new Promise((resolve) => celular.on('removido', resolve));
-    display.emit('reiniciarSala');
+    celular.emit('reiniciarSala');
     const e = await esperarEstado(display, (est) => est.jogadores.length === 0 && est.fase === 'lobby');
     assert.strictEqual(e.codigo, codigo);
     await avisoRemovido;
@@ -279,7 +366,7 @@ test('duelo x1 via sockets: 2 jogadores, placar individual', async () => {
   try {
     await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
     await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
-    display.emit('iniciarPartida');
+    ana.emit('iniciarPartida');
     const e1 = await esperarEstado(ana, (e) => e.fase === 'rodada');
     assert.strictEqual(e1.modoJogo, 'x1');
     assert.strictEqual(e1.voce.papel, 'apresentador');
@@ -359,7 +446,7 @@ test('fluxo de partida registra a sequência de eventos do jogo', async () => {
   try {
     await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
     await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
-    display.emit('iniciarPartida');
+    ana.emit('iniciarPartida');
     await esperarEstado(ana, (e) => e.fase === 'rodada');
     ana.emit('comecarRodada');
     await esperarEstado(joao, (e) => e.rodada && e.rodada.fase === 'emAndamento');
