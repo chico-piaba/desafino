@@ -145,8 +145,16 @@ const CAMPOS_CONFIG = [
 ];
 
 function renderPainelLider(e) {
-  const ehLider = Boolean(e.voce && e.voce.ehLider) && e.fase === 'lobby';
+  // O líder manda em qualquer fase: sem isto a sala morria no fim da partida,
+  // porque o painel só existia no lobby e o display não tem mais botões.
+  const ehLider = Boolean(e.voce && e.voce.ehLider);
+  const noLobby = e.fase === 'lobby';
   $('painel-lider').classList.toggle('oculto', !ehLider);
+  if ($('btn-jogar-de-novo')) $('btn-jogar-de-novo').classList.toggle('oculto', noLobby);
+  for (const [id] of CAMPOS_CONFIG) $(id).disabled = !noLobby;
+  $('btn-salvar-config').classList.toggle('oculto', !noLobby);
+  $('btn-iniciar').classList.toggle('oculto', !noLobby);
+  $('lista-expulsar').classList.toggle('oculto', !noLobby);
   if (!ehLider || !e.configSala) return;
   // Não sobrescreve o que o líder está digitando agora.
   for (const [id, chave, tipo] of CAMPOS_CONFIG) {
@@ -172,17 +180,18 @@ $('btn-salvar-config').onclick = () => {
   socket.emit('configurarSala', knobs);
 };
 $('btn-iniciar').onclick = () => socket.emit('iniciarPartida');
-$('btn-reiniciar').onclick = () => {
-  if (confirm('Reiniciar a sala? Todos os jogadores e pontos serão zerados.')) {
-    socket.emit('reiniciarSala');
-  }
-};
-
-// Os dois botões abaixo entraram por deploy quente: um telefone com HTML velho
-// em cache roda este JS sem ter os elementos, e sem a guarda o script morre aqui.
-if ($('btn-nova-partida')) {
-  $('btn-nova-partida').onclick = () => {
-    if (confirm('Começar uma partida nova? Todos entram de novo e o placar zera.')) {
+// Guarda contra HTML velho em cache: deploy quente troca o JS antes do telefone
+// recarregar o HTML, e sem isto o script morre aqui e leva o resto junto.
+if ($('btn-jogar-de-novo')) {
+  $('btn-jogar-de-novo').onclick = () => {
+    if (confirm('Jogar de novo? Mesmos jogadores e duplas, placar zerado.')) {
+      socket.emit('reiniciarPartida');
+    }
+  };
+}
+if ($('btn-expulsar-todos')) {
+  $('btn-expulsar-todos').onclick = () => {
+    if (confirm('Expulsar todo mundo? Todos voltam para a tela de entrada.')) {
       socket.emit('reiniciarSala');
     }
   };
@@ -209,12 +218,6 @@ function render(e) {
       (emRodada && e.voce && e.voce.papel === 'plateia');
     $('sugerir').classList.toggle('oculto', !ocioso);
   }
-  // Sem isto a sala morre no fim da partida: o painel do líder só vive no lobby
-  // e o display não tem mais botão nenhum. Guarda contra HTML antigo em cache.
-  if ($('btn-nova-partida')) {
-    const podeReiniciar = e.fase === 'fim' && Boolean(e.voce && e.voce.ehLider);
-    $('btn-nova-partida').classList.toggle('oculto', !podeReiniciar);
-  }
   $('timer-jogador').classList.toggle('oculto', !(emRodada && e.rodada.fase === 'emAndamento'));
   if (emRodada && e.rodada.fase === 'emAndamento' && e.tempoRestante != null) {
     $('tempo').textContent = e.tempoRestante;
@@ -227,7 +230,7 @@ function render(e) {
     renderPainelLider(e);
     return mostrarTela(e.voce || entrou ? 'tela-espera' : 'tela-entrar');
   }
-  $('painel-lider').classList.add('oculto');
+  renderPainelLider(e);
   $('emotes').classList.add('oculto');
   if (e.fase === 'fim') {
     $('espera-titulo').textContent = '🏆 Fim de jogo!';

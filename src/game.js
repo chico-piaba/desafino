@@ -64,6 +64,20 @@ function removerJogador(jogo, num) {
   jogo.jogadores.splice(indice, 1);
 }
 
+// Volta ao lobby mantendo jogadores, duplas e avatares — só a partida zera.
+// Diferente de criar uma sala nova, que devolve todo mundo para o login.
+function reiniciarPartida(jogo) {
+  jogo.fase = 'lobby';
+  jogo.modo = 'duplas';
+  jogo.duplas = {};
+  jogo.pontosJogadores = {};
+  jogo.duplasAtivas = [];
+  jogo.rodada = null;
+  jogo.rodadasJogadas = 0;
+  jogo.musicasUsadas = [];
+  jogo.aviso = null;
+}
+
 function iniciarPartida(jogo) {
   if (jogo.fase !== 'lobby') throw new Error('Partida já iniciada');
   const numeros = [...new Set(jogo.jogadores.map((j) => j.dupla))].sort();
@@ -330,6 +344,7 @@ module.exports = {
   entrarJogador,
   removerJogador,
   iniciarPartida,
+  reiniciarPartida,
   comecarRodada,
   mudarParaMimica,
   trocarMusica,

@@ -611,3 +611,24 @@ test('o roubo tolera acento, pontuação e dedo gordo', () => {
   const jogo = jogoCom3Duplas();
   assert.strictEqual(game.palpitar(jogo, 'c', 'MÚSICA NÚMERO 0!!').certo, true);
 });
+
+test('reiniciarPartida mantém jogadores e duplas, zera só a partida', () => {
+  const jogo = jogoCom2Duplas();
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  game.acertou(jogo, 'a');
+  assert.strictEqual(jogo.duplas[1].pontos, 100);
+  game.reiniciarPartida(jogo);
+  assert.strictEqual(jogo.fase, 'lobby');
+  assert.strictEqual(jogo.rodada, null);
+  assert.strictEqual(jogo.rodadasJogadas, 0);
+  assert.deepStrictEqual(jogo.duplas, {});
+  assert.deepStrictEqual(jogo.musicasUsadas, []);
+  // O que NÃO pode se perder: quem está na sala e em que dupla.
+  assert.deepStrictEqual(jogo.jogadores.map((j) => j.nome), ['Ana', 'João', 'Bia', 'Leo']);
+  assert.deepStrictEqual(jogo.jogadores.map((j) => j.dupla), [1, 1, 2, 2]);
+  // E dá para jogar de novo do zero.
+  game.iniciarPartida(jogo);
+  assert.strictEqual(jogo.fase, 'rodada');
+  assert.strictEqual(jogo.duplas[1].pontos, 0);
+});

@@ -82,21 +82,6 @@
       <button class="btn btn-emote" data-emote="🔥">🔥</button>
       <button class="btn btn-emote" data-emote="🎵">🎵</button>
     </div>
-    <button id="btn-nova-partida" class="btn btn-success oculto" style="width:100%;margin-top:16px">✨ Nova partida</button>
-    <div id="painel-lider" class="card oculto" style="text-align:left;margin-top:16px">
-      <h3>👑 Você comanda a sala</h3>
-      <label>Duração da rodada <input id="cfg-duracao" type="number" min="30" max="180" step="15"></label>
-      <label>Rodadas <input id="cfg-rodadas" type="number" min="4" max="20"></label>
-      <label>Máximo de duplas <input id="cfg-duplas" type="number" min="1" max="10"></label>
-      <label><input id="cfg-troca" type="checkbox"> Permitir trocar música</label>
-      <label>Custo da troca <input id="cfg-troca-custo" type="number" min="0" max="50"></label>
-      <label><input id="cfg-palpite" type="checkbox"> Plateia pode palpitar</label>
-      <label><input id="cfg-votacao" type="checkbox"> Plateia vota o acerto</label>
-      <button id="btn-salvar-config" class="btn btn-secondary" style="width:100%">Salvar configuração</button>
-      <button id="btn-iniciar" class="btn btn-success" style="width:100%;margin-top:8px">▶ Começar partida</button>
-      <button id="btn-reiniciar" class="btn btn-error" style="width:100%;margin-top:8px">↺ Reiniciar sala</button>
-      <div id="lista-expulsar"></div>
-    </div>
   </section>
 
   <p id="timer-jogador" class="pill oculto">⏱ <span id="tempo">90</span>s</p>
@@ -141,7 +126,26 @@
     </div>
   </section>
 
-  <!-- Fora do sistema de telas: aparece junto do lobby/plateia, controlada no render() -->
+  <!-- Fora do sistema de telas: o líder manda em qualquer fase, não só no lobby.
+       mostrarTela() esconde tudo que é .tela, então este bloco fica de fora. -->
+  <div id="painel-lider" class="card oculto" style="text-align:left;margin-top:16px">
+    <h3>👑 Você comanda a sala</h3>
+    <label>Duração da rodada <input id="cfg-duracao" type="number" min="30" max="180" step="15"></label>
+    <label>Rodadas <input id="cfg-rodadas" type="number" min="4" max="20"></label>
+    <label>Máximo de duplas <input id="cfg-duplas" type="number" min="1" max="10"></label>
+    <label><input id="cfg-troca" type="checkbox"> Permitir trocar música</label>
+    <label>Custo da troca <input id="cfg-troca-custo" type="number" min="0" max="50"></label>
+    <label><input id="cfg-palpite" type="checkbox"> Plateia pode palpitar</label>
+    <label><input id="cfg-votacao" type="checkbox"> Plateia vota o acerto</label>
+    <button id="btn-salvar-config" class="btn btn-secondary" style="width:100%">Salvar configuração</button>
+    <button id="btn-iniciar" class="btn btn-success" style="width:100%;margin-top:8px">▶ Começar partida</button>
+    <div id="lista-expulsar"></div>
+    <hr style="margin:14px 0">
+    <button id="btn-jogar-de-novo" class="btn btn-success oculto" style="width:100%">🔁 Jogar de novo</button>
+    <button id="btn-expulsar-todos" class="btn btn-error" style="width:100%;margin-top:8px">🚪 Expulsar todos</button>
+  </div>
+
+  <!-- Também fora do sistema de telas: aparece no lobby e na plateia. -->
   <section id="sugerir" class="card oculto">
     <h2>💡 Sugerir música</h2>
     <p style="font-size:0.9rem">Sentiu falta de uma música? Procure e sugira — ela entra na fila de avaliação do jogo.</p>

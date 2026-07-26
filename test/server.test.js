@@ -739,3 +739,88 @@ test('GET /api/sugestoes exige token e devolve a lista', async () => {
     assert.strictEqual(lista[0].titulo, 'Aquarela');
   } finally { httpServer.close(); }
 });
+
+test('trocar de sala solta a anterior: nada da sala velha chega mais', async () => {
+  const { httpServer, url } = await subirServidor();
+  const salaA = await novaSala(url);
+  const salaB = await novaSala(url);
+  const celular = conectar(url);
+  const outro = conectar(url);
+  try {
+    await emitir(celular, 'entrar', { sala: salaA.codigo, nome: 'Ana', dupla: 1 });
+    await emitir(celular, 'entrar', { sala: salaB.codigo, nome: 'Ana', dupla: 1 });
+    const recebidos = [];
+    celular.on('estado', (e) => recebidos.push(e.codigo));
+    // Provoca broadcast só na sala A; o celular não deveria ouvir nada dela.
+    await emitir(outro, 'entrar', { sala: salaA.codigo, nome: 'Zé', dupla: 2 });
+    await new Promise((r) => setTimeout(r, 120));
+    assert.deepStrictEqual(recebidos.filter((c) => c === salaA.codigo), [],
+      'o celular continuou recebendo estado da sala que abandonou');
+  } finally {
+    celular.close(); outro.close();
+    salaA.display.close(); salaB.display.close();
+    httpServer.close();
+  }
+});
+
+test('quem sai da sala deixa de contar como conectado e passa a liderança', async () => {
+  const { httpServer, url } = await subirServidor();
+  const salaA = await novaSala(url);
+  const salaB = await novaSala(url);
+  const lider = conectar(url);
+  const segundo = conectar(url);
+  try {
+    await emitir(lider, 'entrar', { sala: salaA.codigo, nome: 'Ana', dupla: 1 });
+    const r = await emitir(segundo, 'entrar', { sala: salaA.codigo, nome: 'João', dupla: 1 });
+    assert.strictEqual(r.estado.liderNum, 1); // Ana lidera a sala A
+    lider.emit('entrar', { sala: salaB.codigo, nome: 'Ana', dupla: 1 });
+    const e = await esperarEstado(segundo, (est) => est.liderNum === 2);
+    assert.strictEqual(e.liderNum, 2); // João assumiu ao ver Ana sair
+    assert.strictEqual(e.jogadores.find((j) => j.num === 1).conectado, false);
+  } finally {
+    lider.close(); segundo.close();
+    salaA.display.close(); salaB.display.close();
+    httpServer.close();
+  }
+});
+
+test('reiniciarPartida (líder) volta ao lobby sem desvincular os celulares', async () => {
+  const { httpServer, url } = await subirServidor({ resultadoMs: 30 });
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada.fase === 'emAndamento');
+    ana.emit('acertou');
+    await esperarEstado(display, (e) => e.rodada && e.rodada.fase === 'resultado');
+
+    ana.emit('reiniciarPartida');
+    const e = await esperarEstado(display, (est) => est.fase === 'lobby');
+    assert.strictEqual(e.jogadores.length, 2, 'os jogadores continuam na sala');
+    assert.strictEqual(e.liderNum, 1, 'a liderança não muda');
+    assert.strictEqual(e.rodada, null, 'a rodada sumiu');
+    assert.deepStrictEqual(e.duplas, [], 'o placar zerou');
+    // E o celular segue vinculado: não recebeu 'removido'.
+    const aindaDentro = await esperarEstado(ana, (est) => est.fase === 'lobby');
+    assert.strictEqual(aindaDentro.voce.num, 1);
+  } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
+});
+
+test('só o líder reinicia a partida', async () => {
+  const { httpServer, url } = await subirServidor();
+  const { display, codigo } = await novaSala(url);
+  const lider = conectar(url);
+  const outro = conectar(url);
+  try {
+    await emitir(lider, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(outro, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    const erro = esperarErro(outro);
+    outro.emit('reiniciarPartida');
+    assert.match(await erro, /líder da sala/);
+  } finally { lider.close(); outro.close(); display.close(); httpServer.close(); }
+});

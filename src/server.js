@@ -481,6 +481,23 @@ function criarServidor({
     };
 
     function vincular(sala) {
+      // Sair da sala anterior antes de entrar na nova. Sem isto o socket ficava
+      // inscrito nas duas e o broadcast da sala velha sobrescrevia a tela do
+      // celular — a "sala congelada" que o jogador vê ao trocar de sala.
+      const anterior = socket.data.sala && salas.get(socket.data.sala);
+      if (anterior && anterior !== sala) {
+        anterior.socketsNaSala.delete(socket.id);
+        socket.leave(`sala:${anterior.codigo}`);
+        // Varre por socket.id: quando isto roda pelo 'entrar', o playerId já é o
+        // da sala nova, então procurar pelo playerId não acharia o vínculo velho.
+        for (const [playerId, socketId] of [...anterior.conectados]) {
+          if (socketId !== socket.id) continue;
+          anterior.conectados.delete(playerId);
+          if (playerId === anterior.liderId) promoverLider(anterior);
+        }
+        if (anterior.socketsNaSala.size === 0) agendarExpiracao(anterior);
+        broadcast(anterior);
+      }
       socket.data.sala = sala.codigo;
       socket.join(`sala:${sala.codigo}`);
       sala.socketsNaSala.add(socket.id);
@@ -665,6 +682,17 @@ function criarServidor({
           s.emit('removido');
         }
       }
+    }));
+
+    socket.on('reiniciarPartida', () => guardar((sala) => {
+      exigirLider();
+      pararTimer(sala);
+      pararProxima(sala);
+      pararPrazoVotacao(sala);
+      sala.tempoRestante = null;
+      sala.jogo.musicas = banco.ler();
+      game.reiniciarPartida(sala.jogo);
+      registrador.registrar('partidaReiniciada', { sala: sala.codigo });
     }));
 
     socket.on('reiniciarSala', () => guardar((sala) => {

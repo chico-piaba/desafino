@@ -38,10 +38,14 @@ socket.on('connect', () => {
 });
 
 socket.on('erro', (msg) => mostrarEvento(`⚠️ ${msg}`));
-socket.on('roubo', ({ nome, valor }) => mostrarEvento(`🔥 ${nome} roubou ${valor} pts da rodada!`));
+socket.on('roubo', ({ nome, valor }) => {
+  musicaLobby.tocar('roubo');
+  mostrarEvento(`🔥 ${nome} roubou ${valor} pts da rodada!`);
+});
 socket.on('tick', (t) => {
   $('tempo').textContent = t;
   $('timer').classList.toggle('urgente', t <= 15);
+  musicaLobby.tique(t);
 });
 
 // ---- Música do lobby (chiptune WebAudio, precisa de um clique pra começar) ----
@@ -51,6 +55,8 @@ let faseAtual = 'lobby';
 
 function atualizarSom() {
   $('btn-som').textContent = somLigado ? '🔊' : '🔇';
+  musicaLobby.mudo(!somLigado);
+  // O loop é só do lobby; os efeitos seguem valendo o resto da partida.
   if (somLigado && faseAtual === 'lobby') musicaLobby.ligar();
   else musicaLobby.desligar();
 }
@@ -63,7 +69,28 @@ $('btn-som').onclick = () => {
 document.addEventListener('pointerdown', () => atualizarSom(), { once: true });
 
 let dicasVistas = 0;
+let faseVista = null;        // fase do jogo na última renderização
+let faseRodadaVista = null;  // fase da rodada na última renderização
+
+// Efeitos disparam em transição, não em estado: o servidor reenvia o mesmo
+// estado várias vezes por rodada e sem isto o som repetiria a cada broadcast.
+function sonsDeTransicao(e) {
+  const faseRodada = e.rodada ? e.rodada.fase : null;
+  if (faseVista === 'lobby' && e.fase === 'rodada') musicaLobby.tocar('inicioPartida');
+  if (e.fase === 'fim' && faseVista !== 'fim') musicaLobby.tocar('fimDeJogo');
+  if (faseRodadaVista !== 'emAndamento' && faseRodada === 'emAndamento') {
+    musicaLobby.tocar('contagem');
+  }
+  if (faseRodadaVista !== 'votacao' && faseRodada === 'votacao') musicaLobby.tocar('votacao');
+  if (faseRodadaVista !== 'resultado' && faseRodada === 'resultado') {
+    musicaLobby.tocar(e.rodada.pontosGanhos > 0 ? 'acertou' : 'errou');
+  }
+  faseVista = e.fase;
+  faseRodadaVista = faseRodada;
+}
+
 socket.on('estado', (e) => {
+  sonsDeTransicao(e);
   $('aviso').classList.toggle('oculto', !e.aviso);
   $('aviso').textContent = e.aviso || '';
   faseAtual = e.fase;
@@ -154,6 +181,7 @@ function renderRodada(e) {
   }
   if (r.dicasCompradas.length > dicasVistas) {
     const d = r.dicasCompradas[r.dicasCompradas.length - 1];
+    musicaLobby.tocar('dica');
     mostrarEvento(`💡 Dica comprada: ${NOME_DICA[d.tipo] || d.tipo} (−${d.custo} pts)`);
   }
   dicasVistas = r.dicasCompradas.length;
