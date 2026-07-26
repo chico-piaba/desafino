@@ -178,6 +178,27 @@ $('btn-reiniciar').onclick = () => {
   }
 };
 
+// Os dois botões abaixo entraram por deploy quente: um telefone com HTML velho
+// em cache roda este JS sem ter os elementos, e sem a guarda o script morre aqui.
+if ($('btn-nova-partida')) {
+  $('btn-nova-partida').onclick = () => {
+    if (confirm('Começar uma partida nova? Todos entram de novo e o placar zera.')) {
+      socket.emit('reiniciarSala');
+    }
+  };
+}
+
+// Válvula de escape: playerId/sala gravados podem prender o aparelho numa sala
+// antiga. Limpa só o vínculo com a sala — nome e avatar ficam.
+if ($('btn-limpar')) {
+  $('btn-limpar').onclick = () => {
+    if (!confirm('Esquecer a sala neste aparelho e voltar para a entrada? Seu nome e avatar são mantidos.')) return;
+    localStorage.removeItem('humatunePlayerId');
+    localStorage.removeItem('humatuneSala');
+    location.reload();
+  };
+}
+
 function render(e) {
   const entrou = Boolean(e.voce) || (e.fase === 'lobby' && localStorage.getItem('humatunePlayerId') && e.jogadores.length > 0);
   const emRodada = e.fase === 'rodada' && e.rodada && e.rodada.fase !== 'resultado';
@@ -187,6 +208,12 @@ function render(e) {
     const ocioso = (e.fase === 'lobby' && (Boolean(e.voce) || entrou)) ||
       (emRodada && e.voce && e.voce.papel === 'plateia');
     $('sugerir').classList.toggle('oculto', !ocioso);
+  }
+  // Sem isto a sala morre no fim da partida: o painel do líder só vive no lobby
+  // e o display não tem mais botão nenhum. Guarda contra HTML antigo em cache.
+  if ($('btn-nova-partida')) {
+    const podeReiniciar = e.fase === 'fim' && Boolean(e.voce && e.voce.ehLider);
+    $('btn-nova-partida').classList.toggle('oculto', !podeReiniciar);
   }
   $('timer-jogador').classList.toggle('oculto', !(emRodada && e.rodada.fase === 'emAndamento'));
   if (emRodada && e.rodada.fase === 'emAndamento' && e.tempoRestante != null) {
@@ -204,7 +231,9 @@ function render(e) {
   $('emotes').classList.add('oculto');
   if (e.fase === 'fim') {
     $('espera-titulo').textContent = '🏆 Fim de jogo!';
-    $('espera-texto').textContent = 'Veja o resultado no display.';
+    $('espera-texto').textContent = e.voce && e.voce.ehLider
+      ? 'Veja o resultado no display. Você comanda: comece a próxima quando quiser.'
+      : 'Veja o resultado no display.';
     return mostrarTela('tela-espera');
   }
   if (!e.voce) return mostrarTela('tela-entrar');
