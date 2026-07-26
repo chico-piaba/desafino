@@ -447,3 +447,106 @@ test('troca desligada no config é recusada', () => {
   game.comecarRodada(jogo, 'a');
   assert.throws(() => game.trocarMusica(jogo, 'a'), /desligada/);
 });
+
+function jogoCom3Duplas() {
+  const jogo = jogoCom2Duplas();
+  game.entrarJogador(jogo, 'Carol', 3, 'e');
+  game.entrarJogador(jogo, 'Gui', 3, 'f');
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  return jogo; // apresenta 'a' (num 1), adivinha 'b' (num 2); plateia = nums 3,4,5,6
+}
+
+test('"eu acertei" abre votação só para a plateia conectada', () => {
+  const jogo = jogoCom3Duplas();
+  assert.throws(() => game.adivinhadorAcertou(jogo, 'a', [3, 4]), /adivinhador/);
+  const v = game.adivinhadorAcertou(jogo, 'b', [3, 4]);
+  assert.strictEqual(jogo.rodada.fase, 'votacao');
+  assert.strictEqual(v.origem, 'adivinhador');
+  assert.deepStrictEqual(v.eleitores, [3, 4]);
+});
+
+test('maioria simples aprova e paga o pote descontado', () => {
+  const jogo = jogoCom3Duplas();
+  game.comprarDica(jogo, 'b', 'cantor'); // −10 → 90
+  game.adivinhadorAcertou(jogo, 'b', [3, 4, 5]);
+  assert.strictEqual(game.votar(jogo, 3, true), null); // 1 de 3, ainda não
+  const r = game.votar(jogo, 4, true); // 2 de 3 → passou de 50%
+  assert.strictEqual(r.aprovada, true);
+  assert.strictEqual(jogo.rodada.fase, 'resultado');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 90);
+  assert.strictEqual(jogo.duplas[1].pontos, 90);
+});
+
+test('votação reprovada por "eu acertei" devolve a rodada ao andamento', () => {
+  const jogo = jogoCom3Duplas();
+  game.adivinhadorAcertou(jogo, 'b', [3, 4]);
+  game.votar(jogo, 3, false);
+  const r = game.votar(jogo, 4, false);
+  assert.strictEqual(r.aprovada, false);
+  assert.strictEqual(jogo.rodada.fase, 'emAndamento');
+  assert.strictEqual(jogo.rodadasJogadas, 0);
+});
+
+test('empate não aprova — exige mais de 50%', () => {
+  const jogo = jogoCom3Duplas();
+  game.adivinhadorAcertou(jogo, 'b', [3, 4]);
+  game.votar(jogo, 3, true);
+  const r = game.votar(jogo, 4, false);
+  assert.strictEqual(r.aprovada, false);
+  assert.strictEqual(jogo.rodada.fase, 'emAndamento');
+});
+
+test('quem não é eleitor não vota', () => {
+  const jogo = jogoCom3Duplas();
+  game.adivinhadorAcertou(jogo, 'b', [3, 4]);
+  assert.throws(() => game.votar(jogo, 99, true), /não vota/);
+});
+
+test('tempo esgotado abre votação; reprovada crava 0', () => {
+  const jogo = jogoCom3Duplas();
+  game.tempoEsgotado(jogo, [3, 4]);
+  assert.strictEqual(jogo.rodada.fase, 'votacao');
+  assert.strictEqual(jogo.rodada.votacao.origem, 'tempo');
+  const r = game.fecharVotacaoPorPrazo(jogo); // ninguém votou
+  assert.strictEqual(r.aprovada, false);
+  assert.strictEqual(jogo.rodada.fase, 'resultado');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 0);
+});
+
+test('tempo esgotado com votação aprovada no prazo paga o pote', () => {
+  const jogo = jogoCom3Duplas();
+  game.tempoEsgotado(jogo, [3, 4, 5]);
+  game.votar(jogo, 3, true);
+  game.votar(jogo, 4, true);
+  assert.strictEqual(jogo.rodada.fase, 'resultado');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 100);
+});
+
+test('sem plateia não há votação: x1 mantém o comportamento antigo', () => {
+  const jogo = jogoX1();
+  game.comecarRodada(jogo, 'a');
+  assert.strictEqual(game.adivinhadorAcertou(jogo, 'b', []), null);
+  assert.strictEqual(jogo.rodada.fase, 'emAndamento');
+  game.tempoEsgotado(jogo, []);
+  assert.strictEqual(jogo.rodada.fase, 'resultado');
+  assert.strictEqual(jogo.rodada.pontosGanhos, 0);
+});
+
+test('votação desligada no config não abre', () => {
+  const jogo = jogoCom2Duplas();
+  jogo.config.plateia.votacao = false;
+  game.iniciarPartida(jogo);
+  game.comecarRodada(jogo, 'a');
+  assert.strictEqual(game.adivinhadorAcertou(jogo, 'b', [3, 4]), null);
+  assert.strictEqual(jogo.rodada.fase, 'emAndamento');
+});
+
+test('apresentador resolve na hora mesmo com a votação aberta', () => {
+  const jogo = jogoCom3Duplas();
+  game.adivinhadorAcertou(jogo, 'b', [3, 4]);
+  game.acertou(jogo, 'a');
+  assert.strictEqual(jogo.rodada.fase, 'resultado');
+  assert.strictEqual(jogo.rodada.votacao, null);
+  assert.strictEqual(jogo.rodada.pontosGanhos, 100);
+});

@@ -192,6 +192,60 @@ function comprarDica(jogo, jogadorId, tipo) {
   return dica;
 }
 
+function abrirVotacao(jogo, origem, eleitores) {
+  const r = exigirRodada(jogo, 'emAndamento');
+  // Sem plateia conectada, ou com a votação desligada, o apresentador segue
+  // sendo a única autoridade — é o caso do duelo x1.
+  if (!jogo.config.plateia.votacao) return null;
+  if (!eleitores || eleitores.length === 0) return null;
+  r.fase = 'votacao';
+  r.votacao = { origem, eleitores: [...eleitores], votos: {} };
+  return r.votacao;
+}
+
+function adivinhadorAcertou(jogo, jogadorId, eleitores = []) {
+  const r = exigirRodada(jogo, 'emAndamento');
+  if (jogadorId !== r.adivinhadorId) throw new Error('Só o adivinhador avisa que acertou');
+  return abrirVotacao(jogo, 'adivinhador', eleitores);
+}
+
+function fecharVotacao(jogo, aprovada) {
+  const r = jogo.rodada;
+  const { origem } = r.votacao;
+  r.votacao = null;
+  if (aprovada) {
+    encerrarRodada(jogo, valorAtual(jogo));
+    return { aprovada: true, origem };
+  }
+  if (origem === 'tempo') {
+    encerrarRodada(jogo, 0);
+    return { aprovada: false, origem };
+  }
+  r.fase = 'emAndamento';
+  return { aprovada: false, origem };
+}
+
+function aprovouAcerto(votacao) {
+  const sim = Object.values(votacao.votos).filter(Boolean).length;
+  return sim * 2 > votacao.eleitores.length; // mais de 50%, empate não passa
+}
+
+function votar(jogo, jogadorNum, acertouMesmo) {
+  const r = exigirRodada(jogo, 'votacao');
+  if (!r.votacao.eleitores.includes(jogadorNum)) throw new Error('Você não vota nesta rodada');
+  r.votacao.votos[jogadorNum] = Boolean(acertouMesmo);
+  if (aprovouAcerto(r.votacao)) return fecharVotacao(jogo, true);
+  if (Object.keys(r.votacao.votos).length >= r.votacao.eleitores.length) {
+    return fecharVotacao(jogo, false);
+  }
+  return null;
+}
+
+function fecharVotacaoPorPrazo(jogo) {
+  const r = exigirRodada(jogo, 'votacao');
+  return fecharVotacao(jogo, aprovouAcerto(r.votacao));
+}
+
 function encerrarRodada(jogo, pontos) {
   const r = jogo.rodada;
   r.pontosGanhos = pontos;
@@ -212,8 +266,14 @@ function encerrarRodada(jogo, pontos) {
 }
 
 function acertou(jogo, jogadorId) {
-  const r = exigirRodada(jogo, 'emAndamento');
+  const r = jogo.rodada;
+  // Vale em andamento e durante a votação: o apresentador que acorda no meio
+  // da votação resolve na hora, sem esperar a plateia.
+  if (jogo.fase !== 'rodada' || !r || !['emAndamento', 'votacao'].includes(r.fase)) {
+    throw new Error('Ação inválida nesta fase do jogo');
+  }
   if (jogadorId !== r.apresentadorId) throw new Error('Só o apresentador confirma o acerto');
+  r.votacao = null;
   encerrarRodada(jogo, valorAtual(jogo));
 }
 
@@ -223,9 +283,11 @@ function passar(jogo, jogadorId) {
   encerrarRodada(jogo, 0);
 }
 
-function tempoEsgotado(jogo) {
+function tempoEsgotado(jogo, eleitores = []) {
   exigirRodada(jogo, 'emAndamento');
+  if (abrirVotacao(jogo, 'tempo', eleitores)) return { votacao: true };
   encerrarRodada(jogo, 0);
+  return { votacao: false };
 }
 
 function proximaRodada(jogo) {
@@ -250,6 +312,9 @@ module.exports = {
   acertou,
   passar,
   tempoEsgotado,
+  adivinhadorAcertou,
+  votar,
+  fecharVotacaoPorPrazo,
   proximaRodada,
   valorAtual,
   dicasDisponiveis: dicas.dicasDisponiveis,
