@@ -37,13 +37,8 @@ socket.on('connect', () => {
   });
 });
 
-$('btn-iniciar').onclick = () => socket.emit('iniciarPartida');
-$('btn-reiniciar').onclick = () => {
-  if (confirm('Reiniciar a sala? Todos os jogadores e pontos serão zerados.')) {
-    socket.emit('reiniciarSala');
-  }
-};
 socket.on('erro', (msg) => mostrarEvento(`⚠️ ${msg}`));
+socket.on('roubo', ({ nome, valor }) => mostrarEvento(`🔥 ${nome} roubou ${valor} pts da rodada!`));
 socket.on('tick', (t) => {
   $('tempo').textContent = t;
   $('timer').classList.toggle('urgente', t <= 15);
@@ -81,6 +76,7 @@ socket.on('estado', (e) => {
   if (e.fase === 'fim') return renderFim(e);
   if (e.rodada.fase === 'resultado') return renderResultado(e);
   renderRodada(e);
+  renderVotacao(e);
 });
 
 function mostrarTela(id) {
@@ -89,7 +85,8 @@ function mostrarTela(id) {
 }
 
 function renderLobbyDuplas(e) {
-  const porDupla = [1, 2, 3, 4].map((n) => {
+  const maxDuplas = e.configSala ? e.configSala.maxDuplas : 4;
+  const porDupla = Array.from({ length: maxDuplas }, (_, i) => i + 1).map((n) => {
     const membros = e.jogadores.filter((j) => j.dupla === n);
     if (!membros.length) return '';
     const itens = membros.map((j) =>
@@ -97,15 +94,16 @@ function renderLobbyDuplas(e) {
             style="animation-delay:${(j.num % 7) * 0.4}s">
         <span class="mini-avatar">${DesafinoAvatar.avatarSvg(j.avatar)}</span>
         <span class="nome-jogador">${j.conectado ? '' : '🔴 '}${esc(j.nome)}</span>
-        <button class="remover-jogador" data-num="${j.num}" title="Remover jogador">✕</button>
+        ${j.num === e.liderNum ? '<span class="coroa" title="Líder da sala">👑</span>' : ''}
       </div>`
     ).join('');
     return `<div class="grupo-dupla"><b>Dupla ${n}</b><div class="fileira-avatares">${itens}</div></div>`;
   });
   $('lobby-duplas').innerHTML = porDupla.join('') || '<p>Aguardando jogadores…</p>';
-  for (const btn of $('lobby-duplas').querySelectorAll('button[data-num]')) {
-    btn.onclick = () => socket.emit('removerJogador', Number(btn.dataset.num));
-  }
+  const lider = e.jogadores.find((j) => j.num === e.liderNum);
+  $('lider-aviso').textContent = lider
+    ? `👑 ${lider.nome} comanda a sala pelo celular`
+    : 'Aguardando o primeiro jogador entrar…';
 }
 
 socket.on('emote', ({ num, tipo }) => {
@@ -159,6 +157,16 @@ function renderRodada(e) {
     mostrarEvento(`💡 Dica comprada: ${NOME_DICA[d.tipo] || d.tipo} (−${d.custo} pts)`);
   }
   dicasVistas = r.dicasCompradas.length;
+}
+
+function renderVotacao(e) {
+  const v = e.rodada.votacao;
+  $('painel-votacao').classList.toggle('oculto', !v);
+  if (!v) return;
+  $('votacao-titulo').textContent = v.origem === 'tempo'
+    ? '⏰ Tempo esgotado — a dupla acertou?'
+    : '✋ O adivinhador diz que acertou!';
+  $('votacao-contagem').textContent = `${v.sim} de ${v.eleitores.length} confirmaram · ${v.votaram} votaram`;
 }
 
 function renderResultado(e) {

@@ -13,7 +13,6 @@
     }
     header { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     header .logo { height: clamp(52px, 6vw, 84px); margin: 0; }
-    .btn-som, #btn-reiniciar { font-size: 0.85rem; padding: 8px 14px; }
     .btn-som { font-size: 1.2rem; }
     main { display: flex; flex-direction: column; align-items: center; gap: clamp(14px, 2vw, 24px); }
     .timer {
@@ -67,12 +66,6 @@
     @keyframes subir { to { transform: translate(-50%, -70px); opacity: 0; } }
     .dupla-card .mini-avatar svg { width: 56px; height: 56px; vertical-align: middle; }
     .avatar-ranking svg { width: 26px; height: 26px; vertical-align: middle; margin-right: 2px; }
-    .remover-jogador {
-      border: 2px solid var(--outline); border-radius: 999px; background: var(--error);
-      color: #fff; font-weight: 800; cursor: pointer; width: 22px; height: 22px;
-      line-height: 1; padding: 0; font-size: 0.8rem;
-    }
-    #btn-reiniciar { font-size: 0.85rem; padding: 8px 16px; margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -83,7 +76,6 @@
     <p id="evento" class="evento"></p>
     <span style="flex:1"></span>
     <button id="btn-som" class="btn btn-som" title="Música do lobby">🔇</button>
-    <button id="btn-reiniciar" class="btn btn-error">↺ Reiniciar sala</button>
   </header>
 
   <main>
@@ -93,7 +85,7 @@
       <img id="qr" alt="QR code para entrar no jogo">
       <p id="url-entrada" style="font-weight:800"></p>
       <div id="lobby-duplas"></div>
-      <button id="btn-iniciar" class="btn btn-success">Começar partida</button>
+      <p id="lider-aviso" class="pill">Aguardando o primeiro jogador entrar…</p>
     </section>
 
     <section id="tela-rodada" class="tela oculto" style="display:contents">
@@ -107,6 +99,10 @@
         <span class="mini-avatar" id="avatar-adivinhador"></span>
         <span>🤔 <span id="adivinhador"></span></span>
         <span id="valor" class="pill valor"></span>
+      </div>
+      <div id="painel-votacao" class="card oculto" style="text-align:center">
+        <h2 id="votacao-titulo"></h2>
+        <p id="votacao-contagem" style="font-size:1.6rem;font-weight:800"></p>
       </div>
     </section>
 
