@@ -7,10 +7,10 @@ function normalizar(texto) {
   const limpo = String(texto || '')
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '') // acentos (combinantes, pós-NFD)
+    .replace(/[\u0300-\u036f]/g, '') // acentos (combinantes, pós-NFD)
     .replace(/\([^)]*\)/g, ' ') // "(Ao Vivo)", "(Remix)"
     .replace(/-/g, ' ') // hífens viram espaço
-    .replace(/[^a-z0-9\s]/g, '') // outros pontuação
+    .replace(/[^a-z0-9\s]/g, '') // outras pontuações
     .replace(/\s+/g, ' ')
     .trim();
   const partes = limpo.split(' ');
