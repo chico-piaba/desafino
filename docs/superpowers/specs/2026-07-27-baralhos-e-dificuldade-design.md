@@ -21,12 +21,15 @@ A é grande demais para um plano só. Quatro entregas, nesta ordem:
 
 | | Entrega | Depende de |
 |---|---|---|
-| **A1** | Campo de carta: `tipo`, `tags`, `dificuldade` nos 1340 itens; migração; `/admin` mostra os campos. Nada muda no jogo. | — |
-| **A2** | Classificação por IA: critério escrito, lote reexecutável, revisão por amostra. | A1 |
-| **A3** | Baralhos: pacotes curados, seleção no lobby, deck de filmes do Oscar. | A1 |
-| **A4** | A aposta: escolha do nível, multiplicador, limiar de virada. | A1 + A2 |
+| **A1+A2** | Campo de carta (`tipo`, `tags`, `dificuldade`) nos 1340 itens, preenchido numa passada só de IA; migração; `/admin` mostra os campos. Nada muda no jogo. | — |
+| **A3** | Baralhos de música: nacional, internacional, décadas, gêneros. Seleção no lobby. | A1+A2 |
+| **A4** | A aposta: escolha do nível, multiplicador, limiar de virada. | A1+A2 |
+| **A3b** | Deck do Oscar (filmes, via Wikidata) — **junto com o sub-projeto B**, porque filme muda quais dicas fazem sentido. | A3 + B |
 
-A3 e A4 são independentes entre si; ambos precisam de A1.
+A3, A4 e A3b são independentes entre si; todos precisam de A1+A2.
+
+**A1 e A2 viraram uma entrega só.** `tipo`, `tags` e `dificuldade` saem da mesma
+leitura da carta; separar em duas passadas dobraria o custo sem ganhar nada.
 
 ## 1. O modelo de carta (A1)
 
@@ -72,7 +75,7 @@ tendo só melodia cantarolada ou mímica*. Quatro fatores:
 
 **Processo:** classificação offline em lotes, fora do servidor — não há chamada de
 IA em tempo de jogo e nenhuma dependência nova no projeto. A saída de cada lote é
-`{ id, dificuldade, motivo }`. O `motivo` vai para
+`{ id, tipo, tags, dificuldade, motivo }` — a mesma leitura resolve os três campos. O `motivo` vai para
 `data/dificuldade-motivos.json`, **fora** de `data/musicas.json`: permite auditar e
 reclassificar sem inchar o banco que o jogo lê a cada partida.
 
@@ -85,15 +88,53 @@ ajustar e reclassificar, em vez de corrigir carta a carta.
 
 ## 3. Os baralhos (A3)
 
-Decisões já tomadas com o usuário:
+Decisões já tomadas: tags na carta e não arquivos separados; **um baralho por
+partida**, escolhido pelo líder no lobby; pacotes curados por nós, fixos no
+repositório.
 
-- **Tags na carta**, não arquivos separados por baralho.
-- **Um baralho por partida**, escolhido pelo líder no lobby.
-- **Pacotes curados** por nós, fixos no repositório — não montados pelo jogador.
-- **Primeiro deck de filmes:** "Oscar — vencedores e indicados, todos os períodos".
+Um baralho é um filtro nomeado. Os do lançamento, e de onde sai cada um:
 
-Um baralho é um filtro nomeado sobre as tags. O deck de filmes traz `tipo: 'filme'`,
-o que muda quais dicas fazem sentido — mas isso é matéria de B.
+| Baralho | Filtro | Precisa de quê |
+|---|---|---|
+| Todas as músicas | nenhum | nada (é o padrão de hoje) |
+| Nacional | `tags` contém `nacional` | passada de IA |
+| Internacional | `tags` contém `internacional` | passada de IA |
+| Anos 80 / 90 / 2000 | faixa de `ano` | **nada** — o ano já está na carta |
+| Samba e pagode | `genero` em {Samba, Pagode} | mapa de agrupamento de gêneros |
+| Sertanejo | `genero` = Sertanejo | mapa de agrupamento |
+| Rock | `genero` em {Rock, Hard rock, Metal, Alternativo} | mapa de agrupamento |
+
+Os rótulos de gênero do iTunes são inconsistentes e numerosos (49 distintos), então
+o agrupamento é um mapa explícito no código, não um `filter` por igualdade. Ele mora
+junto da definição dos baralhos: é a mesma decisão de curadoria.
+
+**Tamanho mínimo:** um baralho precisa de cartas suficientes para uma partida
+inteira sem repetir. Com 8 rodadas de padrão, qualquer pacote abaixo de ~30 cartas
+não deve ser publicado. Samba+pagode dá 90, sertanejo 66, rock 173 — todos passam.
+
+### Trilhas de filme e o deck do Oscar (A3b)
+
+Fica para depois, junto do sub-projeto B, e por um motivo de conteúdo e não de
+código: carta de filme muda quais dicas fazem sentido. "Cantor" e "década" não se
+aplicam, e a forca precisa lidar com títulos longos em inglês. Entregar filme sem
+mexer nas dicas seria entregar meia funcionalidade.
+
+**Fonte de dados: Wikidata via SPARQL.** O IMDb não tem API pública gratuita, e os
+wrappers (OMDb) exigem chave. O Wikidata não exige chave, não adiciona dependência
+— é HTTPS puro — e tem prêmio como dado estruturado. Verificado na prática:
+
+- `?filme wdt:P166 wd:Q102427` devolve os vencedores de Melhor Filme
+- filtrar por `wdt:P31 wd:Q11424` é **obrigatório**: sem isso vêm produtores e
+  diretores junto, porque no Wikidata eles também "recebem" o prêmio
+- agrupar por título com `MIN(ano)` remove as duplicatas de múltiplas datas de estreia
+- o rótulo em `pt-br` traz o título brasileiro, que é o que a mesa reconhece
+
+Resultado da consulta validada: **98 vencedores, de 1927 a 2025**, com título em
+português. Suficiente para um baralho inteiro.
+
+**Indicados ficam para uma segunda etapa:** a consulta que inclui indicações
+(`p:P1411`) estoura o timeout do endpoint público. Vai precisar de paginação por
+ano ou por década.
 
 ## 4. A aposta (A4)
 
