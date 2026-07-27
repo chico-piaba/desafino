@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 data/eventos.jsonl
 data/sugestoes.jsonl
+
+# Chave da Groq para o classificador (scripts/classificar.js)
+.env
