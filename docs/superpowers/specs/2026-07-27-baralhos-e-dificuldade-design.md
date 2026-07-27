@@ -43,11 +43,29 @@ Hoje uma música é `{ id, titulo, artista, ano, genero? }`. Passa a ser:
   saber que "cantor" não é dica válida para filme.
 - **`tags`**: lista curta e minúscula (`nacional`, `internacional`, `samba`,
   `trilha-sonora`, `oscar`). Uma carta pode estar em vários pacotes sem duplicar.
-- **`dificuldade`**: inteiro `1` (fácil), `2` (média) ou `3` (difícil). Numérico e
-  não texto porque a tabela de multiplicadores indexa por ele e a ordenação importa.
+- **`dificuldadeCantarolar`**: inteiro `1` (fácil), `2` (média) ou `3` (difícil).
+  Numérico e não texto porque a tabela de multiplicadores indexa por ele.
+
+**Dificuldade são dois eixos, não um.** Colapsá-los num campo só foi um erro do
+primeiro rascunho deste spec:
+
+| eixo | o que pesa | de onde vem |
+|---|---|---|
+| **Cantarolar** | fama da música e se a melodia carrega sozinha | classificação por IA |
+| **Mímica** | número de palavras do título | contagem, derivada do próprio título |
+
+O tamanho do título não afeta em nada quem cantarola — a melodia não tem palavras.
+E a fama não afeta quem mima: *"Você Não Me Ensinou a Te Esquecer"* é conhecida e
+tem sete palavras para representar com o corpo.
+
+**O eixo da mímica não é guardado no banco.** É função pura do título
+(1–2 palavras = 1, 3–4 = 2, 5 ou mais = 3), e guardar dado derivado só cria
+oportunidade de os dois divergirem quando alguém editar um título no `/admin`.
+Medido sobre as 1340 cartas, esse corte dá 46% / 40% / 13% — distribuição
+utilizável sem ajuste.
 
 **Migração:** os 1340 itens atuais recebem `tipo: 'musica'`, `tags: []` e
-`dificuldade: 2`. Média é o padrão honesto — não finge conhecimento que não temos,
+`dificuldadeCantarolar: 2`. Média é o padrão honesto — não finge conhecimento que não temos,
 e mantém o jogo idêntico ao de hoje até A2 rodar.
 
 ## 2. O critério de dificuldade (A2)
@@ -160,6 +178,12 @@ sobre o pote, ele escala junto — coerente, e sem regra nova.
 O apresentador escolhe o nível **antes de começar a rodada**, na fase
 `aguardandoInicio`. A carta é sorteada **dentro do nível escolhido**, e ele não a vê
 antes de escolher: é aposta no escuro, não seleção.
+
+**O sorteio filtra pelo eixo do cantarolar**, que é o modo em que toda rodada
+começa. Depois de ver a carta, o apresentador recebe o peso de mímica dela na tela
+("5 palavras — mímica vai doer"), e decide com informação na mão se vale trocar de
+modo. Cada eixo servindo para o que é bom: um escolhe a carta, o outro informa a
+tática.
 
 Depois que o cronômetro anda, não há escolha — senão não é aposta, é retrospectiva.
 

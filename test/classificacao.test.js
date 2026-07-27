@@ -57,9 +57,24 @@ test('validarFicha recusa ficha sem tag válida e ficha ausente', () => {
   assert.strictEqual(validarFicha(null, CARTA).ok, false);
 });
 
-test('dicaVazada pega o título fora de ordem, não só a sequência exata', () => {
+test('dicaVazada pega o título fora de ordem e também uma palavra só', () => {
   const gi = { titulo: 'Garota de Ipanema', artista: 'Tom Jobim', ano: 1962 };
   assert.match(dicaVazada('A garota mais linda que passa em Ipanema', gi), /título/);
-  // Uma palavra só do título não basta — senão toda dica viraria vazamento.
-  assert.strictEqual(dicaVazada('Uma garota que faz o mundo parar', gi), null);
+  // Uma palavra forte já basta: "garota" sozinha entrega metade da resposta.
+  assert.match(dicaVazada('Uma garota que faz o mundo parar', gi), /garota/);
+  assert.strictEqual(dicaVazada('Alguém passa na areia e o mundo inteiro para de falar', gi), null);
+});
+
+test('dicaVazada pega UMA palavra do título, não só o título inteiro', () => {
+  const sg = { titulo: 'Sorte Grande', artista: 'Ivete Sangalo', ano: 2004 };
+  // Caso real do primeiro lote: metade do título escapou pela regra antiga.
+  assert.match(dicaVazada('Alguém agradece ao destino e celebra a boa sorte que mudou tudo', sg), /sorte/);
+  assert.strictEqual(dicaVazada('Alguém agradece ao destino que virou tudo de cabeça para baixo', sg), null);
+});
+
+test('dicaVazada não reprova dica por palavra comum do título', () => {
+  const c = { titulo: 'Como Uma Onda', artista: 'Lulu Santos', ano: 1983 };
+  // "como" é palavra vazia; "onda" não. Só a segunda deve reprovar.
+  assert.strictEqual(dicaVazada('Tudo muda como o tempo passa e nada fica parado', c), null);
+  assert.match(dicaVazada('O mar traz uma onda que leva tudo embora', c), /onda/);
 });

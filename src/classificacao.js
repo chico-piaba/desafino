@@ -27,28 +27,37 @@ function saneiaTags(bruto) {
 
 // A dica não pode conter o título nem o artista: seria entregar de graça o que
 // a forca e a dica de cantor cobram caro.
-// Casamento por palavra, não por substring: "Chitãozinho & Xororó" e
-// "Chitãozinho e Xororó" têm a mesma palavra-chave mas substring diferente, e
-// "a garota mais linda de Ipanema" entrega "Garota de Ipanema" sem conter a
-// sequência exata. Palavras curtas ficam de fora para não acusar preposição.
-function todasAsPalavrasAparecem(alvo, texto) {
-  const palavras = alvo.split(' ').filter((p) => p.length >= 4);
-  if (!palavras.length) return false;
-  const presentes = new Set(texto.split(' '));
-  return palavras.every((p) => presentes.has(p));
+// Palavras comuns demais para acusar vazamento sozinhas: aparecem em qualquer
+// frase e reprovariam dica boa.
+const VAZIAS = new Set([
+  'para', 'como', 'mais', 'muito', 'quando', 'onde', 'todo', 'toda', 'pelo',
+  'pela', 'esse', 'essa', 'isso', 'ainda', 'sobre', 'entre', 'sem', 'com',
+]);
+
+function palavrasFortes(alvo) {
+  return alvo.split(' ').filter((p) => p.length >= 4 && !VAZIAS.has(p));
 }
 
+// QUALQUER palavra forte do título já vaza. A regra anterior exigia todas, e
+// deixava passar "celebrando a boa sorte" para o título "Sorte Grande" — metade
+// da resposta na dica. Para o artista continua valendo o casamento completo,
+// senão "Djavan" reprovaria toda dica que citasse um nome parecido.
 function dicaVazada(dica, carta) {
   const d = normalizar(dica);
   if (!d) return 'vazia';
+  const presentes = new Set(d.split(' '));
+
   const titulo = normalizar(carta.titulo);
-  if (titulo && (d.includes(titulo) || todasAsPalavrasAparecem(titulo, d))) {
-    return 'contém o título';
-  }
+  if (titulo && d.includes(titulo)) return 'contém o título';
+  const doTitulo = palavrasFortes(titulo);
+  const vazada = doTitulo.find((p) => presentes.has(p));
+  if (vazada) return `contém "${vazada}" do título`;
+
   const artista = normalizar(carta.artista);
-  if (artista && (d.includes(artista) || todasAsPalavrasAparecem(artista, d))) {
-    return 'contém o artista';
-  }
+  if (artista && d.includes(artista)) return 'contém o artista';
+  const doArtista = palavrasFortes(artista);
+  if (doArtista.length && doArtista.every((p) => presentes.has(p))) return 'contém o artista';
+
   return null;
 }
 

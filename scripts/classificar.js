@@ -13,7 +13,11 @@ const RAIZ = path.join(__dirname, '..');
 const CAMINHO_BANCO = path.join(RAIZ, 'data', 'musicas.json');
 const CAMINHO_FICHAS = path.join(RAIZ, 'data', 'classificacao.json');
 const API = 'https://api.groq.com/openai/v1';
-const LOTE = 15;
+// fetch do Node não tem timeout: uma requisição pendurada no pool de conexões
+// espera para sempre, sem socket visível e sem erro. Já travou uma execução
+// inteira por 40 minutos — o teto abaixo transforma isso numa tentativa perdida.
+const TIMEOUT_MS = 90000;
+const LOTE = 10;
 const PAUSA_MS = 1200;
 const TENTATIVAS = 4;
 
@@ -34,6 +38,7 @@ async function chamar(caminho, corpo) {
   if (!chave) throw new Error('Falta GROQ_API_KEY (ponha em .env na raiz do projeto)');
   const opcoes = {
     headers: { Authorization: `Bearer ${chave}`, 'Content-Type': 'application/json' },
+    signal: AbortSignal.timeout(TIMEOUT_MS),
   };
   if (corpo) {
     opcoes.method = 'POST';
@@ -84,6 +89,15 @@ REGRAS DURAS da dica:
 - NÃO afirme fato nenhum: nada de ano, estúdio, prêmio, história de bastidor, quem
   compôs. Só o que a música evoca. Fato inventado é pior que dica fraca.
 - NÃO use nenhuma palavra do título nem o nome do artista.
+- NÃO use SINÔNIMO nem DEFINIÇÃO do título. Esta é a regra mais violada. Exemplos
+  do que NÃO fazer:
+    "Festa"        -> proibido "celebração", "balada", "comemoração"
+    "Sozinho"      -> proibido "solidão", "isolamento"
+    "Aquarela"     -> proibido descrever tinta, pincel ou cores no papel
+    "Sorte Grande" -> proibido "sorte", mesmo sem "grande"
+  Se der para adivinhar o título traduzindo uma palavra da dica, ela está errada.
+- Escreva português correto, sem erro de concordância.
+- Descreva a CENA ou o SENTIMENTO, nunca o significado do título.
 - Escreva como quem descreve a cena sem dizer o nome. Exemplo para "Evidências":
   "Um homem tentando negar o óbvio e se entregando na frase seguinte."
 
@@ -99,7 +113,7 @@ async function classificarLote(modelo, cartas) {
         response_format: { type: 'json_object' },
         messages: [
           { role: 'system', content: INSTRUCOES },
-          { role: 'user', content: `Cartas (id | título | artista | ano | gênero):\n${lista}` },
+          { role: 'user', content: `Devolva EXATAMENTE ${cartas.length} fichas, uma por carta, com o id exato.\n\nCartas (id | título | artista | ano | gênero):\n${lista}` },
         ],
       });
       const texto = r.choices[0].message.content;
@@ -109,7 +123,8 @@ async function classificarLote(modelo, cartas) {
     } catch (e) {
       const esperar = e.status === 429 ? PAUSA_MS * 5 * tentativa : PAUSA_MS * tentativa;
       if (tentativa === TENTATIVAS) throw e;
-      console.error(`  ! tentativa ${tentativa}: ${e.message.slice(0, 120)} — aguardando ${esperar}ms`);
+      const causa = e.name === 'TimeoutError' ? `sem resposta em ${TIMEOUT_MS / 1000}s` : e.message.slice(0, 120);
+      console.error(`  ! tentativa ${tentativa}: ${causa} — aguardando ${esperar}ms`);
       await pausar(esperar);
     }
   }
