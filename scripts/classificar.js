@@ -98,14 +98,36 @@ Para CADA carta devolva:
 Inclua sempre "nacional" OU "internacional" (nunca as duas), mais os gêneros que couberem.
 
 "dificuldade": 1, 2 ou 3 — quão difícil é o parceiro chegar no TÍTULO tendo só a
-melodia cantarolada. Considere, nesta ordem:
-  1. Fama no Brasil. Sucesso que não tocou aqui é difícil mesmo sendo famoso lá fora.
-  2. A melodia carrega sozinha? Rap, funk e faixas cujo apelo é a letra ou a batida
-     são DIFÍCEIS mesmo sendo ícones. Balada com refrão marcante é fácil.
-  3. O título aparece no refrão? Se sim, fica bem mais fácil.
-  4. Título genérico ou regravação famosa confunde, então é mais difícil.
-Âncoras: 1 = Evidências, Garota de Ipanema, Ilariê, Bohemian Rhapsody.
-2 = Nem um Dia, Comfortably Numb. 3 = Diário de um Detento, Alvorada.
+melodia cantarolada.
+
+ATENÇÃO À CALIBRAGEM. Este banco é uma seleção de SUCESSOS POPULARES, não um
+catálogo de raridades. O nível 1 é o caso COMUM, não a exceção. A distribuição
+esperada é aproximadamente:
+  nível 1 — 45% das cartas
+  nível 2 — 40%
+  nível 3 — 15%
+Se você está marcando quase tudo como 2 ou 3, está severo demais e errado.
+
+Nível 1 (FÁCIL) — use sempre que a música for um sucesso que um adulto brasileiro
+reconhece pelo refrão. Basta isso. Não exija que seja a música mais famosa do país.
+  Exemplos: Evidências, Garota de Ipanema, Ilariê, Bohemian Rhapsody, Asa Branca,
+  É o Amor, Eduardo e Mônica, Ai Se Eu Te Pego, Sozinho, Festa, Mas Que Nada.
+
+Nível 2 (MÉDIA) — conhecida, mas não do primeiro acorde: faixa de artista popular
+que não foi o maior hit dele, ou sucesso de nicho geracional.
+  Exemplos: Nem um Dia, Comfortably Numb, Sinais de Fogo, Fio de Cabelo.
+
+Nível 3 (DIFÍCIL) — dois casos, e o primeiro é o mais importante:
+  (a) A MELODIA NÃO CARREGA SOZINHA. Aplique SEMPRE, por mais famosa que a faixa
+      seja, quando o apelo está na letra, na batida ou no grito: rap, hip-hop,
+      funk, faixas faladas, instrumentais complexos, choro. Quem cantarola não
+      tem letra nem batida — só a linha melódica. Diário de um Detento é ícone
+      absoluto e é nível 3 por este critério, não por obscuridade.
+  (b) Faixa realmente obscura, de catálogo profundo, que a maioria não conhece.
+  Exemplos: Diário de um Detento, Alvorada, Serra do Luar, Rap do Silva.
+  O critério (a) deve responder pela maior parte do nível 3.
+
+Ajuste fino: título que aparece no refrão facilita; título genérico dificulta.
 
 "dica": UMA frase curta em português (até 140 caracteres) que evoque a CENA, o CLIMA
 ou o TEMA da música, para ser comprada como pista no jogo.

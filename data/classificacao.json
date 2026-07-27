@@ -5766,5 +5766,6245 @@
     ],
     "dificuldade": 2,
     "dica": "Um narrador declara estar presente, afirmando sua existência em meio a sons minimalistas."
+  },
+  "velha-infancia": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Numa noite de verão, a lembrança de um tempo sem pressa se faz presente."
+  },
+  "wave-joao-gilberto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um violão suave desliza pelo ar, como ondas que acariciam a costa."
+  },
+  "corcovado-quiet-nights-of-quiet-stars-stan-getz-astrud-gilbe": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "No silêncio da noite, a brisa traz notas que lembram estrelas distantes."
+  },
+  "violao-amigo-joao-gilberto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um instrumento que se torna confidente, tocando segredos no peito."
+  },
+  "ainda-bem-marisa-monte": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Mesmo depois de tudo, a chama ainda arde, iluminando memórias."
+  },
+  "pra-voce-guardei-o-amor-nando-reis": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um tesouro guardado com carinho, esperando ser descoberto."
+  },
+  "por-onde-andei-nando-reis": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Caminhos que se cruzam, buscando respostas em cada passo."
+  },
+  "relicario-cassia-eller-nando-reis": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um lugar onde lembranças se guardam, como objetos de valor."
+  },
+  "de-janeiro-a-janeiro-nando-reis-roberta-campos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ciclo que se repete, trazendo novas histórias a cada volta."
+  },
+  "1-de-julho-cassia-eller": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia marcado por lembranças que ainda vibram no peito."
+  },
+  "entre-a-serpente-e-a-estrela-amarillo-by-money-ze-ramalho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Entre sombras e luzes, a jornada de quem busca algo maior."
+  },
+  "la-belle-de-jour-alceu-valenca": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um dia que brilha, mas guarda segredos nas sombras da noite."
+  },
+  "tropicana-morena-tropicana-alceu-valenca": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "A brisa quente que envolve um coração apaixonado."
+  },
+  "enquanto-houver-sol-titas": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Quando o sol ainda brilha, a música ecoa nas ruas."
+  },
+  "dias-melhores-jota-quest": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Momentos que brilham como estrelas no céu da memória."
+  },
+  "amor-maior-jota-quest": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sentimento que cresce, ultrapassando limites invisíveis."
+  },
+  "o-sol-jota-quest": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "A luz que aquece, trazendo calor a quem a sente."
+  },
+  "a-sua-maneira-capital-inicial": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Cada passo tem ritmo, e o coração segue a batida."
+  },
+  "amor-perfeito-chiclete-com-banana": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se reconcilia com um beijo doce e um sorriso contagiante."
+  },
+  "retrato-de-um-playboy-juventude-perdida-gabriel-o-pensador": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 2,
+    "dica": "Um narrador descreve a vida de um jovem que se perde em sonhos e ilusões."
+  },
+  "hunting-high-and-low-a-ha": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se encontra em um parque, celebrando a vida com um sorriso."
+  },
+  "y-m-c-a-village-people": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para dançar em um clube cheio de luzes coloridas."
+  },
+  "regra-tres-toquinho-vinicius-de-moraes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal faz um pacto de amor, prometendo ser fiel em cada passo."
+  },
+  "sinais-sorriso-maroto-pericles-ferrugem": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal dança no ritmo de um samba, celebrando a alegria do amor."
+  },
+  "esqueca-me-se-for-capaz-marilia-mendonca-maiara-maraisa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal decide deixar o passado para trás e seguir em frente."
+  },
+  "someone-like-you-adele": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração busca alguém que compartilhe a mesma melodia de vida."
+  },
+  "set-fire-to-the-rain-adele": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um amor que arde como fogo, mesmo quando a chuva cai."
+  },
+  "rolling-in-the-deep-adele": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração mergulha em uma paixão profunda e intensa."
+  },
+  "love-in-the-dark-adele": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um amor que brilha nas sombras, iluminando a noite."
+  },
+  "perfect-ed-sheeran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se sente completo ao se encontrar em um momento de pura harmonia."
+  },
+  "photograph-ed-sheeran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal captura a essência de um instante, guardando memórias eternas."
+  },
+  "thinking-out-loud-ed-sheeran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração fala alto, revelando segredos que só o amor entende."
+  },
+  "shape-of-you-ed-sheeran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se encaixa como peças de um quebra‑cabeça, criando uma linda sinfonia."
+  },
+  "crazy-in-love-beyonce": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração enlouquece ao sentir a energia de um amor que não pode ser contido."
+  },
+  "irreplaceable-beyonce": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração reconhece que não pode ser substituído por outro."
+  },
+  "naughty-girl-beyonce": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se entrega a um desejo ardente, celebrando a liberdade do amor."
+  },
+  "love-on-top-beyonce": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal sobe em um palco de luzes, celebrando a alegria de estar juntos."
+  },
+  "only-girl-in-the-world-rihanna": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração canta sobre a sensação de ser única e especial."
+  },
+  "where-have-you-been-rihanna": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal procura o que foi perdido, buscando reencontrar a chama."
+  },
+  "we-found-love-rihanna": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal celebra a descoberta de um amor que nunca imaginou existir."
+  },
+  "umbrella-rihanna": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se protege de tempestades, mantendo a chama acesa."
+  },
+  "choka-choka-anitta-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal dança em um ritmo vibrante, celebrando a energia da vida."
+  },
+  "dai-dai-shakira-burna-boy": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal vibra com batidas fortes, sentindo a música pulsar no corpo."
+  },
+  "waka-waka-esto-es-africa-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal celebra a cultura africana, dançando ao som de um ritmo contagiante."
+  },
+  "hips-don-t-lie-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se entrega ao ritmo, deixando o corpo falar por si."
+  },
+  "i-want-it-that-way-backstreet-boys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dueto de vozes suaves cantando sobre um amor que não pode ser escondido"
+  },
+  "everybody-backstreet-s-back-backstreet-boys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Banda animada que convida a todos a dançar com energia contagiante"
+  },
+  "as-long-as-you-love-me-backstreet-boys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Verso que promete permanecer enquanto o afeto continua"
+  },
+  "quit-playing-games-with-my-heart-backstreet-boys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Jogo que termina quando o coração decide não mais brincar"
+  },
+  "wannabe-spice-girls": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Grupos de garotas que desejam ser parte de algo maior"
+  },
+  "say-you-ll-be-there-single-mix-spice-girls": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Promessa de presença em momentos decisivos"
+  },
+  "viva-forever-spice-girls": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canto que celebra a eternidade de um sentimento"
+  },
+  "2-become-1-spice-girls": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Dupla que se funde em uma única voz"
+  },
+  "baby-one-more-time-britney-spears": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Repetição de um pedido que não quer acabar"
+  },
+  "oops-i-did-it-again-britney-spears": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Confissão de repetir um erro que parece inevitável"
+  },
+  "amarelo-sample-sujeito-de-sorte-belchior-emicida-majur-pabll": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Mistura de versos que trazem sorte e cor em um ritmo acelerado"
+  },
+  "passarinhos-emicida": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Metáfora de voos livres em meio a desafios urbanos"
+  },
+  "subirusdoistiozin-criolo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Ritmo que descreve a vida nas ruas com humor e crítica"
+  },
+  "nao-existe-amor-em-sp-criolo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Canto que questiona a existência de afeto em meio ao caos da cidade"
+  },
+  "grajauex-criolo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Verso que mistura linguagem de rua com reflexão sobre identidade"
+  },
+  "cartao-de-visita-criolo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Apresentação que se assemelha a um convite para conhecer o artista"
+  },
+  "1967-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Revisão de um ano que marcou a trajetória de um artista"
+  },
+  "qual-e-marcelo-d2-antonio-carlos-e-jocafi": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Pergunta que desafia a identidade de um personagem fictício"
+  },
+  "vai-vendo-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Narrativa de um processo de venda que envolve confiança"
+  },
+  "rap-e-compromisso-sabotage": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Afirmação de que o rap exige responsabilidade"
+  },
+  "mun-ra-sabotage": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Ritmo que celebra a cultura urbana com atitude"
+  },
+  "um-bom-lugar-sabotage": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Canto que descreve um espaço onde a vida acontece"
+  },
+  "no-brooklin-sabotage": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Verso que descreve a vida em um bairro com identidade própria"
+  },
+  "dig-dig-dig-hempa-planet-hemp": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Repetição de um som que lembra batida de tambor"
+  },
+  "legalize-ja-planet-hemp": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Apelo que pede legalização de algo controverso"
+  },
+  "lucro-descomprimindo-baianasystem": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Canto que descreve a pressão de ganhar dinheiro em meio à arte"
+  },
+  "sulamericano-baianasystem": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo animado que mistura batidas eletrônicas com refrões contagiantes"
+  },
+  "bola-de-cristal-baianasystem": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Som que parece refletir luzes de neon em uma pista de dança"
+  },
+  "muleque-de-vila-projota": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Versos que narram a vida de um garoto de periferia, com batida marcante"
+  },
+  "ela-so-quer-paz-projota": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Refrão que clama por tranquilidade em meio ao caos urbano"
+  },
+  "a-rezadeira-projota": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Ritmo que faz o coração bater mais forte, como um tambor de guerra"
+  },
+  "ela-me-faz-rael": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia que descreve o poder de uma mulher sobre o narrador"
+  },
+  "envolvidao-rael": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Canto que envolve o ouvinte em uma atmosfera de festa"
+  },
+  "aurora-boreal-rael": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Som que evoca a beleza de um céu iluminado por luzes do norte"
+  },
+  "malandro-elza-soares": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Refrão que descreve um personagem astuto e divertido"
+  },
+  "matriz-ou-filial-jamelao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que lembra o som de um samba de roda"
+  },
+  "ela-disse-me-assim-jamelao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Verso que descreve uma mulher que fala com o narrador"
+  },
+  "nervos-de-aco-jamelao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que faz o coração bater forte como aço"
+  },
+  "cem-mil-reis-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Canto que descreve um valor que parece infinito"
+  },
+  "saudosa-maloca-demonios-da-garoa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Verso que descreve um lugar acolhedor na cidade"
+  },
+  "trem-das-onze-demonios-da-garoa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Caminho noturno, ônibus vazio, lembranças de um amor que não volta"
+  },
+  "samba-do-arnesto-demonios-da-garoa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Banda de rua, ritmo contagiante, celebração da vida simples"
+  },
+  "tiro-ao-alvaro-demonios-da-garoa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Conflito entre amigos, tensão crescente, clímax inesperado"
+  },
+  "trem-das-onze-adoniran-barbosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Ônibus de madrugada, despedida de um amor que vai embora"
+  },
+  "tiro-ao-alvaro-adoniran-barbosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 2,
+    "dica": "Desavença entre vizinhos, disputa de território, fim abrupto"
+  },
+  "saudosa-maloca-adoniran-barbosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Saudade de infância, lembranças de um bairro querido"
+  },
+  "samba-do-arnesto-adoniran-barbosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo alegre, celebração da amizade, dança de rua"
+  },
+  "alguem-me-avisou-dona-ivone-lara": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Alerta de perigo, urgência de escapar, coração acelerado"
+  },
+  "sonho-meu-dona-ivone-lara": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Sonhos de infância, lembranças de um tempo mais simples"
+  },
+  "acreditar-dona-ivone-lara-adryana-ribeiro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Confiança em alguém, esperança de futuro, sorriso contagiante"
+  },
+  "misterio-do-planeta-novos-baianos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Exploração do desconhecido, curiosidade sobre o universo"
+  },
+  "brasil-pandeiro-novos-baianos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Orgulho nacional, ritmo animado, celebração da cultura"
+  },
+  "a-menina-danca-novos-baianos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Jovem dançando, energia contagiante, festa na rua"
+  },
+  "preta-pretinha-novos-baianos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Cores vibrantes, ritmo alegre, celebração da diversidade"
+  },
+  "sangue-latino-secos-molhados": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Revolta política, crítica social, voz de resistência"
+  },
+  "rosa-de-hiroshima-secos-molhados": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Luta contra a opressão, esperança em meio à violência"
+  },
+  "o-vira-secos-molhados": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Desconforto social, crítica ao poder, voz de protesto"
+  },
+  "fala-secos-molhados": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Desafios da vida, busca por identidade, coragem"
+  },
+  "sujeito-de-sorte-belchior": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo animado, celebração da vida, energia contagiante"
+  },
+  "apenas-um-rapaz-latino-americano-belchior": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Desafios de identidade, busca por pertencimento, coragem"
+  },
+  "vapor-barato-revendo-amigos-jards-macale": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Amizade forte, apoio mútuo, superação de dificuldades"
+  },
+  "senhor-cidadao-tom-ze": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Crítica à burocracia, humor na vida cotidiana, desconfiança"
+  },
+  "menino-do-rio-baby-do-brasil": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo pulsante, vibração de festa, energia contagiante"
+  },
+  "a-menina-danca-baby-do-brasil": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Jovem dançando, energia vibrante, celebração da vida"
+  },
+  "malandro-baby-do-brasil": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo animado, celebração da vida, energia contagiante"
+  },
+  "telurica-baby-do-brasil": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo envolvente, celebração da vida, energia contagiante"
+  },
+  "agora-so-falta-voce-rita-lee-tutti-frutti": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Coração acelerado, desejo de estar junto, energia contagiante"
+  },
+  "esse-tal-de-roque-enrow-rita-lee-tutti-frutti": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo animado, celebração da vida, energia contagiante"
+  },
+  "o-toque-rita-lee-tutti-frutti": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo marcante que lembra o som de um tambor de festa, com voz que canta de forma brincalhona."
+  },
+  "samba-jambo-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma batida contagiante que faz a gente querer dançar com os pés no chão."
+  },
+  "quero-ser-locomotiva-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "A melodia lembra um trem que corre sem parar, com ritmo que não deixa o corpo parado."
+  },
+  "segredo-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma canção que fala de algo guardado, com voz suave e ritmo tranquilo."
+  },
+  "coracao-tranquilo-walter-franco": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que traz paz e serenidade, como se fosse um abraço musical."
+  },
+  "serra-do-luar-musica-incidental-coracao-tranquilo-leila-pinh": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um arranjo que mistura instrumentos suaves com batidas leves, criando um clima de tranquilidade."
+  },
+  "canalha-walter-franco": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "A melodia tem um tom de crítica, com ritmo que faz pensar sobre quem não cumpre promessas."
+  },
+  "eu-quero-e-botar-meu-bloco-na-rua-sergio-sampaio": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma canção que fala de festa de rua, com ritmo que faz a gente querer dançar."
+  },
+  "policia-bandido-cachorro-dentista-sergio-sampaio": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 3,
+    "dica": "A melodia tem ritmo rápido e letra que brinca com personagens inesperados."
+  },
+  "nao-adianta-trio-mocoto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo de samba que faz a gente querer dançar, com letra que fala de superação."
+  },
+  "swinga-sambaby-trio-mocoto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um arranjo que mistura jazz com samba, criando um clima de festa sofisticada."
+  },
+  "nem-vem-que-nao-tem-wilson-simonal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que fala de algo que não chega, mas que faz a gente sonhar."
+  },
+  "meu-limao-meu-limoeiro-wilson-simonal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "A melodia lembra frutas que crescem juntas, com ritmo que faz a gente sorrir."
+  },
+  "sa-marina-wilson-simonal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que fala de algo que está no ar, com melodia que lembra vento."
+  },
+  "diz-que-fui-por-ai-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "A melodia tem ritmo suave, como se fosse um sussurro de vento."
+  },
+  "como-e-grande-o-meu-amor-por-voce-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que fala de algo enorme, com melodia que faz a gente sentir calor."
+  },
+  "o-barquinho-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um arranjo que lembra o som de ondas, com ritmo que faz a gente imaginar um barco."
+  },
+  "estrelar-marcos-valle": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que fala de algo que brilha, com melodia que lembra estrelas."
+  },
+  "so-nice-summer-samba-marcos-valle": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um arranjo que mistura jazz com samba, criando clima de verão."
+  },
+  "dias-de-luta-ira": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "A melodia tem ritmo intenso, como se fosse uma batalha que não termina."
+  },
+  "tarde-vazia-ira": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia de sol, mas o coração está vazio e a música pede um retorno"
+  },
+  "ate-quando-esperar-plebe-rude": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "A espera se torna um convite para a própria jornada, sem pressa, apenas o passo a passo"
+  },
+  "protecao-plebe-rude": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um escudo invisível que protege quem se sente vulnerável, mas que não impede a dança"
+  },
+  "johnny-vai-a-guerra-outra-vez-plebe-rude": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado à batalha que se repete, mas a coragem ainda está em jogo"
+  },
+  "minha-renda-plebe-rude": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "O valor do trabalho diário, a esperança de um futuro que ainda não chegou"
+  },
+  "eu-nao-matei-joana-d-arc-camisa-de-venus": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração que se recusa a matar a própria história, mesmo quando o passado tenta puxar"
+  },
+  "simca-chambord-camisa-de-venus": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um riff que faz a cabeça balançar como um carrinho de brinquedo em alta velocidade"
+  },
+  "silvia-camisa-de-venus": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um nome que ecoa no coração, mas não revela quem está por trás da voz"
+  },
+  "so-o-fim-camisa-de-venus": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "O último acorde que fecha a porta de um palco, deixando apenas o silêncio"
+  },
+  "o-astronauta-de-marmore-starman-nenhum-de-nos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um viajante de concreto que busca estrelas em um céu de concreto"
+  },
+  "camila-camila-nenhum-de-nos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um nome que se repete como um mantra, mas a mensagem permanece oculta"
+  },
+  "voce-vai-lembrar-de-mim-nenhum-de-nos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "A promessa de ser lembrado, mesmo quando o tempo tenta apagar a memória"
+  },
+  "razoes-e-emocoes-nx-zero": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dilema interno que mistura lógica e sentimento em cada verso"
+  },
+  "ligacao-nx-zero": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um fio invisível que conecta duas almas, mas o destino ainda não se revela"
+  },
+  "onde-estiver-nx-zero-freddy-gibbs": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para seguir a trilha sonora de um lugar que não tem fronteiras"
+  },
+  "cancao-pra-voce-viver-mais-pato-fu": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para respirar mais fundo e sentir a vida em cada batida"
+  },
+  "sobre-o-tempo-pato-fu": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um relógio que gira mais rápido quando a música toca"
+  },
+  "ando-meio-desligado-pato-fu": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um passo que parece parado, mas a energia ainda pulsa no ar"
+  },
+  "eu-quero-ver-o-oco-raimundos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um desejo de descobrir o que está escondido nas sombras da própria vida"
+  },
+  "reggae-do-manero-raimundos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz o corpo vibrar como ondas em um mar de alegria"
+  },
+  "a-mais-pedida-raimundos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um pedido que ecoa nas ruas, mas ninguém sabe quem está pedindo"
+  },
+  "ratamahatta-sepultura": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um grito que atravessa a noite, mas o eco ainda não foi ouvido"
+  },
+  "orgasmatron-sepultura": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um som que faz o coração disparar como um tambor de guerra"
+  },
+  "territory-sepultura": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um território desconhecido que desafia quem ousa entrar"
+  },
+  "roots-bloody-roots-sepultura": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sangue que corre nas veias de quem não tem medo de se perder"
+  },
+  "eu-nao-gosto-de-ninguem-matanza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração que não se deixa levar, mas ainda busca um lugar para chamar de lar"
+  },
+  "meio-psicopata-matanza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Som pesado, guitarras distorcidas e vocais que gritam a rebeldia de um personagem sombrio."
+  },
+  "santa-sampa-vespas-mandarinas": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Bossa suave, acorde de violão e voz que descreve o cotidiano de um bairro de São Paulo."
+  },
+  "cobra-de-vidro-vespas-mandarinas": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia leve, ritmo dançante e letra que fala de um relacionamento que parece transparente."
+  },
+  "nao-sei-o-que-fazer-comigo-vespas-mandarinas": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção otimista que celebra a liberdade de viver sem regras."
+  },
+  "furta-cor-scalene-xenia-franca": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Guitarra elétrica e batida forte contam a história de um roubo de emoções."
+  },
+  "legado-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Riffs intensos e letra que fala de heranças e de quem deixa sua marca."
+  },
+  "entrelacos-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Guitarras entrelaçadas e bateria marcante descrevem um relacionamento complicado."
+  },
+  "surreal-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Som experimental, guitarras distorcidas e letras que falam de um mundo diferente."
+  },
+  "sinceramente-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Guitarra limpa, ritmo leve e letra que fala de honestidade em um relacionamento."
+  },
+  "sexperienced-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo acelerado, guitarra com distorção e letra que fala de experiências sexuais."
+  },
+  "dia-perfeito-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia alegre, bateria animada e letra que descreve um dia ideal."
+  },
+  "por-onde-andei-nando-reis-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção romântica com melodia suave e letra que fala de encontrar o caminho de volta."
+  },
+  "princesa-amado-batista": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia envolvente, ritmo de samba e letra que descreve a beleza de uma mulher."
+  },
+  "folha-seca-amado-batista": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia lenta, ritmo de samba e letra que fala de um coração seco."
+  },
+  "garcon-reginaldo-rossi": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia suave, ritmo de MPB e letra que descreve um garçom que ama a vida."
+  },
+  "leviana-reginaldo-rossi": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção romântica, ritmo de MPB e letra que descreve um amor que não pode ser."
+  },
+  "a-raposa-e-as-uvas-reginaldo-rossi": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia suave, ritmo de MPB e letra que descreve uma história de traição."
+  },
+  "meu-sangue-ferve-for-voce-sidney-magal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia animada, ritmo de pop e letra que descreve um amor que faz o coração bater forte."
+  },
+  "meu-sangue-ferve-por-voce-sidney-magal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia animada, ritmo de pop e letra que descreve um amor que faz o coração bater forte."
+  },
+  "me-chama-que-eu-vou-sidney-magal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção animada, ritmo de pop e letra que descreve um convite para sair."
+  },
+  "o-que-e-que-ha-fabio-jr": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia suave, ritmo de MPB e letra que descreve um amor que não pode ser."
+  },
+  "quando-gira-o-mundo-que-no-se-acabe-el-mundo-fabio-jr": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção animada, ritmo de pop e letra que descreve um amor que não pode ser."
+  },
+  "pareco-um-menino-fabio-jr": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia suave, ritmo de pop e letra que descreve um amor que não pode ser."
+  },
+  "caca-e-cacador-fabio-jr": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção animada, ritmo de pop e letra que descreve um amor que não pode ser."
+  },
+  "fogo-e-paixao-wando": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia animada, ritmo de pop e letra que descreve um amor que não pode ser."
+  },
+  "moca-wando": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção animada, ritmo de pop e letra que descreve um amor que não pode ser."
+  },
+  "chora-coracao-wando": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Choro que faz o peito bater forte e a lágrima escorrer"
+  },
+  "vou-tirar-voce-desse-lugar-odair-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Balada que pede para se afastar de quem não quer mais ficar"
+  },
+  "cade-voce-odair-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Refrão que chama por alguém que desapareceu"
+  },
+  "nunca-mais-odair-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia que promete não voltar a sofrer"
+  },
+  "tortura-de-amor-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Romance que descreve a dor de um coração partido"
+  },
+  "perfume-de-gardenia-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Fragrância que lembra um jardim de flores"
+  },
+  "eu-nao-sou-cachorro-nao-quireria-olivia-araujo-waldick-soria": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Fala de quem não quer ser tratado como animal"
+  },
+  "a-minha-historia-jose-augusto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Narrativa de um passado que molda quem somos"
+  },
+  "me-esqueci-de-viver-jose-augusto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Canção que lembra de deixar o medo para trás"
+  },
+  "sabado-jose-augusto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Dia de descanso que traz alegria"
+  },
+  "tudo-passara-nelson-ned": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Balada que celebra a vida sem arrependimentos"
+  },
+  "sonda-me-nelson-ned": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 3,
+    "dica": "Instrumental que faz o ouvinte sentir a profundidade"
+  },
+  "a-cigana-nelson-ned": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que descreve a vida de quem viaja"
+  },
+  "deixa-eu-te-amar-agepe": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Refrão que pede para deixar o amor entrar"
+  },
+  "me-leva-agepe": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Verso que convida a seguir em frente"
+  },
+  "cama-e-mesa-agepe": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Fala de um encontro que acontece em dois lugares"
+  },
+  "saga-de-um-vaqueiro-mastruz-com-leite": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "História de um homem que vive na roça"
+  },
+  "meu-vaqueiro-meu-peao-mastruz-com-leite": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que celebra a amizade entre dono e ajudante"
+  },
+  "razoes-mastruz-com-leite": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 2,
+    "dica": "Verso que lista motivos que não se pode deixar de seguir"
+  },
+  "a-praia-mastruz-com-leite": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Fala de um dia de sol e mar"
+  },
+  "sei-la-a-vida-tem-sempre-razao-toquinho-vinicius-de-moraes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Refrão que lembra que a vida tem razão"
+  },
+  "sabia-alceu-valenca-elba-ramalho-geraldo-azevedo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Verso que lembra a natureza e a liberdade"
+  },
+  "sabia-elba-ramalho-geraldo-azevedo-ze-ramalho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Refrão que descreve a alegria de cantar ao ar livre"
+  },
+  "ai-que-saudade-d-oce-elba-ramalho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Lá fora, o vento traz lembranças de um lugar distante"
+  },
+  "me-da-um-beijo-alceu-valenca-elba-ramalho-geraldo-azevedo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite suave, com ritmo que faz o coração bater mais forte"
+  },
+  "minha-vida-in-my-life-rita-lee": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um balanço de alegria que celebra cada instante vivido"
+  },
+  "baila-comigo-rita-lee-roberto-de-carvalho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma batida contagiante que convida a dançar sem parar"
+  },
+  "jardins-da-babilonia-rita-lee-roberto-de-carvalho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um cenário de sonhos, onde a música faz a imaginação florescer"
+  },
+  "nao-abro-mao-maiara-maraisa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente querer cantar alto no campo"
+  },
+  "a-culpa-e-nossa-maiara-maraisa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite ao perdão, com melodia que lembra um abraço"
+  },
+  "fala-a-verdade-maiara-maraisa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado à sinceridade, com batida que faz o coração bater"
+  },
+  "voce-vai-ver-maiara-maraisa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para testemunhar algo que vai mudar tudo"
+  },
+  "nao-me-cutuca-anitta-alceu-valenca": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma mensagem de força, com ritmo que faz a gente se sentir invencível"
+  },
+  "tudo-isso-anitta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a viver intensamente, sem medo de errar"
+  },
+  "pra-voce-gostar-de-mim-anitta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para sentir algo especial, com batida que faz a gente sorrir"
+  },
+  "voce-ja-sabe-anitta-los-brasileros": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para descobrir algo que já está no coração"
+  },
+  "i-just-might-bruno-mars": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a se arriscar, com melodia que faz o coração acelerar"
+  },
+  "risk-it-all-bruno-mars": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a deixar tudo de lado e viver o momento"
+  },
+  "just-the-way-you-are-bruno-mars": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a ser quem você é, sem máscaras"
+  },
+  "it-will-rain-bruno-mars": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a deixar a chuva limpar tudo que está errado"
+  },
+  "whenever-wherever-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a viajar sem limites, com ritmo que faz o coração bater"
+  },
+  "shakira-bzrp-music-sessions-vol-53-66-bizarrap-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a dançar com energia que não para"
+  },
+  "estoy-aqui-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a aparecer, com batida que faz a gente se sentir em casa"
+  },
+  "chantaje-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a deixar a música te envolver, sem medo"
+  },
+  "eu-gosto-dela-emicida": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que faz a gente pensar em algo que não pode ser dito"
+  },
+  "principia-emicida": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um convite a refletir sobre o que realmente importa"
+  },
+  "qual-e-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a descobrir quem realmente é"
+  },
+  "voce-diz-que-o-amor-nao-doi-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a sentir algo que não pode ser explicado"
+  },
+  "eu-ja-sabia-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a perceber que tudo já era esperado"
+  },
+  "ultimo-desejo-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a fazer um pedido que vai mudar tudo"
+  },
+  "gago-apaixonado-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a sentir algo que não pode ser escondido"
+  },
+  "arranjei-um-fraseado-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a criar algo que só a música pode explicar"
+  },
+  "coracao-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um acorde suave que lembra o perfume de um café da manhã de domingo."
+  },
+  "mas-quem-disse-que-eu-te-esqueco-dona-ivone-lara": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo alegre que faz o coração bater mais forte."
+  },
+  "mas-quem-disse-que-eu-te-esqueco-dona-ivone-lara-zeca-pagodi": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um compasso que faz a gente querer dançar na rua."
+  },
+  "tendencia-dona-ivone-lara": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um refrão que lembra o cheiro de café e de chuva."
+  },
+  "sorriso-negro-dona-ivone-lara": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um tom melancólico que lembra um pôr‑do‑sol na praia."
+  },
+  "lagrimas-negras-doidao-medley-caetano-veloso-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um dueto que mistura tristeza e leveza em um só acorde."
+  },
+  "cajuina-caetano-veloso-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que lembra o som da chuva na janela."
+  },
+  "feitico-caetano-veloso-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um tom que faz a gente sentir a brisa do mar."
+  },
+  "maracatu-atomico-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que lembra o batuque de um tambor de fogo."
+  },
+  "feito-gente-walter-franco": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que lembra o cheiro de café da manhã."
+  },
+  "me-deixe-mudo-walter-franco": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um tom que lembra o silêncio de uma noite sem estrelas."
+  },
+  "mixturacao-walter-franco": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que mistura diferentes sons em um só acorde."
+  },
+  "serra-do-luar-musica-incidental-coracao-tranquilo-walter-fra": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 3,
+    "dica": "Um som que lembra o vento nas árvores da noite."
+  },
+  "favela-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que lembra o som de um tambor na rua."
+  },
+  "camisa-amarela-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que lembra o cheiro de café da manhã."
+  },
+  "lamento-no-morro-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um tom que lembra o vento na praia."
+  },
+  "joao-e-maria-joao-and-maria-chico-buarque-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que lembra o som de uma canção de amor."
+  },
+  "a-paraiba-nao-e-chicago-marcos-valle": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que lembra o cheiro de café da manhã."
+  },
+  "batucada-surgiu-marcos-valle": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente querer dançar na rua."
+  },
+  "amor-de-nada-marcos-valle": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um tom que lembra o vento na praia."
+  },
+  "daqui-pra-frente-nx-zero": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um riff que lembra o som de uma estrada aberta."
+  },
+  "so-rezo-nx-zero": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que lembra o som de uma guitarra elétrica."
+  },
+  "cartas-pra-voce-nx-zero": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um refrão que lembra o som de uma guitarra elétrica."
+  },
+  "pela-ultima-vez-nx-zero": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um riff que lembra o som de uma estrada aberta."
+  },
+  "nunca-apague-a-luz-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que lembra o som de uma guitarra elétrica."
+  },
+  "relentless-game-far-from-alaska-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que lembra o som de uma guitarra elétrica."
+  },
+  "tiro-cego-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Um som que lembra o peso de uma corda."
+  },
+  "bom-brasileiro-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que lembra o cheiro de café da manhã."
+  },
+  "roda-gigante-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente querer dançar na rua."
+  },
+  "voce-nao-sabe-o-que-perdeu-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente perdido no amor, lembrando de algo que nunca teve."
+  },
+  "vestida-de-branco-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se reúne em uma festa de casamento, celebrando a união."
+  },
+  "angustia-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que sente dor por ter perdido algo que amava."
+  },
+  "fiquei-sabendo-avioes-do-forro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se reencontra no salão de festas, celebrando a vida."
+  },
+  "chupa-que-e-de-uva-avioes-do-forro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 2,
+    "dica": "Um casal que se envolve em uma paixão que não pode ser contida."
+  },
+  "inquilina-avioes-do-forro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma mulher que vive em um apartamento, mas tem um coração que não pode ser contido."
+  },
+  "o-que-tem-que-ser-sera-avioes-do-forro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente livre para fazer o que quiser, sem se preocupar com o futuro."
+  },
+  "magica-calcinha-preta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "hoje-a-noite-alone-calcinha-preta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 2,
+    "dica": "Um homem que se sente solitário, mas encontra conforto na música."
+  },
+  "manchete-dos-jornais-calcinha-preta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "dois-amores-duas-paixoes-calcinha-preta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "porque-nao-ve-limao-com-mel": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 2,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "anjo-querubim-limao-com-mel": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "toma-conta-de-mim-limao-com-mel": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "nao-quero-mais-every-beat-of-mt-heart-limao-com-mel": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 2,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "meu-pedaco-de-pecado-joao-gomes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente culpado por ter cometido um erro."
+  },
+  "dengo-joao-gomes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "lembrei-de-nos-joao-gomes-mestrinho-jota-pe": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "eu-tenho-a-senha-joao-gomes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente inseguro, mas tem a chave para a felicidade."
+  },
+  "eu-tenho-medo-ze-vaqueiro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente inseguro, mas tem a chave para a felicidade."
+  },
+  "coladin-ze-vaqueiro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente inseguro, mas tem a chave para a felicidade."
+  },
+  "volta-comigo-bb-ze-vaqueiro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente inseguro, mas tem a chave para a felicidade."
+  },
+  "ce-volta-wesley-safadao-ze-vaqueiro": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente inseguro, mas tem a chave para a felicidade."
+  },
+  "pela-ultima-vez-grupo-menos-e-mais-nattan": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "morena-nattan": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem que se sente atraído por uma mulher de pele escura."
+  },
+  "love-gostosinho-felipe-amorim-nattan": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "com-voce-ou-sem-nattan": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal que se sente atraído por algo que não pode ser descrito."
+  },
+  "diga-que-valeu-bell-marques": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "axe"
+    ],
+    "dificuldade": 1,
+    "dica": "Balança o corpo ao som de batidas que lembram a praia e o calor do verão"
+  },
+  "selva-branca-bell-marques": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "axe"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo contagiante que faz a galera se mover como se estivesse numa floresta tropical"
+  },
+  "voa-voa-bell-marques": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "axe"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que faz a gente imaginar voar sobre o mar com a cabeça cheia de alegria"
+  },
+  "100-voce-bell-marques": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "axe"
+    ],
+    "dificuldade": 1,
+    "dica": "Energia que explode quando a pessoa se sente completa e pronta para arrasar"
+  },
+  "me-diz-amor-flavio-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 1,
+    "dica": "Samba de raiz que faz o coração bater mais forte quando se pensa em quem ama"
+  },
+  "meu-cenario-flavio-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 2,
+    "dica": "Melodia que lembra um palco improvisado onde a vida vira música"
+  },
+  "espumas-ao-vento-flavio-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo que traz a sensação de estar no meio de uma festa à beira do mar"
+  },
+  "filho-do-dono-flavio-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "forro"
+    ],
+    "dificuldade": 2,
+    "dica": "Canção que narra a história de quem nasceu para ser rei da pista"
+  },
+  "vai-toma-mc-pikachu-mc-fioti": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que faz a galera se entregar ao ritmo sem pensar em nada mais"
+  },
+  "nois-e-thug-life-mc-lan-mc-fioti-mc-lil": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo que lembra a vida nas ruas e a força de quem não se entrega"
+  },
+  "bum-bum-tam-tam-mc-fioti-future-j-balvin-stefflon-don-juan-m": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Batida que mistura sons de diferentes países e faz a galera se mexer"
+  },
+  "vai-cremosa-mc-bella-mc-fioti": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se entregar ao som e ao calor da pista"
+  },
+  "uh-papai-chegou-o-simpatico-mr-catra": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "funk"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que lembra a chegada de um amigo que traz alegria"
+  },
+  "cerol-na-mao-furacao-2000-bonde-do-tigrao-dennis": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se mexer como se estivesse em uma festa de rua"
+  },
+  "tchu-tchuca-bonde-do-tigrao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se mover como se estivesse em uma dança de rua"
+  },
+  "um-morto-muito-louco-bonde-do-tigrao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Batida que lembra a vida de quem vive no ritmo da cidade"
+  },
+  "mimosa-2000-furacao-2000": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se mexer como se estivesse em uma festa de verão"
+  },
+  "egua-pocoto-furacao-2000-serginho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que lembra a energia de quem está em uma festa de rua"
+  },
+  "tchu-tchuca-furacao-2000-bonde-do-tigrao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se mover como se estivesse em uma dança de rua"
+  },
+  "tapinha-furacao-2000-naldinho-bela": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que lembra a energia de quem está em uma festa de rua"
+  },
+  "agora-to-solteira-furacao-2000-valesca-popozuda": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se mover como se estivesse em uma festa de rua"
+  },
+  "beijinho-no-ombro-valesca-popozuda": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que lembra a energia de quem está em uma festa de rua"
+  },
+  "eu-sou-a-diva-que-voce-quer-copiar-valesca-popozuda": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo que faz a galera se mover como se estivesse em uma festa de rua"
+  },
+  "sou-dessas-valesca-popozuda": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida que lembra a energia de quem está em uma festa de rua"
+  },
+  "corpo-sensual-pabllo-vittar": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Melodia que lembra o toque suave de um romance que não quer terminar"
+  },
+  "k-o-pabllo-vittar": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo que lembra a energia de quem está em uma festa de rua"
+  },
+  "tic-tic-nmixx-pabllo-vittar": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Batida que lembra o som de um relógio que marca o ritmo da noite"
+  },
+  "alibi-sevdaliza-pabllo-vittar-yseult": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Ritmo que lembra a energia de quem está em uma festa de rua"
+  },
+  "dona-de-mim-iza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Melodia que lembra a sensação de quem está em uma festa de rua"
+  },
+  "sem-filtro-iza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo contagiante que faz a galera dançar sem pensar"
+  },
+  "meu-talisma-iza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida envolvente que lembra um amuleto que protege a alma"
+  },
+  "pesadao-iza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Som pesado que faz o coração bater mais forte"
+  },
+  "sagrado-profano-luisa-sonza-kayblack": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Mistura de ritmos que cria um clima de festa nas ruas"
+  },
+  "motinha-2-0-dennis-luisa-sonza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Batida eletrônica que faz a pista de dança vibrar"
+  },
+  "anaconda-o-luisa-sonza-mariah-angeliq": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Som sensual que lembra o movimento de uma serpente"
+  },
+  "cachorrinhas-luisa-sonza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo animado que faz o público cantar junto"
+  },
+  "bixinho-duda-beat": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Batida suave que lembra um beijo roubado"
+  },
+  "voce-vai-gostar-duda-beat-ajulliacosta": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Som que faz a gente querer ouvir de novo"
+  },
+  "meu-pisero-duda-beat": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia que lembra um lugar secreto"
+  },
+  "tangerina-tiago-iorc-duda-beat": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo refrescante que lembra uma fruta cítrica"
+  },
+  "veludo-marrom-liniker": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Som suave que lembra um abraço quente"
+  },
+  "caminhador-anitta-liniker": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo que faz a gente caminhar ao som da cidade"
+  },
+  "caju-liniker": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia que lembra o sabor de um fruto tropical"
+  },
+  "baby-95-liniker": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Som que lembra um bebê rindo"
+  },
+  "ilarie-xuxa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que faz as crianças dançarem com alegria"
+  },
+  "lua-de-cristal-xuxa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia que lembra a luz da lua em um céu estrelado"
+  },
+  "parabens-da-xuxa-xuxa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que faz a gente celebrar momentos especiais"
+  },
+  "he-man-trem-da-alegria": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que lembra um herói de super-heróis"
+  },
+  "thundercats-trem-da-alegria": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Som que lembra um gato com superpoderes"
+  },
+  "superfantastico-super-fantastico-a-turma-do-balao-magico-dja": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que lembra um mundo mágico cheio de cores"
+  },
+  "e-tao-lindo-it-s-no-easy-a-turma-do-balao-magico": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Melodia que lembra um dia ensolarado"
+  },
+  "amigos-do-peito-somos-amigos-a-turma-do-balao-magico-fabio-j": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Canção que lembra a amizade verdadeira"
+  },
+  "orquestra-dos-bichos-eliana": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um garoto corre atrás de um gato que se transforma em música"
+  },
+  "wish-you-were-here-pink-floyd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um viajante perdido sente falta de um amigo que não pode ver"
+  },
+  "comfortably-numb-pink-floyd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um médico tenta aliviar a dor de um paciente que não sente mais nada"
+  },
+  "time-pink-floyd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um relógio antigo conta histórias que ninguém mais lembra"
+  },
+  "another-brick-in-the-wall-pt-2-pink-floyd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma sala de aula se transforma em prisão de concreto"
+  },
+  "stairway-to-heaven-led-zeppelin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma escada de madeira leva a um lugar onde o vento canta"
+  },
+  "whole-lotta-love-led-zeppelin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se abraça em meio a um mar de confete"
+  },
+  "immigrant-song-led-zeppelin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um navio de madeira atravessa ondas de fogo"
+  },
+  "kashmir-led-zeppelin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Um viajante atravessa desertos de neve e montanhas de luz"
+  },
+  "gimme-shelter-the-rolling-stones": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Um homem pede abrigo enquanto a chuva bate forte"
+  },
+  "start-me-up-the-rolling-stones": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um motor desperta e a cidade começa a vibrar"
+  },
+  "in-the-stars-the-rolling-stones": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Uma noite estrelada faz um homem lembrar de um sonho distante"
+  },
+  "sympathy-for-the-devil-the-rolling-stones": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um viajante encontra um velho que fala em segredos"
+  },
+  "highway-to-hell-ac-dc": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um carro corre por uma estrada que nunca termina"
+  },
+  "back-in-black-ac-dc": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem volta para a casa que nunca esqueceu"
+  },
+  "thunderstruck-ac-dc": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um trovão faz o chão tremer e a música subir"
+  },
+  "t-n-t-ac-dc": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um garoto coloca um relógio na boca de um relógio"
+  },
+  "enter-sandman-metallica": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um soldado entra em um mundo de sonhos que não quer deixar"
+  },
+  "the-unforgiven-metallica": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um homem reflete sobre erros que não pode mudar"
+  },
+  "nothing-else-matters-metallica": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um guitarrista toca enquanto a noite se desfaz"
+  },
+  "master-of-puppets-metallica": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Um maestro controla fios que não pertencem a ele"
+  },
+  "i-don-t-want-to-miss-a-thing-aerosmith": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "trilha-sonora"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal observa o pôr do sol enquanto a música toca"
+  },
+  "dream-on-aerosmith": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um garoto fecha os olhos e viaja para um lugar que não existe"
+  },
+  "cryin-aerosmith": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma mulher chora enquanto a chuva cai no telhado"
+  },
+  "crazy-aerosmith": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um homem corre pela cidade com o coração acelerado"
+  },
+  "take-it-easy-eagles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal caminha na praia enquanto o sol se põe"
+  },
+  "tequila-sunrise-eagles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem bebe enquanto o céu se ilumina com cores vermelhas"
+  },
+  "desperado-eagles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um cowboy solitário atravessa um deserto sem fim"
+  },
+  "fortunate-son-creedence-clearwater-revival": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um jovem descobre que a vida pode ser diferente quando se muda de lugar"
+  },
+  "have-you-ever-seen-the-rain-creedence-clearwater-revival": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um trovão de emoção enquanto a chuva cai sobre a estrada."
+  },
+  "i-heard-it-through-the-grapevine-creedence-clearwater-reviva": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Sussurros de um segredo que se espalha como um perfume nas árvores."
+  },
+  "proud-mary-creedence-clearwater-revival": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um barco de madeira que avança com força, guiado por uma voz forte."
+  },
+  "sultans-of-swing-dire-straits": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um guitarrista solitário que faz a plateia vibrar com cada acorde."
+  },
+  "walk-of-life-dire-straits": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma jornada que celebra a liberdade de seguir o próprio caminho."
+  },
+  "so-far-away-dire-straits": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para viajar além dos horizontes, onde a distância se torna leve."
+  },
+  "your-latest-trick-dire-straits": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um jogo de ilusões que faz o coração bater mais forte."
+  },
+  "smoke-on-the-water-deep-purple": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Fumaça que sobe sobre o mar enquanto a tempestade se aproxima."
+  },
+  "highway-star-deep-purple": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma estrela que brilha na estrada, guiando quem segue seu ritmo."
+  },
+  "perfect-strangers-deep-purple": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Encontros inesperados que revelam segredos escondidos nas notas."
+  },
+  "burn-deep-purple": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Chamas que queimam no peito, incendiando a alma com energia."
+  },
+  "paranoid-black-sabbath": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um medo que cresce quando a sombra se estende sobre a mente."
+  },
+  "iron-man-black-sabbath": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um titã que ergue seu escudo contra a tempestade de aço."
+  },
+  "black-sabbath-black-sabbath": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "A voz que ecoa nas ruínas, lembrando quem não se esquece."
+  },
+  "war-pigs-2009-remaster-black-sabbath": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um conflito que faz o mundo girar em torno de uma fúria silenciosa."
+  },
+  "baba-o-riley-the-who": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um céu que se abre, revelando luzes que dançam no horizonte."
+  },
+  "behind-blue-eyes-the-who": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um olhar profundo que revela segredos escondidos nas sombras."
+  },
+  "pinball-wizard-the-who": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um jogo de luzes que faz o coração bater em ritmo acelerado."
+  },
+  "won-t-get-fooled-again-the-who": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um juramento de não se deixar enganar pelas ilusões do mundo."
+  },
+  "simple-man-lynyrd-skynyrd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um conselho sincero que ecoa na estrada do coração."
+  },
+  "free-bird-lynyrd-skynyrd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "As asas que se abrem para voar além dos limites da terra."
+  },
+  "sweet-home-alabama-lynyrd-skynyrd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um retorno ao lugar onde a saudade se mistura com o sol."
+  },
+  "tuesday-s-gone-lynyrd-skynyrd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia que desaparece, deixando apenas memórias no vento."
+  },
+  "i-ll-be-over-you-toto": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um abraço que atravessa o espaço, prometendo nunca mais se afastar."
+  },
+  "africa-toto": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma jornada que atravessa desertos, encontrando luz no horizonte."
+  },
+  "hold-the-line-toto": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um compromisso firme que mantém a esperança viva."
+  },
+  "rosanna-toto": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sorriso que ilumina a noite, trazendo calor ao coração."
+  },
+  "don-t-stop-believin-2024-remaster-journey": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma chama que nunca se apaga, guiando quem segue o caminho."
+  },
+  "separate-ways-worlds-apart-2024-remaster-journey": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Dois caminhos que se cruzam, mas seguem em direções distintas."
+  },
+  "don-t-stop-believin-2022-remaster-journey": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "A mesma chama que pulsa forte, lembrando que a esperança é eterna."
+  },
+  "the-final-countdown-europe": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma marcha triunfal que faz a plateia vibrar como se fosse o último ato de um grande espetáculo."
+  },
+  "carrie-europe": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo pulsante que lembra o som de um tambor de guerra, mas com um toque de melancolia."
+  },
+  "open-your-heart-europe": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para abrir portas internas, como se a música fosse um portal para o coração."
+  },
+  "superstitious-europe": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um clima de mistério e crença, onde cada acorde parece sussurrar segredos antigos."
+  },
+  "still-loving-you-scorpions": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um hino de amor que resiste ao tempo, como se a paixão fosse eterna."
+  },
+  "wind-of-change-scorpions": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um vento que sopra forte, trazendo novas ideias e renovação para quem escuta."
+  },
+  "always-somewhere-scorpions": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sentimento de estar sempre em algum lugar, como se a jornada fosse interminável."
+  },
+  "send-me-an-angel-scorpions": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um pedido de ajuda que chega como um mensageiro celestial, trazendo esperança."
+  },
+  "i-was-made-for-lovin-you-kiss": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz o corpo vibrar, como se fosse feito para dançar em sintonia com o coração."
+  },
+  "rock-and-roll-all-nite-kiss": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma noite sem fim de energia, onde a música não para de pulsar."
+  },
+  "forever-kiss": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sentimento que se estende além do tempo, como se fosse eterno."
+  },
+  "jump-van-halen": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um impulso que faz a pessoa querer saltar para o céu, como se fosse uma explosão de energia."
+  },
+  "why-can-t-this-be-love-van-halen": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um dilema que faz a mente questionar a própria realidade, como se fosse um enigma."
+  },
+  "ain-t-talkin-bout-love-van-halen": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a cabeça balançar, como se fosse uma conversa sem fim."
+  },
+  "can-t-stop-lovin-you-van-halen": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um desejo que não pode ser contido, como se fosse uma chama que arde sem parar."
+  },
+  "love-bites-def-leppard": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sabor que deixa marcas, como se fosse uma mordida que não pode ser esquecida."
+  },
+  "pour-some-sugar-on-me-def-leppard": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para adoçar a vida, como se fosse um doce que se espalha pelo ar."
+  },
+  "hysteria-def-leppard": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Um turbilhão de emoções que faz o coração bater mais forte, como se fosse um terremoto interno."
+  },
+  "animal-def-leppard": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um instinto que se manifesta em cada acorde, como se fosse um rugido que ecoa."
+  },
+  "save-a-prayer-duran-duran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um pedido que flutua no ar, como se fosse uma oração que se mistura com a melodia."
+  },
+  "come-undone-duran-duran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um convite para se libertar de amarras, como se fosse uma fuga que começa agora."
+  },
+  "ordinary-world-duran-duran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um cenário que parece familiar, mas que revela segredos escondidos em cada nota."
+  },
+  "a-matter-of-feeling-duran-duran": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sentimento que se espalha como uma onda, como se fosse uma corrente que não pode ser parada."
+  },
+  "everybody-wants-to-rule-the-world-tears-for-fears": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um desejo de poder que se mistura com a melodia, como se fosse uma força invisível."
+  },
+  "shout-tears-for-fears": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um grito que ecoa no coração, como se fosse uma explosão de emoções."
+  },
+  "head-over-heels-broken-tears-for-fears": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sentimento que se mistura com a música, como se fosse uma tempestade que não pode ser contida."
+  },
+  "break-it-down-again-tears-for-fears": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Um ritmo que quebra barreiras, como se fosse um terremoto que sacode tudo."
+  },
+  "enjoy-the-silence-depeche-mode": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um silêncio que fala alto, como se fosse um sussurro que atravessa o tempo."
+  },
+  "strangelove-depeche-mode": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um amor que parece estranho, mas que pulsa forte, como se fosse um mistério que não pode ser explicado."
+  },
+  "never-let-me-down-again-depeche-mode": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um compromisso que se mantém firme, como se fosse uma promessa que não pode ser quebrada."
+  },
+  "just-can-t-get-enough-depeche-mode": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sintetizador vibra enquanto a voz canta sobre querer mais"
+  },
+  "friday-i-m-in-love-the-cure": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um romance começa no fim de semana, com um som que lembra um relógio antigo"
+  },
+  "heart-of-glass-blondie": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um coração transparente pulsa no ritmo de um tambor elétrico"
+  },
+  "call-me-blondie": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para ligar, enquanto a batida faz a pista vibrar"
+  },
+  "one-way-or-another-blondie": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma escolha entre caminhos, com guitarras que ecoam em um corredor"
+  },
+  "karma-chameleon-culture-club": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma criatura muda de cor ao som de um ritmo que gira como um espelho"
+  },
+  "do-you-really-want-to-hurt-me-culture-club": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para sentir dor, enquanto a melodia se desfaz em notas suaves"
+  },
+  "everything-i-own-boy-george-culture-club": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um tesouro que pertence a todos, tocado por um violão que canta"
+  },
+  "love-is-love-culture-club": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um canto que celebra a igualdade, com batidas que se espalham"
+  },
+  "alive-and-kicking-simple-minds": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um corpo que vibra ao som de uma bateria que não para"
+  },
+  "mandela-day-simple-minds": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma celebração de liberdade, com guitarras que ecoam em um campo"
+  },
+  "don-t-you-forget-about-me-simple-minds": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um pedido de lembrança, enquanto a melodia sobe como um voo"
+  },
+  "psycho-killer-talking-heads": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Um monstro interno que canta em ritmo de batida pulsante"
+  },
+  "wild-wild-life-2005-remaster-talking-heads": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma vida selvagem que se move ao som de um tambor que não para"
+  },
+  "once-in-a-lifetime-talking-heads": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um momento que acontece apenas uma vez, enquanto a melodia gira"
+  },
+  "and-she-was-2005-remaster-talking-heads": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma história que se desenrola em um palco de luzes e som"
+  },
+  "never-tear-us-apart-2011-remaster-inxs": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um juramento de união, enquanto a batida mantém a pista em movimento"
+  },
+  "by-my-side-inxs": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um companheiro que permanece, enquanto a melodia flui como água"
+  },
+  "beautiful-girl-inxs": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um encanto que brilha como um raio de sol em uma tarde"
+  },
+  "need-you-tonight-2011-remaster-inxs": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um desejo que cresce com a noite, enquanto a música sobe"
+  },
+  "here-comes-the-rain-again-eurythmics": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma chuva que volta a cair, com batidas que lembram gotas"
+  },
+  "sweet-dreams-are-made-of-this-eurythmics": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sonho doce que se forma em notas que deslizam"
+  },
+  "there-must-be-an-angel-playing-with-my-heart-eurythmics": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ser leve que brinca com o coração, enquanto a melodia flutua"
+  },
+  "miracle-of-love-eurythmics": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um milagre que nasce no toque de um violão suave"
+  },
+  "i-feel-love-donna-summer": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sentimento que cresce como uma onda, com ritmo que pulsa"
+  },
+  "hot-stuff-donna-summer": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um calor que faz a pista vibrar, enquanto a batida não para"
+  },
+  "macarthur-park-donna-summer": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um parque que se transforma em palco, com sons que ecoam"
+  },
+  "breakaway-donna-summer": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um salto que liberta, enquanto a melodia sobe como vento"
+  },
+  "september-earth-wind-fire": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um mês que traz calor, com batidas que lembram o vento"
+  },
+  "let-s-groove-earth-wind-fire": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma batida contagiante que faz todo mundo dançar sem parar."
+  },
+  "boogie-wonderland-earth-wind-fire": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "A música que transforma qualquer festa em um parque de diversões musical."
+  },
+  "after-the-love-has-gone-earth-wind-fire": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um refrão melancólico que lembra um adeus que não quer ser esquecido."
+  },
+  "please-don-t-go-kc-and-the-sunshine-band": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um pedido desesperado que faz a pista de dança vibrar."
+  },
+  "shake-shake-shake-shake-your-booty-kc-and-the-sunshine-band": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para mover o corpo de forma descontraída e divertida."
+  },
+  "give-it-up-kc-and-the-sunshine-band": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado para entregar tudo ao ritmo e à energia da música."
+  },
+  "that-s-the-way-i-like-it-2004-remaster-kc-and-the-sunshine-b": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente sentir a alegria de estar bem."
+  },
+  "le-freak-2018-remaster-chic": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um clímax de energia que faz a pista de dança explodir."
+  },
+  "good-times-chic": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma celebração de momentos felizes que faz todos sorrirem."
+  },
+  "everybody-dance-chic": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite universal para dançar, sem exceções."
+  },
+  "i-want-your-love-2018-remaster-chic": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um desejo ardente que pulsa no ritmo da batida."
+  },
+  "daddy-cool-boney-m": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um groove que faz a gente se sentir em casa."
+  },
+  "rasputin-boney-m": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma história de poder que se desenrola ao som de um ritmo marcante."
+  },
+  "rivers-of-babylon-2007-remastered-version-boney-m": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma melodia que evoca a força de um rio que nunca para."
+  },
+  "ma-baker-boney-m": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que lembra o calor de um forno de pão recém-saído."
+  },
+  "i-say-a-little-prayer-aretha-franklin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um clamor suave que pede por algo mais alto."
+  },
+  "you-make-me-feel-like-a-natural-woman-aretha-franklin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sentimento de liberdade que faz a gente se sentir em casa."
+  },
+  "respect-aretha-franklin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado para reconhecer a força que está dentro de cada um."
+  },
+  "rolling-in-the-deep-the-aretha-version-aretha-franklin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma viagem profunda que faz a gente mergulhar nas emoções."
+  },
+  "let-s-get-it-on-marvin-gaye": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para deixar a música guiar os passos."
+  },
+  "sexual-healing-marvin-gaye": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que cura e acalma a alma com sua suavidade."
+  },
+  "what-s-going-on-marvin-gaye": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma pergunta que faz a gente refletir sobre o que acontece ao redor."
+  },
+  "ain-t-no-mountain-high-enough-marvin-gaye-tammi-terrell": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado que lembra que nada pode impedir quem quer chegar."
+  },
+  "i-want-you-back-jackson-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um pedido que faz o coração bater mais forte."
+  },
+  "i-ll-be-there-jackson-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma promessa que faz a gente sentir segurança."
+  },
+  "abc-jackson-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente cantar as letras sem pensar."
+  },
+  "who-s-loving-you-jackson-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um questionamento que faz a gente sentir o calor do afeto."
+  },
+  "upside-down-diana-ross": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma inversão de tudo que se espera de uma música de amor."
+  },
+  "i-m-coming-out-diana-ross": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um anúncio que faz a gente sentir a liberdade de ser quem é."
+  },
+  "missing-you-diana-ross": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sentimento de saudade que ecoa no silêncio."
+  },
+  "ain-t-no-mountain-high-enough-diana-ross": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dueto que celebra a força de um amor que não conhece limites"
+  },
+  "the-payback-james-brown": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "funk"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo contagiante que faz a gente querer se vingrar com um sorriso"
+  },
+  "i-got-you-i-feel-good-james-brown": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "funk"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que faz a gente cantar alto e se sentir bem"
+  },
+  "people-get-up-and-drive-your-funky-soul-remix-james-brown-fr": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "funk"
+    ],
+    "dificuldade": 2,
+    "dica": "Um groove que pede para levantar e seguir a batida da cidade"
+  },
+  "it-s-a-man-s-man-s-man-s-world-james-brown": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um hino que lembra que a vida é feita de desafios e superações"
+  },
+  "song-2-2012-remaster-blur": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma melodia que faz a gente se perder em um mundo de sons e luzes"
+  },
+  "fake-plastic-trees-radiohead": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um cenário urbano onde a natureza parece ter sido substituída por objetos vazios"
+  },
+  "let-down-radiohead": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sentimento de desânimo que paira no ar de uma cidade cinzenta"
+  },
+  "no-surprises-radiohead": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um momento de paz que surge sem aviso em meio ao caos"
+  },
+  "high-and-dry-radiohead": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um cenário árido onde a esperança parece ter se esgotado"
+  },
+  "basket-case-green-day": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia em que tudo parece desmoronar e a mente fica em desordem"
+  },
+  "holiday-green-day": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia de descanso que traz lembranças de um passado distante"
+  },
+  "when-i-come-around-green-day": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um retorno que traz memórias de um amor que ainda vive"
+  },
+  "wake-me-up-when-september-ends-green-day": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um fim de temporada que deixa a gente com saudade e esperança"
+  },
+  "in-the-end-linkin-park": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um desfecho que mistura dor e determinação em cada acorde"
+  },
+  "numb-linkin-park": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um silêncio que faz a mente se perder entre as notas"
+  },
+  "what-i-ve-done-linkin-park": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um arrependimento que ecoa em cada batida"
+  },
+  "somewhere-i-belong-linkin-park": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um lugar que se sente como lar, mesmo sem ter endereço"
+  },
+  "californication-red-hot-chili-peppers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um sonho de sucesso que se transforma em ilusão"
+  },
+  "can-t-stop-red-hot-chili-peppers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente não conseguir parar"
+  },
+  "otherside-red-hot-chili-peppers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um lado oculto que revela segredos escondidos"
+  },
+  "scar-tissue-red-hot-chili-peppers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma cicatriz que permanece viva na memória"
+  },
+  "black-pearl-jam": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um momento de liberdade que faz a alma vibrar"
+  },
+  "alive-pearl-jam": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado que desperta a coragem interior"
+  },
+  "last-kiss-pearl-jam": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um adeus que deixa a lembrança de um beijo eterno"
+  },
+  "yellow-ledbetter-pearl-jam": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um cenário de luzes que lembra um sorriso distante"
+  },
+  "linger-the-cranberries": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um tempo que parece não querer terminar"
+  },
+  "zombie-the-cranberries": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um horror que assombra a noite"
+  },
+  "dreams-the-cranberries": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sonho que se torna realidade em cada acorde"
+  },
+  "ode-to-my-family-the-cranberries": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma homenagem que ecoa nas paredes da infância"
+  },
+  "don-t-speak-no-doubt": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um clamor de coração que não quer ser silenciado"
+  },
+  "it-s-my-life-no-doubt": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um grito de liberdade que ecoa no peito"
+  },
+  "just-a-girl-no-doubt": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma voz que desafia expectativas com atitude"
+  },
+  "everlong-foo-fighters": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um rugido que mantém o coração em ritmo acelerado"
+  },
+  "best-of-you-foo-fighters": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um chamado para superar limites com energia crua"
+  },
+  "learn-to-fly-foo-fighters": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma jornada de descobertas que desafia gravidade"
+  },
+  "my-hero-foo-fighters": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um hino de coragem que inspira quem escuta"
+  },
+  "i-miss-you-blink-182": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um eco de saudade que bate forte no peito"
+  },
+  "all-the-small-things-blink-182": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que celebra detalhes que fazem a diferença"
+  },
+  "first-date-blink-182": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um momento de nervosismo e expectativa em um encontro"
+  },
+  "always-blink-182": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para permanecer junto, sem fim"
+  },
+  "mr-brightside-the-killers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um olhar que brilha mesmo quando a noite cai"
+  },
+  "when-you-were-young-the-killers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para reviver a energia da juventude"
+  },
+  "somebody-told-me-the-killers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um aviso que chega com ritmo acelerado"
+  },
+  "read-my-mind-the-killers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para desvendar pensamentos escondidos"
+  },
+  "take-me-out-franz-ferdinand": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para sair de uma rotina cansativa"
+  },
+  "this-fire-franz-ferdinand": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um calor que queima no ritmo de uma noite"
+  },
+  "do-you-want-to-franz-ferdinand": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um questionamento que desafia o status quo"
+  },
+  "walk-away-franz-ferdinand": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um passo que marca o fim de algo que não funciona"
+  },
+  "do-i-wanna-know-arctic-monkeys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um desejo de desvendar segredos escondidos"
+  },
+  "505-arctic-monkeys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um caminho que leva a lugares desconhecidos"
+  },
+  "why-d-you-only-call-me-when-you-re-high-arctic-monkeys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um convite que só acontece quando a mente está leve"
+  },
+  "i-wanna-be-yours-arctic-monkeys": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um pedido de entrega total em um relacionamento"
+  },
+  "feel-good-inc-gorillaz-de-la-soul": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo que faz a alma vibrar com energia positiva"
+  },
+  "19-2000-gorillaz": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um convite para explorar um universo paralelo"
+  },
+  "on-melancholy-hill-gorillaz": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um cenário de tranquilidade que eleva o espírito"
+  },
+  "dare-gorillaz": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um desafio que pede coragem para seguir em frente"
+  },
+  "alejandro-lady-gaga": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para se perder em um sonho de luz"
+  },
+  "judas-lady-gaga": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um momento de culpa que ecoa no coração"
+  },
+  "abracadabra-lady-gaga": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um truque que transforma o comum em extraordinário"
+  },
+  "always-remember-us-this-way-lady-gaga": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "trilha-sonora"
+    ],
+    "dificuldade": 1,
+    "dica": "Coração batendo forte enquanto a câmera gira ao redor de um casal em um cenário de filme."
+  },
+  "firework-katy-perry": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Pessoas dançando sob luzes coloridas, celebrando a liberdade de ser quem são."
+  },
+  "last-friday-night-t-g-i-f-katy-perry": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Noite de sexta-feira, amigos se reunindo para uma festa que vai durar até o amanhecer."
+  },
+  "roar-katy-perry": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Alma confiante, pronta para enfrentar o mundo e mostrar sua força interior."
+  },
+  "dark-horse-katy-perry": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo enérgico que faz a pista de dança vibrar como um cavalo selvagem."
+  },
+  "cruel-summer-taylor-swift": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Verão intenso, calor que faz a pele queimar e o coração acelerar."
+  },
+  "the-fate-of-ophelia-taylor-swift": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um romance que se desenrola em meio a festas e confusões de jovens."
+  },
+  "blank-space-taylor-swift": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um romance que começa com um convite e termina em confusão."
+  },
+  "shake-it-off-taylor-swift": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Dançar para esquecer os problemas e deixar a tristeza de lado."
+  },
+  "new-rules-dua-lipa": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Regras claras para evitar que alguém volte a entrar na vida."
+  },
+  "levitating-dua-lipa": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Sente-se flutuando enquanto a batida faz o corpo vibrar."
+  },
+  "don-t-start-now-dua-lipa": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Despertar cedo para não perder tempo com quem não merece."
+  },
+  "training-season-dua-lipa": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Treino intenso que transforma o corpo e a mente em uma máquina de ritmo."
+  },
+  "call-out-my-name-the-weeknd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado que ecoa na noite, pedindo atenção de quem se perdeu."
+  },
+  "blinding-lights-the-weeknd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Luzes piscando enquanto a cidade corre ao ritmo de um coração acelerado."
+  },
+  "one-of-the-girls-the-weeknd-jennie-lily-rose-depp": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "trilha-sonora"
+    ],
+    "dificuldade": 1,
+    "dica": "Um trio de vozes que cria uma atmosfera de festa em um cenário de filme."
+  },
+  "earned-it-the-weeknd": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "trilha-sonora"
+    ],
+    "dificuldade": 1,
+    "dica": "Um clipe que mostra um personagem conquistando algo valioso."
+  },
+  "believer-imagine-dragons": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Alma que se levanta após cada queda, pronto para lutar."
+  },
+  "demons-imagine-dragons": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Luta interna que faz a mente oscilar entre luz e escuridão."
+  },
+  "thunder-imagine-dragons": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um trovão que faz a batida do coração acelerar."
+  },
+  "radioactive-imagine-dragons": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Energia que surge de dentro, pronta para explodir."
+  },
+  "maps-maroon-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um mapa que guia o coração em busca de um lugar que sente falta."
+  },
+  "moves-like-jagger-maroon-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Passos que seguem o ritmo de um groove que não pode parar."
+  },
+  "she-will-be-loved-maroon-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Promessa de amor que vai além das palavras."
+  },
+  "this-love-maroon-5": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um amor que parece ter sido escrito em uma música."
+  },
+  "unstoppable-sia": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Força que não pode ser contida, mesmo quando tudo parece perdido."
+  },
+  "chandelier-sia": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um balde de luz que faz a alma se mover como um espelho."
+  },
+  "elastic-heart-sia": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Coração que se estica, mas nunca se rompe."
+  },
+  "cheap-thrills-sia": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Sinta a batida que faz a noite virar uma festa."
+  },
+  "birds-of-a-feather-billie-eilish": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Pássaros que cantam no silêncio de uma noite sem fim."
+  },
+  "wildflower-billie-eilish": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Som de vento suave, voz que ecoa nas sombras da noite."
+  },
+  "lovely-billie-eilish-khalid": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Dois cantores se encontram em um ritmo que faz o coração bater mais forte."
+  },
+  "chihiro-billie-eilish": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um silêncio que se transforma em melodia, lembrando um conto de fadas moderno."
+  },
+  "sign-of-the-times-harry-styles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um chamado que atravessa gerações, com batida que lembra o coração acelerado."
+  },
+  "as-it-was-harry-styles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um retorno ao passado, com ritmo que faz lembrar um verão eterno."
+  },
+  "watermelon-sugar-harry-styles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Sabor doce, luz do sol e uma batida que faz a gente querer dançar."
+  },
+  "american-girls-harry-styles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma celebração de liberdade, com ritmo que lembra um passeio de verão."
+  },
+  "is-this-love-bob-marley-the-wailers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "reggae"
+    ],
+    "dificuldade": 1,
+    "dica": "Ritmo suave que faz a alma se mover como ondas do mar."
+  },
+  "three-little-birds-bob-marley-the-wailers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "reggae"
+    ],
+    "dificuldade": 1,
+    "dica": "Três voos leves que trazem boas notícias, com batida que lembra o vento."
+  },
+  "could-you-be-loved-bob-marley-the-wailers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "reggae"
+    ],
+    "dificuldade": 2,
+    "dica": "Um convite para sentir a vibração da vida, com ritmo que faz o coração bater."
+  },
+  "natural-mystic-bob-marley-the-wailers": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "reggae"
+    ],
+    "dificuldade": 2,
+    "dica": "Sons que lembram a natureza, com batida que faz a mente viajar."
+  },
+  "la-barca-luis-miguel": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um barco que navega em águas de paixão, com ritmo que faz o coração bater."
+  },
+  "la-mentira-luis-miguel": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um jogo de esconder e revelar, com batida que faz a alma se mover."
+  },
+  "hasta-que-me-olvides-luis-miguel": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um adeus que ecoa no coração, com batida que lembra o vento."
+  },
+  "livin-la-vida-loca-ricky-martin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma festa que não termina, com ritmo que faz a gente querer mais."
+  },
+  "la-mordidita-ricky-martin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um sabor picante que faz a boca vibrar, com batida que lembra o coração."
+  },
+  "maria-pablo-flores-spanglish-radio-edit-ricky-martin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um remix que mistura duas línguas, com ritmo que faz a gente dançar."
+  },
+  "vente-pa-ca-ricky-martin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para a festa, com batida que faz a alma vibrar."
+  },
+  "bailando-enrique-iglesias": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um passo que leva a um mundo de cores, com ritmo que faz a gente girar."
+  },
+  "duele-el-corazon-enrique-iglesias": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Dor que pulsa no peito, com batida que lembra o coração."
+  },
+  "you-re-my-1-enrique-iglesias-david-cambell": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um título que fala de amor, com ritmo que faz a alma vibrar."
+  },
+  "el-perdedor-enrique-iglesias": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um jogo de perder e ganhar, com batida que lembra o coração."
+  },
+  "labios-compartidos-mana": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um beijo que compartilha segredos, com ritmo que faz a alma vibrar."
+  },
+  "vivir-sin-aire-mana": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um vento que sopra forte, com batida que faz o coração bater."
+  },
+  "bendita-tu-luz-mana": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma luz que guia, com ritmo que faz a alma vibrar."
+  },
+  "en-el-muelle-de-san-blas-mana": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 3,
+    "dica": "Um cais que guarda segredos, com batida que lembra o mar."
+  },
+  "para-tu-amor-juanes": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um convite para a paixão, com ritmo que faz o coração bater."
+  },
+  "a-dios-le-pido-juanes": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um pedido que ecoa no silêncio, com batida que faz a alma vibrar."
+  },
+  "robarte-un-beso-carlos-vives-sebastian-yatra": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se aproxima em ritmo alegre, cantando em espanhol."
+  },
+  "la-bicicleta-carlos-vives-shakira": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Dois amigos pedalando sob o sol, cantando em espanhol."
+  },
+  "cancion-bonita-carlos-vives-ricky-martin": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma melodia suave que faz o coração bater mais forte."
+  },
+  "la-duena-del-swing-gabriel-pagan-los-hermanos-rosario": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo de salsa que faz a pista de dança vibrar."
+  },
+  "morena-ven-los-hermanos-rosario": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a dançar sob o sol com um toque de salsa."
+  },
+  "la-duena-del-swing-los-hermanos-rosario": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "la-negra-tiene-tumbao-celia-cruz": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a batida do coração bater no compasso da música."
+  },
+  "quimbara-celia-cruz-johnny-pacheco": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "azucar-negra-celia-cruz": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "nuevayol-bad-bunny": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "ojitos-lindos-bad-bunny-bomba-estereo": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "cafe-con-ron-bad-bunny-los-pleneros-de-la-cresta": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "la-noche-de-anoche-bad-bunny-rosalia": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a pista de dança vibrar com energia latina."
+  },
+  "na-tela-pitty": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma batida que faz a cabeça balançar no ritmo do rock."
+  },
+  "mascara-pitty": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a cabeça balançar no ritmo do rock."
+  },
+  "nem-um-dia-djavan": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma melodia que faz o coração bater em ritmo de MPB."
+  },
+  "sinais-de-fogo-preta-gil": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a cabeça balançar no ritmo do pop."
+  },
+  "poker-face-lady-gaga": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a cabeça balançar no ritmo do pop."
+  },
+  "dancing-with-myself-billy-idol": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a cabeça balançar no ritmo do rock."
+  },
+  "carta-ao-tom-74-vinicius-de-moraes-toquinho-quarteto-em-cy": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal celebra o amor em uma noite de verão, com ritmo suave."
+  },
+  "luz-dos-olhos-cassia-eller": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um olhar que brilha como estrela, revelando segredos de um coração."
+  },
+  "por-enquanto-cassia-eller": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um tempo de pausa, onde o amor ainda pulsa, mas a vida segue."
+  },
+  "chao-de-giz-ze-ramalho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um palco de palavras escritas em giz, onde a história de um homem se desenrola."
+  },
+  "so-hoje-jota-quest": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia de alegria que se torna memória, com ritmo contagiante."
+  },
+  "de-quem-e-a-culpa-marilia-mendonca": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um questionamento que faz o coração bater mais forte."
+  },
+  "decide-ai-na-praia-ao-vivo-matheus-kauan": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para aproveitar a vida na praia, com ritmo animado."
+  },
+  "hoje-cedo-emicida": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um despertar precoce para enfrentar o mundo com coragem."
+  },
+  "mantenha-o-respeito-planet-hemp": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Um chamado à consciência, como fogo que arde na mente."
+  },
+  "queimando-tudo-planet-hemp": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Um ritmo que queima, como chama que não se apaga."
+  },
+  "atras-da-verde-e-rosa-so-nao-vai-quem-ja-morreu-jamelao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite a seguir em frente, mesmo quando o passado pesa."
+  },
+  "juizo-final-nelson-cavaquinho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um julgamento que se resolve com o ritmo alegre do samba."
+  },
+  "a-flor-e-o-espinho-nelson-cavaquinho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se abraça na praia, enquanto o mar reflete a luz do sol."
+  },
+  "quando-eu-me-chamar-saudade-nelson-cavaquinho": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem espera por um amor distante, sentindo a falta de cada passo."
+  },
+  "conversa-de-botequim-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Amigos se reúnem em um bar, trocando piadas e histórias de vida."
+  },
+  "com-que-roupa-noel-rosa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal decide se encontrar em um encontro casual, sem pressa."
+  },
+  "pierro-apaixonado-noel-rosa-heitor-dos-prazeres": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem tenta conquistar a mulher que ama, mas não sabe como."
+  },
+  "juizo-final-dona-ivone-lara": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pagode"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal se despede, mas ainda guarda a esperança de se reencontrar."
+  },
+  "maracatu-atomico-caetano-veloso-jorge-mautner": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um ritmo de carnaval mistura com a energia de um universo paralelo."
+  },
+  "vela-aberta-walter-franco": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal celebra a vida em uma noite de lua cheia, com luz suave."
+  },
+  "pais-tropical-musica-incidental-sou-flamengo-wilson-simonal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um torcedor canta o hino do seu time, enquanto a torcida vibra."
+  },
+  "historia-de-uma-gata-os-saltimbancos-nara-leao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um gato curioso segue a trilha de um sonho, explorando a cidade."
+  },
+  "pequenas-alegrias-da-vida-adulta-emicida-marcos-valle-thiago": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "Um rap conta histórias de superação, com batidas que ecoam na rua."
+  },
+  "flores-em-voce-ira": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um guitarrista canta sobre a força de um amor que floresce na dor."
+  },
+  "clube-dos-canalhas-matanza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um grupo de amigos se reúne para celebrar a vida, com risadas e música."
+  },
+  "tempo-ruim-matanza": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um dia chuvoso faz a cidade se mover mais devagar, mas a música continua."
+  },
+  "dama-de-vermelho-reginaldo-rossi": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma mulher elegante entra em uma festa, com passos que deslizam."
+  },
+  "eu-ja-tirei-a-tua-roupa-wando": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem revela a verdade sobre um amor, sem esconder nada."
+  },
+  "se-eu-pudesse-conversar-com-deus-nelson-ned": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 2,
+    "dica": "Um homem pede ajuda para superar os desafios da vida, com fé e esperança."
+  },
+  "moro-onde-nao-mora-ninguem-agepe": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz a gente lembrar de um samba de raiz, com letras que falam de quem não tem onde morar."
+  },
+  "o-peso-da-pena-scalene": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma música que fala de carregar um fardo pesado, com guitarras que ecoam a dor."
+  },
+  "debaixo-do-chapeu-cachorro-grande": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um rock que traz a sensação de estar escondido sob algo que cobre tudo."
+  },
+  "o-baile-todo-bonde-do-tigrao": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "funk"
+    ],
+    "dificuldade": 1,
+    "dica": "Um funk que faz todo mundo dançar, com batidas que não param."
+  },
+  "estatua-xuxa": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um hit infantil que fala de uma figura que parece estar de pé."
+  },
+  "a-danca-dos-bichos-eliana": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que faz os bichinhos dançarem, com passos que parecem brincadeira."
+  },
+  "boys-don-t-cry-the-cure": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma música que pede para não chorar, enquanto a melodia traz um tom melancólico."
+  },
+  "sabor-a-mi-luis-miguel": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um refrão que fala de um gosto que não pode ser descrito em palavras."
+  },
+  "la-camisa-negra-juanes": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo que lembra a sensação de vestir algo que cobre todo o corpo."
+  },
+  "palavras-ao-vento-cassia-eller": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Versos que se espalham como brisa"
+  },
+  "nao-olhe-pra-tras-capital-inicial": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Caminho que não volta atrás"
+  },
+  "tudo-que-a-fe-pode-tocar-tiago-iorc": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Música que toca o coração com fé"
+  },
+  "n-nando-reis": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 1,
+    "dica": "Refrão que ecoa em guitarras distorcidas"
+  },
+  "bebendo-vinho-ira": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Brinde que celebra a vida"
+  },
+  "aguenta-coracao-jose-augusto": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem pede para a mulher não se afastar, mesmo quando o amor parece escurecer."
+  },
+  "pode-acreditar-meu-laia-laia-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Um rap que mistura humor e crítica, com ritmo acelerado e batida marcante."
+  },
+  "uni-duni-te-trem-da-alegria": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo animado que convida a todos a dançar e celebrar a vida."
+  },
+  "piui-abacaxi-trem-da-alegria": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "infantil"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma música divertida que fala de frutas e de aventuras na floresta."
+  },
+  "dona-felicidade-eliana": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma menina que espalha alegria com um sorriso que ilumina a sala."
+  },
+  "ao-mestre-com-carinho-eliana": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um garoto que pede ajuda para aprender a tocar um instrumento que ele ama."
+  },
+  "hotel-california-eagles": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Um lugar que parece ser um refúgio, mas guarda segredos que ninguém quer descobrir."
+  },
+  "fruta-fresca-carlos-vives": {
+    "tipo": "musica",
+    "tags": [
+      "internacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo contagiante que faz a gente querer dançar e cantar com energia."
+  },
+  "depois-marisa-monte": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite suave para continuar a jornada, mesmo quando tudo parece ter acabado"
+  },
+  "desabafo-deixa-eu-dizer-marcelo-d2": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 2,
+    "dica": "Um grito de liberdade, onde a voz desafia quem tenta controlar o destino"
+  },
+  "feira-de-mangaio-clara-nunes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma celebração de sabores e cores de um mercado que pulsa com alegria"
+  },
+  "depois-pato-fu": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um convite para continuar a festa, mesmo quando o som parece ter parado"
+  },
+  "la-vida-es-un-carnaval-celia-cruz": {
+    "tipo": "musica",
+    "tags": [
+      "internacional"
+    ],
+    "dificuldade": 1,
+    "dica": "No ritmo quente de um baile, a alegria contagia quem dança."
+  },
+  "o-descobridor-dos-sete-mares-tim-maia": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um viajante sonha em explorar o mundo sem sair do lugar"
+  },
+  "depois-do-prazer-alexandre-pires": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Um casal celebra a alegria de estar juntos em um ritmo contagiante"
+  },
+  "duas-cidades-baianasystem": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Dois mundos colidem em um som que mistura tradição e modernidade"
+  },
+  "o-homem-que-nao-tinha-nada-projota": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rap"
+    ],
+    "dificuldade": 3,
+    "dica": "Um narrador descreve a vida de quem começa do zero e luta contra o sistema"
+  },
+  "maria-da-vila-matilde-elza-soares": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma mulher descreve a vida de uma comunidade que vive no ritmo do mar"
+  },
+  "sandra-rosa-madalena-a-cigana-sidney-magal": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma figura misteriosa encanta quem a observa com seu charme"
+  },
+  "a-carta-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma mensagem secreta é enviada em forma de música"
+  },
+  "samba-da-bencao-vinicius-de-moraes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 1,
+    "dica": "Um ritmo suave celebra a alegria de receber boas energias"
+  },
+  "canto-das-tres-racas-clara-nunes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Uma batida alegre que celebra a diversidade cultural do Brasil."
+  },
+  "espumas-ao-vento-elza-soares": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Ritmo que lembra ondas, leve e refrescante, como espuma no ar."
+  },
+  "seresteiro-das-noites-amado-batista": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Noite de seresta, onde a música flui como um rio."
+  },
+  "mulher-do-fim-do-mundo-elza-soares": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma voz potente fala sobre o fim de tudo, mas ainda há esperança no coração."
+  },
+  "roda-morta-sergio-sampaio": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "A música fala de um círculo que não volta, de um amor que se encerra sem retorno."
+  },
+  "deixaria-tudo-dejaria-todo-leonardo": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "sertanejo"
+    ],
+    "dificuldade": 1,
+    "dica": "No sertão, um homem promete tudo ao amor que o faz sonhar."
+  },
+  "coisas-da-vida-rita-lee-tutti-frutti": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um passeio pela vida revela que tudo tem um sabor diferente."
+  },
+  "cada-lugar-na-sua-coisa-sergio-sampaio": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Cada canto da cidade guarda um segredo que só quem escuta pode descobrir."
+  },
+  "mulher-de-fases-raimundos": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "rock"
+    ],
+    "dificuldade": 2,
+    "dica": "Uma garota muda de atitude como as ondas que batem na praia."
+  },
+  "meu-ex-amor-amado-batista": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem lembra de quem foi antes de seguir em frente."
+  },
+  "meu-grande-amor-odair-jose": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 1,
+    "dica": "A voz do cantor canta sobre um amor que parece infinito."
+  },
+  "paixao-de-um-homem-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um homem sente um fogo que não pode apagar, mesmo quando tudo parece calmo."
+  },
+  "esta-noite-eu-queria-que-o-mundo-acabasse-waldick-soriano": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Na noite, um coração pede que tudo se acabe para começar de novo."
+  },
+  "mi-tonto-amor-los-hermanos-rosario": {
+    "tipo": "musica",
+    "tags": [
+      "nacional"
+    ],
+    "dificuldade": 3,
+    "dica": "A música faz a gente perder a cabeça e dançar sem parar."
+  },
+  "conto-de-areia-clara-nunes": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Pessoas contando histórias na praia enquanto a brisa toca."
+  },
+  "samba-de-verao-marcos-valle": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "samba"
+    ],
+    "dificuldade": 1,
+    "dica": "Calor, praia e ritmo que faz todo mundo dançar."
   }
 }

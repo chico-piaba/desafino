@@ -34,14 +34,26 @@ const VAZIAS = new Set([
   'pela', 'esse', 'essa', 'isso', 'ainda', 'sobre', 'entre', 'sem', 'com',
 ]);
 
+// Palavras tão frequentes em português que sozinhas não entregam nada. Um título
+// feito só delas ("Coisas da Vida") não tem dica evocativa possível se cada uma
+// reprovar isolada — mas "sorte" em "Sorte Grande" entrega metade da resposta,
+// então a lista é curta e só de genéricos de verdade.
+const COMUNS = new Set([
+  'amor', 'vida', 'tudo', 'coisa', 'coisas', 'homem', 'mulher', 'noite', 'dia',
+  'dias', 'tempo', 'mundo', 'gente', 'casa', 'hora', 'olhos', 'coracao', 'samba',
+  'cada', 'nada', 'alguem', 'voce', 'amigo', 'nome', 'anos', 'paixao',
+]);
+
 function palavrasFortes(alvo) {
   return alvo.split(' ').filter((p) => p.length >= 4 && !VAZIAS.has(p));
 }
 
-// QUALQUER palavra forte do título já vaza. A regra anterior exigia todas, e
-// deixava passar "celebrando a boa sorte" para o título "Sorte Grande" — metade
-// da resposta na dica. Para o artista continua valendo o casamento completo,
-// senão "Djavan" reprovaria toda dica que citasse um nome parecido.
+// Duas regras, porque uma só não serve para os dois casos:
+//   palavra DISTINTIVA do título sozinha já vaza — "celebrando a boa sorte" para
+//     o título "Sorte Grande" entrega metade da resposta;
+//   palavra COMUM só vaza acompanhada das outras — exigir que "vida" não apareça
+//     numa dica para "Coisas da Vida" não deixaria dica nenhuma possível.
+// Para o artista vale o casamento completo: "Djavan" isolado reprovaria dica boa.
 function dicaVazada(dica, carta) {
   const d = normalizar(dica);
   if (!d) return 'vazia';
@@ -50,8 +62,14 @@ function dicaVazada(dica, carta) {
   const titulo = normalizar(carta.titulo);
   if (titulo && d.includes(titulo)) return 'contém o título';
   const doTitulo = palavrasFortes(titulo);
-  const vazada = doTitulo.find((p) => presentes.has(p));
-  if (vazada) return `contém "${vazada}" do título`;
+  const naDica = doTitulo.filter((p) => presentes.has(p));
+  // Palavra distintiva sozinha já vaza. Palavra comum só vaza se as outras do
+  // título também aparecerem — senão título genérico não admitiria dica nenhuma.
+  const distintiva = naDica.find((p) => !COMUNS.has(p));
+  if (distintiva) return `contém "${distintiva}" do título`;
+  if (naDica.length && naDica.length === doTitulo.length) {
+    return 'contém o título inteiro, palavra por palavra';
+  }
 
   const artista = normalizar(carta.artista);
   if (artista && d.includes(artista)) return 'contém o artista';

@@ -78,3 +78,16 @@ test('dicaVazada não reprova dica por palavra comum do título', () => {
   assert.strictEqual(dicaVazada('Tudo muda como o tempo passa e nada fica parado', c), null);
   assert.match(dicaVazada('O mar traz uma onda que leva tudo embora', c), /onda/);
 });
+
+test('palavra comum sozinha não vaza, mas o título inteiro sim', () => {
+  const cv = { titulo: 'Coisas da Vida', artista: 'Zezé Di Camargo', ano: 1991 };
+  // "vida" é genérica: sem ela, título assim não admitiria dica evocativa nenhuma.
+  assert.strictEqual(dicaVazada('Os altos e baixos que a vida traz sem avisar', cv), null);
+  // As duas juntas entregam o título por completo.
+  assert.match(dicaVazada('As coisas que a vida traz sem avisar', cv), /título/);
+});
+
+test('palavra distintiva continua vazando mesmo sozinha', () => {
+  const sg = { titulo: 'Sorte Grande', artista: 'Ivete Sangalo', ano: 2004 };
+  assert.match(dicaVazada('Celebrando a boa sorte que mudou tudo', sg), /sorte/);
+});
