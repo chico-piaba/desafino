@@ -5694,5 +5694,77 @@
     ],
     "dificuldade": 1,
     "dica": "Uma pergunta ecoa no ar, aguardando a solução que trará alívio ao coração inquieto."
+  },
+  "tudo-outra-vez-belchior": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 1,
+    "dica": "Um viajante nostálgico refaz caminhos, buscando recomeços ao som de violão e voz melancólica."
+  },
+  "comentario-a-respeito-de-john-belchior": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 3,
+    "dica": "Um crítico observa a trajetória de um ícone musical, questionando sua influência e legado."
+  },
+  "farinha-do-desprezo-jards-macale": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 3,
+    "dica": "Um cozinheiro amarga ao perceber que o tempero da vida perdeu o sabor, enquanto a melodia ecoa desilusão."
+  },
+  "solucos-jards-macale": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 3,
+    "dica": "Um personagem sente espasmos de emoção ao lembrar de amores perdidos, com acordes que tremem."
+  },
+  "mal-secreto-jards-macale": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "pop"
+    ],
+    "dificuldade": 3,
+    "dica": "Um segredo sombrio se revela nas sombras de um quarto, com suspiros que ecoam na madrugada."
+  },
+  "xiquexique-tom-ze": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 3,
+    "dica": "Um deserto de cactos vibra ao som de ritmos experimentais, criando um clima de curiosa inquietude."
+  },
+  "jimmy-renda-se-tom-ze": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um fugitivo é confrontado por um agente, a tensão cresce ao som de batidas cortantes."
+  },
+  "to-tom-ze": {
+    "tipo": "musica",
+    "tags": [
+      "nacional",
+      "mpb"
+    ],
+    "dificuldade": 2,
+    "dica": "Um narrador declara estar presente, afirmando sua existência em meio a sons minimalistas."
   }
 }

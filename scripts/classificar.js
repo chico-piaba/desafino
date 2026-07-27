@@ -17,7 +17,7 @@ const API = 'https://api.groq.com/openai/v1';
 // espera para sempre, sem socket visível e sem erro. Já travou uma execução
 // inteira por 40 minutos — o teto abaixo transforma isso numa tentativa perdida.
 const TIMEOUT_MS = 90000;
-const LOTE = 10;
+const LOTE = 30;
 const PAUSA_MS = 1200;
 const TENTATIVAS = 4;
 
@@ -33,6 +33,29 @@ function carregarEnv() {
 
 const pausar = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// A Groq informa o saldo do minuto em cada resposta. O gargalo aqui é token por
+// minuto (8000 no plano gratuito), não número de requisições — então vale
+// esperar o reset em vez de tomar 429 e entrar em backoff cego.
+let limite = { tokens: null, resetMs: 0 };
+
+function lerLimites(r) {
+  const tokens = Number(r.headers.get('x-ratelimit-remaining-tokens'));
+  const reset = r.headers.get('x-ratelimit-reset-tokens') || '';
+  const m = reset.match(/(?:(\d+)m)?([\d.]+)s/);
+  limite = {
+    tokens: Number.isFinite(tokens) ? tokens : null,
+    resetMs: m ? (Number(m[1] || 0) * 60 + Number(m[2])) * 1000 : 0,
+  };
+}
+
+// Espera o saldo voltar quando ele não cobre o próximo lote.
+async function respirar(custoEstimado) {
+  if (limite.tokens === null || limite.tokens >= custoEstimado) return;
+  const espera = Math.min(limite.resetMs + 500, 65000);
+  console.error(`  saldo em ${limite.tokens} tokens — aguardando ${Math.round(espera / 1000)}s`);
+  await pausar(espera);
+}
+
 async function chamar(caminho, corpo) {
   const chave = process.env.GROQ_API_KEY;
   if (!chave) throw new Error('Falta GROQ_API_KEY (ponha em .env na raiz do projeto)');
@@ -45,6 +68,7 @@ async function chamar(caminho, corpo) {
     opcoes.body = JSON.stringify(corpo);
   }
   const r = await fetch(API + caminho, opcoes);
+  lerLimites(r);
   if (!r.ok) {
     const erro = new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`);
     erro.status = r.status;
@@ -110,6 +134,9 @@ async function classificarLote(modelo, cartas) {
       const r = await chamar('/chat/completions', {
         model: modelo,
         temperature: 0.4,
+        // Só o gpt-oss aceita: é modelo de raciocínio e sem isto gasta milhares
+        // de tokens pensando. O llama recusa parâmetro que não conhece.
+        ...(modelo.includes('gpt-oss') ? { reasoning_effort: 'low' } : {}),
         response_format: { type: 'json_object' },
         messages: [
           { role: 'system', content: INSTRUCOES },
@@ -164,6 +191,7 @@ async function main() {
     const porId = new Map(lote.map((c) => [c.id, c]));
     let resposta;
     try {
+      await respirar(5000); // custo observado por lote de 10, com folga
       resposta = await classificarLote(modelo, lote);
     } catch (e) {
       console.error(`lote ${i / LOTE + 1}: FALHOU — ${e.message.slice(0, 160)}`);
