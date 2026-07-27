@@ -1,4 +1,4 @@
-# Design — Controle da sala, configuração e juízo coletivo
+1# Design — Controle da sala, configuração e juízo coletivo
 
 Data: 2026-07-26 · Status: aprovado
 

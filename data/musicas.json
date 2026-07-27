@@ -622,13 +622,6 @@
     "genero": "Pop"
   },
   {
-    "id": "borbulhas-de-amor-tenho-um-coracao-borbujas-de-amor-fagner",
-    "titulo": "Borbulhas de Amor (Tenho um Coração) [Borbujas de Amor]",
-    "artista": "Fagner",
-    "ano": 1991,
-    "genero": "Pop"
-  },
-  {
     "id": "deslizes-fagner",
     "titulo": "Deslizes",
     "artista": "Fagner",
@@ -678,25 +671,11 @@
     "genero": "Pop"
   },
   {
-    "id": "velha-infancia-2004-digital-remaster-tribalistas",
-    "titulo": "Velha Infância (2004 Digital Remaster)",
-    "artista": "Tribalistas",
-    "ano": 2002,
-    "genero": "MPB"
-  },
-  {
     "id": "alianca-tribalistas",
     "titulo": "Aliança",
     "artista": "Tribalistas",
     "ano": 2017,
     "genero": "Pop"
-  },
-  {
-    "id": "ja-sei-namorar-2004-digital-remaster-tribalistas",
-    "titulo": "Já Sei Namorar (2004 Digital Remaster)",
-    "artista": "Tribalistas",
-    "ano": 2002,
-    "genero": "MPB"
   },
   {
     "id": "e-voce-2004-digital-remaster-tribalistas",
@@ -920,13 +899,6 @@
     "titulo": "Tropicana (Morena Tropicana)",
     "artista": "Alceu Valença",
     "ano": 1982,
-    "genero": "MPB"
-  },
-  {
-    "id": "la-belle-de-jour-girassol-alceu-valenca",
-    "titulo": "La Belle de Jour / Girassol",
-    "artista": "Alceu Valença",
-    "ano": 2016,
     "genero": "MPB"
   },
   {
@@ -1618,13 +1590,6 @@
   {
     "id": "um-certo-alguem-lulu-santos",
     "titulo": "Um Certo Alguém",
-    "artista": "Lulu Santos",
-    "ano": 1987,
-    "genero": "Brasileira"
-  },
-  {
-    "id": "como-uma-onda-zen-surfismo-lulu-santos",
-    "titulo": "Como Uma Onda (Zen-Surfismo)",
     "artista": "Lulu Santos",
     "ano": 1987,
     "genero": "Brasileira"
@@ -3016,13 +2981,6 @@
     "genero": "Rock"
   },
   {
-    "id": "bohemian-rhapsody-operatic-section-2011-a-cappella-mix-queen",
-    "titulo": "Bohemian Rhapsody (Operatic Section / 2011 A Cappella Mix)",
-    "artista": "Queen",
-    "ano": 1975,
-    "genero": "Rock"
-  },
-  {
     "id": "here-comes-the-sun-the-beatles",
     "titulo": "Here Comes the Sun",
     "artista": "The Beatles",
@@ -3602,5 +3560,5738 @@
     "artista": "Djonga",
     "ano": 2017,
     "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "f4769bd8-d6ab-43c3-a69c-ad4a6ec77feb",
+    "titulo": "Magic",
+    "artista": "Coldplay",
+    "ano": 2014,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "canto-de-ossanha-baden-powell-vinicius-de-moraes",
+    "titulo": "Canto de Ossanha",
+    "artista": "Baden Powell & Vinicius de Moraes",
+    "ano": 1966,
+    "genero": "Jazz"
+  },
+  {
+    "id": "chega-de-saudade-toquinho-vinicius-de-moraes",
+    "titulo": "Chega de Saudade",
+    "artista": "Toquinho & Vinicius de Moraes",
+    "ano": 1975,
+    "genero": "MPB"
+  },
+  {
+    "id": "regra-tres-toquinho-vinicius-de-moraes",
+    "titulo": "Regra Três",
+    "artista": "Toquinho & Vinicius de Moraes",
+    "ano": 1988,
+    "genero": "Pop"
+  },
+  {
+    "id": "berimbau-vinicius-de-moraes",
+    "titulo": "Berimbau",
+    "artista": "Vinicius de Moraes",
+    "ano": 1967,
+    "genero": "Bossa nova"
+  },
+  {
+    "id": "fascinacao-elis-regina",
+    "titulo": "Fascinaçao",
+    "artista": "Elis Regina",
+    "ano": 1976,
+    "genero": "MPB"
+  },
+  {
+    "id": "alo-alo-marciano-elis-regina",
+    "titulo": "Alô, alô marciano",
+    "artista": "Elis Regina",
+    "ano": 1980,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "maria-maria-elis-regina",
+    "titulo": "Maria, Maria",
+    "artista": "Elis Regina",
+    "ano": 1980,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "madalena-elis-regina",
+    "titulo": "Madalena",
+    "artista": "Elis Regina",
+    "ano": 1971,
+    "genero": "MPB"
+  },
+  {
+    "id": "cotidiano-chico-buarque",
+    "titulo": "Cotidiano",
+    "artista": "Chico Buarque",
+    "ano": 1971,
+    "genero": "Pop"
+  },
+  {
+    "id": "calice-chico-buarque-milton-nascimento",
+    "titulo": "Cálice",
+    "artista": "Chico Buarque & Milton Nascimento",
+    "ano": 1978,
+    "genero": "MPB"
+  },
+  {
+    "id": "roda-viva-chico-buarque",
+    "titulo": "Roda-Viva",
+    "artista": "Chico Buarque",
+    "ano": 1968,
+    "genero": "Bossa nova"
+  },
+  {
+    "id": "vai-passar-chico-buarque",
+    "titulo": "Vai Passar",
+    "artista": "Chico Buarque",
+    "ano": 1984,
+    "genero": "Pop"
+  },
+  {
+    "id": "escravo-da-alegria-toquinho-vinicius-de-moraes",
+    "titulo": "Escravo da Alegria",
+    "artista": "Toquinho & Vinicius de Moraes",
+    "ano": 1988,
+    "genero": "Pop"
+  },
+  {
+    "id": "tarde-em-itapoa-vinicius-marilia-medalha-toquinho",
+    "titulo": "Tarde em Itapoã",
+    "artista": "Vinícius, Marilia Medalha & Toquinho",
+    "ano": 1971,
+    "genero": "Bossa nova"
+  },
+  {
+    "id": "espumas-ao-vento-fagner",
+    "titulo": "Espumas ao Vento",
+    "artista": "Fagner",
+    "ano": 2000,
+    "genero": "MPB"
+  },
+  {
+    "id": "revelacao-fagner",
+    "titulo": "Revelação",
+    "artista": "Fagner",
+    "ano": 2004,
+    "genero": "MPB"
+  },
+  {
+    "id": "borbulhas-de-amor-tenho-um-coracao-fagner",
+    "titulo": "Borbulhas de Amor (Tenho um Coração)",
+    "artista": "Fagner",
+    "ano": 2000,
+    "genero": "MPB"
+  },
+  {
+    "id": "noturno-coracao-alado-fagner",
+    "titulo": "Noturno (Coração Alado)",
+    "artista": "Fagner",
+    "ano": 1979,
+    "genero": "MPB"
+  },
+  {
+    "id": "ai-ai-ai-vanessa-da-mata",
+    "titulo": "Ai, Ai, Ai...",
+    "artista": "Vanessa da Mata",
+    "ano": 2007,
+    "genero": "MPB"
+  },
+  {
+    "id": "so-voce-e-eu-vanessa-da-mata",
+    "titulo": "Só Você e Eu",
+    "artista": "Vanessa da Mata",
+    "ano": 2019,
+    "genero": "MPB"
+  },
+  {
+    "id": "nossa-cancao-vanessa-da-mata",
+    "titulo": "Nossa Canção",
+    "artista": "Vanessa da Mata",
+    "ano": 1999,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "va-pro-inferno-com-seu-amor-chitaozinho-xororo-vanessa-da-ma",
+    "titulo": "Vá Pro Inferno Com Seu Amor",
+    "artista": "Chitãozinho & Xororó & Vanessa da Mata",
+    "ano": 2026,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "all-star-nando-reis",
+    "titulo": "All Star",
+    "artista": "Nando Reis",
+    "ano": 2015,
+    "genero": "MPB"
+  },
+  {
+    "id": "n-nando-reis",
+    "titulo": "N",
+    "artista": "Nando Reis",
+    "ano": 2018,
+    "genero": "Rock"
+  },
+  {
+    "id": "as-coisas-tao-mais-lindas-nando-reis",
+    "titulo": "As Coisas Tão Mais Lindas",
+    "artista": "Nando Reis",
+    "ano": 2015,
+    "genero": "MPB"
+  },
+  {
+    "id": "luz-dos-olhos-nando-reis",
+    "titulo": "Luz dos Olhos",
+    "artista": "Nando Reis",
+    "ano": 2015,
+    "genero": "MPB"
+  },
+  {
+    "id": "misterios-da-meia-noite-ze-ramalho",
+    "titulo": "Mistérios da Meia Noite",
+    "artista": "Zé Ramalho",
+    "ano": 1985,
+    "genero": "MPB"
+  },
+  {
+    "id": "avohai-ze-ramalho",
+    "titulo": "Avôhai",
+    "artista": "Zé Ramalho",
+    "ano": 1978,
+    "genero": "MPB"
+  },
+  {
+    "id": "sinonimos-ze-ramalho",
+    "titulo": "Sinônimos",
+    "artista": "Zé Ramalho",
+    "ano": 2005,
+    "genero": "MPB"
+  },
+  {
+    "id": "garoto-de-aluguel-taxi-boy-ze-ramalho",
+    "titulo": "Garoto de Aluguel (Taxi Boy)",
+    "artista": "Zé Ramalho",
+    "ano": 1997,
+    "genero": "Latina contemporânea"
+  },
+  {
+    "id": "cajuina-elba-ramalho",
+    "titulo": "Cajuína",
+    "artista": "Elba Ramalho",
+    "ano": 1981,
+    "genero": "MPB"
+  },
+  {
+    "id": "chao-de-giz-ze-ramalho-elba-ramalho",
+    "titulo": "Chão de Giz",
+    "artista": "Zé Ramalho & Elba Ramalho",
+    "ano": 1996,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "anunciacao-alceu-valenca-elba-ramalho-geraldo-azevedo",
+    "titulo": "Anunciação",
+    "artista": "Alceu Valença, Elba Ramalho & Geraldo Azevedo",
+    "ano": 2016,
+    "genero": "MPB"
+  },
+  {
+    "id": "eu-so-quero-um-xodo-dominguinhos-elba-ramalho",
+    "titulo": "Eu Só Quero um Xodó",
+    "artista": "Dominguinhos & Elba Ramalho",
+    "ano": 2005,
+    "genero": "Música do mundo"
+  },
+  {
+    "id": "ovelha-negra-rita-lee-tutti-frutti",
+    "titulo": "Ovelha Negra",
+    "artista": "Rita Lee & Tutti Frutti",
+    "ano": 1992,
+    "genero": "MPB"
+  },
+  {
+    "id": "doce-vampiro-rita-lee-roberto-de-carvalho",
+    "titulo": "Doce Vampiro",
+    "artista": "Rita Lee & Roberto de Carvalho",
+    "ano": 1979,
+    "genero": "Pop"
+  },
+  {
+    "id": "mania-de-voce-rita-lee-roberto-de-carvalho",
+    "titulo": "Mania de Você",
+    "artista": "Rita Lee & Roberto de Carvalho",
+    "ano": 1992,
+    "genero": "MPB"
+  },
+  {
+    "id": "desculpe-o-aue-rita-lee-roberto-de-carvalho",
+    "titulo": "Desculpe o Auê",
+    "artista": "Rita Lee & Roberto de Carvalho",
+    "ano": 1983,
+    "genero": "MPB"
+  },
+  {
+    "id": "presente-de-um-beija-flor-natiruts",
+    "titulo": "Presente de um Beija-Flor",
+    "artista": "Natiruts",
+    "ano": 1998,
+    "genero": "Reggae"
+  },
+  {
+    "id": "me-namora-natiruts",
+    "titulo": "Me Namora",
+    "artista": "Natiruts",
+    "ano": 1998,
+    "genero": "Reggae"
+  },
+  {
+    "id": "liberdade-pra-dentro-da-cabeca-natiruts",
+    "titulo": "Liberdade pra Dentro da Cabeça",
+    "artista": "Natiruts",
+    "ano": 1998,
+    "genero": "Reggae"
+  },
+  {
+    "id": "meu-reggae-e-roots-natiruts",
+    "titulo": "Meu Reggae É Roots",
+    "artista": "Natiruts",
+    "ano": 1998,
+    "genero": "Reggae"
+  },
+  {
+    "id": "nada-sei-apneia-kid-abelha",
+    "titulo": "Nada Sei (Apnéia)",
+    "artista": "Kid Abelha",
+    "ano": 2002,
+    "genero": "Pop"
+  },
+  {
+    "id": "fixacao-kid-abelha",
+    "titulo": "Fixação",
+    "artista": "Kid Abelha",
+    "ano": 2002,
+    "genero": "Pop"
+  },
+  {
+    "id": "a-formula-do-amor-kid-abelha",
+    "titulo": "A Fórmula do Amor",
+    "artista": "Kid Abelha",
+    "ano": 1985,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "na-rua-na-chuva-na-fazenda-casinha-de-sape-kid-abelha-lenine",
+    "titulo": "Na Rua, Na Chuva, Na Fazenda (Casinha de Sapê)",
+    "artista": "Kid Abelha & Lenine",
+    "ano": 2003,
+    "genero": "Pop"
+  },
+  {
+    "id": "vento-ventania-biquini-cavadao",
+    "titulo": "Vento Ventania",
+    "artista": "Biquini Cavadão",
+    "ano": 1999,
+    "genero": "Pop"
+  },
+  {
+    "id": "quando-eu-te-encontrar-biquini-cavadao",
+    "titulo": "Quando Eu Te Encontrar",
+    "artista": "Biquini Cavadão",
+    "ano": 2007,
+    "genero": "Pop"
+  },
+  {
+    "id": "timidez-biquini-cavadao",
+    "titulo": "Timidez",
+    "artista": "Biquini Cavadão",
+    "ano": 1999,
+    "genero": "Pop"
+  },
+  {
+    "id": "tedio-biquini-cavadao",
+    "titulo": "Tédio",
+    "artista": "Biquini Cavadão",
+    "ano": 1999,
+    "genero": "Pop"
+  },
+  {
+    "id": "me-lambe-jao",
+    "titulo": "Me Lambe",
+    "artista": "Jão",
+    "ano": 2023,
+    "genero": "Pop"
+  },
+  {
+    "id": "imaturo-jao",
+    "titulo": "Imaturo",
+    "artista": "Jão",
+    "ano": 2018,
+    "genero": "Pop"
+  },
+  {
+    "id": "santo-jao",
+    "titulo": "Santo",
+    "artista": "Jão",
+    "ano": 2021,
+    "genero": "Pop"
+  },
+  {
+    "id": "alinhamento-milenar-jao",
+    "titulo": "Alinhamento Milenar",
+    "artista": "Jão",
+    "ano": 2023,
+    "genero": "Pop"
+  },
+  {
+    "id": "diplomacao-ivan-lins-zeca-pagodinho",
+    "titulo": "Diplomação",
+    "artista": "Ivan Lins & Zeca Pagodinho",
+    "ano": 2026,
+    "genero": "Samba"
+  },
+  {
+    "id": "faixa-amarela-zeca-pagodinho",
+    "titulo": "Faixa Amarela",
+    "artista": "Zeca Pagodinho",
+    "ano": 1997,
+    "genero": "Pop"
+  },
+  {
+    "id": "camarao-que-dorme-a-onda-leva-sombrinha-roberta-sa-dudu-nobr",
+    "titulo": "Camarão Que Dorme a Onda Leva",
+    "artista": "Sombrinha, Roberta Sá, Dudu Nobre, Mumuzinho, Lenine, Arlindo Cruz, Maria Rita, Péricles, Almir Guineto, Beth Carvalho, Marcelo D2, Alcione, Diogo Nogueira, Frejat, Jorge Ben Jor, Nilze Carvalho, Emicida, Gabrielzinho do Irajá, Mariene de Castro, Monarco, Velha Guarda Da Portela, Rildo Hora, Martinho da Vila & Zeca Pagodinho",
+    "ano": 1999,
+    "genero": "Samba"
+  },
+  {
+    "id": "mais-feliz-zeca-pagodinho",
+    "titulo": "Mais Feliz",
+    "artista": "Zeca Pagodinho",
+    "ano": 2019,
+    "genero": "Samba"
+  },
+  {
+    "id": "sinais-sorriso-maroto-pericles-ferrugem",
+    "titulo": "Sinais",
+    "artista": "Sorriso Maroto, Péricles & Ferrugem",
+    "ano": 2023,
+    "genero": "Pagode"
+  },
+  {
+    "id": "vai-e-chora-sorriso-maroto",
+    "titulo": "Vai e Chora",
+    "artista": "Sorriso Maroto",
+    "ano": 2012,
+    "genero": "Pagode"
+  },
+  {
+    "id": "mensagem-apagada-dilsinho-sorriso-maroto",
+    "titulo": "Mensagem Apagada",
+    "artista": "Dilsinho & Sorriso Maroto",
+    "ano": 2022,
+    "genero": "Pagode"
+  },
+  {
+    "id": "dependente-sorriso-maroto",
+    "titulo": "Dependente",
+    "artista": "Sorriso Maroto",
+    "ano": 2016,
+    "genero": "Pagode"
+  },
+  {
+    "id": "dna-matheus-vargas-leonardo",
+    "titulo": "DNA",
+    "artista": "Matheus Vargas & Leonardo",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "coracao-bandido-leonardo",
+    "titulo": "Coração Bandido",
+    "artista": "Leonardo",
+    "ano": 2008,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "tocando-em-frente-paula-fernandes-leonardo",
+    "titulo": "Tocando Em Frente",
+    "artista": "Paula Fernandes & Leonardo",
+    "ano": 2010,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "sinonimos-pense-em-mim-e-o-amor-chitaozinho-xororo-leonardo-",
+    "titulo": "Sinônimos / Pense Em Mim / É o Amor",
+    "artista": "Chitãozinho & Xororó, Leonardo & Zezé Di Camargo & Luciano",
+    "ano": 2019,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "assunto-que-doi-gusttavo-lima",
+    "titulo": "Assunto Que Dói",
+    "artista": "Gusttavo Lima",
+    "ano": 2026,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "desejo-imortal-it-must-have-been-love-gusttavo-lima",
+    "titulo": "Desejo Imortal (It Must Have Been Love)",
+    "artista": "Gusttavo Lima",
+    "ano": 2023,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "na-hora-de-amar-gusttavo-lima",
+    "titulo": "Na Hora de Amar",
+    "artista": "Gusttavo Lima",
+    "ano": 2018,
+    "genero": "Música do mundo"
+  },
+  {
+    "id": "ficha-limpa-gusttavo-lima",
+    "titulo": "Ficha Limpa",
+    "artista": "Gusttavo Lima",
+    "ano": 2021,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "louca-de-saudade-jorge-mateus",
+    "titulo": "Louca de Saudade",
+    "artista": "Jorge & Mateus",
+    "ano": 2016,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "propaganda-jorge-mateus",
+    "titulo": "Propaganda",
+    "artista": "Jorge & Mateus",
+    "ano": 2018,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "o-que-e-que-tem-jorge-mateus",
+    "titulo": "O Que É Que Tem",
+    "artista": "Jorge & Mateus",
+    "ano": 2012,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "pra-sempre-com-voce-jorge-mateus",
+    "titulo": "Pra Sempre Com Você",
+    "artista": "Jorge & Mateus",
+    "ano": 2016,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "leao-marilia-mendonca",
+    "titulo": "Leão",
+    "artista": "Marília Mendonça",
+    "ano": 2022,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "de-quem-e-a-culpa-marilia-mendonca",
+    "titulo": "De Quem É a Culpa?",
+    "artista": "Marília Mendonça",
+    "ano": 2012,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "sentimento-louco-marilia-mendonca",
+    "titulo": "Sentimento Louco",
+    "artista": "Marília Mendonça",
+    "ano": 2015,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "o-que-falta-em-voce-sou-eu-marilia-mendonca",
+    "titulo": "O Que Falta em Você Sou Eu",
+    "artista": "Marília Mendonça",
+    "ano": 2015,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "medo-bobo-maiara-maraisa",
+    "titulo": "Medo Bobo",
+    "artista": "Maiara & Maraisa",
+    "ano": 2016,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "10-maiara-maraisa",
+    "titulo": "10%",
+    "artista": "Maiara & Maraisa",
+    "ano": 2012,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "sorte-que-ce-beija-bem-maiara-maraisa",
+    "titulo": "Sorte Que Cê Beija Bem",
+    "artista": "Maiara & Maraisa",
+    "ano": 2016,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "esqueca-me-se-for-capaz-marilia-mendonca-maiara-maraisa",
+    "titulo": "Esqueça-Me Se For Capaz",
+    "artista": "Marília Mendonça & Maiara & Maraisa",
+    "ano": 2021,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "te-assumi-pro-brasil-na-praia-2-ao-vivo-matheus-kauan",
+    "titulo": "Te Assumi Pro Brasil (Na Praia 2 / Ao Vivo)",
+    "artista": "Matheus & Kauan",
+    "ano": 2017,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "decide-ai-na-praia-ao-vivo-matheus-kauan",
+    "titulo": "Decide Aí (Na Praia / Ao Vivo)",
+    "artista": "Matheus & Kauan",
+    "ano": 2016,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "quarta-cadeira-matheus-kauan",
+    "titulo": "Quarta Cadeira",
+    "artista": "Matheus & Kauan",
+    "ano": 2019,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "que-sorte-a-nossa-na-praia-2-ao-vivo-matheus-kauan",
+    "titulo": "Que Sorte A Nossa (Na Praia 2 / Ao Vivo)",
+    "artista": "Matheus & Kauan",
+    "ano": 2017,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "cadeira-cativa-ze-neto-cristiano",
+    "titulo": "Cadeira Cativa",
+    "artista": "Zé Neto & Cristiano",
+    "ano": 2026,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "barulho-do-foguete-ze-neto-cristiano",
+    "titulo": "Barulho Do Foguete",
+    "artista": "Zé Neto & Cristiano",
+    "ano": 2023,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "largado-as-tracas-ze-neto-cristiano",
+    "titulo": "Largado às Traças",
+    "artista": "Zé Neto & Cristiano",
+    "ano": 2018,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "notificacao-preferida-ze-neto-cristiano",
+    "titulo": "Notificação Preferida",
+    "artista": "Zé Neto & Cristiano",
+    "ano": 2012,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "sal-grosso-anitta-kbrum",
+    "titulo": "Sal Grosso",
+    "artista": "Anitta & KBrum",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "feitico-anitta-mart-nalia",
+    "titulo": "Feitiço",
+    "artista": "Anitta & Mart'nália",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "ponta-do-pe-anitta",
+    "titulo": "Ponta Do Pé",
+    "artista": "Anitta",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "eu-nao-sou-santa-anitta-mestrinho",
+    "titulo": "Eu Não Sou Santa",
+    "artista": "Anitta & Mestrinho",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "rainha-da-favela-ludmilla",
+    "titulo": "Rainha da Favela",
+    "artista": "LUDMILLA",
+    "ano": 2020,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cheguei-ludmilla",
+    "titulo": "Cheguei",
+    "artista": "LUDMILLA",
+    "ano": 2016,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "24-horas-por-dia-ludmilla",
+    "titulo": "24 Horas por Dia",
+    "artista": "LUDMILLA",
+    "ano": 2014,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "verdinha-ludmilla-topo-la-maskara-walshy-fire",
+    "titulo": "Verdinha",
+    "artista": "LUDMILLA, Topo La Maskara & Walshy Fire",
+    "ano": 2019,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "uma-nora-pra-cada-dia-kevinho",
+    "titulo": "Uma Nora pra Cada Dia",
+    "artista": "Kevinho",
+    "ano": 2019,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "love-sensation-madonna",
+    "titulo": "Love Sensation",
+    "artista": "Madonna",
+    "ano": 2026,
+    "genero": "Pop"
+  },
+  {
+    "id": "i-feel-so-free-madonna",
+    "titulo": "I Feel So Free",
+    "artista": "Madonna",
+    "ano": 2026,
+    "genero": "Pop"
+  },
+  {
+    "id": "la-isla-bonita-madonna",
+    "titulo": "La Isla Bonita",
+    "artista": "Madonna",
+    "ano": 1986,
+    "genero": "Pop"
+  },
+  {
+    "id": "like-a-prayer-madonna",
+    "titulo": "Like a Prayer",
+    "artista": "Madonna",
+    "ano": 1989,
+    "genero": "Pop"
+  },
+  {
+    "id": "have-you-ever-seen-the-rain-bonnie-tyler",
+    "titulo": "Have You Ever Seen the Rain?",
+    "artista": "Bonnie Tyler",
+    "ano": 1983,
+    "genero": "Pop"
+  },
+  {
+    "id": "straight-from-the-heart-bonnie-tyler",
+    "titulo": "Straight from the Heart",
+    "artista": "Bonnie Tyler",
+    "ano": 1980,
+    "genero": "Contemporâneo adulto"
+  },
+  {
+    "id": "hold-on-bonnie-tyler",
+    "titulo": "Hold On",
+    "artista": "Bonnie Tyler",
+    "ano": 2019,
+    "genero": "Pop"
+  },
+  {
+    "id": "isn-t-she-lovely-stevie-wonder",
+    "titulo": "Isn't She Lovely",
+    "artista": "Stevie Wonder",
+    "ano": 1976,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "i-just-called-to-say-i-love-you-stevie-wonder",
+    "titulo": "I Just Called to Say I Love You",
+    "artista": "Stevie Wonder",
+    "ano": 2002,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "superstition-stevie-wonder",
+    "titulo": "Superstition",
+    "artista": "Stevie Wonder",
+    "ano": 1972,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "you-are-the-sunshine-of-my-life-stevie-wonder",
+    "titulo": "You Are the Sunshine of My Life",
+    "artista": "Stevie Wonder",
+    "ano": 1972,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "die-with-a-smile-lady-gaga-bruno-mars",
+    "titulo": "Die With A Smile",
+    "artista": "Lady Gaga & Bruno Mars",
+    "ano": 2024,
+    "genero": "Pop"
+  },
+  {
+    "id": "locked-out-of-heaven-bruno-mars",
+    "titulo": "Locked Out of Heaven",
+    "artista": "Bruno Mars",
+    "ano": 2012,
+    "genero": "Pop"
+  },
+  {
+    "id": "when-i-was-your-man-bruno-mars",
+    "titulo": "When I Was Your Man",
+    "artista": "Bruno Mars",
+    "ano": 2012,
+    "genero": "Pop"
+  },
+  {
+    "id": "talking-to-the-moon-bruno-mars",
+    "titulo": "Talking to the Moon",
+    "artista": "Bruno Mars",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "someone-like-you-adele",
+    "titulo": "Someone Like You",
+    "artista": "Adele",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "set-fire-to-the-rain-adele",
+    "titulo": "Set Fire to the Rain",
+    "artista": "Adele",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "rolling-in-the-deep-adele",
+    "titulo": "Rolling in the Deep",
+    "artista": "Adele",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "love-in-the-dark-adele",
+    "titulo": "Love in the Dark",
+    "artista": "Adele",
+    "ano": 2015,
+    "genero": "Pop"
+  },
+  {
+    "id": "perfect-ed-sheeran",
+    "titulo": "Perfect",
+    "artista": "Ed Sheeran",
+    "ano": 2017,
+    "genero": "Pop"
+  },
+  {
+    "id": "photograph-ed-sheeran",
+    "titulo": "Photograph",
+    "artista": "Ed Sheeran",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "thinking-out-loud-ed-sheeran",
+    "titulo": "Thinking Out Loud",
+    "artista": "Ed Sheeran",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "shape-of-you-ed-sheeran",
+    "titulo": "Shape of You",
+    "artista": "Ed Sheeran",
+    "ano": 2017,
+    "genero": "Pop"
+  },
+  {
+    "id": "crazy-in-love-beyonce",
+    "titulo": "Crazy in Love",
+    "artista": "Beyoncé",
+    "ano": 2003,
+    "genero": "Pop"
+  },
+  {
+    "id": "irreplaceable-beyonce",
+    "titulo": "Irreplaceable",
+    "artista": "Beyoncé",
+    "ano": 2006,
+    "genero": "Pop"
+  },
+  {
+    "id": "naughty-girl-beyonce",
+    "titulo": "Naughty Girl",
+    "artista": "Beyoncé",
+    "ano": 2003,
+    "genero": "Pop"
+  },
+  {
+    "id": "love-on-top-beyonce",
+    "titulo": "Love On Top",
+    "artista": "Beyoncé",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "only-girl-in-the-world-rihanna",
+    "titulo": "Only Girl (In the World)",
+    "artista": "Rihanna",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "where-have-you-been-rihanna",
+    "titulo": "Where Have You Been",
+    "artista": "Rihanna",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "we-found-love-rihanna",
+    "titulo": "We Found Love",
+    "artista": "Rihanna",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "umbrella-rihanna",
+    "titulo": "Umbrella",
+    "artista": "Rihanna",
+    "ano": 2007,
+    "genero": "Pop"
+  },
+  {
+    "id": "choka-choka-anitta-shakira",
+    "titulo": "Choka Choka",
+    "artista": "Anitta & Shakira",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "dai-dai-shakira-burna-boy",
+    "titulo": "Dai Dai",
+    "artista": "Shakira & Burna Boy",
+    "ano": 2026,
+    "genero": "Pop"
+  },
+  {
+    "id": "waka-waka-esto-es-africa-shakira",
+    "titulo": "Waka Waka (Esto es Africa)",
+    "artista": "Shakira",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "hips-don-t-lie-shakira",
+    "titulo": "Hips Don't Lie",
+    "artista": "Shakira",
+    "ano": 2006,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "i-want-it-that-way-backstreet-boys",
+    "titulo": "I Want It That Way",
+    "artista": "Backstreet Boys",
+    "ano": 1999,
+    "genero": "Pop"
+  },
+  {
+    "id": "everybody-backstreet-s-back-backstreet-boys",
+    "titulo": "Everybody (Backstreet's Back)",
+    "artista": "Backstreet Boys",
+    "ano": 1997,
+    "genero": "Pop"
+  },
+  {
+    "id": "as-long-as-you-love-me-backstreet-boys",
+    "titulo": "As Long as You Love Me",
+    "artista": "Backstreet Boys",
+    "ano": 1996,
+    "genero": "Pop"
+  },
+  {
+    "id": "quit-playing-games-with-my-heart-backstreet-boys",
+    "titulo": "Quit Playing Games (With My Heart)",
+    "artista": "Backstreet Boys",
+    "ano": 1996,
+    "genero": "Pop"
+  },
+  {
+    "id": "wannabe-spice-girls",
+    "titulo": "Wannabe",
+    "artista": "Spice Girls",
+    "ano": 1996,
+    "genero": "Pop"
+  },
+  {
+    "id": "say-you-ll-be-there-single-mix-spice-girls",
+    "titulo": "Say You'll Be There (Single Mix)",
+    "artista": "Spice Girls",
+    "ano": 1996,
+    "genero": "Pop"
+  },
+  {
+    "id": "viva-forever-spice-girls",
+    "titulo": "Viva Forever",
+    "artista": "Spice Girls",
+    "ano": 1997,
+    "genero": "Britpop"
+  },
+  {
+    "id": "2-become-1-spice-girls",
+    "titulo": "2 Become 1",
+    "artista": "Spice Girls",
+    "ano": 1996,
+    "genero": "Pop"
+  },
+  {
+    "id": "baby-one-more-time-britney-spears",
+    "titulo": "...Baby One More Time",
+    "artista": "Britney Spears",
+    "ano": 1998,
+    "genero": "Pop"
+  },
+  {
+    "id": "oops-i-did-it-again-britney-spears",
+    "titulo": "Oops!…I Did It Again",
+    "artista": "Britney Spears",
+    "ano": 2000,
+    "genero": "Pop"
+  },
+  {
+    "id": "toxic-britney-spears",
+    "titulo": "Toxic",
+    "artista": "Britney Spears",
+    "ano": 2003,
+    "genero": "Pop"
+  },
+  {
+    "id": "criminal-britney-spears",
+    "titulo": "Criminal",
+    "artista": "Britney Spears",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "last-christmas-wham",
+    "titulo": "Last Christmas",
+    "artista": "Wham!",
+    "ano": 1984,
+    "genero": "Natal"
+  },
+  {
+    "id": "wake-me-up-before-you-go-go-wham",
+    "titulo": "Wake Me Up Before You Go-Go",
+    "artista": "Wham!",
+    "ano": 1984,
+    "genero": "Pop"
+  },
+  {
+    "id": "everything-she-wants-wham",
+    "titulo": "Everything She Wants",
+    "artista": "Wham!",
+    "ano": 1984,
+    "genero": "Pop"
+  },
+  {
+    "id": "vida-loka-pt-1-racionais-mc-s",
+    "titulo": "Vida Loka, Pt. 1",
+    "artista": "Racionais MC's",
+    "ano": 2000,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "jesus-chorou-racionais-mc-s",
+    "titulo": "Jesus Chorou",
+    "artista": "Racionais MC's",
+    "ano": 2003,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "negro-drama-racionais-mc-s",
+    "titulo": "Negro Drama",
+    "artista": "Racionais MC's",
+    "ano": 2003,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "diario-de-um-detento-racionais-mc-s",
+    "titulo": "Diário de um Detento",
+    "artista": "Racionais MC's",
+    "ano": 1997,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "levanta-e-anda-emicida",
+    "titulo": "Levanta e Anda",
+    "artista": "Emicida",
+    "ano": 2013,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "hoje-cedo-emicida",
+    "titulo": "Hoje Cedo",
+    "artista": "Emicida",
+    "ano": 2013,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "amarelo-sample-sujeito-de-sorte-belchior-emicida-majur-pabll",
+    "titulo": "AmarElo (Sample: Sujeito de Sorte - Belchior)",
+    "artista": "Emicida, Majur & Pabllo Vittar",
+    "ano": 2019,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "passarinhos-emicida",
+    "titulo": "Passarinhos",
+    "artista": "Emicida",
+    "ano": 2015,
+    "genero": "Rap"
+  },
+  {
+    "id": "subirusdoistiozin-criolo",
+    "titulo": "Subirusdoistiozin",
+    "artista": "Criolo",
+    "ano": 2011,
+    "genero": "Hip-hop"
+  },
+  {
+    "id": "nao-existe-amor-em-sp-criolo",
+    "titulo": "Não Existe Amor em SP",
+    "artista": "Criolo",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "grajauex-criolo",
+    "titulo": "Grajauex",
+    "artista": "Criolo",
+    "ano": 2011,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "cartao-de-visita-criolo",
+    "titulo": "Cartão de Visita",
+    "artista": "Criolo",
+    "ano": 2014,
+    "genero": "Rap"
+  },
+  {
+    "id": "desabafo-deixa-eu-dizer-marcelo-d2",
+    "titulo": "Desabafo / Deixa Eu Dizer",
+    "artista": "Marcelo D2",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "1967-marcelo-d2",
+    "titulo": "1967",
+    "artista": "Marcelo D2",
+    "ano": 2015,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "qual-e-marcelo-d2-antonio-carlos-e-jocafi",
+    "titulo": "Qual É?",
+    "artista": "Marcelo D2 & Antonio Carlos e Jocafi",
+    "ano": 2015,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "vai-vendo-marcelo-d2",
+    "titulo": "Vai Vendo",
+    "artista": "Marcelo D2",
+    "ano": 2015,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "rap-e-compromisso-sabotage",
+    "titulo": "Rap É Compromisso",
+    "artista": "Sabotage",
+    "ano": 2000,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "mun-ra-sabotage",
+    "titulo": "Mun Rá",
+    "artista": "Sabotage",
+    "ano": 2002,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "um-bom-lugar-sabotage",
+    "titulo": "Um Bom Lugar",
+    "artista": "Sabotage",
+    "ano": 2000,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "no-brooklin-sabotage",
+    "titulo": "No Brooklin",
+    "artista": "Sabotage",
+    "ano": 2000,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "mantenha-o-respeito-planet-hemp",
+    "titulo": "Mantenha o Respeito",
+    "artista": "Planet Hemp",
+    "ano": 1995,
+    "genero": "Rap"
+  },
+  {
+    "id": "queimando-tudo-planet-hemp",
+    "titulo": "Queimando Tudo",
+    "artista": "Planet Hemp",
+    "ano": 1997,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "dig-dig-dig-hempa-planet-hemp",
+    "titulo": "Dig Dig Dig (Hempa)",
+    "artista": "Planet Hemp",
+    "ano": 1995,
+    "genero": "Rap"
+  },
+  {
+    "id": "legalize-ja-planet-hemp",
+    "titulo": "Legalize Já",
+    "artista": "Planet Hemp",
+    "ano": 1995,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "lucro-descomprimindo-baianasystem",
+    "titulo": "Lucro (Descomprimindo)",
+    "artista": "BaianaSystem",
+    "ano": 2016,
+    "genero": "Indie Rock"
+  },
+  {
+    "id": "sulamericano-baianasystem",
+    "titulo": "Sulamericano",
+    "artista": "BaianaSystem",
+    "ano": 2019,
+    "genero": "Pop/Rock"
+  },
+  {
+    "id": "duas-cidades-baianasystem",
+    "titulo": "Duas Cidades",
+    "artista": "BaianaSystem",
+    "ano": 2016,
+    "genero": "Indie Rock"
+  },
+  {
+    "id": "bola-de-cristal-baianasystem",
+    "titulo": "Bola de Cristal",
+    "artista": "BaianaSystem",
+    "ano": 2019,
+    "genero": "Pop/Rock"
+  },
+  {
+    "id": "muleque-de-vila-projota",
+    "titulo": "Muleque De Vila",
+    "artista": "Projota",
+    "ano": 2016,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "ela-so-quer-paz-projota",
+    "titulo": "Ela Só Quer Paz",
+    "artista": "Projota",
+    "ano": 2016,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "a-rezadeira-projota",
+    "titulo": "A Rezadeira",
+    "artista": "Projota",
+    "ano": 2014,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "o-homem-que-nao-tinha-nada-projota",
+    "titulo": "O Homem Que Não Tinha Nada",
+    "artista": "Projota",
+    "ano": 2014,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "ela-me-faz-rael",
+    "titulo": "Ela Me Faz",
+    "artista": "Rael",
+    "ano": 2013,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "envolvidao-rael",
+    "titulo": "Envolvidão",
+    "artista": "Rael",
+    "ano": 2014,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "aurora-boreal-rael",
+    "titulo": "Aurora Boreal",
+    "artista": "Rael",
+    "ano": 2016,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "rouxinol-rael",
+    "titulo": "Rouxinol",
+    "artista": "Rael",
+    "ano": 2026,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "preciso-me-encontrar-cartola",
+    "titulo": "Preciso Me Encontrar",
+    "artista": "Cartola",
+    "ano": 1976,
+    "genero": "Samba"
+  },
+  {
+    "id": "o-mundo-e-um-moinho-cartola",
+    "titulo": "O Mundo É um Moinho",
+    "artista": "Cartola",
+    "ano": 1976,
+    "genero": "Samba"
+  },
+  {
+    "id": "as-rosas-nao-falam-cartola",
+    "titulo": "As Rosas Não Falam",
+    "artista": "Cartola",
+    "ano": 1976,
+    "genero": "Samba"
+  },
+  {
+    "id": "alvorada-cartola",
+    "titulo": "Alvorada",
+    "artista": "Cartola",
+    "ano": 1974,
+    "genero": "Samba"
+  },
+  {
+    "id": "foi-um-rio-que-passou-em-minha-vida-paulinho-da-viola",
+    "titulo": "Foi Um Rio Que Passou Em Minha Vida",
+    "artista": "Paulinho da Viola",
+    "ano": 1970,
+    "genero": "Samba"
+  },
+  {
+    "id": "coracao-leviano-paulinho-da-viola",
+    "titulo": "Coração Leviano",
+    "artista": "Paulinho da Viola",
+    "ano": 1978,
+    "genero": "Samba"
+  },
+  {
+    "id": "timoneiro-paulinho-da-viola",
+    "titulo": "Timoneiro",
+    "artista": "Paulinho da Viola",
+    "ano": 1996,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "pecado-capital-paulinho-da-viola",
+    "titulo": "Pecado Capital",
+    "artista": "Paulinho da Viola",
+    "ano": 1999,
+    "genero": "Jazz latino"
+  },
+  {
+    "id": "o-mar-serenou-clara-nunes",
+    "titulo": "O Mar Serenou",
+    "artista": "Clara Nunes",
+    "ano": 1975,
+    "genero": "MPB"
+  },
+  {
+    "id": "feira-de-mangaio-clara-nunes",
+    "titulo": "Feira De Mangaio",
+    "artista": "Clara Nunes",
+    "ano": 1979,
+    "genero": "Samba"
+  },
+  {
+    "id": "canto-das-tres-racas-clara-nunes",
+    "titulo": "Canto Das Tres Racas",
+    "artista": "Clara Nunes",
+    "ano": 1976,
+    "genero": "Samba"
+  },
+  {
+    "id": "conto-de-areia-clara-nunes",
+    "titulo": "Conto de Areia",
+    "artista": "Clara Nunes",
+    "ano": 2010,
+    "genero": "MPB"
+  },
+  {
+    "id": "maria-da-vila-matilde-elza-soares",
+    "titulo": "Maria da Vila Matilde",
+    "artista": "Elza Soares",
+    "ano": 2015,
+    "genero": "MPB"
+  },
+  {
+    "id": "malandro-elza-soares",
+    "titulo": "Malandro",
+    "artista": "Elza Soares",
+    "ano": 1976,
+    "genero": "MPB"
+  },
+  {
+    "id": "espumas-ao-vento-elza-soares",
+    "titulo": "Espumas ao Vento",
+    "artista": "Elza Soares",
+    "ano": 2003,
+    "genero": "MPB"
+  },
+  {
+    "id": "mulher-do-fim-do-mundo-elza-soares",
+    "titulo": "Mulher do Fim do Mundo",
+    "artista": "Elza Soares",
+    "ano": 2015,
+    "genero": "MPB"
+  },
+  {
+    "id": "matriz-ou-filial-jamelao",
+    "titulo": "Matriz Ou Filial",
+    "artista": "Jamelão",
+    "ano": 2002,
+    "genero": "Samba"
+  },
+  {
+    "id": "atras-da-verde-e-rosa-so-nao-vai-quem-ja-morreu-jamelao",
+    "titulo": "Atrás da Verde e Rosa Só Não Vai Quem Já Morreu",
+    "artista": "Jamelão",
+    "ano": 2006,
+    "genero": "Pop"
+  },
+  {
+    "id": "ela-disse-me-assim-jamelao",
+    "titulo": "Ela Disse-me Assim",
+    "artista": "Jamelão",
+    "ano": 1963,
+    "genero": "Samba"
+  },
+  {
+    "id": "nervos-de-aco-jamelao",
+    "titulo": "Nervos de Aço",
+    "artista": "Jamelão",
+    "ano": 1994,
+    "genero": "Samba"
+  },
+  {
+    "id": "juizo-final-nelson-cavaquinho",
+    "titulo": "Juízo Final",
+    "artista": "Nelson Cavaquinho",
+    "ano": 1973,
+    "genero": "Samba"
+  },
+  {
+    "id": "folhas-secas-nelson-cavaquinho",
+    "titulo": "Folhas Secas",
+    "artista": "Nelson Cavaquinho",
+    "ano": 1973,
+    "genero": "Samba"
+  },
+  {
+    "id": "a-flor-e-o-espinho-nelson-cavaquinho",
+    "titulo": "A Flor e o Espinho",
+    "artista": "Nelson Cavaquinho",
+    "ano": 1973,
+    "genero": "Samba"
+  },
+  {
+    "id": "quando-eu-me-chamar-saudade-nelson-cavaquinho",
+    "titulo": "Quando Eu Me Chamar Saudade",
+    "artista": "Nelson Cavaquinho",
+    "ano": 1973,
+    "genero": "Samba"
+  },
+  {
+    "id": "conversa-de-botequim-noel-rosa",
+    "titulo": "Conversa de Botequim",
+    "artista": "Noel Rosa",
+    "ano": 2000,
+    "genero": "Pagode"
+  },
+  {
+    "id": "com-que-roupa-noel-rosa",
+    "titulo": "Com Que Roupa?",
+    "artista": "Noel Rosa",
+    "ano": 2000,
+    "genero": "Pagode"
+  },
+  {
+    "id": "pierro-apaixonado-noel-rosa-heitor-dos-prazeres",
+    "titulo": "Pierrô apaixonado",
+    "artista": "Noel Rosa & Heitor dos Prazeres",
+    "ano": 2011,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cem-mil-reis-noel-rosa",
+    "titulo": "Cem Mil Réis",
+    "artista": "Noel Rosa",
+    "ano": 2018,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "saudosa-maloca-demonios-da-garoa",
+    "titulo": "Saudosa Maloca",
+    "artista": "Demônios da Garoa",
+    "ano": 1994,
+    "genero": "MPB"
+  },
+  {
+    "id": "trem-das-onze-demonios-da-garoa",
+    "titulo": "Trem das Onze",
+    "artista": "Demônios da Garoa",
+    "ano": 1994,
+    "genero": "MPB"
+  },
+  {
+    "id": "samba-do-arnesto-demonios-da-garoa",
+    "titulo": "Samba do Arnesto",
+    "artista": "Demônios da Garoa",
+    "ano": 1994,
+    "genero": "MPB"
+  },
+  {
+    "id": "tiro-ao-alvaro-demonios-da-garoa",
+    "titulo": "Tiro Ao Álvaro",
+    "artista": "Demônios da Garoa",
+    "ano": 1994,
+    "genero": "MPB"
+  },
+  {
+    "id": "trem-das-onze-adoniran-barbosa",
+    "titulo": "Trem Das Onze",
+    "artista": "Adoniran Barbosa",
+    "ano": 1974,
+    "genero": "Samba"
+  },
+  {
+    "id": "tiro-ao-alvaro-adoniran-barbosa",
+    "titulo": "Tiro Ao Alvaro",
+    "artista": "Adoniran Barbosa",
+    "ano": 1994,
+    "genero": "Samba"
+  },
+  {
+    "id": "saudosa-maloca-adoniran-barbosa",
+    "titulo": "Saudosa Maloca",
+    "artista": "Adoniran Barbosa",
+    "ano": 1999,
+    "genero": "MPB"
+  },
+  {
+    "id": "samba-do-arnesto-adoniran-barbosa",
+    "titulo": "Samba do Arnesto",
+    "artista": "Adoniran Barbosa",
+    "ano": 2006,
+    "genero": "Samba"
+  },
+  {
+    "id": "alguem-me-avisou-dona-ivone-lara",
+    "titulo": "Alguém me avisou",
+    "artista": "Dona Ivone Lara",
+    "ano": 1981,
+    "genero": "Samba"
+  },
+  {
+    "id": "sonho-meu-dona-ivone-lara",
+    "titulo": "Sonho Meu",
+    "artista": "Dona Ivone Lara",
+    "ano": 1997,
+    "genero": "MPB"
+  },
+  {
+    "id": "acreditar-dona-ivone-lara-adryana-ribeiro",
+    "titulo": "Acreditar",
+    "artista": "Dona Ivone Lara & Adryana Ribeiro",
+    "ano": 1997,
+    "genero": "Samba"
+  },
+  {
+    "id": "juizo-final-dona-ivone-lara",
+    "titulo": "Juízo Final",
+    "artista": "Dona Ivone Lara",
+    "ano": 2003,
+    "genero": "Pagode"
+  },
+  {
+    "id": "misterio-do-planeta-novos-baianos",
+    "titulo": "Mistério do Planeta",
+    "artista": "Novos Baianos",
+    "ano": 1972,
+    "genero": "MPB"
+  },
+  {
+    "id": "brasil-pandeiro-novos-baianos",
+    "titulo": "Brasil Pandeiro",
+    "artista": "Novos Baianos",
+    "ano": 1972,
+    "genero": "MPB"
+  },
+  {
+    "id": "a-menina-danca-novos-baianos",
+    "titulo": "A Menina Dança",
+    "artista": "Novos Baianos",
+    "ano": 1972,
+    "genero": "MPB"
+  },
+  {
+    "id": "preta-pretinha-novos-baianos",
+    "titulo": "Preta Pretinha",
+    "artista": "Novos Baianos",
+    "ano": 1972,
+    "genero": "MPB"
+  },
+  {
+    "id": "sangue-latino-secos-molhados",
+    "titulo": "Sangue Latino",
+    "artista": "Secos & Molhados",
+    "ano": 1973,
+    "genero": "MPB"
+  },
+  {
+    "id": "rosa-de-hiroshima-secos-molhados",
+    "titulo": "Rosa de Hiroshima",
+    "artista": "Secos & Molhados",
+    "ano": 1973,
+    "genero": "MPB"
+  },
+  {
+    "id": "o-vira-secos-molhados",
+    "titulo": "O Vira",
+    "artista": "Secos & Molhados",
+    "ano": 1973,
+    "genero": "MPB"
+  },
+  {
+    "id": "fala-secos-molhados",
+    "titulo": "Fala",
+    "artista": "Secos & Molhados",
+    "ano": 1973,
+    "genero": "MPB"
+  },
+  {
+    "id": "sujeito-de-sorte-belchior",
+    "titulo": "Sujeito de Sórte",
+    "artista": "Belchior",
+    "ano": 1976,
+    "genero": "Pop"
+  },
+  {
+    "id": "apenas-um-rapaz-latino-americano-belchior",
+    "titulo": "Apenas Um Rapaz Latino Americano",
+    "artista": "Belchior",
+    "ano": 1976,
+    "genero": "Pop"
+  },
+  {
+    "id": "tudo-outra-vez-belchior",
+    "titulo": "Tudo Outra Vez",
+    "artista": "Belchior",
+    "ano": 1978,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "comentario-a-respeito-de-john-belchior",
+    "titulo": "Comentário a Respeito de John",
+    "artista": "Belchior",
+    "ano": 1978,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "farinha-do-desprezo-jards-macale",
+    "titulo": "Farinha do Desprezo",
+    "artista": "Jards Macalé",
+    "ano": 1972,
+    "genero": "Pop"
+  },
+  {
+    "id": "solucos-jards-macale",
+    "titulo": "Soluços",
+    "artista": "Jards Macalé",
+    "ano": 1970,
+    "genero": "MPB"
+  },
+  {
+    "id": "vapor-barato-revendo-amigos-jards-macale",
+    "titulo": "Vapor Barato / Revendo Amigos",
+    "artista": "Jards Macalé",
+    "ano": 1972,
+    "genero": "Pop"
+  },
+  {
+    "id": "mal-secreto-jards-macale",
+    "titulo": "Mal Secreto",
+    "artista": "Jards Macalé",
+    "ano": 1972,
+    "genero": "Pop"
+  },
+  {
+    "id": "xiquexique-tom-ze",
+    "titulo": "Xiquexique",
+    "artista": "Tom Zé",
+    "ano": 1998,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "jimmy-renda-se-tom-ze",
+    "titulo": "Jimmy, Renda-Se",
+    "artista": "Tom Zé",
+    "ano": 1968,
+    "genero": "MPB"
+  },
+  {
+    "id": "to-tom-ze",
+    "titulo": "Tô",
+    "artista": "Tom Zé",
+    "ano": 1976,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "senhor-cidadao-tom-ze",
+    "titulo": "Senhor, Cidadão",
+    "artista": "Tom Zé",
+    "ano": 1972,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "menino-do-rio-baby-do-brasil",
+    "titulo": "Menino do Rio",
+    "artista": "Baby Do Brasil",
+    "ano": 1978,
+    "genero": "Eletrônica"
+  },
+  {
+    "id": "a-menina-danca-baby-do-brasil",
+    "titulo": "A Menina Dança",
+    "artista": "Baby Do Brasil",
+    "ano": 2015,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "malandro-baby-do-brasil",
+    "titulo": "Malandro",
+    "artista": "Baby Do Brasil",
+    "ano": 2016,
+    "genero": "Samba"
+  },
+  {
+    "id": "telurica-baby-do-brasil",
+    "titulo": "Telúrica",
+    "artista": "Baby Do Brasil",
+    "ano": 2015,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "agora-so-falta-voce-rita-lee-tutti-frutti",
+    "titulo": "Agora Só Falta Você",
+    "artista": "Rita Lee & Tutti Frutti",
+    "ano": 1975,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "esse-tal-de-roque-enrow-rita-lee-tutti-frutti",
+    "titulo": "Esse Tal de Roque Enrow",
+    "artista": "Rita Lee & Tutti Frutti",
+    "ano": 1975,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "coisas-da-vida-rita-lee-tutti-frutti",
+    "titulo": "Coisas da Vida",
+    "artista": "Rita Lee & Tutti Frutti",
+    "ano": 1976,
+    "genero": "MPB"
+  },
+  {
+    "id": "o-toque-rita-lee-tutti-frutti",
+    "titulo": "O Toque",
+    "artista": "Rita Lee & Tutti Frutti",
+    "ano": 1975,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "samba-jambo-jorge-mautner",
+    "titulo": "Samba Jambo",
+    "artista": "Jorge Mautner",
+    "ano": 1976,
+    "genero": "MPB"
+  },
+  {
+    "id": "quero-ser-locomotiva-jorge-mautner",
+    "titulo": "Quero Ser Locomotiva",
+    "artista": "Jorge Mautner",
+    "ano": 1972,
+    "genero": "MPB"
+  },
+  {
+    "id": "segredo-jorge-mautner",
+    "titulo": "Segredo",
+    "artista": "Jorge Mautner",
+    "ano": 2019,
+    "genero": "MPB"
+  },
+  {
+    "id": "maracatu-atomico-caetano-veloso-jorge-mautner",
+    "titulo": "Maracatú Atômico",
+    "artista": "Caetano Veloso & Jorge Mautner",
+    "ano": 2002,
+    "genero": "MPB"
+  },
+  {
+    "id": "coracao-tranquilo-walter-franco",
+    "titulo": "Coração Tranquilo",
+    "artista": "Walter Franco",
+    "ano": 1978,
+    "genero": "MPB"
+  },
+  {
+    "id": "vela-aberta-walter-franco",
+    "titulo": "Vela Aberta",
+    "artista": "Walter Franco",
+    "ano": 1995,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "serra-do-luar-musica-incidental-coracao-tranquilo-leila-pinh",
+    "titulo": "Serra do Luar / Música Incidental: Coração Tranquilo",
+    "artista": "Leila Pinheiro & Walter Franco",
+    "ano": 1998,
+    "genero": "Pop"
+  },
+  {
+    "id": "canalha-walter-franco",
+    "titulo": "Canalha",
+    "artista": "Walter Franco",
+    "ano": 1995,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "eu-quero-e-botar-meu-bloco-na-rua-sergio-sampaio",
+    "titulo": "Eu Quero É Botar Meu Bloco Na Rua",
+    "artista": "Sergio Sampaio",
+    "ano": 1973,
+    "genero": "MPB"
+  },
+  {
+    "id": "cada-lugar-na-sua-coisa-sergio-sampaio",
+    "titulo": "Cada Lugar na Sua Coisa",
+    "artista": "Sérgio Sampaio",
+    "ano": 2012,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "policia-bandido-cachorro-dentista-sergio-sampaio",
+    "titulo": "Polícia Bandido Cachorro Dentista",
+    "artista": "Sergio Sampaio",
+    "ano": 2014,
+    "genero": "MPB"
+  },
+  {
+    "id": "roda-morta-sergio-sampaio",
+    "titulo": "Roda Morta",
+    "artista": "Sergio Sampaio",
+    "ano": 2014,
+    "genero": "MPB"
+  },
+  {
+    "id": "nao-adianta-trio-mocoto",
+    "titulo": "Não Adianta",
+    "artista": "Trio Mocotó",
+    "ano": 1975,
+    "genero": "Samba"
+  },
+  {
+    "id": "swinga-sambaby-trio-mocoto",
+    "titulo": "Swinga Sambaby",
+    "artista": "Trio Mocotó",
+    "ano": 1973,
+    "genero": "Jazz"
+  },
+  {
+    "id": "nem-vem-que-nao-tem-wilson-simonal",
+    "titulo": "Nem Vem Que Não Tem",
+    "artista": "Wilson Simonal",
+    "ano": 1967,
+    "genero": "MPB"
+  },
+  {
+    "id": "meu-limao-meu-limoeiro-wilson-simonal",
+    "titulo": "Meu Limão, Meu Limoeiro",
+    "artista": "Wilson Simonal",
+    "ano": 1966,
+    "genero": "Pop"
+  },
+  {
+    "id": "sa-marina-wilson-simonal",
+    "titulo": "Sá Marina",
+    "artista": "Wilson Simonal",
+    "ano": 1968,
+    "genero": "MPB"
+  },
+  {
+    "id": "pais-tropical-musica-incidental-sou-flamengo-wilson-simonal",
+    "titulo": "País Tropical / Música Incidental: Sou Flamengo",
+    "artista": "Wilson Simonal",
+    "ano": 1996,
+    "genero": "MPB"
+  },
+  {
+    "id": "diz-que-fui-por-ai-nara-leao",
+    "titulo": "Diz Que Fui por Ai",
+    "artista": "Nara Leão",
+    "ano": 1964,
+    "genero": "Jazz"
+  },
+  {
+    "id": "historia-de-uma-gata-os-saltimbancos-nara-leao",
+    "titulo": "História De Uma Gata",
+    "artista": "Os Saltimbancos & Nara Leão",
+    "ano": 1977,
+    "genero": "Pop"
+  },
+  {
+    "id": "como-e-grande-o-meu-amor-por-voce-nara-leao",
+    "titulo": "Como É Grande O Meu Amor Por Você",
+    "artista": "Nara Leão",
+    "ano": 1978,
+    "genero": "MPB"
+  },
+  {
+    "id": "o-barquinho-nara-leao",
+    "titulo": "O Barquinho",
+    "artista": "Nara Leão",
+    "ano": 1996,
+    "genero": "Pop"
+  },
+  {
+    "id": "estrelar-marcos-valle",
+    "titulo": "Estrelar",
+    "artista": "Marcos Valle",
+    "ano": 1983,
+    "genero": "MPB"
+  },
+  {
+    "id": "pequenas-alegrias-da-vida-adulta-emicida-marcos-valle-thiago",
+    "titulo": "Pequenas Alegrias da Vida Adulta",
+    "artista": "Emicida, Marcos Valle & Thiago Ventura",
+    "ano": 2019,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "so-nice-summer-samba-marcos-valle",
+    "titulo": "So Nice (Summer Samba)",
+    "artista": "Marcos Valle",
+    "ano": 1968,
+    "genero": "Jazz"
+  },
+  {
+    "id": "samba-de-verao-marcos-valle",
+    "titulo": "Samba de Verão",
+    "artista": "Marcos Valle",
+    "ano": 2006,
+    "genero": "MPB"
+  },
+  {
+    "id": "flores-em-voce-ira",
+    "titulo": "Flores em você",
+    "artista": "Ira!",
+    "ano": 2001,
+    "genero": "Rock"
+  },
+  {
+    "id": "dias-de-luta-ira",
+    "titulo": "Dias de Luta",
+    "artista": "Ira!",
+    "ano": 2001,
+    "genero": "Rock"
+  },
+  {
+    "id": "bebendo-vinho-ira",
+    "titulo": "Bebendo Vinho",
+    "artista": "Ira!",
+    "ano": 1999,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "tarde-vazia-ira",
+    "titulo": "Tarde Vazia",
+    "artista": "Ira!",
+    "ano": 2004,
+    "genero": "Pop"
+  },
+  {
+    "id": "ate-quando-esperar-plebe-rude",
+    "titulo": "Até Quando Esperar",
+    "artista": "Plebe Rude",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "protecao-plebe-rude",
+    "titulo": "Proteção",
+    "artista": "Plebe Rude",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "johnny-vai-a-guerra-outra-vez-plebe-rude",
+    "titulo": "Johnny Vai A Guerra (Outra Vez)",
+    "artista": "Plebe Rude",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "minha-renda-plebe-rude",
+    "titulo": "Minha Renda",
+    "artista": "Plebe Rude",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "eu-nao-matei-joana-d-arc-camisa-de-venus",
+    "titulo": "Eu Não Matei Joana d'Arc",
+    "artista": "Camisa De Vênus",
+    "ano": 1984,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "simca-chambord-camisa-de-venus",
+    "titulo": "Simca chambord",
+    "artista": "Camisa De Vênus",
+    "ano": 2015,
+    "genero": "Rock"
+  },
+  {
+    "id": "silvia-camisa-de-venus",
+    "titulo": "Silvia",
+    "artista": "Camisa De Vênus",
+    "ano": 1986,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "so-o-fim-camisa-de-venus",
+    "titulo": "Só O Fim",
+    "artista": "Camisa De Vênus",
+    "ano": 1995,
+    "genero": "Rock"
+  },
+  {
+    "id": "o-astronauta-de-marmore-starman-nenhum-de-nos",
+    "titulo": "O Astronauta de Mármore (Starman)",
+    "artista": "Nenhum De Nós",
+    "ano": 1987,
+    "genero": "Rock"
+  },
+  {
+    "id": "camila-camila-nenhum-de-nos",
+    "titulo": "Camila, Camila",
+    "artista": "Nenhum De Nós",
+    "ano": 1999,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "voce-vai-lembrar-de-mim-nenhum-de-nos",
+    "titulo": "Você Vai Lembrar de Mim",
+    "artista": "Nenhum De Nós",
+    "ano": 2014,
+    "genero": "Rock"
+  },
+  {
+    "id": "sobre-o-tempo-nenhum-de-nos",
+    "titulo": "Sobre o Tempo",
+    "artista": "Nenhum De Nós",
+    "ano": 1990,
+    "genero": "MPB"
+  },
+  {
+    "id": "olhos-certos-detonautas",
+    "titulo": "Olhos Certos",
+    "artista": "Detonautas",
+    "ano": 2009,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "quando-o-sol-se-for-detonautas",
+    "titulo": "Quando O Sol Se For",
+    "artista": "Detonautas",
+    "ano": 2002,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "o-retorno-de-saturno-detonautas",
+    "titulo": "O Retorno de Saturno",
+    "artista": "Detonautas",
+    "ano": 2009,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "voce-me-faz-tao-bem-detonautas",
+    "titulo": "Você Me Faz Tão Bem",
+    "artista": "Detonautas",
+    "ano": 2009,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "desde-quando-voce-se-foi-fresno",
+    "titulo": "Desde Quando Você Se Foi",
+    "artista": "Fresno",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "eu-sei-fresno",
+    "titulo": "Eu Sei",
+    "artista": "Fresno",
+    "ano": 2010,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "alguem-que-te-faz-sorrir-fresno",
+    "titulo": "Alguém Que Te Faz Sorrir",
+    "artista": "Fresno",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "deixa-o-tempo-fresno",
+    "titulo": "Deixa O Tempo",
+    "artista": "Fresno",
+    "ano": 2010,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cedo-ou-tarde-nx-zero",
+    "titulo": "Cedo Ou Tarde",
+    "artista": "NX Zero",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "razoes-e-emocoes-nx-zero",
+    "titulo": "Razões e Emoções",
+    "artista": "NX Zero",
+    "ano": 2006,
+    "genero": "Rock"
+  },
+  {
+    "id": "ligacao-nx-zero",
+    "titulo": "Ligação",
+    "artista": "NX Zero",
+    "ano": 2012,
+    "genero": "Rock"
+  },
+  {
+    "id": "onde-estiver-nx-zero-freddy-gibbs",
+    "titulo": "Onde Estiver",
+    "artista": "NX Zero & Freddy Gibbs",
+    "ano": 2006,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "depois-pato-fu",
+    "titulo": "Depois",
+    "artista": "Pato Fu",
+    "ano": 1999,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cancao-pra-voce-viver-mais-pato-fu",
+    "titulo": "Canção Pra Você Viver Mais",
+    "artista": "Pato Fu",
+    "ano": 1998,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "sobre-o-tempo-pato-fu",
+    "titulo": "Sobre o Tempo",
+    "artista": "Pato Fu",
+    "ano": 1991,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "ando-meio-desligado-pato-fu",
+    "titulo": "Ando Meio Desligado",
+    "artista": "Pato Fu",
+    "ano": 2001,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "mulher-de-fases-raimundos",
+    "titulo": "Mulher de fases",
+    "artista": "Raimundos",
+    "ano": 1999,
+    "genero": "Rock"
+  },
+  {
+    "id": "eu-quero-ver-o-oco-raimundos",
+    "titulo": "Eu Quero Ver o Oco",
+    "artista": "Raimundos",
+    "ano": 1995,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "reggae-do-manero-raimundos",
+    "titulo": "Reggae do Manero",
+    "artista": "Raimundos",
+    "ano": 1995,
+    "genero": "Rock"
+  },
+  {
+    "id": "a-mais-pedida-raimundos",
+    "titulo": "A mais pedida",
+    "artista": "Raimundos",
+    "ano": 1999,
+    "genero": "Rock"
+  },
+  {
+    "id": "ratamahatta-sepultura",
+    "titulo": "Ratamahatta",
+    "artista": "Sepultura",
+    "ano": 1996,
+    "genero": "Metal"
+  },
+  {
+    "id": "orgasmatron-sepultura",
+    "titulo": "Orgasmatron",
+    "artista": "Sepultura",
+    "ano": 1991,
+    "genero": "Metal"
+  },
+  {
+    "id": "territory-sepultura",
+    "titulo": "Territory",
+    "artista": "Sepultura",
+    "ano": 1993,
+    "genero": "Metal"
+  },
+  {
+    "id": "roots-bloody-roots-sepultura",
+    "titulo": "Roots Bloody Roots",
+    "artista": "Sepultura",
+    "ano": 1996,
+    "genero": "Metal"
+  },
+  {
+    "id": "clube-dos-canalhas-matanza",
+    "titulo": "Clube dos Canalhas",
+    "artista": "Matanza",
+    "ano": 2006,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "eu-nao-gosto-de-ninguem-matanza",
+    "titulo": "Eu Não Gosto de Ninguém",
+    "artista": "Matanza",
+    "ano": 2006,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "tempo-ruim-matanza",
+    "titulo": "Tempo Ruim",
+    "artista": "Matanza",
+    "ano": 2006,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "meio-psicopata-matanza",
+    "titulo": "Meio Psicopata",
+    "artista": "Matanza",
+    "ano": 2006,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "santa-sampa-vespas-mandarinas",
+    "titulo": "Santa Sampa",
+    "artista": "Vespas Mandarinas",
+    "ano": 2013,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cobra-de-vidro-vespas-mandarinas",
+    "titulo": "Cobra de Vidro",
+    "artista": "Vespas Mandarinas",
+    "ano": 2013,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "nao-sei-o-que-fazer-comigo-vespas-mandarinas",
+    "titulo": "Não Sei o Que Fazer Comigo",
+    "artista": "Vespas Mandarinas",
+    "ano": 2015,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "furta-cor-scalene-xenia-franca",
+    "titulo": "Furta-Cor",
+    "artista": "Scalene & Xênia França",
+    "ano": 2019,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "legado-scalene",
+    "titulo": "Legado",
+    "artista": "Scalene",
+    "ano": 2015,
+    "genero": "Rock"
+  },
+  {
+    "id": "entrelacos-scalene",
+    "titulo": "Entrelaços",
+    "artista": "Scalene",
+    "ano": 2016,
+    "genero": "Rock"
+  },
+  {
+    "id": "surreal-scalene",
+    "titulo": "Surreal",
+    "artista": "Scalene",
+    "ano": 2016,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "sinceramente-cachorro-grande",
+    "titulo": "Sinceramente",
+    "artista": "Cachorro Grande",
+    "ano": 2005,
+    "genero": "Rock"
+  },
+  {
+    "id": "sexperienced-cachorro-grande",
+    "titulo": "Sexperienced",
+    "artista": "Cachorro Grande",
+    "ano": 2005,
+    "genero": "Rock"
+  },
+  {
+    "id": "dia-perfeito-cachorro-grande",
+    "titulo": "Dia Perfeito",
+    "artista": "Cachorro Grande",
+    "ano": 2004,
+    "genero": "Rock"
+  },
+  {
+    "id": "por-onde-andei-nando-reis-cachorro-grande",
+    "titulo": "Por Onde Andei",
+    "artista": "Nando Reis & Cachorro Grande",
+    "ano": 2015,
+    "genero": "Pop"
+  },
+  {
+    "id": "princesa-amado-batista",
+    "titulo": "Princesa",
+    "artista": "Amado Batista",
+    "ano": 1994,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "meu-ex-amor-amado-batista",
+    "titulo": "Meu Ex-Amor",
+    "artista": "Amado Batista",
+    "ano": 1994,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "folha-seca-amado-batista",
+    "titulo": "Folha Seca",
+    "artista": "Amado Batista",
+    "ano": 1995,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "seresteiro-das-noites-amado-batista",
+    "titulo": "Serésteiro das Noites",
+    "artista": "Amado Batista",
+    "ano": 1985,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "garcon-reginaldo-rossi",
+    "titulo": "Garcon",
+    "artista": "Reginaldo Rossi",
+    "ano": 1998,
+    "genero": "MPB"
+  },
+  {
+    "id": "leviana-reginaldo-rossi",
+    "titulo": "Leviana",
+    "artista": "Reginaldo Rossi",
+    "ano": 2010,
+    "genero": "MPB"
+  },
+  {
+    "id": "a-raposa-e-as-uvas-reginaldo-rossi",
+    "titulo": "A Raposa e As Uvas",
+    "artista": "Reginaldo Rossi",
+    "ano": 1998,
+    "genero": "MPB"
+  },
+  {
+    "id": "dama-de-vermelho-reginaldo-rossi",
+    "titulo": "Dama de Vermelho",
+    "artista": "Reginaldo Rossi",
+    "ano": 2010,
+    "genero": "MPB"
+  },
+  {
+    "id": "meu-sangue-ferve-for-voce-sidney-magal",
+    "titulo": "Meu Sangue Ferve For Você",
+    "artista": "Sidney Magal",
+    "ano": 1977,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "sandra-rosa-madalena-a-cigana-sidney-magal",
+    "titulo": "Sandra Rosa Madalena \"A Cigana\"",
+    "artista": "Sidney Magal",
+    "ano": 2014,
+    "genero": "MPB"
+  },
+  {
+    "id": "meu-sangue-ferve-por-voce-sidney-magal",
+    "titulo": "Meu Sangue Ferve por Você",
+    "artista": "Sidney Magal",
+    "ano": 2018,
+    "genero": "Pop"
+  },
+  {
+    "id": "me-chama-que-eu-vou-sidney-magal",
+    "titulo": "Me Chama Que Eu Vou",
+    "artista": "Sidney Magal",
+    "ano": 1990,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "o-que-e-que-ha-fabio-jr",
+    "titulo": "O Que É Que Há",
+    "artista": "Fábio Jr.",
+    "ano": 1982,
+    "genero": "MPB"
+  },
+  {
+    "id": "quando-gira-o-mundo-que-no-se-acabe-el-mundo-fabio-jr",
+    "titulo": "Quando Gira o Mundo (Que No Se Acabe el Mundo)",
+    "artista": "Fábio Jr.",
+    "ano": 2002,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "pareco-um-menino-fabio-jr",
+    "titulo": "Pareço Um Menino",
+    "artista": "Fábio Jr.",
+    "ano": 1994,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "caca-e-cacador-fabio-jr",
+    "titulo": "Caça e Caçador",
+    "artista": "Fábio Jr.",
+    "ano": 1999,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "fogo-e-paixao-wando",
+    "titulo": "Fogo e Paixão",
+    "artista": "Wando",
+    "ano": 1998,
+    "genero": "Pop"
+  },
+  {
+    "id": "moca-wando",
+    "titulo": "Moça",
+    "artista": "Wando",
+    "ano": 1998,
+    "genero": "Pop"
+  },
+  {
+    "id": "chora-coracao-wando",
+    "titulo": "Chora Coração",
+    "artista": "Wando",
+    "ano": 2005,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "eu-ja-tirei-a-tua-roupa-wando",
+    "titulo": "Eu Já Tirei a Tua Roupa",
+    "artista": "Wando",
+    "ano": 1998,
+    "genero": "Pop"
+  },
+  {
+    "id": "vou-tirar-voce-desse-lugar-odair-jose",
+    "titulo": "Vou Tirar Você Desse Lugar",
+    "artista": "Odair José",
+    "ano": 1995,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cade-voce-odair-jose",
+    "titulo": "Cadê Você?",
+    "artista": "Odair José",
+    "ano": 1996,
+    "genero": "MPB"
+  },
+  {
+    "id": "meu-grande-amor-odair-jose",
+    "titulo": "Meu Grande Amor",
+    "artista": "Odair José",
+    "ano": 1971,
+    "genero": "Pop"
+  },
+  {
+    "id": "nunca-mais-odair-jose",
+    "titulo": "Nunca Mais",
+    "artista": "Odair José",
+    "ano": 1977,
+    "genero": "Pop"
+  },
+  {
+    "id": "tortura-de-amor-waldick-soriano",
+    "titulo": "Tortura de Amor",
+    "artista": "Waldick Soriano",
+    "ano": 1975,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "a-carta-waldick-soriano",
+    "titulo": "A Carta",
+    "artista": "Waldick Soriano",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "perfume-de-gardenia-waldick-soriano",
+    "titulo": "Perfume de Gardênia",
+    "artista": "Waldick Soriano",
+    "ano": 1994,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "eu-nao-sou-cachorro-nao-quireria-olivia-araujo-waldick-soria",
+    "titulo": "Eu Não Sóu Cachorro Não / Quireria",
+    "artista": "Olivia Araujo & Waldick Soriano",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "a-minha-historia-jose-augusto",
+    "titulo": "A Minha Historia",
+    "artista": "José Augusto",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "me-esqueci-de-viver-jose-augusto",
+    "titulo": "Me Esqueci de Viver",
+    "artista": "José Augusto",
+    "ano": 2010,
+    "genero": "MPB"
+  },
+  {
+    "id": "sabado-jose-augusto",
+    "titulo": "Sábado",
+    "artista": "José Augusto",
+    "ano": 1987,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "aguenta-coracao-jose-augusto",
+    "titulo": "Agüenta Coração",
+    "artista": "José Augusto",
+    "ano": 1980,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "tudo-passara-nelson-ned",
+    "titulo": "Tudo Passara",
+    "artista": "Nelson Ned",
+    "ano": 1998,
+    "genero": "Pop"
+  },
+  {
+    "id": "se-eu-pudesse-conversar-com-deus-nelson-ned",
+    "titulo": "Se Eu Pudesse Conversar Com Deus",
+    "artista": "Nelson Ned",
+    "ano": 1972,
+    "genero": "Pop"
+  },
+  {
+    "id": "sonda-me-nelson-ned",
+    "titulo": "Sonda - Me",
+    "artista": "Nelson Ned",
+    "ano": 2005,
+    "genero": "Música do mundo"
+  },
+  {
+    "id": "a-cigana-nelson-ned",
+    "titulo": "A Cigana",
+    "artista": "Nelson Ned",
+    "ano": 1972,
+    "genero": "Pop"
+  },
+  {
+    "id": "deixa-eu-te-amar-agepe",
+    "titulo": "Deixa Eu Te Amar",
+    "artista": "Agepê",
+    "ano": 1996,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "me-leva-agepe",
+    "titulo": "Me Leva",
+    "artista": "Agepê",
+    "ano": 1996,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cama-e-mesa-agepe",
+    "titulo": "Cama E Mesa",
+    "artista": "Agepê",
+    "ano": 1991,
+    "genero": "Pop"
+  },
+  {
+    "id": "moro-onde-nao-mora-ninguem-agepe",
+    "titulo": "Moro Onde Não Mora Ninguém",
+    "artista": "Agepê",
+    "ano": 1975,
+    "genero": "Samba"
+  },
+  {
+    "id": "saga-de-um-vaqueiro-mastruz-com-leite",
+    "titulo": "Saga de um Vaqueiro",
+    "artista": "Mastruz Com Leite",
+    "ano": 2007,
+    "genero": "Forró"
+  },
+  {
+    "id": "meu-vaqueiro-meu-peao-mastruz-com-leite",
+    "titulo": "Meu Vaqueiro, Meu Peão",
+    "artista": "Mastruz Com Leite",
+    "ano": 1993,
+    "genero": "Forró"
+  },
+  {
+    "id": "razoes-mastruz-com-leite",
+    "titulo": "Razões",
+    "artista": "Mastruz Com Leite",
+    "ano": 2003,
+    "genero": "Forró"
+  },
+  {
+    "id": "a-praia-mastruz-com-leite",
+    "titulo": "A Praia",
+    "artista": "Mastruz Com Leite",
+    "ano": 2004,
+    "genero": "Forró"
+  },
+  {
+    "id": "sei-la-a-vida-tem-sempre-razao-toquinho-vinicius-de-moraes",
+    "titulo": "Sei Lá (A Vida Tem Sempre Razão)",
+    "artista": "Toquinho & Vinicius de Moraes",
+    "ano": 1971,
+    "genero": "MPB"
+  },
+  {
+    "id": "samba-da-bencao-vinicius-de-moraes",
+    "titulo": "Samba da Bencao",
+    "artista": "Vinicius de Moraes",
+    "ano": 1967,
+    "genero": "Bossa nova"
+  },
+  {
+    "id": "sabia-alceu-valenca-elba-ramalho-geraldo-azevedo",
+    "titulo": "Sabiá",
+    "artista": "Alceu Valença, Elba Ramalho & Geraldo Azevedo",
+    "ano": 2016,
+    "genero": "MPB"
+  },
+  {
+    "id": "sabia-elba-ramalho-geraldo-azevedo-ze-ramalho",
+    "titulo": "Sabiá",
+    "artista": "Elba Ramalho, Geraldo Azevedo & Zé Ramalho",
+    "ano": 1996,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "ai-que-saudade-d-oce-elba-ramalho",
+    "titulo": "Ai Que Saudade D'Ocê",
+    "artista": "Elba Ramalho",
+    "ano": 2016,
+    "genero": "MPB"
+  },
+  {
+    "id": "me-da-um-beijo-alceu-valenca-elba-ramalho-geraldo-azevedo",
+    "titulo": "Me dá um Beijo",
+    "artista": "Alceu Valença, Elba Ramalho & Geraldo Azevedo",
+    "ano": 2016,
+    "genero": "MPB"
+  },
+  {
+    "id": "minha-vida-in-my-life-rita-lee",
+    "titulo": "Minha Vida (In My Life)",
+    "artista": "Rita Lee",
+    "ano": 2001,
+    "genero": "Pop"
+  },
+  {
+    "id": "baila-comigo-rita-lee-roberto-de-carvalho",
+    "titulo": "Baila Comigo",
+    "artista": "Rita Lee & Roberto de Carvalho",
+    "ano": 1980,
+    "genero": "Pop"
+  },
+  {
+    "id": "jardins-da-babilonia-rita-lee-roberto-de-carvalho",
+    "titulo": "Jardins da Babilônia",
+    "artista": "Rita Lee & Roberto de Carvalho",
+    "ano": 1992,
+    "genero": "MPB"
+  },
+  {
+    "id": "nao-abro-mao-maiara-maraisa",
+    "titulo": "Não Abro Mão",
+    "artista": "Maiara & Maraisa",
+    "ano": 2019,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "a-culpa-e-nossa-maiara-maraisa",
+    "titulo": "A Culpa É Nossa",
+    "artista": "Maiara & Maraisa",
+    "ano": 2022,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "fala-a-verdade-maiara-maraisa",
+    "titulo": "Fala a Verdade",
+    "artista": "Maiara & Maraisa",
+    "ano": 2015,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "voce-vai-ver-maiara-maraisa",
+    "titulo": "Você Vai Ver",
+    "artista": "Maiara & Maraisa",
+    "ano": 2022,
+    "genero": "Sertanejo"
+  },
+  {
+    "id": "nao-me-cutuca-anitta-alceu-valenca",
+    "titulo": "Não Me Cutuca",
+    "artista": "Anitta & Alceu Valença",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "tudo-isso-anitta",
+    "titulo": "Tudo Isso",
+    "artista": "Anitta",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "pra-voce-gostar-de-mim-anitta",
+    "titulo": "Pra Você Gostar De Mim",
+    "artista": "Anitta",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "voce-ja-sabe-anitta-los-brasileros",
+    "titulo": "Você Já Sabe",
+    "artista": "Anitta & Los Brasileros",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "i-just-might-bruno-mars",
+    "titulo": "I Just Might",
+    "artista": "Bruno Mars",
+    "ano": 2026,
+    "genero": "Pop"
+  },
+  {
+    "id": "risk-it-all-bruno-mars",
+    "titulo": "Risk It All",
+    "artista": "Bruno Mars",
+    "ano": 2026,
+    "genero": "Pop"
+  },
+  {
+    "id": "just-the-way-you-are-bruno-mars",
+    "titulo": "Just the Way You Are",
+    "artista": "Bruno Mars",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "it-will-rain-bruno-mars",
+    "titulo": "It Will Rain",
+    "artista": "Bruno Mars",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "whenever-wherever-shakira",
+    "titulo": "Whenever, Wherever",
+    "artista": "Shakira",
+    "ano": 2001,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "shakira-bzrp-music-sessions-vol-53-66-bizarrap-shakira",
+    "titulo": "Shakira: Bzrp Music Sessions, Vol. 53/66",
+    "artista": "Bizarrap & Shakira",
+    "ano": 2023,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "estoy-aqui-shakira",
+    "titulo": "Estoy Aquí",
+    "artista": "Shakira",
+    "ano": 1995,
+    "genero": "Pop"
+  },
+  {
+    "id": "chantaje-shakira",
+    "titulo": "Chantaje",
+    "artista": "Shakira",
+    "ano": 2016,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "eu-gosto-dela-emicida",
+    "titulo": "Eu Gosto Dela",
+    "artista": "Emicida",
+    "ano": 2010,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "principia-emicida",
+    "titulo": "Principia",
+    "artista": "Emicida",
+    "ano": 2019,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "qual-e-marcelo-d2",
+    "titulo": "Qual é?",
+    "artista": "Marcelo D2",
+    "ano": 2003,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "pode-acreditar-meu-laia-laia-marcelo-d2",
+    "titulo": "Pode Acreditar (Meu Laiá Laiá)",
+    "artista": "Marcelo D2",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "voce-diz-que-o-amor-nao-doi-marcelo-d2",
+    "titulo": "Você Diz Que o Amor Não Dói",
+    "artista": "Marcelo D2",
+    "ano": 2013,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "eu-ja-sabia-marcelo-d2",
+    "titulo": "Eu Já Sabia",
+    "artista": "Marcelo D2",
+    "ano": 2013,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "ultimo-desejo-noel-rosa",
+    "titulo": "Último Desejo",
+    "artista": "Noel Rosa",
+    "ano": 2000,
+    "genero": "Pop"
+  },
+  {
+    "id": "gago-apaixonado-noel-rosa",
+    "titulo": "Gago Apaixonado",
+    "artista": "Noel Rosa",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "arranjei-um-fraseado-noel-rosa",
+    "titulo": "Arranjei Um Fraseado",
+    "artista": "Noel Rosa",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "coracao-noel-rosa",
+    "titulo": "Coração",
+    "artista": "Noel Rosa",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "mas-quem-disse-que-eu-te-esqueco-dona-ivone-lara",
+    "titulo": "Mas Quem Disse Que Eu Te Esqueço",
+    "artista": "Dona Ivone Lara",
+    "ano": 2008,
+    "genero": "Pop"
+  },
+  {
+    "id": "mas-quem-disse-que-eu-te-esqueco-dona-ivone-lara-zeca-pagodi",
+    "titulo": "Mas Quem Disse Que Eu Te Esqueço",
+    "artista": "Dona Ivone Lara & Zeca Pagodinho",
+    "ano": 1997,
+    "genero": "Samba"
+  },
+  {
+    "id": "tendencia-dona-ivone-lara",
+    "titulo": "Tendência",
+    "artista": "Dona Ivone Lara",
+    "ano": 2001,
+    "genero": "Música do mundo"
+  },
+  {
+    "id": "sorriso-negro-dona-ivone-lara",
+    "titulo": "Sorriso negro",
+    "artista": "Dona Ivone Lara",
+    "ano": 1981,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "lagrimas-negras-doidao-medley-caetano-veloso-jorge-mautner",
+    "titulo": "Lágrimas Negras / Doidão (Medley)",
+    "artista": "Caetano Veloso & Jorge Mautner",
+    "ano": 2002,
+    "genero": "MPB"
+  },
+  {
+    "id": "cajuina-caetano-veloso-jorge-mautner",
+    "titulo": "Cajuína",
+    "artista": "Caetano Veloso & Jorge Mautner",
+    "ano": 2002,
+    "genero": "MPB"
+  },
+  {
+    "id": "feitico-caetano-veloso-jorge-mautner",
+    "titulo": "Feitico",
+    "artista": "Caetano Veloso & Jorge Mautner",
+    "ano": 2002,
+    "genero": "MPB"
+  },
+  {
+    "id": "maracatu-atomico-jorge-mautner",
+    "titulo": "Maracatú Atômico",
+    "artista": "Jorge Mautner",
+    "ano": 1974,
+    "genero": "MPB"
+  },
+  {
+    "id": "feito-gente-walter-franco",
+    "titulo": "Feito Gente",
+    "artista": "Walter Franco",
+    "ano": 1975,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "me-deixe-mudo-walter-franco",
+    "titulo": "Me Deixe Mudo",
+    "artista": "Walter Franco",
+    "ano": 1995,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "mixturacao-walter-franco",
+    "titulo": "Mixturação",
+    "artista": "Walter Franco",
+    "ano": 1971,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "serra-do-luar-musica-incidental-coracao-tranquilo-walter-fra",
+    "titulo": "Serra do Luar / Música Incidental: Coração Tranquilo",
+    "artista": "Walter Franco & Leila Pinheiro",
+    "ano": 1998,
+    "genero": "MPB"
+  },
+  {
+    "id": "favela-nara-leao",
+    "titulo": "Favela",
+    "artista": "Nara Leão",
+    "ano": 1966,
+    "genero": "MPB"
+  },
+  {
+    "id": "camisa-amarela-nara-leao",
+    "titulo": "Camisa Amarela",
+    "artista": "Nara Leão",
+    "ano": 1967,
+    "genero": "MPB"
+  },
+  {
+    "id": "lamento-no-morro-nara-leao",
+    "titulo": "Lamento No Morro",
+    "artista": "Nara Leão",
+    "ano": 1967,
+    "genero": "MPB"
+  },
+  {
+    "id": "joao-e-maria-joao-and-maria-chico-buarque-nara-leao",
+    "titulo": "João e Maria - João and Maria",
+    "artista": "Chico Buarque & Nara Leão",
+    "ano": 2012,
+    "genero": "MPB"
+  },
+  {
+    "id": "a-paraiba-nao-e-chicago-marcos-valle",
+    "titulo": "A Paraíba Não é Chicago",
+    "artista": "Marcos Valle",
+    "ano": 1978,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "batucada-surgiu-marcos-valle",
+    "titulo": "Batucada Surgiu",
+    "artista": "Marcos Valle",
+    "ano": 1967,
+    "genero": "MPB"
+  },
+  {
+    "id": "amor-de-nada-marcos-valle",
+    "titulo": "Amor de Nada",
+    "artista": "Marcos Valle",
+    "ano": 1963,
+    "genero": "MPB"
+  },
+  {
+    "id": "daqui-pra-frente-nx-zero",
+    "titulo": "Daqui Pra Frente",
+    "artista": "NX Zero",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "so-rezo-nx-zero",
+    "titulo": "Só Rezo",
+    "artista": "NX Zero",
+    "ano": 2009,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "cartas-pra-voce-nx-zero",
+    "titulo": "Cartas Pra Você",
+    "artista": "NX Zero",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "pela-ultima-vez-nx-zero",
+    "titulo": "Pela Última Vez",
+    "artista": "NX Zero",
+    "ano": 2006,
+    "genero": "Rock"
+  },
+  {
+    "id": "nunca-apague-a-luz-scalene",
+    "titulo": "Nunca Apague a Luz",
+    "artista": "Scalene",
+    "ano": 2011,
+    "genero": "Rock"
+  },
+  {
+    "id": "o-peso-da-pena-scalene",
+    "titulo": "O Peso da Pena",
+    "artista": "Scalene",
+    "ano": 2015,
+    "genero": "Rock"
+  },
+  {
+    "id": "relentless-game-far-from-alaska-scalene",
+    "titulo": "Relentless Game",
+    "artista": "Far From Alaska & Scalene",
+    "ano": 2015,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "tiro-cego-scalene",
+    "titulo": "Tiro Cego",
+    "artista": "Scalene",
+    "ano": 2015,
+    "genero": "Rock"
+  },
+  {
+    "id": "bom-brasileiro-cachorro-grande",
+    "titulo": "Bom Brasileiro",
+    "artista": "Cachorro Grande",
+    "ano": 2005,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "roda-gigante-cachorro-grande",
+    "titulo": "Roda-Gigante",
+    "artista": "Cachorro Grande",
+    "ano": 2005,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "voce-nao-sabe-o-que-perdeu-cachorro-grande",
+    "titulo": "Você Não Sabe o Que Perdeu",
+    "artista": "Cachorro Grande",
+    "ano": 2005,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "debaixo-do-chapeu-cachorro-grande",
+    "titulo": "Debaixo Do Chapéu",
+    "artista": "Cachorro Grande",
+    "ano": 2005,
+    "genero": "Rock"
+  },
+  {
+    "id": "paixao-de-um-homem-waldick-soriano",
+    "titulo": "Paixão de um homem",
+    "artista": "Waldick Soriano",
+    "ano": 1994,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "vestida-de-branco-waldick-soriano",
+    "titulo": "Vestida de Branco",
+    "artista": "Waldick Soriano",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "esta-noite-eu-queria-que-o-mundo-acabasse-waldick-soriano",
+    "titulo": "Esta Noite Eu Queria Que O Mundo Acabasse",
+    "artista": "Waldick Soriano",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "angustia-waldick-soriano",
+    "titulo": "Angústia",
+    "artista": "Waldick Soriano",
+    "ano": 1994,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "fiquei-sabendo-avioes-do-forro",
+    "titulo": "Fiquei Sabendo",
+    "artista": "Aviões do Forró",
+    "ano": 2007,
+    "genero": "Forró"
+  },
+  {
+    "id": "chupa-que-e-de-uva-avioes-do-forro",
+    "titulo": "Chupa Que É de Uva",
+    "artista": "Aviões do Forró",
+    "ano": 2009,
+    "genero": "Forró"
+  },
+  {
+    "id": "inquilina-avioes-do-forro",
+    "titulo": "Inquilina",
+    "artista": "Aviões do Forró",
+    "ano": 2017,
+    "genero": "Forró"
+  },
+  {
+    "id": "o-que-tem-que-ser-sera-avioes-do-forro",
+    "titulo": "O Que Tem Que Ser Será",
+    "artista": "Aviões do Forró",
+    "ano": 2003,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "magica-calcinha-preta",
+    "titulo": "Mágica",
+    "artista": "Calcinha Preta",
+    "ano": 2005,
+    "genero": "Forró"
+  },
+  {
+    "id": "hoje-a-noite-alone-calcinha-preta",
+    "titulo": "Hoje à Noite \"Alone\"",
+    "artista": "Calcinha Preta",
+    "ano": 2003,
+    "genero": "Forró"
+  },
+  {
+    "id": "manchete-dos-jornais-calcinha-preta",
+    "titulo": "Manchete dos Jornais",
+    "artista": "Calcinha Preta",
+    "ano": 2005,
+    "genero": "Forró"
+  },
+  {
+    "id": "dois-amores-duas-paixoes-calcinha-preta",
+    "titulo": "Dois Amores, Duas Paixões",
+    "artista": "Calcinha Preta",
+    "ano": 2006,
+    "genero": "Forró"
+  },
+  {
+    "id": "porque-nao-ve-limao-com-mel",
+    "titulo": "Porque Nao Ve",
+    "artista": "Limão Com Mel",
+    "ano": 2004,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "anjo-querubim-limao-com-mel",
+    "titulo": "Anjo Querubim",
+    "artista": "Limão Com Mel",
+    "ano": 1993,
+    "genero": "Forró"
+  },
+  {
+    "id": "toma-conta-de-mim-limao-com-mel",
+    "titulo": "Toma Conta de Mim",
+    "artista": "Limão Com Mel",
+    "ano": 2002,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "nao-quero-mais-every-beat-of-mt-heart-limao-com-mel",
+    "titulo": "Nao Quero Mais ( Every Beat of Mt Heart)",
+    "artista": "Limão Com Mel",
+    "ano": 2004,
+    "genero": "Música do mundo"
+  },
+  {
+    "id": "meu-pedaco-de-pecado-joao-gomes",
+    "titulo": "Meu Pedaço de Pecado",
+    "artista": "João Gomes",
+    "ano": 2021,
+    "genero": "Forró"
+  },
+  {
+    "id": "dengo-joao-gomes",
+    "titulo": "Dengo",
+    "artista": "João Gomes",
+    "ano": 2022,
+    "genero": "Forró"
+  },
+  {
+    "id": "lembrei-de-nos-joao-gomes-mestrinho-jota-pe",
+    "titulo": "Lembrei de Nós",
+    "artista": "João Gomes, Mestrinho & Jota.pê",
+    "ano": 2025,
+    "genero": "MPB"
+  },
+  {
+    "id": "eu-tenho-a-senha-joao-gomes",
+    "titulo": "Eu Tenho a Senha",
+    "artista": "João Gomes",
+    "ano": 2021,
+    "genero": "Forró"
+  },
+  {
+    "id": "eu-tenho-medo-ze-vaqueiro",
+    "titulo": "Eu Tenho Medo",
+    "artista": "Zé Vaqueiro",
+    "ano": 2020,
+    "genero": "Forró"
+  },
+  {
+    "id": "coladin-ze-vaqueiro",
+    "titulo": "Coladin",
+    "artista": "Zé Vaqueiro",
+    "ano": 2022,
+    "genero": "Forró"
+  },
+  {
+    "id": "volta-comigo-bb-ze-vaqueiro",
+    "titulo": "Volta Comigo BB",
+    "artista": "Zé Vaqueiro",
+    "ano": 2021,
+    "genero": "Forró"
+  },
+  {
+    "id": "ce-volta-wesley-safadao-ze-vaqueiro",
+    "titulo": "Cê Volta",
+    "artista": "Wesley Safadão & Zé Vaqueiro",
+    "ano": 2026,
+    "genero": "Forró"
+  },
+  {
+    "id": "pela-ultima-vez-grupo-menos-e-mais-nattan",
+    "titulo": "Pela Última Vez",
+    "artista": "Grupo Menos É Mais & Nattan",
+    "ano": 2025,
+    "genero": "Pagode"
+  },
+  {
+    "id": "morena-nattan",
+    "titulo": "Morena",
+    "artista": "Nattan",
+    "ano": 2021,
+    "genero": "Forró"
+  },
+  {
+    "id": "love-gostosinho-felipe-amorim-nattan",
+    "titulo": "Love Gostosinho",
+    "artista": "Felipe Amorim & Nattan",
+    "ano": 2022,
+    "genero": "Forró"
+  },
+  {
+    "id": "com-voce-ou-sem-nattan",
+    "titulo": "Com Você ou Sem",
+    "artista": "Nattan",
+    "ano": 2021,
+    "genero": "Forró"
+  },
+  {
+    "id": "diga-que-valeu-bell-marques",
+    "titulo": "Diga Que Valeu",
+    "artista": "Bell Marques",
+    "ano": 2018,
+    "genero": "Axé"
+  },
+  {
+    "id": "selva-branca-bell-marques",
+    "titulo": "Selva Branca",
+    "artista": "Bell Marques",
+    "ano": 2018,
+    "genero": "Axé"
+  },
+  {
+    "id": "voa-voa-bell-marques",
+    "titulo": "Voa Voa",
+    "artista": "Bell Marques",
+    "ano": 2018,
+    "genero": "Axé"
+  },
+  {
+    "id": "100-voce-bell-marques",
+    "titulo": "100% Você",
+    "artista": "Bell Marques",
+    "ano": 2018,
+    "genero": "Axé"
+  },
+  {
+    "id": "me-diz-amor-flavio-jose",
+    "titulo": "Me Diz Amor",
+    "artista": "Flávio José",
+    "ano": 1997,
+    "genero": "Forró"
+  },
+  {
+    "id": "meu-cenario-flavio-jose",
+    "titulo": "Meu Cenário",
+    "artista": "Flávio José",
+    "ano": 2003,
+    "genero": "Forró"
+  },
+  {
+    "id": "espumas-ao-vento-flavio-jose",
+    "titulo": "Espumas ao Vento",
+    "artista": "Flávio José",
+    "ano": 1997,
+    "genero": "Forró"
+  },
+  {
+    "id": "filho-do-dono-flavio-jose",
+    "titulo": "Filho do Dono",
+    "artista": "Flávio José",
+    "ano": 1996,
+    "genero": "Forró"
+  },
+  {
+    "id": "vai-toma-mc-pikachu-mc-fioti",
+    "titulo": "Vai Toma",
+    "artista": "MC Pikachu & MC Fioti",
+    "ano": 2016,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "nois-e-thug-life-mc-lan-mc-fioti-mc-lil",
+    "titulo": "Nois é Thug Life",
+    "artista": "MC Lan, MC Fioti & MC Lil",
+    "ano": 2017,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "bum-bum-tam-tam-mc-fioti-future-j-balvin-stefflon-don-juan-m",
+    "titulo": "Bum Bum Tam Tam",
+    "artista": "MC Fioti, Future, J Balvin, Stefflon Don & Juan Magán",
+    "ano": 2017,
+    "genero": "Hip-Hop/Rap"
+  },
+  {
+    "id": "vai-cremosa-mc-bella-mc-fioti",
+    "titulo": "Vai Cremosa",
+    "artista": "Mc Bella & MC Fioti",
+    "ano": 2017,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "uh-papai-chegou-o-simpatico-mr-catra",
+    "titulo": "Uh Papai Chegou / o Simpático",
+    "artista": "Mr. Catra",
+    "ano": 2016,
+    "genero": "Funk"
+  },
+  {
+    "id": "cerol-na-mao-furacao-2000-bonde-do-tigrao-dennis",
+    "titulo": "Cerol na Mão",
+    "artista": "Furacão 2000, Bonde do Tigrão & DENNIS",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "o-baile-todo-bonde-do-tigrao",
+    "titulo": "O Baile Todo",
+    "artista": "Bonde do Tigrão",
+    "ano": 2001,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "tchu-tchuca-bonde-do-tigrao",
+    "titulo": "Tchu Tchuca",
+    "artista": "Bonde do Tigrão",
+    "ano": 2001,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "um-morto-muito-louco-bonde-do-tigrao",
+    "titulo": "Um Morto Muito Louco",
+    "artista": "Bonde do Tigrão",
+    "ano": 2018,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "mimosa-2000-furacao-2000",
+    "titulo": "Mimosa 2000",
+    "artista": "Furacão 2000",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "egua-pocoto-furacao-2000-serginho",
+    "titulo": "Égua Pocotó",
+    "artista": "Furacão 2000 & Serginho",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "tchu-tchuca-furacao-2000-bonde-do-tigrao",
+    "titulo": "Tchu Tchuca",
+    "artista": "Furacão 2000 & Bonde do Tigrão",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "tapinha-furacao-2000-naldinho-bela",
+    "titulo": "Tapinha",
+    "artista": "Furacão 2000, Naldinho & Bela",
+    "ano": 2000,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "agora-to-solteira-furacao-2000-valesca-popozuda",
+    "titulo": "Agora Tô Solteira",
+    "artista": "Furacão 2000 & Valesca Popozuda",
+    "ano": 2008,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "beijinho-no-ombro-valesca-popozuda",
+    "titulo": "Beijinho no Ombro",
+    "artista": "Valesca Popozuda",
+    "ano": 2013,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "eu-sou-a-diva-que-voce-quer-copiar-valesca-popozuda",
+    "titulo": "Eu Sou a Diva Que Você Quer Copiar",
+    "artista": "Valesca Popozuda",
+    "ano": 2014,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "sou-dessas-valesca-popozuda",
+    "titulo": "Sou Dessas",
+    "artista": "Valesca Popozuda",
+    "ano": 2015,
+    "genero": "Baile Funk"
+  },
+  {
+    "id": "corpo-sensual-pabllo-vittar",
+    "titulo": "Corpo Sensual",
+    "artista": "Pabllo Vittar",
+    "ano": 2017,
+    "genero": "MPB"
+  },
+  {
+    "id": "k-o-pabllo-vittar",
+    "titulo": "K.O.",
+    "artista": "Pabllo Vittar",
+    "ano": 2017,
+    "genero": "MPB"
+  },
+  {
+    "id": "tic-tic-nmixx-pabllo-vittar",
+    "titulo": "TIC TIC",
+    "artista": "NMIXX & Pabllo Vittar",
+    "ano": 2026,
+    "genero": "K-pop"
+  },
+  {
+    "id": "alibi-sevdaliza-pabllo-vittar-yseult",
+    "titulo": "Alibi",
+    "artista": "Sevdaliza, Pabllo Vittar & Yseult",
+    "ano": 2024,
+    "genero": "Música latina urbana"
+  },
+  {
+    "id": "dona-de-mim-iza",
+    "titulo": "Dona de Mim",
+    "artista": "IZA",
+    "ano": 2018,
+    "genero": "R&B Contemporâneo"
+  },
+  {
+    "id": "sem-filtro-iza",
+    "titulo": "Sem Filtro",
+    "artista": "IZA",
+    "ano": 2005,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "meu-talisma-iza",
+    "titulo": "Meu Talismã",
+    "artista": "IZA",
+    "ano": 2019,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "pesadao-iza",
+    "titulo": "Pesadão",
+    "artista": "IZA",
+    "ano": 2017,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "sagrado-profano-luisa-sonza-kayblack",
+    "titulo": "Sagrado Profano",
+    "artista": "Luísa Sonza & Kayblack",
+    "ano": 2023,
+    "genero": "Pop"
+  },
+  {
+    "id": "motinha-2-0-dennis-luisa-sonza",
+    "titulo": "Motinha 2.0",
+    "artista": "DENNIS & Luísa Sonza",
+    "ano": 2025,
+    "genero": "Pop"
+  },
+  {
+    "id": "anaconda-o-luisa-sonza-mariah-angeliq",
+    "titulo": "ANACONDA *o* ~~~",
+    "artista": "Luísa Sonza & Mariah Angeliq",
+    "ano": 2021,
+    "genero": "Pop"
+  },
+  {
+    "id": "cachorrinhas-luisa-sonza",
+    "titulo": "CACHORRINHAS",
+    "artista": "Luísa Sonza",
+    "ano": 2022,
+    "genero": "Pop"
+  },
+  {
+    "id": "bixinho-duda-beat",
+    "titulo": "Bixinho",
+    "artista": "DUDA BEAT",
+    "ano": 2018,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "voce-vai-gostar-duda-beat-ajulliacosta",
+    "titulo": "você vai gostar",
+    "artista": "DUDA BEAT & AJULLIACOSTA",
+    "ano": 2025,
+    "genero": "Pop"
+  },
+  {
+    "id": "meu-pisero-duda-beat",
+    "titulo": "Meu Pisêro",
+    "artista": "DUDA BEAT",
+    "ano": 2021,
+    "genero": "Pop"
+  },
+  {
+    "id": "tangerina-tiago-iorc-duda-beat",
+    "titulo": "Tangerina",
+    "artista": "TIAGO IORC & DUDA BEAT",
+    "ano": 2019,
+    "genero": "Pop"
+  },
+  {
+    "id": "veludo-marrom-liniker",
+    "titulo": "VELUDO MARROM",
+    "artista": "Liniker",
+    "ano": 2024,
+    "genero": "MPB"
+  },
+  {
+    "id": "caminhador-anitta-liniker",
+    "titulo": "Caminhador",
+    "artista": "Anitta & Liniker",
+    "ano": 2026,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "caju-liniker",
+    "titulo": "CAJU",
+    "artista": "Liniker",
+    "ano": 2024,
+    "genero": "MPB"
+  },
+  {
+    "id": "baby-95-liniker",
+    "titulo": "Baby 95",
+    "artista": "Liniker",
+    "ano": 2021,
+    "genero": "MPB"
+  },
+  {
+    "id": "ilarie-xuxa",
+    "titulo": "Ilariê",
+    "artista": "Xuxa",
+    "ano": 1988,
+    "genero": "Música para crianças"
+  },
+  {
+    "id": "lua-de-cristal-xuxa",
+    "titulo": "Lua de Cristal",
+    "artista": "Xuxa",
+    "ano": 1990,
+    "genero": "Música para crianças"
+  },
+  {
+    "id": "estatua-xuxa",
+    "titulo": "Estátua",
+    "artista": "Xuxa",
+    "ano": 2003,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "parabens-da-xuxa-xuxa",
+    "titulo": "Parabéns da Xuxa",
+    "artista": "Xuxa",
+    "ano": 1986,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "uni-duni-te-trem-da-alegria",
+    "titulo": "Uni-Duni-Tê",
+    "artista": "Trem Da Alegria",
+    "ano": 1989,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "he-man-trem-da-alegria",
+    "titulo": "He-Man",
+    "artista": "Trem Da Alegria",
+    "ano": 1986,
+    "genero": "Música para crianças"
+  },
+  {
+    "id": "thundercats-trem-da-alegria",
+    "titulo": "Thundercats",
+    "artista": "Trem Da Alegria",
+    "ano": 1987,
+    "genero": "Música para crianças"
+  },
+  {
+    "id": "piui-abacaxi-trem-da-alegria",
+    "titulo": "Piuí Abacaxí",
+    "artista": "Trem Da Alegria",
+    "ano": 1987,
+    "genero": "Música para crianças"
+  },
+  {
+    "id": "superfantastico-super-fantastico-a-turma-do-balao-magico-dja",
+    "titulo": "Superfantástico (Super Fantástico)",
+    "artista": "A Turma do Balão Mágico & Djavan",
+    "ano": 2003,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "e-tao-lindo-it-s-no-easy-a-turma-do-balao-magico",
+    "titulo": "É Tão Lindo (It's no Easy)",
+    "artista": "A Turma do Balão Mágico",
+    "ano": 1984,
+    "genero": "Música para crianças"
+  },
+  {
+    "id": "ursinho-pimpao-mi-osito-pelon-a-turma-do-balao-magico",
+    "titulo": "Ursinho Pimpão (Mi Osito Pelón)",
+    "artista": "A Turma do Balão Mágico",
+    "ano": 2003,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "amigos-do-peito-somos-amigos-a-turma-do-balao-magico-fabio-j",
+    "titulo": "Amigos do Peito (Somos Amigos)",
+    "artista": "A Turma do Balão Mágico & Fábio Jr.",
+    "ano": 2003,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "a-danca-dos-bichos-eliana",
+    "titulo": "A Dança Dos Bichos",
+    "artista": "Eliana",
+    "ano": 1998,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "dona-felicidade-eliana",
+    "titulo": "Dona Félicidade",
+    "artista": "Eliana",
+    "ano": 2002,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "ao-mestre-com-carinho-eliana",
+    "titulo": "Ao Mestre Com Carinho",
+    "artista": "Eliana",
+    "ano": 2012,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "orquestra-dos-bichos-eliana",
+    "titulo": "Orquestra Dos Bichos",
+    "artista": "Eliana",
+    "ano": 2002,
+    "genero": "Brasileira"
+  },
+  {
+    "id": "wish-you-were-here-pink-floyd",
+    "titulo": "Wish You Were Here",
+    "artista": "Pink Floyd",
+    "ano": 1975,
+    "genero": "Rock"
+  },
+  {
+    "id": "comfortably-numb-pink-floyd",
+    "titulo": "Comfortably Numb",
+    "artista": "Pink Floyd",
+    "ano": 1979,
+    "genero": "Rock"
+  },
+  {
+    "id": "time-pink-floyd",
+    "titulo": "Time",
+    "artista": "Pink Floyd",
+    "ano": 1973,
+    "genero": "Rock"
+  },
+  {
+    "id": "another-brick-in-the-wall-pt-2-pink-floyd",
+    "titulo": "Another Brick In the Wall, Pt. 2",
+    "artista": "Pink Floyd",
+    "ano": 1979,
+    "genero": "Rock"
+  },
+  {
+    "id": "stairway-to-heaven-led-zeppelin",
+    "titulo": "Stairway to Heaven",
+    "artista": "Led Zeppelin",
+    "ano": 1971,
+    "genero": "Rock"
+  },
+  {
+    "id": "whole-lotta-love-led-zeppelin",
+    "titulo": "Whole Lotta Love",
+    "artista": "Led Zeppelin",
+    "ano": 1969,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "immigrant-song-led-zeppelin",
+    "titulo": "Immigrant Song",
+    "artista": "Led Zeppelin",
+    "ano": 1970,
+    "genero": "Rock"
+  },
+  {
+    "id": "kashmir-led-zeppelin",
+    "titulo": "Kashmir",
+    "artista": "Led Zeppelin",
+    "ano": 1975,
+    "genero": "Rock"
+  },
+  {
+    "id": "gimme-shelter-the-rolling-stones",
+    "titulo": "Gimme Shelter",
+    "artista": "The Rolling Stones",
+    "ano": 1969,
+    "genero": "Rock"
+  },
+  {
+    "id": "start-me-up-the-rolling-stones",
+    "titulo": "Start Me Up",
+    "artista": "The Rolling Stones",
+    "ano": 1981,
+    "genero": "Rock"
+  },
+  {
+    "id": "in-the-stars-the-rolling-stones",
+    "titulo": "In The Stars",
+    "artista": "The Rolling Stones",
+    "ano": 2026,
+    "genero": "Rock"
+  },
+  {
+    "id": "sympathy-for-the-devil-the-rolling-stones",
+    "titulo": "Sympathy For The Devil",
+    "artista": "The Rolling Stones",
+    "ano": 1968,
+    "genero": "Rock"
+  },
+  {
+    "id": "highway-to-hell-ac-dc",
+    "titulo": "Highway to Hell",
+    "artista": "AC/DC",
+    "ano": 1979,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "back-in-black-ac-dc",
+    "titulo": "Back In Black",
+    "artista": "AC/DC",
+    "ano": 1980,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "thunderstruck-ac-dc",
+    "titulo": "Thunderstruck",
+    "artista": "AC/DC",
+    "ano": 1990,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "t-n-t-ac-dc",
+    "titulo": "T.N.T.",
+    "artista": "AC/DC",
+    "ano": 1975,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "enter-sandman-metallica",
+    "titulo": "Enter Sandman",
+    "artista": "Metallica",
+    "ano": 1991,
+    "genero": "Metal"
+  },
+  {
+    "id": "the-unforgiven-metallica",
+    "titulo": "The Unforgiven",
+    "artista": "Metallica",
+    "ano": 1991,
+    "genero": "Metal"
+  },
+  {
+    "id": "nothing-else-matters-metallica",
+    "titulo": "Nothing Else Matters",
+    "artista": "Metallica",
+    "ano": 1991,
+    "genero": "Metal"
+  },
+  {
+    "id": "master-of-puppets-metallica",
+    "titulo": "Master of Puppets",
+    "artista": "Metallica",
+    "ano": 1986,
+    "genero": "Metal"
+  },
+  {
+    "id": "i-don-t-want-to-miss-a-thing-aerosmith",
+    "titulo": "I Don't Want to Miss a Thing",
+    "artista": "Aerosmith",
+    "ano": 1998,
+    "genero": "Trilha sonora"
+  },
+  {
+    "id": "dream-on-aerosmith",
+    "titulo": "Dream On",
+    "artista": "Aerosmith",
+    "ano": 1973,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "cryin-aerosmith",
+    "titulo": "Cryin'",
+    "artista": "Aerosmith",
+    "ano": 1993,
+    "genero": "Pop"
+  },
+  {
+    "id": "crazy-aerosmith",
+    "titulo": "Crazy",
+    "artista": "Aerosmith",
+    "ano": 1993,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "hotel-california-eagles",
+    "titulo": "Hotel California",
+    "artista": "Eagles",
+    "ano": 1976,
+    "genero": "Rock"
+  },
+  {
+    "id": "take-it-easy-eagles",
+    "titulo": "Take It Easy",
+    "artista": "Eagles",
+    "ano": 1972,
+    "genero": "Rock"
+  },
+  {
+    "id": "tequila-sunrise-eagles",
+    "titulo": "Tequila Sunrise",
+    "artista": "Eagles",
+    "ano": 1973,
+    "genero": "Rock"
+  },
+  {
+    "id": "desperado-eagles",
+    "titulo": "Desperado",
+    "artista": "Eagles",
+    "ano": 1973,
+    "genero": "Rock"
+  },
+  {
+    "id": "fortunate-son-creedence-clearwater-revival",
+    "titulo": "Fortunate Son",
+    "artista": "Creedence Clearwater Revival",
+    "ano": 1968,
+    "genero": "Rock"
+  },
+  {
+    "id": "have-you-ever-seen-the-rain-creedence-clearwater-revival",
+    "titulo": "Have You Ever Seen the Rain",
+    "artista": "Creedence Clearwater Revival",
+    "ano": 1968,
+    "genero": "Rock"
+  },
+  {
+    "id": "i-heard-it-through-the-grapevine-creedence-clearwater-reviva",
+    "titulo": "I Heard It Through the Grapevine",
+    "artista": "Creedence Clearwater Revival",
+    "ano": 1970,
+    "genero": "Rock"
+  },
+  {
+    "id": "proud-mary-creedence-clearwater-revival",
+    "titulo": "Proud Mary",
+    "artista": "Creedence Clearwater Revival",
+    "ano": 1969,
+    "genero": "Rock"
+  },
+  {
+    "id": "sultans-of-swing-dire-straits",
+    "titulo": "Sultans of Swing",
+    "artista": "Dire Straits",
+    "ano": 1978,
+    "genero": "Rock"
+  },
+  {
+    "id": "walk-of-life-dire-straits",
+    "titulo": "Walk Of Life",
+    "artista": "Dire Straits",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "so-far-away-dire-straits",
+    "titulo": "So Far Away",
+    "artista": "Dire Straits",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "your-latest-trick-dire-straits",
+    "titulo": "Your Latest Trick",
+    "artista": "Dire Straits",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "smoke-on-the-water-deep-purple",
+    "titulo": "Smoke on the Water",
+    "artista": "Deep Purple",
+    "ano": 1972,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "highway-star-deep-purple",
+    "titulo": "Highway Star",
+    "artista": "Deep Purple",
+    "ano": 1972,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "perfect-strangers-deep-purple",
+    "titulo": "Perfect Strangers",
+    "artista": "Deep Purple",
+    "ano": 1984,
+    "genero": "Rock"
+  },
+  {
+    "id": "burn-deep-purple",
+    "titulo": "Burn",
+    "artista": "Deep Purple",
+    "ano": 1974,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "paranoid-black-sabbath",
+    "titulo": "Paranoid",
+    "artista": "Black Sabbath",
+    "ano": 1970,
+    "genero": "Metal"
+  },
+  {
+    "id": "iron-man-black-sabbath",
+    "titulo": "Iron Man",
+    "artista": "Black Sabbath",
+    "ano": 1970,
+    "genero": "Metal"
+  },
+  {
+    "id": "black-sabbath-black-sabbath",
+    "titulo": "Black Sabbath",
+    "artista": "Black Sabbath",
+    "ano": 1970,
+    "genero": "Metal"
+  },
+  {
+    "id": "war-pigs-2009-remaster-black-sabbath",
+    "titulo": "War Pigs (2009 Remaster)",
+    "artista": "Black Sabbath",
+    "ano": 1970,
+    "genero": "Rock"
+  },
+  {
+    "id": "baba-o-riley-the-who",
+    "titulo": "Baba O'Riley",
+    "artista": "The Who",
+    "ano": 1971,
+    "genero": "Rock"
+  },
+  {
+    "id": "behind-blue-eyes-the-who",
+    "titulo": "Behind Blue Eyes",
+    "artista": "The Who",
+    "ano": 1971,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "pinball-wizard-the-who",
+    "titulo": "Pinball Wizard",
+    "artista": "The Who",
+    "ano": 1969,
+    "genero": "Rock"
+  },
+  {
+    "id": "won-t-get-fooled-again-the-who",
+    "titulo": "Won't Get Fooled Again",
+    "artista": "The Who",
+    "ano": 1971,
+    "genero": "Rock"
+  },
+  {
+    "id": "simple-man-lynyrd-skynyrd",
+    "titulo": "Simple Man",
+    "artista": "Lynyrd Skynyrd",
+    "ano": 1973,
+    "genero": "Rock"
+  },
+  {
+    "id": "free-bird-lynyrd-skynyrd",
+    "titulo": "Free Bird",
+    "artista": "Lynyrd Skynyrd",
+    "ano": 1973,
+    "genero": "Rock"
+  },
+  {
+    "id": "sweet-home-alabama-lynyrd-skynyrd",
+    "titulo": "Sweet Home Alabama",
+    "artista": "Lynyrd Skynyrd",
+    "ano": 1974,
+    "genero": "Rock"
+  },
+  {
+    "id": "tuesday-s-gone-lynyrd-skynyrd",
+    "titulo": "Tuesday's Gone",
+    "artista": "Lynyrd Skynyrd",
+    "ano": 1973,
+    "genero": "Rock"
+  },
+  {
+    "id": "i-ll-be-over-you-toto",
+    "titulo": "I'll Be Over You",
+    "artista": "Toto",
+    "ano": 1986,
+    "genero": "Rock"
+  },
+  {
+    "id": "africa-toto",
+    "titulo": "Africa",
+    "artista": "Toto",
+    "ano": 1982,
+    "genero": "Rock"
+  },
+  {
+    "id": "hold-the-line-toto",
+    "titulo": "Hold the Line",
+    "artista": "Toto",
+    "ano": 1978,
+    "genero": "Rock"
+  },
+  {
+    "id": "rosanna-toto",
+    "titulo": "Rosanna",
+    "artista": "Toto",
+    "ano": 1982,
+    "genero": "Rock"
+  },
+  {
+    "id": "don-t-stop-believin-2024-remaster-journey",
+    "titulo": "Don't Stop Believin' (2024 Remaster)",
+    "artista": "Journey",
+    "ano": 1981,
+    "genero": "Rock"
+  },
+  {
+    "id": "separate-ways-worlds-apart-2024-remaster-journey",
+    "titulo": "Separate Ways (Worlds Apart) [2024 Remaster]",
+    "artista": "Journey",
+    "ano": 1983,
+    "genero": "Rock"
+  },
+  {
+    "id": "don-t-stop-believin-2022-remaster-journey",
+    "titulo": "Don't Stop Believin'  (2022 Remaster)",
+    "artista": "Journey",
+    "ano": 1981,
+    "genero": "Rock"
+  },
+  {
+    "id": "the-final-countdown-europe",
+    "titulo": "The Final Countdown",
+    "artista": "Europe",
+    "ano": 1986,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "carrie-europe",
+    "titulo": "Carrie",
+    "artista": "Europe",
+    "ano": 1986,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "open-your-heart-europe",
+    "titulo": "Open Your Heart",
+    "artista": "Europe",
+    "ano": 1984,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "superstitious-europe",
+    "titulo": "Superstitious",
+    "artista": "Europe",
+    "ano": 1988,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "still-loving-you-scorpions",
+    "titulo": "Still Loving You",
+    "artista": "Scorpions",
+    "ano": 1984,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "wind-of-change-scorpions",
+    "titulo": "Wind of Change",
+    "artista": "Scorpions",
+    "ano": 1990,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "always-somewhere-scorpions",
+    "titulo": "Always Somewhere",
+    "artista": "Scorpions",
+    "ano": 1979,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "send-me-an-angel-scorpions",
+    "titulo": "Send Me an Angel",
+    "artista": "Scorpions",
+    "ano": 1990,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "i-was-made-for-lovin-you-kiss",
+    "titulo": "I Was Made for Lovin' You",
+    "artista": "Kiss",
+    "ano": 1979,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "rock-and-roll-all-nite-kiss",
+    "titulo": "Rock and Roll All Nite",
+    "artista": "Kiss",
+    "ano": 1975,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "forever-kiss",
+    "titulo": "Forever",
+    "artista": "Kiss",
+    "ano": 1989,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "jump-van-halen",
+    "titulo": "Jump",
+    "artista": "Van Halen",
+    "ano": 1983,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "why-can-t-this-be-love-van-halen",
+    "titulo": "Why Can't This Be Love",
+    "artista": "Van Halen",
+    "ano": 1986,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "ain-t-talkin-bout-love-van-halen",
+    "titulo": "Ain't Talkin' 'Bout Love",
+    "artista": "Van Halen",
+    "ano": 1978,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "can-t-stop-lovin-you-van-halen",
+    "titulo": "Can't Stop Lovin' You",
+    "artista": "Van Halen",
+    "ano": 1995,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "love-bites-def-leppard",
+    "titulo": "Love Bites",
+    "artista": "Def Leppard",
+    "ano": 1987,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "pour-some-sugar-on-me-def-leppard",
+    "titulo": "Pour Some Sugar On Me",
+    "artista": "Def Leppard",
+    "ano": 1987,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "hysteria-def-leppard",
+    "titulo": "Hysteria",
+    "artista": "Def Leppard",
+    "ano": 1987,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "animal-def-leppard",
+    "titulo": "Animal",
+    "artista": "Def Leppard",
+    "ano": 1987,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "save-a-prayer-duran-duran",
+    "titulo": "Save a Prayer",
+    "artista": "Duran Duran",
+    "ano": 1982,
+    "genero": "New wave"
+  },
+  {
+    "id": "come-undone-duran-duran",
+    "titulo": "Come Undone",
+    "artista": "Duran Duran",
+    "ano": 1993,
+    "genero": "Pop"
+  },
+  {
+    "id": "ordinary-world-duran-duran",
+    "titulo": "Ordinary World",
+    "artista": "Duran Duran",
+    "ano": 1993,
+    "genero": "Pop"
+  },
+  {
+    "id": "a-matter-of-feeling-duran-duran",
+    "titulo": "A Matter of Feeling",
+    "artista": "Duran Duran",
+    "ano": 1986,
+    "genero": "Pop"
+  },
+  {
+    "id": "everybody-wants-to-rule-the-world-tears-for-fears",
+    "titulo": "Everybody Wants to Rule the World",
+    "artista": "Tears for Fears",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "shout-tears-for-fears",
+    "titulo": "Shout",
+    "artista": "Tears for Fears",
+    "ano": 1984,
+    "genero": "Pop"
+  },
+  {
+    "id": "head-over-heels-broken-tears-for-fears",
+    "titulo": "Head Over Heels / Broken",
+    "artista": "Tears for Fears",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "break-it-down-again-tears-for-fears",
+    "titulo": "Break It Down Again",
+    "artista": "Tears for Fears",
+    "ano": 1993,
+    "genero": "Rock"
+  },
+  {
+    "id": "enjoy-the-silence-depeche-mode",
+    "titulo": "Enjoy the Silence",
+    "artista": "Depeche Mode",
+    "ano": 1990,
+    "genero": "Pop"
+  },
+  {
+    "id": "strangelove-depeche-mode",
+    "titulo": "Strangelove",
+    "artista": "Depeche Mode",
+    "ano": 1987,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "never-let-me-down-again-depeche-mode",
+    "titulo": "Never Let Me Down Again",
+    "artista": "Depeche Mode",
+    "ano": 1987,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "just-can-t-get-enough-depeche-mode",
+    "titulo": "Just Can't Get Enough",
+    "artista": "Depeche Mode",
+    "ano": 1981,
+    "genero": "Pop"
+  },
+  {
+    "id": "friday-i-m-in-love-the-cure",
+    "titulo": "Friday I'm In Love",
+    "artista": "The Cure",
+    "ano": 1992,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "boys-don-t-cry-the-cure",
+    "titulo": "Boys Don't Cry",
+    "artista": "The Cure",
+    "ano": 1979,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "heart-of-glass-blondie",
+    "titulo": "Heart of Glass",
+    "artista": "Blondie",
+    "ano": 1978,
+    "genero": "Rock"
+  },
+  {
+    "id": "call-me-blondie",
+    "titulo": "Call Me",
+    "artista": "Blondie",
+    "ano": 1980,
+    "genero": "Disco"
+  },
+  {
+    "id": "one-way-or-another-blondie",
+    "titulo": "One Way Or Another",
+    "artista": "Blondie",
+    "ano": 1978,
+    "genero": "Rock"
+  },
+  {
+    "id": "karma-chameleon-culture-club",
+    "titulo": "Karma Chameleon",
+    "artista": "Culture Club",
+    "ano": 1983,
+    "genero": "Rock"
+  },
+  {
+    "id": "do-you-really-want-to-hurt-me-culture-club",
+    "titulo": "Do You Really Want to Hurt Me",
+    "artista": "Culture Club",
+    "ano": 1982,
+    "genero": "Pop"
+  },
+  {
+    "id": "everything-i-own-boy-george-culture-club",
+    "titulo": "Everything I Own",
+    "artista": "Boy George & Culture Club",
+    "ano": 1987,
+    "genero": "Pop"
+  },
+  {
+    "id": "love-is-love-culture-club",
+    "titulo": "Love Is Love",
+    "artista": "Culture Club",
+    "ano": 1984,
+    "genero": "Pop"
+  },
+  {
+    "id": "alive-and-kicking-simple-minds",
+    "titulo": "Alive and Kicking",
+    "artista": "Simple Minds",
+    "ano": 1985,
+    "genero": "Rock"
+  },
+  {
+    "id": "mandela-day-simple-minds",
+    "titulo": "Mandela Day",
+    "artista": "Simple Minds",
+    "ano": 1989,
+    "genero": "Rock"
+  },
+  {
+    "id": "don-t-you-forget-about-me-simple-minds",
+    "titulo": "Don't You Forget About Me",
+    "artista": "Simple Minds",
+    "ano": 1987,
+    "genero": "Rock"
+  },
+  {
+    "id": "psycho-killer-talking-heads",
+    "titulo": "Psycho Killer",
+    "artista": "Talking Heads",
+    "ano": 1977,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "wild-wild-life-2005-remaster-talking-heads",
+    "titulo": "Wild Wild Life (2005 Remaster)",
+    "artista": "Talking Heads",
+    "ano": 1986,
+    "genero": "Pop"
+  },
+  {
+    "id": "once-in-a-lifetime-talking-heads",
+    "titulo": "Once In a Lifetime",
+    "artista": "Talking Heads",
+    "ano": 1980,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "and-she-was-2005-remaster-talking-heads",
+    "titulo": "And She Was (2005 Remaster)",
+    "artista": "Talking Heads",
+    "ano": 1985,
+    "genero": "Rock"
+  },
+  {
+    "id": "never-tear-us-apart-2011-remaster-inxs",
+    "titulo": "Never Tear Us Apart (2011 Remaster)",
+    "artista": "INXS",
+    "ano": 1987,
+    "genero": "Pop"
+  },
+  {
+    "id": "by-my-side-inxs",
+    "titulo": "By My Side",
+    "artista": "INXS",
+    "ano": 1990,
+    "genero": "Pop"
+  },
+  {
+    "id": "beautiful-girl-inxs",
+    "titulo": "Beautiful Girl",
+    "artista": "INXS",
+    "ano": 1992,
+    "genero": "Pop"
+  },
+  {
+    "id": "need-you-tonight-2011-remaster-inxs",
+    "titulo": "Need You Tonight (2011 Remaster)",
+    "artista": "INXS",
+    "ano": 1987,
+    "genero": "Pop"
+  },
+  {
+    "id": "here-comes-the-rain-again-eurythmics",
+    "titulo": "Here Comes the Rain Again",
+    "artista": "Eurythmics",
+    "ano": 1983,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "sweet-dreams-are-made-of-this-eurythmics",
+    "titulo": "Sweet Dreams (Are Made of This)",
+    "artista": "Eurythmics",
+    "ano": 1983,
+    "genero": "Pop"
+  },
+  {
+    "id": "there-must-be-an-angel-playing-with-my-heart-eurythmics",
+    "titulo": "There Must Be an Angel (Playing with My Heart)",
+    "artista": "Eurythmics",
+    "ano": 1985,
+    "genero": "Pop"
+  },
+  {
+    "id": "miracle-of-love-eurythmics",
+    "titulo": "Miracle of Love",
+    "artista": "Eurythmics",
+    "ano": 1986,
+    "genero": "Pop"
+  },
+  {
+    "id": "i-feel-love-donna-summer",
+    "titulo": "I Feel Love",
+    "artista": "Donna Summer",
+    "ano": 1977,
+    "genero": "Pop"
+  },
+  {
+    "id": "hot-stuff-donna-summer",
+    "titulo": "Hot Stuff",
+    "artista": "Donna Summer",
+    "ano": 1979,
+    "genero": "Disco"
+  },
+  {
+    "id": "macarthur-park-donna-summer",
+    "titulo": "MacArthur Park",
+    "artista": "Donna Summer",
+    "ano": 1978,
+    "genero": "Disco"
+  },
+  {
+    "id": "breakaway-donna-summer",
+    "titulo": "Breakaway",
+    "artista": "Donna Summer",
+    "ano": 1989,
+    "genero": "Pop"
+  },
+  {
+    "id": "september-earth-wind-fire",
+    "titulo": "September",
+    "artista": "Earth, Wind & Fire",
+    "ano": 1978,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "let-s-groove-earth-wind-fire",
+    "titulo": "Let's Groove",
+    "artista": "Earth, Wind & Fire",
+    "ano": 1981,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "boogie-wonderland-earth-wind-fire",
+    "titulo": "Boogie Wonderland",
+    "artista": "Earth, Wind & Fire",
+    "ano": 1979,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "after-the-love-has-gone-earth-wind-fire",
+    "titulo": "After the Love Has Gone",
+    "artista": "Earth, Wind & Fire",
+    "ano": 1979,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "please-don-t-go-kc-and-the-sunshine-band",
+    "titulo": "Please Don't Go",
+    "artista": "KC and The Sunshine Band",
+    "ano": 1979,
+    "genero": "Dance"
+  },
+  {
+    "id": "shake-shake-shake-shake-your-booty-kc-and-the-sunshine-band",
+    "titulo": "(Shake Shake Shake) Shake Your Booty",
+    "artista": "KC and The Sunshine Band",
+    "ano": 1975,
+    "genero": "Dance"
+  },
+  {
+    "id": "give-it-up-kc-and-the-sunshine-band",
+    "titulo": "Give It Up",
+    "artista": "KC and The Sunshine Band",
+    "ano": 1982,
+    "genero": "Pop"
+  },
+  {
+    "id": "that-s-the-way-i-like-it-2004-remaster-kc-and-the-sunshine-b",
+    "titulo": "That's the Way (I Like It) [2004 Remaster]",
+    "artista": "KC and The Sunshine Band",
+    "ano": 1975,
+    "genero": "Pop"
+  },
+  {
+    "id": "le-freak-2018-remaster-chic",
+    "titulo": "Le Freak (2018 Remaster)",
+    "artista": "Chic",
+    "ano": 1978,
+    "genero": "Dance"
+  },
+  {
+    "id": "good-times-chic",
+    "titulo": "Good Times",
+    "artista": "Chic",
+    "ano": 1979,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "everybody-dance-chic",
+    "titulo": "Everybody Dance",
+    "artista": "Chic",
+    "ano": 1977,
+    "genero": "Disco"
+  },
+  {
+    "id": "i-want-your-love-2018-remaster-chic",
+    "titulo": "I Want Your Love (2018 Remaster)",
+    "artista": "Chic",
+    "ano": 1978,
+    "genero": "Dance"
+  },
+  {
+    "id": "daddy-cool-boney-m",
+    "titulo": "Daddy Cool",
+    "artista": "Boney M.",
+    "ano": 1976,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "rasputin-boney-m",
+    "titulo": "Rasputin",
+    "artista": "Boney M.",
+    "ano": 1978,
+    "genero": "Pop"
+  },
+  {
+    "id": "rivers-of-babylon-2007-remastered-version-boney-m",
+    "titulo": "Rivers of Babylon (2007 Remastered Version)",
+    "artista": "Boney M.",
+    "ano": 1978,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "ma-baker-boney-m",
+    "titulo": "Ma Baker",
+    "artista": "Boney M.",
+    "ano": 1977,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "i-say-a-little-prayer-aretha-franklin",
+    "titulo": "I Say a Little Prayer",
+    "artista": "Aretha Franklin",
+    "ano": 1968,
+    "genero": "Rock"
+  },
+  {
+    "id": "you-make-me-feel-like-a-natural-woman-aretha-franklin",
+    "titulo": "(You Make Me Feel Like) A Natural Woman",
+    "artista": "Aretha Franklin",
+    "ano": 1967,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "respect-aretha-franklin",
+    "titulo": "Respect",
+    "artista": "Aretha Franklin",
+    "ano": 1967,
+    "genero": "Rock"
+  },
+  {
+    "id": "rolling-in-the-deep-the-aretha-version-aretha-franklin",
+    "titulo": "Rolling In the Deep (The Aretha Version)",
+    "artista": "Aretha Franklin",
+    "ano": 2014,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "let-s-get-it-on-marvin-gaye",
+    "titulo": "Let's Get It On",
+    "artista": "Marvin Gaye",
+    "ano": 1973,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "sexual-healing-marvin-gaye",
+    "titulo": "Sexual Healing",
+    "artista": "Marvin Gaye",
+    "ano": 1982,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "what-s-going-on-marvin-gaye",
+    "titulo": "What's Going On",
+    "artista": "Marvin Gaye",
+    "ano": 1971,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "ain-t-no-mountain-high-enough-marvin-gaye-tammi-terrell",
+    "titulo": "Ain't No Mountain High Enough",
+    "artista": "Marvin Gaye & Tammi Terrell",
+    "ano": 1967,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "i-want-you-back-jackson-5",
+    "titulo": "I Want You Back",
+    "artista": "Jackson 5",
+    "ano": 1969,
+    "genero": "Pop"
+  },
+  {
+    "id": "i-ll-be-there-jackson-5",
+    "titulo": "I'll Be There",
+    "artista": "Jackson 5",
+    "ano": 1970,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "abc-jackson-5",
+    "titulo": "ABC",
+    "artista": "Jackson 5",
+    "ano": 1970,
+    "genero": "Pop"
+  },
+  {
+    "id": "who-s-loving-you-jackson-5",
+    "titulo": "Who's Loving You",
+    "artista": "Jackson 5",
+    "ano": 1969,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "upside-down-diana-ross",
+    "titulo": "Upside Down",
+    "artista": "Diana Ross",
+    "ano": 1980,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "i-m-coming-out-diana-ross",
+    "titulo": "I'm Coming Out",
+    "artista": "Diana Ross",
+    "ano": 1980,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "missing-you-diana-ross",
+    "titulo": "Missing You",
+    "artista": "Diana Ross",
+    "ano": 1984,
+    "genero": "Pop"
+  },
+  {
+    "id": "ain-t-no-mountain-high-enough-diana-ross",
+    "titulo": "Ain't No Mountain High Enough",
+    "artista": "Diana Ross",
+    "ano": 1970,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "the-payback-james-brown",
+    "titulo": "The Payback",
+    "artista": "James Brown",
+    "ano": 1973,
+    "genero": "Soul"
+  },
+  {
+    "id": "i-got-you-i-feel-good-james-brown",
+    "titulo": "I Got You (I Feel Good)",
+    "artista": "James Brown",
+    "ano": 1964,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "people-get-up-and-drive-your-funky-soul-remix-james-brown-fr",
+    "titulo": "People Get Up and Drive Your Funky Soul (Remix)",
+    "artista": "James Brown, Fred Wesley & The J.B.'s",
+    "ano": 1988,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "it-s-a-man-s-man-s-man-s-world-james-brown",
+    "titulo": "It's a Man's, Man's, Man's World",
+    "artista": "James Brown",
+    "ano": 1991,
+    "genero": "Pop"
+  },
+  {
+    "id": "song-2-2012-remaster-blur",
+    "titulo": "Song 2 (2012 Remaster)",
+    "artista": "Blur",
+    "ano": 1997,
+    "genero": "Pop"
+  },
+  {
+    "id": "fake-plastic-trees-radiohead",
+    "titulo": "Fake Plastic Trees",
+    "artista": "Radiohead",
+    "ano": 1995,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "let-down-radiohead",
+    "titulo": "Let Down",
+    "artista": "Radiohead",
+    "ano": 1997,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "no-surprises-radiohead",
+    "titulo": "No Surprises",
+    "artista": "Radiohead",
+    "ano": 1997,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "high-and-dry-radiohead",
+    "titulo": "High and Dry",
+    "artista": "Radiohead",
+    "ano": 1995,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "basket-case-green-day",
+    "titulo": "Basket Case",
+    "artista": "Green Day",
+    "ano": 1994,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "holiday-green-day",
+    "titulo": "Holiday",
+    "artista": "Green Day",
+    "ano": 2004,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "when-i-come-around-green-day",
+    "titulo": "When I Come Around",
+    "artista": "Green Day",
+    "ano": 1994,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "wake-me-up-when-september-ends-green-day",
+    "titulo": "Wake Me Up When September Ends",
+    "artista": "Green Day",
+    "ano": 2004,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "in-the-end-linkin-park",
+    "titulo": "In the End",
+    "artista": "LINKIN PARK",
+    "ano": 2000,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "numb-linkin-park",
+    "titulo": "Numb",
+    "artista": "LINKIN PARK",
+    "ano": 2003,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "what-i-ve-done-linkin-park",
+    "titulo": "What I've Done",
+    "artista": "LINKIN PARK",
+    "ano": 2007,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "somewhere-i-belong-linkin-park",
+    "titulo": "Somewhere I Belong",
+    "artista": "LINKIN PARK",
+    "ano": 2003,
+    "genero": "Hard rock"
+  },
+  {
+    "id": "californication-red-hot-chili-peppers",
+    "titulo": "Californication",
+    "artista": "Red Hot Chili Peppers",
+    "ano": 1999,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "can-t-stop-red-hot-chili-peppers",
+    "titulo": "Can't Stop",
+    "artista": "Red Hot Chili Peppers",
+    "ano": 2002,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "otherside-red-hot-chili-peppers",
+    "titulo": "Otherside",
+    "artista": "Red Hot Chili Peppers",
+    "ano": 1999,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "scar-tissue-red-hot-chili-peppers",
+    "titulo": "Scar Tissue",
+    "artista": "Red Hot Chili Peppers",
+    "ano": 1999,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "black-pearl-jam",
+    "titulo": "Black",
+    "artista": "Pearl Jam",
+    "ano": 1991,
+    "genero": "Rock"
+  },
+  {
+    "id": "alive-pearl-jam",
+    "titulo": "Alive",
+    "artista": "Pearl Jam",
+    "ano": 1991,
+    "genero": "Rock"
+  },
+  {
+    "id": "last-kiss-pearl-jam",
+    "titulo": "Last Kiss",
+    "artista": "Pearl Jam",
+    "ano": 1998,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "yellow-ledbetter-pearl-jam",
+    "titulo": "Yellow Ledbetter",
+    "artista": "Pearl Jam",
+    "ano": 1991,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "linger-the-cranberries",
+    "titulo": "Linger",
+    "artista": "The Cranberries",
+    "ano": 1993,
+    "genero": "Pop"
+  },
+  {
+    "id": "zombie-the-cranberries",
+    "titulo": "Zombie",
+    "artista": "The Cranberries",
+    "ano": 1994,
+    "genero": "Rock"
+  },
+  {
+    "id": "dreams-the-cranberries",
+    "titulo": "Dreams",
+    "artista": "The Cranberries",
+    "ano": 1993,
+    "genero": "Pop"
+  },
+  {
+    "id": "ode-to-my-family-the-cranberries",
+    "titulo": "Ode to My Family",
+    "artista": "The Cranberries",
+    "ano": 1994,
+    "genero": "Rock"
+  },
+  {
+    "id": "don-t-speak-no-doubt",
+    "titulo": "Don't Speak",
+    "artista": "No Doubt",
+    "ano": 1995,
+    "genero": "Pop"
+  },
+  {
+    "id": "it-s-my-life-no-doubt",
+    "titulo": "It's My Life",
+    "artista": "No Doubt",
+    "ano": 2003,
+    "genero": "Pop"
+  },
+  {
+    "id": "just-a-girl-no-doubt",
+    "titulo": "Just a Girl",
+    "artista": "No Doubt",
+    "ano": 1995,
+    "genero": "Pop"
+  },
+  {
+    "id": "everlong-foo-fighters",
+    "titulo": "Everlong",
+    "artista": "Foo Fighters",
+    "ano": 1997,
+    "genero": "Rock"
+  },
+  {
+    "id": "best-of-you-foo-fighters",
+    "titulo": "Best of You",
+    "artista": "Foo Fighters",
+    "ano": 2005,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "learn-to-fly-foo-fighters",
+    "titulo": "Learn to Fly",
+    "artista": "Foo Fighters",
+    "ano": 1999,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "my-hero-foo-fighters",
+    "titulo": "My Hero",
+    "artista": "Foo Fighters",
+    "ano": 1997,
+    "genero": "Rock"
+  },
+  {
+    "id": "i-miss-you-blink-182",
+    "titulo": "I Miss You",
+    "artista": "blink-182",
+    "ano": 2003,
+    "genero": "Rock"
+  },
+  {
+    "id": "all-the-small-things-blink-182",
+    "titulo": "All the Small Things",
+    "artista": "blink-182",
+    "ano": 1999,
+    "genero": "Rock"
+  },
+  {
+    "id": "first-date-blink-182",
+    "titulo": "First Date",
+    "artista": "blink-182",
+    "ano": 2001,
+    "genero": "Rock"
+  },
+  {
+    "id": "always-blink-182",
+    "titulo": "Always",
+    "artista": "blink-182",
+    "ano": 2003,
+    "genero": "Rock"
+  },
+  {
+    "id": "mr-brightside-the-killers",
+    "titulo": "Mr. Brightside",
+    "artista": "The Killers",
+    "ano": 2003,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "when-you-were-young-the-killers",
+    "titulo": "When You Were Young",
+    "artista": "The Killers",
+    "ano": 2006,
+    "genero": "Rock"
+  },
+  {
+    "id": "somebody-told-me-the-killers",
+    "titulo": "Somebody Told Me",
+    "artista": "The Killers",
+    "ano": 2004,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "read-my-mind-the-killers",
+    "titulo": "Read My Mind",
+    "artista": "The Killers",
+    "ano": 2006,
+    "genero": "Rock"
+  },
+  {
+    "id": "take-me-out-franz-ferdinand",
+    "titulo": "Take Me Out",
+    "artista": "Franz Ferdinand",
+    "ano": 2004,
+    "genero": "Pop"
+  },
+  {
+    "id": "this-fire-franz-ferdinand",
+    "titulo": "This Fire",
+    "artista": "Franz Ferdinand",
+    "ano": 2004,
+    "genero": "Pop"
+  },
+  {
+    "id": "do-you-want-to-franz-ferdinand",
+    "titulo": "Do You Want To",
+    "artista": "Franz Ferdinand",
+    "ano": 2005,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "walk-away-franz-ferdinand",
+    "titulo": "Walk Away",
+    "artista": "Franz Ferdinand",
+    "ano": 2005,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "do-i-wanna-know-arctic-monkeys",
+    "titulo": "Do I Wanna Know?",
+    "artista": "Arctic Monkeys",
+    "ano": 2013,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "505-arctic-monkeys",
+    "titulo": "505",
+    "artista": "Arctic Monkeys",
+    "ano": 2007,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "why-d-you-only-call-me-when-you-re-high-arctic-monkeys",
+    "titulo": "Why'd You Only Call Me When You're High?",
+    "artista": "Arctic Monkeys",
+    "ano": 2013,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "i-wanna-be-yours-arctic-monkeys",
+    "titulo": "I Wanna Be Yours",
+    "artista": "Arctic Monkeys",
+    "ano": 2013,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "feel-good-inc-gorillaz-de-la-soul",
+    "titulo": "Feel Good Inc.",
+    "artista": "Gorillaz & De La Soul",
+    "ano": 2005,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "19-2000-gorillaz",
+    "titulo": "19-2000",
+    "artista": "Gorillaz",
+    "ano": 2001,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "on-melancholy-hill-gorillaz",
+    "titulo": "On Melancholy Hill",
+    "artista": "Gorillaz",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "dare-gorillaz",
+    "titulo": "DARE",
+    "artista": "Gorillaz",
+    "ano": 2005,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "alejandro-lady-gaga",
+    "titulo": "Alejandro",
+    "artista": "Lady Gaga",
+    "ano": 2009,
+    "genero": "Pop"
+  },
+  {
+    "id": "judas-lady-gaga",
+    "titulo": "Judas",
+    "artista": "Lady Gaga",
+    "ano": 2011,
+    "genero": "Pop"
+  },
+  {
+    "id": "abracadabra-lady-gaga",
+    "titulo": "Abracadabra",
+    "artista": "Lady Gaga",
+    "ano": 2025,
+    "genero": "Pop"
+  },
+  {
+    "id": "always-remember-us-this-way-lady-gaga",
+    "titulo": "Always Remember Us This Way",
+    "artista": "Lady Gaga",
+    "ano": 2018,
+    "genero": "Trilha sonora"
+  },
+  {
+    "id": "firework-katy-perry",
+    "titulo": "Firework",
+    "artista": "Katy Perry",
+    "ano": 2010,
+    "genero": "Pop adolescente"
+  },
+  {
+    "id": "last-friday-night-t-g-i-f-katy-perry",
+    "titulo": "Last Friday Night (T.G.I.F.)",
+    "artista": "Katy Perry",
+    "ano": 2010,
+    "genero": "Pop adolescente"
+  },
+  {
+    "id": "roar-katy-perry",
+    "titulo": "Roar",
+    "artista": "Katy Perry",
+    "ano": 2013,
+    "genero": "Pop"
+  },
+  {
+    "id": "dark-horse-katy-perry",
+    "titulo": "Dark Horse",
+    "artista": "Katy Perry",
+    "ano": 2013,
+    "genero": "Pop"
+  },
+  {
+    "id": "cruel-summer-taylor-swift",
+    "titulo": "Cruel Summer",
+    "artista": "Taylor Swift",
+    "ano": 2019,
+    "genero": "Pop"
+  },
+  {
+    "id": "the-fate-of-ophelia-taylor-swift",
+    "titulo": "The Fate of Ophelia",
+    "artista": "Taylor Swift",
+    "ano": 2025,
+    "genero": "Pop"
+  },
+  {
+    "id": "blank-space-taylor-swift",
+    "titulo": "Blank Space",
+    "artista": "Taylor Swift",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "shake-it-off-taylor-swift",
+    "titulo": "Shake It Off",
+    "artista": "Taylor Swift",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "new-rules-dua-lipa",
+    "titulo": "New Rules",
+    "artista": "Dua Lipa",
+    "ano": 2017,
+    "genero": "Pop"
+  },
+  {
+    "id": "levitating-dua-lipa",
+    "titulo": "Levitating",
+    "artista": "Dua Lipa",
+    "ano": 2020,
+    "genero": "Pop"
+  },
+  {
+    "id": "don-t-start-now-dua-lipa",
+    "titulo": "Don't Start Now",
+    "artista": "Dua Lipa",
+    "ano": 2019,
+    "genero": "Pop"
+  },
+  {
+    "id": "training-season-dua-lipa",
+    "titulo": "Training Season",
+    "artista": "Dua Lipa",
+    "ano": 2024,
+    "genero": "Pop"
+  },
+  {
+    "id": "call-out-my-name-the-weeknd",
+    "titulo": "Call Out My Name",
+    "artista": "The Weeknd",
+    "ano": 2018,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "blinding-lights-the-weeknd",
+    "titulo": "Blinding Lights",
+    "artista": "The Weeknd",
+    "ano": 2019,
+    "genero": "R&B/soul"
+  },
+  {
+    "id": "one-of-the-girls-the-weeknd-jennie-lily-rose-depp",
+    "titulo": "One Of The Girls",
+    "artista": "The Weeknd, JENNIE & Lily Rose Depp",
+    "ano": 2023,
+    "genero": "Trilha sonora"
+  },
+  {
+    "id": "earned-it-the-weeknd",
+    "titulo": "Earned It",
+    "artista": "The Weeknd",
+    "ano": 2014,
+    "genero": "Trilha sonora"
+  },
+  {
+    "id": "believer-imagine-dragons",
+    "titulo": "Believer",
+    "artista": "Imagine Dragons",
+    "ano": 2017,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "demons-imagine-dragons",
+    "titulo": "Demons",
+    "artista": "Imagine Dragons",
+    "ano": 2012,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "thunder-imagine-dragons",
+    "titulo": "Thunder",
+    "artista": "Imagine Dragons",
+    "ano": 2017,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "radioactive-imagine-dragons",
+    "titulo": "Radioactive",
+    "artista": "Imagine Dragons",
+    "ano": 2012,
+    "genero": "Pop"
+  },
+  {
+    "id": "maps-maroon-5",
+    "titulo": "Maps",
+    "artista": "Maroon 5",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "moves-like-jagger-maroon-5",
+    "titulo": "Moves Like Jagger",
+    "artista": "Maroon 5",
+    "ano": 2010,
+    "genero": "Pop"
+  },
+  {
+    "id": "she-will-be-loved-maroon-5",
+    "titulo": "She Will Be Loved",
+    "artista": "Maroon 5",
+    "ano": 2002,
+    "genero": "Vocal"
+  },
+  {
+    "id": "this-love-maroon-5",
+    "titulo": "This Love",
+    "artista": "Maroon 5",
+    "ano": 2002,
+    "genero": "Pop"
+  },
+  {
+    "id": "unstoppable-sia",
+    "titulo": "Unstoppable",
+    "artista": "Sia",
+    "ano": 2016,
+    "genero": "Pop"
+  },
+  {
+    "id": "chandelier-sia",
+    "titulo": "Chandelier",
+    "artista": "Sia",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "elastic-heart-sia",
+    "titulo": "Elastic Heart",
+    "artista": "Sia",
+    "ano": 2014,
+    "genero": "Pop"
+  },
+  {
+    "id": "cheap-thrills-sia",
+    "titulo": "Cheap Thrills",
+    "artista": "Sia",
+    "ano": 2015,
+    "genero": "Pop"
+  },
+  {
+    "id": "birds-of-a-feather-billie-eilish",
+    "titulo": "BIRDS OF A FEATHER",
+    "artista": "Billie Eilish",
+    "ano": 2024,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "wildflower-billie-eilish",
+    "titulo": "WILDFLOWER",
+    "artista": "Billie Eilish",
+    "ano": 2024,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "lovely-billie-eilish-khalid",
+    "titulo": "lovely",
+    "artista": "Billie Eilish & Khalid",
+    "ano": 2018,
+    "genero": "Pop"
+  },
+  {
+    "id": "chihiro-billie-eilish",
+    "titulo": "CHIHIRO",
+    "artista": "Billie Eilish",
+    "ano": 2024,
+    "genero": "Alternativo"
+  },
+  {
+    "id": "sign-of-the-times-harry-styles",
+    "titulo": "Sign of the Times",
+    "artista": "Harry Styles",
+    "ano": 2017,
+    "genero": "Pop"
+  },
+  {
+    "id": "as-it-was-harry-styles",
+    "titulo": "As It Was",
+    "artista": "Harry Styles",
+    "ano": 2022,
+    "genero": "Pop"
+  },
+  {
+    "id": "watermelon-sugar-harry-styles",
+    "titulo": "Watermelon Sugar",
+    "artista": "Harry Styles",
+    "ano": 2019,
+    "genero": "Pop"
+  },
+  {
+    "id": "american-girls-harry-styles",
+    "titulo": "American Girls",
+    "artista": "Harry Styles",
+    "ano": 2026,
+    "genero": "Pop"
+  },
+  {
+    "id": "is-this-love-bob-marley-the-wailers",
+    "titulo": "Is This Love",
+    "artista": "Bob Marley & The Wailers",
+    "ano": 1984,
+    "genero": "Reggae"
+  },
+  {
+    "id": "three-little-birds-bob-marley-the-wailers",
+    "titulo": "Three Little Birds",
+    "artista": "Bob Marley & The Wailers",
+    "ano": 1984,
+    "genero": "Reggae"
+  },
+  {
+    "id": "could-you-be-loved-bob-marley-the-wailers",
+    "titulo": "Could You Be Loved",
+    "artista": "Bob Marley & The Wailers",
+    "ano": 1984,
+    "genero": "Reggae"
+  },
+  {
+    "id": "natural-mystic-bob-marley-the-wailers",
+    "titulo": "Natural Mystic",
+    "artista": "Bob Marley & The Wailers",
+    "ano": 1977,
+    "genero": "Reggae"
+  },
+  {
+    "id": "la-barca-luis-miguel",
+    "titulo": "La Barca",
+    "artista": "Luis Miguel",
+    "ano": 1991,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "la-mentira-luis-miguel",
+    "titulo": "La Mentira",
+    "artista": "Luis Miguel",
+    "ano": 1991,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "sabor-a-mi-luis-miguel",
+    "titulo": "Sabor a Mí",
+    "artista": "Luis Miguel",
+    "ano": 1997,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "hasta-que-me-olvides-luis-miguel",
+    "titulo": "Hasta Que Me Olvides",
+    "artista": "Luis Miguel",
+    "ano": 1993,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "livin-la-vida-loca-ricky-martin",
+    "titulo": "Livin' la Vida Loca",
+    "artista": "Ricky Martin",
+    "ano": 1999,
+    "genero": "Pop"
+  },
+  {
+    "id": "la-mordidita-ricky-martin",
+    "titulo": "La Mordidita",
+    "artista": "Ricky Martin",
+    "ano": 2015,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "maria-pablo-flores-spanglish-radio-edit-ricky-martin",
+    "titulo": "María (Pablo Flores Spanglish Radio Edit)",
+    "artista": "Ricky Martin",
+    "ano": 1995,
+    "genero": "Pop"
+  },
+  {
+    "id": "vente-pa-ca-ricky-martin",
+    "titulo": "Vente Pa' Ca",
+    "artista": "Ricky Martin",
+    "ano": 2016,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "bailando-enrique-iglesias",
+    "titulo": "Bailando",
+    "artista": "Enrique Iglesias",
+    "ano": 1998,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "duele-el-corazon-enrique-iglesias",
+    "titulo": "DUELE EL CORAZÓN",
+    "artista": "Enrique Iglesias",
+    "ano": 2016,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "you-re-my-1-enrique-iglesias-david-cambell",
+    "titulo": "You're My #1",
+    "artista": "Enrique Iglesias & David Cambell",
+    "ano": 1999,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "el-perdedor-enrique-iglesias",
+    "titulo": "El Perdedor",
+    "artista": "Enrique Iglesias",
+    "ano": 2016,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "labios-compartidos-mana",
+    "titulo": "Labios Compartidos",
+    "artista": "Maná",
+    "ano": 2006,
+    "genero": "Alternativo e rock latino"
+  },
+  {
+    "id": "vivir-sin-aire-mana",
+    "titulo": "Vivir Sin Aire",
+    "artista": "Maná",
+    "ano": 1999,
+    "genero": "Alternativo e rock latino"
+  },
+  {
+    "id": "bendita-tu-luz-mana",
+    "titulo": "Bendita Tu Luz",
+    "artista": "Maná",
+    "ano": 2006,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "en-el-muelle-de-san-blas-mana",
+    "titulo": "En el Muelle de San Blás",
+    "artista": "Maná",
+    "ano": 1997,
+    "genero": "Alternativo e rock latino"
+  },
+  {
+    "id": "para-tu-amor-juanes",
+    "titulo": "Para Tu Amor",
+    "artista": "Juanes",
+    "ano": 1988,
+    "genero": "Música clássica"
+  },
+  {
+    "id": "a-dios-le-pido-juanes",
+    "titulo": "A Dios Le Pido",
+    "artista": "Juanes",
+    "ano": 2002,
+    "genero": "Música clássica"
+  },
+  {
+    "id": "la-camisa-negra-juanes",
+    "titulo": "La Camisa Negra",
+    "artista": "Juanes",
+    "ano": 2004,
+    "genero": "Música clássica"
+  },
+  {
+    "id": "robarte-un-beso-carlos-vives-sebastian-yatra",
+    "titulo": "Robarte un Beso",
+    "artista": "Carlos Vives & Sebastián Yatra",
+    "ano": 2017,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "fruta-fresca-carlos-vives",
+    "titulo": "Fruta Fresca",
+    "artista": "Carlos Vives",
+    "ano": 1999,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "la-bicicleta-carlos-vives-shakira",
+    "titulo": "La Bicicleta",
+    "artista": "Carlos Vives & Shakira",
+    "ano": 2016,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "cancion-bonita-carlos-vives-ricky-martin",
+    "titulo": "Canción Bonita",
+    "artista": "Carlos Vives & Ricky Martin",
+    "ano": 2021,
+    "genero": "Pop em espanhol"
+  },
+  {
+    "id": "la-duena-del-swing-gabriel-pagan-los-hermanos-rosario",
+    "titulo": "La Dueña del Swing",
+    "artista": "Gabriel Pagan & Los Hermanos Rosario",
+    "ano": 2019,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "mi-tonto-amor-los-hermanos-rosario",
+    "titulo": "Mi Tonto Amor",
+    "artista": "Los Hermanos Rosario",
+    "ano": 1987,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "morena-ven-los-hermanos-rosario",
+    "titulo": "Morena Ven",
+    "artista": "Los Hermanos Rosario",
+    "ano": 1993,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "la-duena-del-swing-los-hermanos-rosario",
+    "titulo": "La Dueña Del Swing",
+    "artista": "Los Hermanos Rosario",
+    "ano": 2023,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "la-vida-es-un-carnaval-celia-cruz",
+    "titulo": "La Vida Es un Carnaval",
+    "artista": "Celia Cruz",
+    "ano": 1998,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "la-negra-tiene-tumbao-celia-cruz",
+    "titulo": "La Negra Tiene Tumbao",
+    "artista": "Celia Cruz",
+    "ano": 2001,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "quimbara-celia-cruz-johnny-pacheco",
+    "titulo": "Quimbara",
+    "artista": "Celia Cruz & Johnny Pacheco",
+    "ano": 1974,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "azucar-negra-celia-cruz",
+    "titulo": "Azúcar Negra",
+    "artista": "Celia Cruz",
+    "ano": 1992,
+    "genero": "Salsa e tropical"
+  },
+  {
+    "id": "nuevayol-bad-bunny",
+    "titulo": "NUEVAYoL",
+    "artista": "Bad Bunny",
+    "ano": 2025,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "ojitos-lindos-bad-bunny-bomba-estereo",
+    "titulo": "Ojitos Lindos",
+    "artista": "Bad Bunny & Bomba Estéreo",
+    "ano": 2022,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "cafe-con-ron-bad-bunny-los-pleneros-de-la-cresta",
+    "titulo": "CAFé CON RON",
+    "artista": "Bad Bunny & Los Pleneros de la Cresta",
+    "ano": 2025,
+    "genero": "Música Latina"
+  },
+  {
+    "id": "la-noche-de-anoche-bad-bunny-rosalia",
+    "titulo": "LA NOCHE DE ANOCHE",
+    "artista": "Bad Bunny & ROSALÍA",
+    "ano": 2020,
+    "genero": "Música latina urbana"
   }
 ]

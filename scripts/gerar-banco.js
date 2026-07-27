@@ -9,7 +9,7 @@ const crypto = require('crypto');
 const itunes = require('../src/itunes');
 
 const CAMINHO = path.join(__dirname, '..', 'data', 'musicas.json');
-const ALVO_TOTAL = 510;
+const ALVO_TOTAL = 1400;
 const FAIXAS_POR_ARTISTA = 4;
 const PAUSA_MS = 1000; // iTunes limita ~20 chamadas/min
 
@@ -49,6 +49,54 @@ const ARTISTAS = [
   'Cyndi Lauper', 'Bonnie Tyler', 'Village People', 'Gloria Gaynor', 'Stevie Wonder',
   'Bruno Mars', 'Adele', 'Ed Sheeran', 'Beyoncé', 'Rihanna',
   'Shakira', 'Backstreet Boys', 'Spice Girls', 'Britney Spears', 'Wham!',
+
+  // --- Expansão: gêneros e épocas que faltavam no banco ---
+  // Rap e hip-hop nacional
+  'Racionais MC\'s', 'Emicida', 'Criolo', 'Marcelo D2', 'Sabotage',
+  'Planet Hemp', 'BaianaSystem', 'Djonga', 'Projota', 'Rael',
+  // Samba e choro clássicos
+  'Cartola', 'Paulinho da Viola', 'Clara Nunes', 'Elza Soares', 'Jamelão',
+  'Nelson Cavaquinho', 'Noel Rosa', 'Demônios da Garoa', 'Adoniran Barbosa', 'Dona Ivone Lara',
+  // MPB e rock dos anos 60/70 que estavam magros
+  'Novos Baianos', 'Secos & Molhados', 'Belchior', 'Jards Macalé', 'Tom Zé',
+  'Baby do Brasil', 'Rita Lee & Tutti Frutti', 'Jorge Mautner', 'Walter Franco', 'Sérgio Sampaio',
+  'Trio Mocotó', 'Wilson Simonal', 'Elis & Tom', 'Nara Leão', 'Marcos Valle',
+  // Rock nacional que faltava
+  'Ira!', 'Plebe Rude', 'Camisa de Vênus', 'Nenhum de Nós', 'Detonautas',
+  'Fresno', 'NX Zero', 'Pato Fu', 'Raimundos', 'Sepultura',
+  'Matanza', 'Ultraje a Rigor', 'Vespas Mandarinas', 'Scalene', 'Cachorro Grande',
+  // Brega e romântico
+  'Amado Batista', 'Reginaldo Rossi', 'Sidney Magal', 'Fábio Jr.', 'Wando',
+  'Odair José', 'Waldick Soriano', 'José Augusto', 'Nelson Ned', 'Agepê',
+  // Forró, piseiro e nordeste
+  'Mastruz com Leite', 'Aviões do Forró', 'Calcinha Preta', 'Wesley Safadão', 'Limão com Mel',
+  'João Gomes', 'Zé Vaqueiro', 'Nattan', 'Bell Marques', 'Flávio José',
+  // Funk e pop urbano
+  'MC Fioti', 'Mr. Catra', 'Bonde do Tigrão', 'Furacão 2000', 'Valesca Popozuda',
+  'Pabllo Vittar', 'Iza', 'Luísa Sonza', 'Duda Beat', 'Liniker',
+  // Infantil e nostalgia de festa
+  'Xuxa', 'Trem da Alegria', 'A Turma do Balão Mágico', 'Angélica', 'Eliana',
+  // Rock clássico internacional
+  'Pink Floyd', 'Led Zeppelin', 'The Rolling Stones', 'AC/DC', 'Metallica',
+  'Aerosmith', 'Eagles', 'Creedence Clearwater Revival', 'Dire Straits', 'Deep Purple',
+  'Black Sabbath', 'The Who', 'Lynyrd Skynyrd', 'Toto', 'Journey',
+  'Europe', 'Scorpions', 'Kiss', 'Van Halen', 'Def Leppard',
+  // Anos 80 internacionais
+  'Duran Duran', 'Tears for Fears', 'Depeche Mode', 'The Cure', 'Blondie',
+  'Culture Club', 'Simple Minds', 'Talking Heads', 'INXS', 'Eurythmics',
+  // Disco e soul
+  'Donna Summer', 'Earth, Wind & Fire', 'KC and the Sunshine Band', 'Chic', 'Boney M.',
+  'Aretha Franklin', 'Marvin Gaye', 'The Jackson 5', 'Diana Ross', 'James Brown',
+  // Rock e pop dos 90/2000
+  'Oasis', 'Blur', 'Radiohead', 'Green Day', 'Linkin Park',
+  'Red Hot Chili Peppers', 'Pearl Jam', 'The Cranberries', 'No Doubt', 'Foo Fighters',
+  'Blink-182', 'The Killers', 'Franz Ferdinand', 'Arctic Monkeys', 'Gorillaz',
+  // Pop contemporâneo
+  'Lady Gaga', 'Katy Perry', 'Taylor Swift', 'Dua Lipa', 'The Weeknd',
+  'Imagine Dragons', 'Maroon 5', 'Sia', 'Billie Eilish', 'Harry Styles',
+  // Latino e reggae
+  'Bob Marley', 'Luis Miguel', 'Ricky Martin', 'Enrique Iglesias', 'Maná',
+  'Juanes', 'Carlos Vives', 'Los Hermanos Rosario', 'Celia Cruz', 'Bad Bunny',
 ];
 
 const SUFIXOS_RUIDO = /\s*[-–(\[]\s*(ao vivo|live|acústic[oa]|remaster(izad[oa])?(\s*\d{4})?|playback|karaok[eê]|instrumental|radio edit|single version|bonus|b[oô]nus|deluxe|feat\.?|part\.?|com |version|vers[aã]o).*$/i;
@@ -75,8 +123,15 @@ async function main() {
   const ids = new Set(atuais.map((m) => m.id));
   const novas = [];
 
+  const porArtista = {};
+  for (const m of atuais) {
+    const chave = normalizar(m.artista);
+    porArtista[chave] = (porArtista[chave] || 0) + 1;
+  }
+
   for (const artista of ARTISTAS) {
     if (atuais.length + novas.length >= ALVO_TOTAL) break;
+    if ((porArtista[normalizar(artista)] || 0) >= FAIXAS_POR_ARTISTA) continue;
     let resultados = [];
     try {
       resultados = await itunes.buscar(artista, { limite: 12, atributo: 'artistTerm' });
