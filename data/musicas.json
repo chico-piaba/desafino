@@ -9293,5 +9293,47 @@
     "artista": "Bad Bunny & ROSALÍA",
     "ano": 2020,
     "genero": "Música latina urbana"
+  },
+  {
+    "id": "na-tela-pitty",
+    "titulo": "Na Tela",
+    "artista": "Pitty",
+    "ano": 2020,
+    "genero": "Rock"
+  },
+  {
+    "id": "mascara-pitty",
+    "titulo": "Máscara",
+    "artista": "Pitty",
+    "ano": 2003,
+    "genero": "Rock"
+  },
+  {
+    "id": "nem-um-dia-djavan",
+    "titulo": "Nem um Dia",
+    "artista": "Djavan",
+    "ano": 1996,
+    "genero": "MPB"
+  },
+  {
+    "id": "sinais-de-fogo-preta-gil",
+    "titulo": "Sinais de Fogo",
+    "artista": "Preta Gil",
+    "ano": 2003,
+    "genero": "Pop"
+  },
+  {
+    "id": "poker-face-lady-gaga",
+    "titulo": "Poker Face",
+    "artista": "Lady Gaga",
+    "ano": 2008,
+    "genero": "Pop"
+  },
+  {
+    "id": "dancing-with-myself-billy-idol",
+    "titulo": "Dancing With Myself",
+    "artista": "Billy Idol",
+    "ano": 1980,
+    "genero": "Rock"
   }
 ]
