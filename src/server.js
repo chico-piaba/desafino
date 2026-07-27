@@ -717,7 +717,11 @@ function criarServidor({
 
     socket.on('configurarSala', (knobs) => guardar((sala) => {
       exigirLider();
-      if (sala.jogo.fase !== 'lobby') throw new Error('Só dá para configurar a sala no lobby');
+      // Vale no lobby e no fim de jogo: no fim, o líder ajusta antes de
+      // recomeçar. Durante a rodada não, senão mudaria a regra em jogo.
+      if (!['lobby', 'fim'].includes(sala.jogo.fase)) {
+        throw new Error('Não dá para configurar a sala no meio da rodada');
+      }
       sala.config = aplicarKnobs(sala.config, knobs);
       sala.jogo.config = sala.config;
       registrador.registrar('salaConfigurada', { sala: sala.codigo, knobs });

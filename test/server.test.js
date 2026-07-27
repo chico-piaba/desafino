@@ -824,3 +824,33 @@ test('só o líder reinicia a partida', async () => {
     assert.match(await erro, /líder da sala/);
   } finally { lider.close(); outro.close(); display.close(); httpServer.close(); }
 });
+
+test('configurarSala vale no fim de jogo, mas não no meio da rodada', async () => {
+  // Uma rodada só: passar já leva a partida ao fim, sem laço nenhum.
+  const config = { ...CONFIG, rodada: { duracaoSegundos: 90, totalRodadas: 1 } };
+  const { httpServer } = criarServidor({ config, banco: bancoFalso, rng: () => 0, resultadoMs: 20 });
+  await new Promise((r) => httpServer.listen(0, r));
+  const url = `http://localhost:${httpServer.address().port}`;
+  const { display, codigo } = await novaSala(url);
+  const ana = conectar(url);
+  const joao = conectar(url);
+  try {
+    await emitir(ana, 'entrar', { sala: codigo, nome: 'Ana', dupla: 1 });
+    await emitir(joao, 'entrar', { sala: codigo, nome: 'João', dupla: 1 });
+    ana.emit('iniciarPartida');
+    await esperarEstado(ana, (e) => e.fase === 'rodada');
+    ana.emit('comecarRodada');
+    await esperarEstado(joao, (e) => e.rodada.fase === 'emAndamento');
+
+    const erro = esperarErro(ana);
+    ana.emit('configurarSala', { duracaoSegundos: 30 });
+    assert.match(await erro, /no meio da rodada/);
+
+    ana.emit('passar');
+    await esperarEstado(display, (e) => e.fase === 'fim');
+
+    ana.emit('configurarSala', { duracaoSegundos: 45 });
+    const e = await esperarEstado(display, (est) => est.configSala.duracaoSegundos === 45);
+    assert.strictEqual(e.configSala.duracaoSegundos, 45);
+  } finally { ana.close(); joao.close(); display.close(); httpServer.close(); }
+});

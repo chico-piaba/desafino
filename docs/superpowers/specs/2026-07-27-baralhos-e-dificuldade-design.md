@@ -154,11 +154,10 @@ a comparação é entre jogadores, não entre duplas.
 
 **Não tira pontos.** A rodada vale zero, como qualquer rodada perdida hoje.
 
-Isto contraria o pedido original ("se escolher o mais difícil e perder, perde
-pontos") e foi decidido assim de propósito: o risco não sumiu, mudou de lugar. Quem
-aposta no difícil aceita uma chance menor de pontuar, e o valor esperado já pune a
-ousadia mal calibrada. Somar uma multa a isso, numa mecânica que só destrava para
-quem está perdendo, empurraria o perdedor mais para baixo — o oposto do objetivo.
+O risco não sumiu, mudou de lugar: quem aposta no difícil aceita uma chance menor
+de pontuar, e o valor esperado já pune a ousadia mal calibrada. Somar uma multa a
+isso, numa mecânica que só destrava para quem está perdendo, empurraria o perdedor
+mais para baixo — o oposto do objetivo.
 
 ## 5. Testes
 

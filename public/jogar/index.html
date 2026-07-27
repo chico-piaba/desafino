@@ -129,20 +129,33 @@
   <!-- Fora do sistema de telas: o líder manda em qualquer fase, não só no lobby.
        mostrarTela() esconde tudo que é .tela, então este bloco fica de fora. -->
   <div id="painel-lider" class="card oculto" style="text-align:left;margin-top:16px">
-    <h3>👑 Você comanda a sala</h3>
-    <label>Duração da rodada <input id="cfg-duracao" type="number" min="30" max="180" step="15"></label>
-    <label>Rodadas <input id="cfg-rodadas" type="number" min="4" max="20"></label>
-    <label>Máximo de duplas <input id="cfg-duplas" type="number" min="1" max="10"></label>
-    <label><input id="cfg-troca" type="checkbox"> Permitir trocar música</label>
-    <label>Custo da troca <input id="cfg-troca-custo" type="number" min="0" max="50"></label>
-    <label><input id="cfg-palpite" type="checkbox"> Plateia pode palpitar</label>
-    <label><input id="cfg-votacao" type="checkbox"> Plateia vota o acerto</label>
-    <button id="btn-salvar-config" class="btn btn-secondary" style="width:100%">Salvar configuração</button>
-    <button id="btn-iniciar" class="btn btn-success" style="width:100%;margin-top:8px">▶ Começar partida</button>
-    <div id="lista-expulsar"></div>
-    <hr style="margin:14px 0">
-    <button id="btn-jogar-de-novo" class="btn btn-success oculto" style="width:100%">🔁 Jogar de novo</button>
-    <button id="btn-expulsar-todos" class="btn btn-error" style="width:100%;margin-top:8px">🚪 Expulsar todos</button>
+    <!-- Durante a rodada o painel inteiro se recolhe atrás desta coroa: quem
+         lidera também está jogando, e precisa da tela do jogo, não da de admin. -->
+    <button id="btn-coroa" class="btn btn-secondary oculto" style="width:100%">👑 Controles da sala</button>
+
+    <div id="lider-conteudo">
+      <button id="btn-iniciar" class="btn btn-success" style="width:100%">▶ Começar partida</button>
+      <button id="btn-jogar-de-novo" class="btn btn-success oculto" style="width:100%">🔁 Jogar de novo</button>
+
+      <details id="gaveta-config" style="margin-top:10px">
+        <summary style="font-weight:800;cursor:pointer;padding:6px 0">⚙️ Configurar sala</summary>
+        <label>Duração da rodada <input id="cfg-duracao" type="number" min="30" max="180" step="15"></label>
+        <label>Rodadas <input id="cfg-rodadas" type="number" min="4" max="20"></label>
+        <label>Máximo de duplas <input id="cfg-duplas" type="number" min="1" max="10"></label>
+        <label><input id="cfg-troca" type="checkbox"> Permitir trocar música</label>
+        <label>Custo da troca <input id="cfg-troca-custo" type="number" min="0" max="50"></label>
+        <label><input id="cfg-palpite" type="checkbox"> Plateia pode palpitar</label>
+        <label><input id="cfg-votacao" type="checkbox"> Plateia vota o acerto</label>
+        <button id="btn-salvar-config" class="btn btn-secondary" style="width:100%">Salvar configuração</button>
+      </details>
+
+      <details id="gaveta-jogadores" style="margin-top:10px">
+        <summary style="font-weight:800;cursor:pointer;padding:6px 0">👥 Jogadores</summary>
+        <div id="lista-expulsar"></div>
+      </details>
+
+      <button id="btn-expulsar-todos" class="btn btn-error" style="width:100%;margin-top:12px">🚪 Expulsar todos</button>
+    </div>
   </div>
 
   <!-- Também fora do sistema de telas: aparece no lobby e na plateia. -->

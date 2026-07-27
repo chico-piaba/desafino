@@ -144,24 +144,44 @@ const CAMPOS_CONFIG = [
   ['cfg-votacao', 'votacaoPlateia', 'check'],
 ];
 
+let faseLiderVista = null;
+let coroaAberta = false;
+
 function renderPainelLider(e) {
-  // O líder manda em qualquer fase: sem isto a sala morria no fim da partida,
-  // porque o painel só existia no lobby e o display não tem mais botões.
   const ehLider = Boolean(e.voce && e.voce.ehLider);
-  const noLobby = e.fase === 'lobby';
   $('painel-lider').classList.toggle('oculto', !ehLider);
-  if ($('btn-jogar-de-novo')) $('btn-jogar-de-novo').classList.toggle('oculto', noLobby);
-  for (const [id] of CAMPOS_CONFIG) $(id).disabled = !noLobby;
-  $('btn-salvar-config').classList.toggle('oculto', !noLobby);
+  if (!ehLider) return;
+
+  const noLobby = e.fase === 'lobby';
+  const noFim = e.fase === 'fim';
+  const emJogo = !noLobby && !noFim;
+
+  // Ao mudar de fase, tudo fecha. Sem isto o líder que abriu a configuração no
+  // lobby reencontra os sete campos abertos no fim — o oposto do que queremos.
+  if (e.fase !== faseLiderVista) {
+    coroaAberta = false;
+    $('gaveta-config').open = false;
+    $('gaveta-jogadores').open = false;
+    faseLiderVista = e.fase;
+  }
+
+  $('btn-coroa').classList.toggle('oculto', !emJogo);
+  $('lider-conteudo').classList.toggle('oculto', emJogo && !coroaAberta);
   $('btn-iniciar').classList.toggle('oculto', !noLobby);
-  $('lista-expulsar').classList.toggle('oculto', !noLobby);
-  if (!ehLider || !e.configSala) return;
+  $('btn-jogar-de-novo').classList.toggle('oculto', noLobby);
+  // Configurar vale no lobby e no fim; no meio da rodada o servidor recusa.
+  $('gaveta-config').classList.toggle('oculto', emJogo);
+  $('gaveta-jogadores').classList.toggle('oculto', !noLobby);
+  $('btn-expulsar-todos').textContent = noFim ? '✨ Nova partida' : '🚪 Expulsar todos';
+
+  if (!e.configSala) return;
   // Não sobrescreve o que o líder está digitando agora.
   for (const [id, chave, tipo] of CAMPOS_CONFIG) {
     if (document.activeElement === $(id)) continue;
     if (tipo === 'check') $(id).checked = e.configSala[chave];
     else $(id).value = e.configSala[chave];
   }
+  $('gaveta-jogadores').querySelector('summary').textContent = `👥 Jogadores (${e.jogadores.length})`;
   $('lista-expulsar').innerHTML = e.jogadores
     .filter((j) => j.num !== e.voce.num)
     .map((j) => `<div class="dica"><span>${esc(j.nome)} (Dupla ${j.dupla})</span>
@@ -171,6 +191,12 @@ function renderPainelLider(e) {
     btn.onclick = () => socket.emit('removerJogador', Number(btn.dataset.expulsar));
   }
 }
+
+$('btn-coroa').onclick = () => {
+  coroaAberta = !coroaAberta;
+  $('lider-conteudo').classList.toggle('oculto', !coroaAberta);
+  $('btn-coroa').textContent = coroaAberta ? '👑 Fechar controles' : '👑 Controles da sala';
+};
 
 $('btn-salvar-config').onclick = () => {
   const knobs = {};
@@ -191,9 +217,10 @@ if ($('btn-jogar-de-novo')) {
 }
 if ($('btn-expulsar-todos')) {
   $('btn-expulsar-todos').onclick = () => {
-    if (confirm('Expulsar todo mundo? Todos voltam para a tela de entrada.')) {
-      socket.emit('reiniciarSala');
-    }
+    const pergunta = $('btn-expulsar-todos').textContent.includes('Nova partida')
+      ? 'Começar do zero? Todos voltam para a tela de entrada.'
+      : 'Expulsar todo mundo? Todos voltam para a tela de entrada.';
+    if (confirm(pergunta)) socket.emit('reiniciarSala');
   };
 }
 
